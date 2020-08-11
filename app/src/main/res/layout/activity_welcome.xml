@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/start_background"
+    android:id="@+id/relative">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@mipmap/app_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:id="@+id/welcomeImg"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:text="硅谷金融"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:layout_below="@+id/welcomeImg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:text="当前版本 ：1.1"
+        android:textColor="#fff"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:textStyle="bold"/>
+
+</RelativeLayout>
