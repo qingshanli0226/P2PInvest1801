@@ -2,9 +2,9 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
-    defaultConfig {
+        defaultConfig {
         applicationId "com.p2p.bawei.p2pinvest1801"
-        minSdkVersion 15
+        minSdkVersion 27
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -25,4 +25,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation project(path: ':framework')
+    implementation project(path: ':common')
+    implementation project(path: ':net')
 }
