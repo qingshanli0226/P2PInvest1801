@@ -1,13 +1,12 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.end_01.mvp.presenter.IPresenter;
+import com.p2p.bawei.p2pinvest1801.mvp.presenter.IPresenter;
 
 public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IView,IActivity, View.OnClickListener {
 
@@ -17,8 +16,8 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(banLayout());
-        initData();
         initView();
+        initData();
     }
 
     @Override

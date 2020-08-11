@@ -1,7 +1,7 @@
 package com.p2p.bawei.p2pinvest1801.mvp.presenter;
 
-import com.example.end_01.mvp.model.IModel;
-import com.example.end_01.mvp.view.IView;
+import com.p2p.bawei.p2pinvest1801.mvp.model.IModel;
+import com.p2p.bawei.p2pinvest1801.mvp.view.IView;
 
 public class BasePresenter<V extends IView,M extends IModel> implements IPresenter {
     protected V mView;

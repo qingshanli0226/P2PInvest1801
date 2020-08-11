@@ -4,15 +4,15 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 
-import java.util.Timer;
-import java.util.TimerTask;
+import com.p2p.bawei.p2pinvest1801.mvp.view.BaseActivity;
 
-public class WelComeActivity extends AppCompatActivity {
+public class WelComeActivity extends BaseActivity {
     private ImageView ivIdActivity;
     private Handler handler = new Handler(){
         @Override
@@ -27,20 +27,45 @@ public class WelComeActivity extends AppCompatActivity {
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void onClick(View v) {
 
-        Log.d("ljl", "1801学习git");
+    }
 
-        final Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
+    @Override
+    public void initData() {
+        setDongHua();
+    }
+
+    private void setDongHua() {
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);//0：完全透明  1：完全不透明
+        alphaAnimation.setDuration(3000);
+        alphaAnimation.setInterpolator(new AccelerateInterpolator());//设置动画的变化率
+        ivIdActivity.startAnimation(alphaAnimation);
+        alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public void run() {
-                handler.sendEmptyMessage(0);
-                timer.cancel();
-            }
-        },5000);
+            public void onAnimationStart(Animation animation) {
 
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                handler.sendEmptyMessage(0);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+    }
+
+    @Override
+    public void initView() {
+        ivIdActivity = findViewById(R.id.iv_id_activity);
+    }
+
+    @Override
+    public int banLayout() {
+        return R.layout.activity_main;
     }
 }

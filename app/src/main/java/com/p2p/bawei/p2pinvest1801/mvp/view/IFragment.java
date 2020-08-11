@@ -1,8 +1,8 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view;
 
+import android.support.annotation.IdRes;
 import android.view.View;
 
-import androidx.annotation.IdRes;
 
 public interface IFragment extends IActivity {
 
