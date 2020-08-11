@@ -10,12 +10,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.e("hq", "onCreate: " );
-        Log.e("hq", "onCreate: "+123 );
-        Log.e("hq", "onCreate: "+123 );
-        Log.e("hq", "onCreate: " );
-        Log.e("hq", "onCreate: "+123 );
-        Log.e("hq", "onCreate: "+123 );
+       
     }
 }
  
