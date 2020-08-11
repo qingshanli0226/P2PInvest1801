@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.wildma:PictureSelector:2.0.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6b63b4a95f5e63d1d1c60ee85b1346bb/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6b63b4a95f5e63d1d1c60ee85b1346bb/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.wildma/PictureSelector/2.0.0/86e37ee2f41eaccc914016ecb01218e3a788a444/PictureSelector-2.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

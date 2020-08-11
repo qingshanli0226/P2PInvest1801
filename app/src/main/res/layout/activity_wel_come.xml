@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".WelComeActivity">
+    tools:context=".view.activity.WelComeActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/image_1"/>
+        android:src="@drawable/welcome"/>
 
 </LinearLayout>
