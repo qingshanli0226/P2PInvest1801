@@ -19,14 +19,22 @@ import java.util.TimerTask;
  */
 public class WelComeActivity extends BaseActivity {
     private int i = 0;
+    private ImageView welcomeImg;
+
+    private float num = 0.6f;
+
     @Override
     public void initView() {
         //2秒后跳转主页面
+        welcomeImg = (ImageView) findViewById(R.id.welcome_img);
         final Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                if (i>=2){
+                num+=0.1f;
+                //渐变
+                welcomeImg.setAlpha(num);
+                if (i>=3){
                     Intent intent = new Intent(WelComeActivity.this, MainActivity.class);
                     startActivity(intent);
                     timer.cancel();

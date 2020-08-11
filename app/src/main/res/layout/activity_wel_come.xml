@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/welcome_li"
     android:orientation="horizontal"
-    android:background="@drawable/welcome"
     tools:context=".mvp.view.activity.WelComeActivity">
 
-
+    <ImageView
+        android:src="@drawable/welcome"
+        android:id="@+id/welcome_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>
