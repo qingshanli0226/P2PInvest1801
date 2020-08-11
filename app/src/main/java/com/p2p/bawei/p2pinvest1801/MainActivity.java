@@ -1,7 +1,7 @@
 package com.p2p.bawei.p2pinvest1801;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.d("LQS", "1801学习git");
-        Log.d("ZXH", "赵旭辉学习git");
+        Log.d("---", "onCreate: ");
+        Log.d("---", "onCreate: ");
     }
 }
