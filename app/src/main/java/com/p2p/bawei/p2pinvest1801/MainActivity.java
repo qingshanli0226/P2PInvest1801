@@ -1,7 +1,6 @@
 package com.p2p.bawei.p2pinvest1801;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.d("---", "onCreate: ");
-        Log.d("---", "onCreate: ");
+
     }
 }
