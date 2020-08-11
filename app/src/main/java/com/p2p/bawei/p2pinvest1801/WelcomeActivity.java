@@ -3,6 +3,7 @@ package com.p2p.bawei.p2pinvest1801;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Handler;
 import android.os.Message;
@@ -59,7 +60,6 @@ public class WelcomeActivity extends BaseActivity {
 
         //添加对话框内容
         builder.setTitle("下载最新版本");
-        builder.setIcon(R.mipmap.app_icon);
         builder.setMessage("解决一些bug，优化网络请求！");
 
         builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
@@ -69,6 +69,7 @@ public class WelcomeActivity extends BaseActivity {
                 progressDialog.setMax(100);
                 //水平
                 progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                
                 //模拟定时器
                 final Timer timer = new Timer();
                 /**
@@ -100,10 +101,11 @@ public class WelcomeActivity extends BaseActivity {
             }
         });
         //创建对话框
-        final AlertDialog alertDialog = builder.create();
+        AlertDialog alertDialog = builder.create();
         //显示对话框
         alertDialog.show();
-
+        alertDialog.getButton(DialogInterface.BUTTON_POSITIVE).setTextColor(Color.RED);
+        alertDialog.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(Color.RED);
     }
 
     private void net() {
