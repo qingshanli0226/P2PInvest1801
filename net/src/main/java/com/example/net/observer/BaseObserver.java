@@ -22,17 +22,7 @@ public abstract class BaseObserver<T> extends DisposableObserver<T> implements I
 
     @Override
     public void onError(Throwable e) {
-        if (e instanceof JSONException) {
-            error(NetCommon.JSCON_ERROR_CODE, NetCommon.JSON_ERROR_MESSAGE);
-        } else if (e instanceof HttpException) {
-            error(NetCommon.HTTP_ERROR_CODE, NetCommon.HTTP_ERROR_MESSAGE);
-        } else if (e instanceof SocketTimeoutException) {
-            error(NetCommon.SOCKET_TIMEOUT_ERROR_CODE, NetCommon.SOCKET_TIMEOUT_ERROR_MESSAGE);
-        } else if (e instanceof NetBusinessException) {
-            NetBusinessException netBusinessException = (NetBusinessException)e;
-            error(netBusinessException.getCode(), netBusinessException.getMessage());
-        } else if (e instanceof SecurityException) {
-        }
+
     }
 
     @Override
