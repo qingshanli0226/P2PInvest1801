@@ -6,15 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
-    <TextView
-        android:text="欢迎"
-        android:textColor="#CF1010"
-        android:textSize="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
     <ImageView
-        android:src="@mipmap/a1"
+        android:id="@+id/jb"
+        android:src="@mipmap/jb"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
