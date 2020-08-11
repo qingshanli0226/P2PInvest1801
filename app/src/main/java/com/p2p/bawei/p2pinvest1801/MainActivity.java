@@ -1,7 +1,5 @@
 package com.p2p.bawei.p2pinvest1801;
 
-import android.os.Handler;
-import android.os.Message;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -15,5 +13,10 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("LQS", "1801学习git");
 		Log.d("LQS", "何铭轩");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }
