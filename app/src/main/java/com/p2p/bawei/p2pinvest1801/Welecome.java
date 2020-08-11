@@ -20,10 +20,8 @@ public class Welecome extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ImageView imageView = new ImageView(this);
-        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(200, 200);
-        imageView.setLayoutParams(layoutParams);
         setContentView(imageView);
-        imageView.setImageResource(R.mipmap.ic_launcher);
+        imageView.setImageResource(R.mipmap.adr);
         timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
