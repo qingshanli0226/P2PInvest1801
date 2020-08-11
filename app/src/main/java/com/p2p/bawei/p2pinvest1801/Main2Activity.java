@@ -2,6 +2,7 @@ package com.p2p.bawei.p2pinvest1801;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -9,5 +10,6 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
     }
 }
