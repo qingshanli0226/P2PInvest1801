@@ -1,17 +1,23 @@
 package com.p2p.bawei.p2pinvest1801;
 
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.framework.BaseActivity;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected void initData() {
 
+    }
 
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_main;
     }
 }
