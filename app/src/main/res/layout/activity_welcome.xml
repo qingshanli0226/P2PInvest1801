@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".WelcomeActivity">
     <ImageView
+        android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/app_icon"/>
+        android:src="@mipmap/welcome"/>
 </LinearLayout>
