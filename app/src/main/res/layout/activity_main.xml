@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".mvp.view.activity.MainActivity">
 
-    <TextView
-        android:text="欢迎━(*｀∀´*)ノ亻!"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_view_vp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
 
-</LinearLayout>
+    <RadioGroup
+
+        android:id="@+id/radio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></RadioGroup>
+</RelativeLayout>
