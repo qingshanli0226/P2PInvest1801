@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mvp.view.activity.MainActivity">
+    android:id="@+id/welcome_li"
+    android:orientation="horizontal"
+    android:background="@drawable/welcome"
+    tools:context=".mvp.view.activity.WelComeActivity">
 
-    <TextView
-        android:text="欢迎━(*｀∀´*)ノ亻!"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
 
 </LinearLayout>
