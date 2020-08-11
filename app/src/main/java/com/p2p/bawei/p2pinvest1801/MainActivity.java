@@ -12,5 +12,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Log.d("LQS", "1801学习git");
+        Log.d("LQS", "在新的lqs分支上添加了一行log");
     }
 }
