@@ -1,6 +1,4 @@
-package com.p2p.bawei.p2pinvest1801.fragment;
-
-import android.support.v4.app.Fragment;
+package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 
 import com.example.common.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;

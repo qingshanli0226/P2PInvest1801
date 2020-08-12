@@ -10,14 +10,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HttpManager {
     public static HttpManager httpManager;
-    private static HttpManager getInstance(){
+    public static HttpManager getInstance(){
         if (httpManager==null){
             httpManager=new HttpManager();
         }
         return httpManager;
     }
     private Retrofit retrofit;
-    private Retrofit getRetrofit(){
+    public Retrofit getRetrofit(){
         if (retrofit==null){
             initretrofit();
         }
@@ -33,7 +33,7 @@ public class HttpManager {
                 .readTimeout(5, TimeUnit.SECONDS)
                 .build();
          retrofit = new Retrofit.Builder().client(client)
-                .baseUrl("")
+                .baseUrl("http://49.233.93.155:8080/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();

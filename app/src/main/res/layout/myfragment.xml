@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent">
+    <TextView
+        android:text="首页"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:textColor="#26B7ED"
+        android:background="#102531"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+    <com.youth.banner.Banner
+        android:id="@+id/bann"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
 
-</android.support.constraint.ConstraintLayout>
+    </com.youth.banner.Banner>
+</LinearLayout>
