@@ -71,4 +71,5 @@ dependencies {
     implementation 'com.youth.banner:banner:1.4.10'
     //html-text-view
     implementation 'org.sufficientlysecure:html-textview:3.9'
+    implementation 'com.github.Vincent7Wong:EasyNavigation:2.0.5'
 }

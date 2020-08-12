@@ -5,5 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".mvp.view.act.SyActivity">
-
+    <com.next.easynavigation.view.EasyNavigationBar
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/bar"></com.next.easynavigation.view.EasyNavigationBar>
 </LinearLayout>
