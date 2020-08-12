@@ -36,7 +36,7 @@ public class NetRetrofitManager {
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(client)
-                    .baseUrl("http://49.233.93.155:8080")
+                    .baseUrl("http://49.233.93.155:8080/")
                     .build();
 
         }

@@ -11,7 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
@@ -31,5 +31,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    api 'com.youth.banner:banner:1.4.10'//轮播图
+    api 'com.google.code.gson:gson:2.8.0'//gson依赖
+    api 'com.github.Vincent7Wong:EasyNavigation:2.0.5' //导航栏
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'//万能适配器
+    api 'com.youth.banner:banner:1.4.10'//轮播图
 
 }
