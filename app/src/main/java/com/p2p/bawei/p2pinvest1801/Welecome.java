@@ -30,6 +30,7 @@ public class Welecome extends AppCompatActivity {
             super.handleMessage(msg);
             Intent intent = new Intent(Welecome.this,MainActivity.class);
             startActivity(intent);
+            finish();
         }
     };
     private RelativeLayout mainRelative;
