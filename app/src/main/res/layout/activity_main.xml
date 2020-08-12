@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WelComeActivity">
 
-    <ImageView
-        android:id="@+id/iv_id_activity"
-        android:src="@drawable/a"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="3"
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:id="@+id/tv_id_wel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-</LinearLayout>
+    <ImageView
+        android:src="@drawable/ab"
+        android:id="@+id/iv_id_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ImageView>
+
+</FrameLayout>

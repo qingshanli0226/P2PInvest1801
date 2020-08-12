@@ -9,11 +9,17 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.p2p.bawei.p2pinvest1801.mvp.view.BaseActivity;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class WelComeActivity extends BaseActivity {
     private ImageView ivIdActivity;
+    private TextView tvIdWel;
+    private int theTime = 2;
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -22,6 +28,10 @@ public class WelComeActivity extends BaseActivity {
                 Intent intent = new Intent(WelComeActivity.this, Main2Activity.class);
                 startActivity(intent);
 
+            }
+            if (msg.what == 101){
+                tvIdWel.setText(theTime+"");
+                theTime--;
             }
         }
     };
@@ -34,6 +44,23 @@ public class WelComeActivity extends BaseActivity {
     @Override
     public void initData() {
         setDongHua();
+        setTimer();
+    }
+
+    private void setTimer() {
+        final Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if (theTime < 1){
+                    timer.cancel();
+                }else {
+                    Message message = new Message();
+                    message.what = 101;
+                    handler.sendMessage(message);
+                }
+            }
+        },1000,1000);
     }
 
     private void setDongHua() {
@@ -62,6 +89,8 @@ public class WelComeActivity extends BaseActivity {
     @Override
     public void initView() {
         ivIdActivity = findViewById(R.id.iv_id_activity);
+        tvIdWel = findViewById(R.id.tv_id_wel);
+
     }
 
     @Override
