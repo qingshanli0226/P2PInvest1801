@@ -13,7 +13,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        banlayout();
+        setContentView(banlayout());
         initView();
         initData();
     }

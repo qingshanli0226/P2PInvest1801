@@ -1,21 +1,27 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.act;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import com.bumptech.glide.Glide;
 import com.next.easynavigation.view.EasyNavigationBar;
 import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.Share;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fra.Fragment1;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fra.Fragment2;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fra.Fragment3;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fra.Fragment4;
+import com.youth.banner.Banner;
+import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +51,7 @@ public class SyActivity extends AppCompatActivity {
                 .setOnTabLoadListener(new EasyNavigationBar.OnTabLoadListener() { //Tab加载完毕回调
                     @Override
                     public void onTabLoadCompleteEvent() {
-                        bar.setMsgPointCount(0, 66);
+                        bar.setMsgPointCount(1, 66);
 
                         bar.setHintPoint(3, true);
                     }
@@ -64,5 +70,9 @@ public class SyActivity extends AppCompatActivity {
                     }
                 })
                 .build();
+
+
 }
+
+
 }
