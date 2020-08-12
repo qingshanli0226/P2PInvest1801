@@ -11,7 +11,13 @@
         android:id="@+id/main_framelayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="15"></FrameLayout>
+        android:layout_weight="16"></FrameLayout>
+
+
+    <View
+        android:background="@color/title_text"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
 
     <com.flyco.tablayout.CommonTabLayout
         android:id="@+id/main_common"
