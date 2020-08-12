@@ -10,11 +10,18 @@ import android.os.Message;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
+import com.example.common.InvestConstant;
 import com.example.framework.BaseActivity;
+import com.example.net.bean.UpdataBean;
+import com.google.gson.Gson;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
 import com.p2p.bawei.p2pinvest1801.R;
 
 import java.util.Timer;
@@ -22,8 +29,6 @@ import java.util.TimerTask;
 
 public class WelcomeActivity extends BaseActivity {
     private RelativeLayout rlWelcome;
-
-
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -33,30 +38,37 @@ public class WelcomeActivity extends BaseActivity {
                     launchActivity(MainActivity.class, null);
                     finish();
                     break;
+                case 2:
+                    //更新版本UI
+                    tvWelcomeVersion.setText(msg.obj.toString());
+                    break;
             }
 
         }
     };
+    private TextView tvWelcomeVersion;
+
 
     @Override
     protected void initData() {
 
     }
 
+
     @Override
     protected void initView() {
         rlWelcome = findViewById(R.id.rl_welcome);
+        tvWelcomeVersion = findViewById(R.id.tv_welcome_version);
+
         //弹出得请求更新对话框
         initDialog();
         //启动动画
         setAnimation();
         //判断网络连接
         net();
-
     }
 
     private void initDialog() {
-
         //创建构造者
         final AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
 
@@ -88,7 +100,22 @@ public class WelcomeActivity extends BaseActivity {
                         if (progress == 100) {
                             timer.cancel();//取消定时器
                             progressDialog.dismiss();//消失
-                            launchActivity(MainActivity.class,null);
+
+                            //开启一个线程,更新版本
+                            OkGo.<String>get(InvestConstant.BASE_RESOURCE_JSON_URL + "P2PInvest/update.json")
+                                    .execute(new StringCallback() {
+                                        @Override
+                                        public void onSuccess(Response<String> response) {
+                                            String json = response.body();
+                                            UpdataBean.ResultBean result = new Gson().fromJson(json, UpdataBean.class).getResult();
+                                            Message message = new Message();
+                                            message.what = 2;
+                                            message.obj = result.getVersion();
+                                            handler.sendMessage(message);
+                                        }
+                                    });
+                            //跳转
+                            launchActivity(MainActivity.class, null);
                             finish();
                         }
                         progressDialog.setProgress(progress++);
