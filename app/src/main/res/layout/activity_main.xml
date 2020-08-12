@@ -7,4 +7,13 @@
     tools:context=".MainActivity">
 
 
+    <com.next.easynavigation.view.EasyNavigationBar
+        android:id="@+id/easyBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.next.easynavigation.view.EasyNavigationBar>
+
+
+
 </LinearLayout>
