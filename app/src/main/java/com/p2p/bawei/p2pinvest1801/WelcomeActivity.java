@@ -69,7 +69,7 @@ public class WelcomeActivity extends BaseActivity {
                 progressDialog.setMax(100);
                 //水平
                 progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                
+
                 //模拟定时器
                 final Timer timer = new Timer();
                 /**
