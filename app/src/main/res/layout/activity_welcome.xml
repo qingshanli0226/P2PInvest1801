@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:id="@+id/rl_welcome"
     android:background="@drawable/start_background"
-    tools:context=".WelcomeActivity">
+    tools:context=".main.view.WelcomeActivity">
 
     <ImageView
         android:id="@+id/iv_welcome_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="@dimen/margin100"
         android:background="@drawable/app_icon" />
 
     <TextView
@@ -21,17 +21,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/iv_welcome_icon"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/margin20"
         android:text="硅谷金融"
         android:textColor="@color/white"
-        android:textSize="40sp" />
+        android:textSize="@dimen/textSize40" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="@dimen/margin100"
         android:orientation="horizontal">
 
         <TextView
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text="当前版本:"
             android:textColor="@color/white"
-            android:textSize="15sp" />
+            android:textSize="@dimen/textSize15" />
 
         <TextView
             android:id="@+id/tv_welcome_version"
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:text="1.1"
             android:textColor="@color/white"
-            android:textSize="15sp" />
+            android:textSize="@dimen/textSize15" />
 
     </LinearLayout>
 

@@ -50,10 +50,5 @@ dependencies {
     //权限动态申请
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:+'
 
-    //——	Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
-    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'
-
     implementation project(':common')
 }

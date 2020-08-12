@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--layout-->
+    <dimen name="layout30">30dp</dimen>
+    <dimen name="layoutHeight45">45dp</dimen>
+    <dimen name="layoutHeight44">44dp</dimen>
+
+    <!--textsize-->
+    <dimen name="textSize15">15sp</dimen>
+    <dimen name="textSize40">40sp</dimen>
+    <dimen name="textSize30">30sp</dimen>
+
+    <!--margin-->
+    <dimen name="margin100">100dp</dimen>
+    <dimen name="margin20">20dp</dimen>
+    <dimen name="margin10">10dp</dimen>
+
+    <!--iconsize-->
+    <dimen name="icon30">30dp</dimen>
+
+    <dimen name="banner170">170dp</dimen>
+
+
+</resources>

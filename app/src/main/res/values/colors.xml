@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#00FFFFFF</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FF4081</color>
+
     <color name="white">#ffffff</color>
+    <color name="home_back_unselected">#676767</color>
+    <color name="product_detail_common">#666666</color>
+
+    <color name="RoundProgressBar_defoutColor">#5A6E9E</color>
+    <color name="RoundProgressBar_sweepColor">#DC143C</color>
+
+    <!--主页面-->
+    <color name="maintextSelectColor">#3984D1</color>
+    <color name="maintextUnselectColor">#6D6D6D</color>
+    <color name="title_text">#26B8EE</color>
+
+
+
 </resources>
