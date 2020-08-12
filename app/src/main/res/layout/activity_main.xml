@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-</LinearLayout>
+    tools:context=".mvp.view.MainActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:id="@+id/main_framlayout"
+        android:layout_height="match_parent"></FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@id/main_common"
+        android:background="#3882D0"></View>
+    <com.flyco.tablayout.CommonTabLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/main_common"
+        app:tl_textSelectColor="#3882D0"
+        app:tl_textUnselectColor="#000"
+        android:layout_alignParentBottom="true"></com.flyco.tablayout.CommonTabLayout>
+</RelativeLayout>
