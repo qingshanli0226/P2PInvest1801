@@ -15,7 +15,7 @@ public class RetrofitManager {
         return retrofitManager;
     }
 
-    private String baseurl="http://172.81.227.127:8055/";
+    private String baseurl="http://49.233.93.155:8080";
 
     public void setBaseurl(String baseurl) {
         this.baseurl = baseurl;
