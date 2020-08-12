@@ -49,8 +49,8 @@ public class RoundProgressBar extends View {
         startAngle = 0;
         sweepAngle = 0;
         defoutSize = 140;
-        defoutLine = 8;
-        strokeWidth = 8;
+        defoutLine = 10;
+        strokeWidth = 10;
 
         rectF = new RectF();
 

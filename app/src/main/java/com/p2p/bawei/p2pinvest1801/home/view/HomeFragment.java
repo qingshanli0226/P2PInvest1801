@@ -19,10 +19,12 @@ import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.home.contract.HomeContract;
 import com.p2p.bawei.p2pinvest1801.home.presenter.HomePresenterImpl;
 import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
 import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -42,12 +44,15 @@ public class HomeFragment extends BaseMVPFragment<HomePresenterImpl, HomeContrac
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
-            if (msg.what == 1){
-                tvRoundPro.setText(index+"%");
+            if (msg.what == 1) {
+                tvRoundPro.setText(index + "%");
             }
         }
     };
     private int index = 0;
+    private TextView tvHomeProduct;
+    private TextView tv_home_yearrate;
+
 
     @Override
     protected void initHttpData() {
@@ -75,6 +80,9 @@ public class HomeFragment extends BaseMVPFragment<HomePresenterImpl, HomeContrac
         banner = findViewById(R.id.banner);
         roundProHome = findViewById(R.id.roundPro_home);
         tvRoundPro = findViewById(R.id.tv_roundPro);
+        tvHomeProduct = findViewById(R.id.tv_home_product);
+        tv_home_yearrate = findViewById(R.id.tv_home_yearrate);
+
     }
 
     @Override
@@ -82,18 +90,22 @@ public class HomeFragment extends BaseMVPFragment<HomePresenterImpl, HomeContrac
         HomeBean.ResultBean result = homeBean.getResult();
         List<HomeBean.ResultBean.ImageArrBean> imageArr = result.getImageArr();
 
-        roundProHome.setProgress(0.9f);
+        float v = Float.parseFloat(result.getProInfo().getProgress());
 
+        tvHomeProduct.setText(result.getProInfo().getName());
+        tv_home_yearrate.setText(result.getProInfo().getYearRate() + "%");
+
+        roundProHome.setProgress(v/100);
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 index++;
-                if (index >= 90){
+                if (index >= 90) {
                     timer.cancel();
                 }
                 handler.sendEmptyMessage(1);
             }
-        },0,20);
+        }, 0, 20);
 
         for (int i = 0; i < imageArr.size(); i++) {
             String imaurl = imageArr.get(i).getIMAURL();
@@ -102,6 +114,12 @@ public class HomeFragment extends BaseMVPFragment<HomePresenterImpl, HomeContrac
         banner.setImages(stringList);
         //设置轮播时间
         banner.setDelayTime(1500);
+        //设置标题集合（当banner样式有显示title时）
+        String[] titles = new String[]{"分享砍学费", "人脉总动员", "想不到你是这样的app", "购物节，爱不单行"};
+        banner.setBannerTitles(Arrays.asList(titles));
+        //设置指示器位置（当banner模式中有指示器时）
+        banner.setIndicatorGravity(BannerConfig.CENTER);
+        banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);//设置页码与标题
         //设置banner动画效果
         banner.setBannerAnimation(Transformer.DepthPage);
         banner.setImageLoader(new ImageLoader() {

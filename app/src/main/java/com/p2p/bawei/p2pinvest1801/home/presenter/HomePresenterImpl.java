@@ -18,7 +18,7 @@ public class HomePresenterImpl extends HomeContract.HomePresenter {
     public void getHomeData() {
         RetrofitManager.getInvestApiService()
                 .getHomeData()
-                .delay(2, TimeUnit.SECONDS)
+                .delay(1, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .doOnSubscribe(new Consumer<Disposable>() {

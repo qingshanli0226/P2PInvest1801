@@ -12,6 +12,7 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:visibility="gone"
             android:id="@+id/iv_title_back"
             android:layout_width="@dimen/layout30"
             android:layout_height="@dimen/layout30"
@@ -29,6 +30,7 @@
             android:textSize="@dimen/textSize30" />
 
         <ImageView
+            android:visibility="gone"
             android:id="@+id/iv_title_setting"
             android:layout_width="@dimen/layout30"
             android:layout_height="@dimen/layout30"

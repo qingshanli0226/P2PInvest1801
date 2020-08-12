@@ -1,31 +1,33 @@
 package com.p2p.bawei.p2pinvest1801.invest.view;
 
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.framework.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class InvestFragment extends Fragment {
-
-
-    public InvestFragment() {
-        // Required empty public constructor
-    }
+public class InvestFragment extends BaseFragment {
+    private TextView tvTitle;
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_invest, container, false);
+    protected int getLayoutId() {
+        return R.layout.fragment_invest;
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void initView() {
+        tvTitle = findViewById(R.id.tv_title);
+        tvTitle.setText("投资");
+    }
 }
