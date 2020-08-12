@@ -2,7 +2,11 @@ package com.example.common;
 
 public class FinanceConstant {
 
-    public static String BASE_URL = "http://49.233.93.155:8080";
+    public static String BASE_URL = "http://49.233.93.155:8080/";
+
+    public static String BUNDLE = "BUNDLE";
+
+    public static String BUNDLE_BANNER = "BUNDLE_BANNER";
 
     public static final String JSCON_ERROR_CODE = "10000";
     public static final String JSON_ERROR_MESSAGE = "服务端范湖数据解析错误";

@@ -13,15 +13,23 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public abstract class BaseFragment extends Fragment {
+import com.example.common.FinanceConstant;
+import com.example.common.view.ToolBar;
+import com.example.framework.R;
+
+public abstract class BaseFragment extends Fragment implements ToolBar.IToolBarClickListner {
 
     private static final String TAG = "BaseFragment";
     private View baseView;
+    private ToolBar toolBar;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return baseView = inflater.inflate(getLayoutId(),container,false);
+        baseView = inflater.inflate(getLayoutId(),container,false);
+        toolBar = findViewById(R.id.toolBar);
+        toolBar.setiToolBarClickListner(this);
+        return baseView;
     }
 
     protected abstract int getLayoutId();
@@ -47,12 +55,22 @@ public abstract class BaseFragment extends Fragment {
 
     public void lunachActivity(Class activityClass,Bundle bundle){
         Intent intent = new Intent();
-        intent.putExtra("bundle",bundle);
+        intent.putExtra(FinanceConstant.BUNDLE,bundle);
         intent.setClass(getContext(),activityClass);
         startActivity(intent);
     }
 
     public <T extends View> T findViewById(@IdRes int id){
         return baseView.findViewById(id);
+    }
+
+    @Override
+    public void onLeftClick() {
+        getActivity().finish();
+    }
+
+    @Override
+    public void onRightClick() {
+
     }
 }

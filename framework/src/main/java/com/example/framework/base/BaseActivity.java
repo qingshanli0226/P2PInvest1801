@@ -8,9 +8,14 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public abstract class BaseActivity extends AppCompatActivity {
+import com.example.common.FinanceConstant;
+import com.example.common.view.ToolBar;
+import com.example.framework.R;
+
+public abstract class BaseActivity extends AppCompatActivity implements ToolBar.IToolBarClickListner {
 
     private static final String TAG = "BaseActivity";
+    private ToolBar toolBar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -18,6 +23,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayoutId());
 
         initView();
+        toolBar = findViewById(R.id.toolBar);
+        toolBar.setiToolBarClickListner(this);
         initData();
     }
 
@@ -37,8 +44,18 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public void lunachActivity(Class activityClass,Bundle bundle){
         Intent intent = new Intent();
-        intent.putExtra("bundle",bundle);
+        intent.putExtra(FinanceConstant.BUNDLE,bundle);
         intent.setClass(this,activityClass);
         startActivity(intent);
+    }
+
+    @Override
+    public void onLeftClick() {
+        finish();
+    }
+
+    @Override
+    public void onRightClick() {
+
     }
 }

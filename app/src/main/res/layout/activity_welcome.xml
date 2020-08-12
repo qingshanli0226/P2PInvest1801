@@ -5,6 +5,22 @@
     android:background="@mipmap/start_background"
     android:id="@+id/relative">
 
+    <TextView
+        android:background="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="倒计时秒"
+        android:textColor="#fff"
+        android:layout_alignParentRight="true"
+        android:id="@+id/timerCount"/>
+
+    <com.example.common.view.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/toolBar"></com.example.common.view.ToolBar>
+
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -29,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textSize="20sp"
-        android:text="当前版本 ：1.1"
+        android:text="当前版本 ：1.0"
         android:textColor="#fff"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="100dp"

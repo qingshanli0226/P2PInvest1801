@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ToolBar">
+
+        <attr name="left_show" format="boolean"></attr>
+        <attr name="title_show" format="boolean"></attr>
+        <attr name="right_show" format="boolean"></attr>
+        <attr name="left_src" format="reference"></attr>
+        <attr name="title_text" format="string"></attr>
+
+    </declare-styleable>
+
+</resources>
