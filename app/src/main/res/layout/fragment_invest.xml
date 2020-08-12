@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".invest.view.InvestFragment">
+    tools:context=".invest.InvestFragment">
 
-    <include layout="@layout/common_title"/>
+    <include layout="@layout/common_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.tabs.TabLayout
+            app:tabPaddingStart="70dp"
+            app:tabPaddingEnd="70dp"
+            android:layout_gravity="center"
+            android:id="@+id/tablayout"
+            android:layout_width="match_parent"
+            app:tabIndicatorColor="@null"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            app:tabBackground="@drawable/invest_bg_select"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/RoundProgressBar_sweepColor"
+            app:tabTextColor="@color/colorPrimaryDark"></com.google.android.material.tabs.TabLayout>
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="13"></androidx.viewpager.widget.ViewPager>
+
+    </LinearLayout>
 
 </LinearLayout>

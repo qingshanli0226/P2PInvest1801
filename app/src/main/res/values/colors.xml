@@ -4,6 +4,12 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FF4081</color>
 
+
+
+    <color name="colorGray">#cccccc</color>
+
+
+
     <color name="white">#ffffff</color>
     <color name="home_back_unselected">#676767</color>
     <color name="product_detail_common">#666666</color>

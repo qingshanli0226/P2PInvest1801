@@ -14,7 +14,7 @@ import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.main.entity.CommonEntity;
 import com.p2p.bawei.p2pinvest1801.home.view.HomeFragment;
-import com.p2p.bawei.p2pinvest1801.invest.view.InvestFragment;
+import com.p2p.bawei.p2pinvest1801.invest.InvestFragment;
 import com.p2p.bawei.p2pinvest1801.more.view.MoreFragment;
 import com.p2p.bawei.p2pinvest1801.user.view.UserFragment;
 
