@@ -1,1 +1,1 @@
-include ':app', ':framwork', ':net'
+include ':app', ':framwork', ':net', ':common'
