@@ -13,7 +13,7 @@ import com.p2p.bawei.p2pinvest1801.mvp.presenter.IPresenter;
 
 
 public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IView, IActivity, View.OnClickListener {
-    private P mPresenter;
+    protected P mPresenter;
 
     @Override
     protected void onDestroy() {

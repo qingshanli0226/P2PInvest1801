@@ -15,9 +15,15 @@ public class NetConnect {
         return netConnect;
     }
 
-    public Context getContext() {
-        return context;
+    public boolean isNet() {
+        return isNet;
     }
+
+    public void setNet(boolean net) {
+        isNet = net;
+    }
+
+    private boolean isNet;
 
     public static boolean isNetworkConnected(Context context) {
         if (context != null) {
