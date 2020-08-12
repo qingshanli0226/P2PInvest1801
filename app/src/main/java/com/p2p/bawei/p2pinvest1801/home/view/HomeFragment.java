@@ -90,7 +90,7 @@ public class HomeFragment extends BaseMVPFragment<HomePresenterImpl, HomeContrac
         HomeBean.ResultBean result = homeBean.getResult();
         List<HomeBean.ResultBean.ImageArrBean> imageArr = result.getImageArr();
 
-        float v = Float.parseFloat(result.getProInfo().getProgress());
+        final float v = Float.parseFloat(result.getProInfo().getProgress());
 
         tvHomeProduct.setText(result.getProInfo().getName());
         tv_home_yearrate.setText(result.getProInfo().getYearRate() + "%");
@@ -100,7 +100,7 @@ public class HomeFragment extends BaseMVPFragment<HomePresenterImpl, HomeContrac
             @Override
             public void run() {
                 index++;
-                if (index >= 90) {
+                if (index >= v) {
                     timer.cancel();
                 }
                 handler.sendEmptyMessage(1);

@@ -33,7 +33,6 @@ public class HomePresenterImpl extends HomeContract.HomePresenter {
                         iHttpView.hideLoading();
                     }
                 })
-
                 .subscribe(new Observer<HomeBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
