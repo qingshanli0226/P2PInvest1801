@@ -55,5 +55,4 @@ public abstract class BaseFragment extends Fragment {
         intent.setClass(getActivity(), launcActivityClass);
         startActivity(intent);
     }
-
 }
