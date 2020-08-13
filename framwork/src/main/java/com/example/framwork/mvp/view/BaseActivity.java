@@ -1,7 +1,9 @@
 package com.example.framwork.mvp.view;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import com.example.framwork.mvp.presenter.IPresenter;
 public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IActivity,IView {
     protected P mPresenter;
     private ToolBar toolBar;
+    private long lastBackTime;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +24,6 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
         toolBar = findViewById(R.id.toolbar);
         initDatas();
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();

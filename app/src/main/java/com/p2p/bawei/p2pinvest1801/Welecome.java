@@ -14,6 +14,7 @@ import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -75,7 +76,7 @@ public class Welecome extends AppCompatActivity {
     }
 
     private TextView welcomeCount;
-    int count = 4;
+    int count = 3;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,14 +89,14 @@ public class Welecome extends AppCompatActivity {
                     CacheManager.getInstance().initInter();
                     handler.sendEmptyMessage(0);
                 }
+
             }
         }).start();
         new Thread(new Runnable() {
             @Override
             public void run() {
                 synchronized (Welecome.this){
-                    Log.i("----", "222");
-                    for (int i = 3; i >= 0; i--) {
+                    for (int i = 3; i > 0; i--) {
                         handler.sendEmptyMessage(1);
                         try {
                             Thread.sleep(1000);
@@ -105,13 +106,9 @@ public class Welecome extends AppCompatActivity {
                     }
                     handler.sendEmptyMessage(0);
                 }
-            }
+                }
         }).start();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                synchronized (Welecome.this){
-                    RetrofitManager.getInstance().getRetrofit()
+        RetrofitManager.getInstance().getRetrofit()
                             .create(P2PApi.class)
                             .versionlist()
                             .observeOn(AndroidSchedulers.mainThread())
@@ -119,17 +116,17 @@ public class Welecome extends AppCompatActivity {
                             .subscribe(new BaseObserver<VersionBean>() {
                                 @Override
                                 public void onNext(VersionBean versionBean) {
-                                    handler.sendEmptyMessage(0);
-                                    title = versionBean.getResult().getDesc();
+                                    if(versionBean.getCode() == 200){
+                                        title = versionBean.getResult().getDesc();
+                                        handler.sendEmptyMessage(0);
+                                    }else{
+                                        Toast.makeText(Welecome.this, "请求出错", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-
                                 @Override
                                 public void onRequestError(String code, String message) {
 
                                 }
                             });
-                }
             }
-        }).start();
-    }
 }

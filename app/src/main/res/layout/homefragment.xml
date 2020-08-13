@@ -10,6 +10,38 @@
         app:center_text="首页"></com.example.common.ToolBar>
     <com.youth.banner.Banner
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
         android:id="@+id/home_banner"></com.youth.banner.Banner>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:layout_width="270dp"
+                android:gravity="center"
+                android:textSize="32dp"
+                android:id="@+id/home_title"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/recommend"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+        <com.p2p.bawei.p2pinvest1801.mvp.view.ProgressView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:stroke_width="15"
+            android:id="@+id/home_progress"
+            app:text_color="@android:color/holo_blue_dark"
+            app:round_size="100"
+            app:text_size="18sp"
+            app:circle_color="@android:color/holo_red_dark"
+            app:arc_color="@android:color/holo_blue_dark"
+            android:layout_marginTop="80dp"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
 </LinearLayout>

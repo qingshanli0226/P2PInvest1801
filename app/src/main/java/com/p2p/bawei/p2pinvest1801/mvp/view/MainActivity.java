@@ -3,6 +3,7 @@ package com.p2p.bawei.p2pinvest1801.mvp.view;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -97,6 +98,9 @@ public class MainActivity extends BaseActivity {
                 .show(fragment)
                 .commit();
     }
+
+
+
     @Override
     public int bandLayout() {
         return R.layout.activity_main;
