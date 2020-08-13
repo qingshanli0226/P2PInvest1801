@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorGray"
+    android:orientation="vertical"
     tools:context=".invest.all.view.IAllFragment">
 
     <com.example.common.view.MyLoadingBar
@@ -12,6 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"></com.example.common.view.MyLoadingBar>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="硅谷金融壕运当头，首投返现最高达188元"
+        android:textColor="@color/RoundProgressBar_sweepColor"
+        android:textSize="26sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/all_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
 
 
 </LinearLayout>

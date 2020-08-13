@@ -12,8 +12,8 @@
 
     <color name="white">#ffffff</color>
     <color name="home_back_unselected">#676767</color>
+    <color name="product_red_common">#e84768</color>
     <color name="product_detail_common">#666666</color>
-
     <color name="RoundProgressBar_defoutColor">#5A6E9E</color>
     <color name="RoundProgressBar_sweepColor">#DC143C</color>
 
