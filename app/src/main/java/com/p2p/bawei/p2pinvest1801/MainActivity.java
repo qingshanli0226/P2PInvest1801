@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         findViewById(R.id.btnThread).setOnClickListener(this);
+        findViewById(R.id.btnProgress).setOnClickListener(this);
         Log.d("LQS", "1801学习git");
     }
 
@@ -23,6 +24,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnThread:
                 Intent intent = new Intent(MainActivity.this, ThreadActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.btnProgress:
+                Intent intentP = new Intent(MainActivity.this, ProgressActivity.class);
+                startActivity(intentP);
                 break;
         }
     }

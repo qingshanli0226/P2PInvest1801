@@ -13,4 +13,10 @@
         android:id="@+id/btnThread"
         android:text="线程"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnProgress"
+        android:text="自定义View"/>
+
 </LinearLayout>
