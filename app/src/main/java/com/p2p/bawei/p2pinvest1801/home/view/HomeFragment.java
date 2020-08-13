@@ -117,9 +117,9 @@ public class HomeFragment extends BaseMVPFragment<HomePresenterImpl, HomeContrac
         //设置标题集合（当banner样式有显示title时）
         String[] titles = new String[]{"分享砍学费", "人脉总动员", "想不到你是这样的app", "购物节，爱不单行"};
         banner.setBannerTitles(Arrays.asList(titles));
+        banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);//设置页码与标题
         //设置指示器位置（当banner模式中有指示器时）
         banner.setIndicatorGravity(BannerConfig.CENTER);
-        banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);//设置页码与标题
         //设置banner动画效果
         banner.setBannerAnimation(Transformer.DepthPage);
         banner.setImageLoader(new ImageLoader() {

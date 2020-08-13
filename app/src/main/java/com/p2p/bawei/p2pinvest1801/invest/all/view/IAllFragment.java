@@ -12,8 +12,8 @@ import com.example.framework.BaseMVPFragment;
 import com.example.net.bean.ProductBean;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.invest.all.adapter.AllAdapter;
-import com.p2p.bawei.p2pinvest1801.invest.all.contract.AllContract;
-import com.p2p.bawei.p2pinvest1801.invest.all.presenter.AllPresenterImpl;
+import com.p2p.bawei.p2pinvest1801.invest.all.contract.ProductContract;
+import com.p2p.bawei.p2pinvest1801.invest.all.presenter.ProductPresenterImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class IAllFragment extends BaseMVPFragment<AllPresenterImpl, AllContract.IAllView> implements AllContract.IAllView {
+public class IAllFragment extends BaseMVPFragment<ProductPresenterImpl, ProductContract.IProductView> implements ProductContract.IProductView {
 
     private MyLoadingBar loadingBar;
     private List<ProductBean.ResultBean> resultBeanList = new ArrayList<>();
@@ -33,12 +33,12 @@ public class IAllFragment extends BaseMVPFragment<AllPresenterImpl, AllContract.
 
     @Override
     protected void initHttpData() {
-        ihttpPresenter.getAllData();
+        ihttpPresenter.getProductData();
     }
 
     @Override
     protected void initPresenter() {
-        ihttpPresenter = new AllPresenterImpl();
+        ihttpPresenter = new ProductPresenterImpl();
     }
 
     @Override
@@ -62,7 +62,7 @@ public class IAllFragment extends BaseMVPFragment<AllPresenterImpl, AllContract.
     }
 
     @Override
-    public void onAllData(ProductBean productBean) {
+    public void onProductData(ProductBean productBean) {
         List<ProductBean.ResultBean> result = productBean.getResult();
         resultBeanList.addAll(result);
         allAdapter.notifyDataSetChanged();
