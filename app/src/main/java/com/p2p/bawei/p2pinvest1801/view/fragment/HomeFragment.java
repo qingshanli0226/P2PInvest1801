@@ -8,11 +8,37 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class HomeFragment extends Fragment {
+import com.bw.lib_core.view.BaseFragment;
+import com.p2p.bawei.p2pinvest1801.bean.MyHomeBean;
+import com.p2p.bawei.p2pinvest1801.contract.MyHomeContract;
+import com.p2p.bawei.p2pinvest1801.presenter.MyHomePresenter;
 
-    @Nullable
+public class HomeFragment extends BaseFragment<MyHomePresenter> implements MyHomeContract.View {
+
+
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+    public int bandLayout() {
+        return 0;
+    }
+
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initInject() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void initAdapter(MyHomeBean myHomeBean) {
+
     }
 }

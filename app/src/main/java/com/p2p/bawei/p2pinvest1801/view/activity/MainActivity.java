@@ -5,9 +5,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.next.easynavigation.view.EasyNavigationBar;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.adapter.MyFragmentAdapter;
 import com.p2p.bawei.p2pinvest1801.view.fragment.HomeFragment;
@@ -17,13 +19,13 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ViewPager viewPager;
-    private RadioGroup tabLayout;
-
+    private EasyNavigationBar easyBar;
 
     private List<Fragment> list_fragment = new ArrayList<>();
+    private String[] list_title = {"首页","投资","我的投资","更多"};
+    private int[] list_unselect = {R.drawable.bottom01,R.drawable.bottom03,R.drawable.bottom05,R.drawable.bottom07};
+    private int[] list_select = {R.drawable.bottom02,R.drawable.bottom04,R.drawable.bottom06,R.drawable.bottom08};
 
-    private MyFragmentAdapter myFragmentAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,36 +49,43 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
-       
-        tabLayout = (RadioGroup) findViewById(R.id.tabLayout);
-
-        myFragmentAdapter = new MyFragmentAdapter(getSupportFragmentManager(),list_fragment);
-        viewPager.setAdapter(myFragmentAdapter);
-
-        tabLayout.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        easyBar = (EasyNavigationBar) findViewById(R.id.easyBar);
+        easyBar.titleItems(list_title)
+                .fragmentList(list_fragment)
+                .fragmentManager(getSupportFragmentManager())
+                .normalIconItems(list_unselect)
+                .selectIconItems(list_select)
+                .mode(EasyNavigationBar.NavigationMode.MODE_NORMAL)
+                .canScroll(true)
+                .setOnTabLoadListener(new EasyNavigationBar.OnTabLoadListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
-                    case R.id.button_1:
-                        viewPager.setCurrentItem(0);
-                        break;
+            public void onTabLoadCompleteEvent() {
+                easyBar.setMsgPointCount(1,66);
+                easyBar.setHintPoint(3,true);
+            }
+        }).build();
 
-                    case R.id.button_2:
-                        viewPager.setCurrentItem(1);
-                        break;
 
-                    case R.id.button_3:
-                        viewPager.setCurrentItem(2);
-                        break;
 
-                    case R.id.button_4:
-                        viewPager.setCurrentItem(3);
-                        break;
+        easyBar.setOnTabClickListener(new EasyNavigationBar.OnTabClickListener() {
+            @Override
+            public boolean onTabSelectEvent(View view, int position) {
+
+                if(position==1){
+                    easyBar.setMsgPointCount(1,0);
+                }else if(position==3){
+                    easyBar.setHintPoint(3,false);
                 }
+                return false;
+            }
+
+            @Override
+            public boolean onTabReSelectEvent(View view, int position) {
+                return false;
             }
         });
 
-
     }
+
+
 }
