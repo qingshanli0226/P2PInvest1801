@@ -27,6 +27,7 @@ public class AllAdapter extends BaseQuickAdapter<ProductBean.ResultBean, BaseVie
 
         Item_RoundProgressBar item_roundProgressBar = helper.getView(R.id.roundPro_all);
         float v = Float.parseFloat(item.getProgress());
+
         item_roundProgressBar.setProgress(v / 100);
     }
 }

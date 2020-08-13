@@ -23,7 +23,7 @@
             app:tabIndicatorColor="@null"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/colorGray"
+            android:background="@color/divider_line"
             app:tabBackground="@drawable/invest_bg_select"
             app:tabMode="fixed"
             app:tabSelectedTextColor="@color/RoundProgressBar_sweepColor"

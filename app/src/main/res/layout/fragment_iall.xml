@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorGray"
+    android:background="@color/divider_line"
     android:orientation="vertical"
     tools:context=".invest.all.view.IAllFragment">
 
@@ -13,12 +13,16 @@
         android:layout_height="match_parent"
         android:visibility="gone"></com.example.common.view.MyLoadingBar>
 
-    <TextView
+    <com.p2p.bawei.p2pinvest1801.invest.all.view.MaequeeText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="硅谷金融壕运当头，首投返现最高达188元"
-        android:textColor="@color/RoundProgressBar_sweepColor"
-        android:textSize="26sp" />
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:singleLine="true"
+        android:text="硅谷金融壕运当头，首投返现最高达188元          硅谷金融壕运当头，首投返现最高达188元"
+        android:textColor="@color/product_red_common"
+        android:textSize="30sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/all_rv"

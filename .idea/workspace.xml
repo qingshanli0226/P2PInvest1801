@@ -11,6 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9fb2546-4321-436e-a562-16de3364161d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/MaequeeText.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/adapter/HotAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/contract/ProductContract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/presenter/ProductPresenterImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/color_shap.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/text_shape_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/invest_hot_item.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -18,12 +25,19 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/view/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/view/HomeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/contract/AllContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/contract/ProductContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/presenter/AllPresenterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/presenter/ProductPresenterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/IAllFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/IAllFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/invest_all_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/invest_all_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/adapter/AllAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/adapter/AllAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/presenter/ProductPresenterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/presenter/ProductPresenterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/commend/view/ICommendFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/commend/view/ICommendFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/view/IHotFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/view/IHotFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/invest_bg_select.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/invest_bg_select.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_iall.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_iall.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_icommend.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_icommend.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_ihot.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_ihot.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invest.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,28 +63,26 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/IAllFragment.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/view/IHotFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-157">
-              <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
+            <state relative-caret-position="222">
+              <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#694#695#0" expanded="true" />
-                <element signature="e#737#738#0" expanded="true" />
-                <element signature="e#789#790#0" expanded="true" />
-                <element signature="e#844#845#0" expanded="true" />
-                <element signature="e#1245#1246#0" expanded="true" />
-                <element signature="e#1261#1262#0" expanded="true" />
+                <element signature="e#1097#1098#0" expanded="true" />
+                <element signature="e#1144#1145#0" expanded="true" />
+                <element signature="e#1901#2111#0" expanded="true" />
+                <element signature="e#2110#2111#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/adapter/AllAdapter.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/adapter/HotAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
+            <state relative-caret-position="644">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,101 +91,69 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/invest_all_item.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/text_shape_bg.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+            <state relative-caret-position="46">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="36" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/MaequeeText.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#171#172#0" expanded="true" />
+                <element signature="e#201#202#0" expanded="true" />
+                <element signature="e#458#459#0" expanded="true" />
+                <element signature="e#495#496#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/invest_hot_item.xml">
           <provider editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/net/src/main/java/com/example/net/bean/ProductBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="20" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="20" />
-              <folding>
-                <element signature="e#528#529#0" expanded="true" />
-                <element signature="e#555#556#0" expanded="true" />
-                <element signature="e#592#593#0" expanded="true" />
-                <element signature="e#624#625#0" expanded="true" />
-                <element signature="e#654#655#0" expanded="true" />
-                <element signature="e#680#681#0" expanded="true" />
-                <element signature="e#718#719#0" expanded="true" />
-                <element signature="e#748#749#0" expanded="true" />
-                <element signature="e#791#792#0" expanded="true" />
-                <element signature="e#820#821#0" expanded="true" />
-                <element signature="e#874#875#0" expanded="true" />
-                <element signature="e#910#911#0" expanded="true" />
-                <element signature="e#1465#1466#0" expanded="true" />
-                <element signature="e#1498#1499#0" expanded="true" />
-                <element signature="e#1538#1539#0" expanded="true" />
-                <element signature="e#1574#1575#0" expanded="true" />
-                <element signature="e#1609#1610#0" expanded="true" />
-                <element signature="e#1644#1645#0" expanded="true" />
-                <element signature="e#1688#1689#0" expanded="true" />
-                <element signature="e#1728#1729#0" expanded="true" />
-                <element signature="e#1764#1765#0" expanded="true" />
-                <element signature="e#1800#1801#0" expanded="true" />
-                <element signature="e#1846#1847#0" expanded="true" />
-                <element signature="e#1888#1889#0" expanded="true" />
-                <element signature="e#1927#1928#0" expanded="true" />
-                <element signature="e#1966#1967#0" expanded="true" />
-                <element signature="e#2018#2019#0" expanded="true" />
-                <element signature="e#2066#2067#0" expanded="true" />
-                <element signature="e#2108#2109#0" expanded="true" />
-                <element signature="e#2150#2151#0" expanded="true" />
-                <element signature="e#2208#2209#0" expanded="true" />
-                <element signature="e#2262#2263#0" expanded="true" />
-                <element signature="e#2304#2305#0" expanded="true" />
-                <element signature="e#2346#2347#0" expanded="true" />
-                <element signature="e#2404#2405#0" expanded="true" />
-                <element signature="e#2458#2459#0" expanded="true" />
-                <element signature="e#2498#2499#0" expanded="true" />
-                <element signature="e#2538#2539#0" expanded="true" />
-                <element signature="e#2592#2593#0" expanded="true" />
-                <element signature="e#2642#2643#0" expanded="true" />
-                <element signature="e#2681#2682#0" expanded="true" />
-                <element signature="e#2720#2721#0" expanded="true" />
-                <element signature="e#2772#2773#0" expanded="true" />
-                <element signature="e#2820#2821#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/contract/ProductContract.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="138">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/presenter/ProductPresenterImpl.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/IAllFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="149">
+              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1128#1318#0" expanded="true" />
-                <element signature="e#1317#1318#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/view/HomeFragment.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/InvestAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="114" column="16" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
+            <state relative-caret-position="457">
+              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/InvestFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -188,9 +168,9 @@
       <list>
         <option value="Interface" />
         <option value="valueResourceFile" />
+        <option value="layoutResourceFile_vertical" />
         <option value="resourceFile" />
         <option value="Class" />
-        <option value="layoutResourceFile_vertical" />
       </list>
     </option>
   </component>
@@ -200,20 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/common/src/main/java/com/example/common/view/MyLoadingBar.java" />
-        <option value="$PROJECT_DIR$/framework/src/main/res/layout/framework_layout.xml" />
-        <option value="$PROJECT_DIR$/common/src/main/res/layout/loading_view.xml" />
-        <option value="$PROJECT_DIR$/common/src/main/res/drawable/anim_list.xml" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/main/adapter/MainAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/main/fragment/HomeFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/main/entity/CommonEntity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/main/view/MainActivity.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/example/common/InvestConstant.java" />
-        <option value="$PROJECT_DIR$/net/src/main/java/com/example/net/bean/BannerBean.java" />
-        <option value="$PROJECT_DIR$/net/src/main/java/com/example/net/bean/HomeBean.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/contract/HomeContract.java" />
-        <option value="$PROJECT_DIR$/net/src/main/java/com/example/net/InvestManager.java" />
         <option value="$PROJECT_DIR$/net/src/main/java/com/example/net/RetrofitManager.java" />
         <option value="$PROJECT_DIR$/net/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_welcome.xml" />
@@ -221,17 +187,12 @@
         <option value="$PROJECT_DIR$/framework/src/main/java/com/example/framework/BaseMVPActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/view/RoundProgressBar.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/common_title.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/view/InvestFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/user/view/UserFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/more/view/MoreFragment.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/InvestFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/InvestAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/invest_bg_select.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_invest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_more.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_user.xml" />
@@ -240,35 +201,56 @@
         <option value="$PROJECT_DIR$/net/src/main/java/com/example/net/bean/ProductBean.java" />
         <option value="$PROJECT_DIR$/net/src/main/java/com/example/net/InvestApiService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/presenter/HomePresenterImpl.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_iall.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/item_RoundProgressBar.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/adapter/AllAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/Item_RoundProgressBar.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/view/HomeFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/invest_all_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/contract/AllContract.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/contract/ProductContract.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/IAllFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/presenter/AllPresenterImpl.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/color_shap.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/view/RoundProgressBar.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/adapter/AllAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/contract/HotContract.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/presenter/HotPresenterImpl.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/commend/view/ICommendFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/InvestFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/invest_bg_select.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_icommend.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/presenter/ProductPresenterImpl.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/IAllFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/presenter/ProductPresenterImpl.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/presenter/ProductPresenterImpl.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/MaequeeText.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_invest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_ihot.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_iall.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/text_shape_bg.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/invest_hot_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/adapter/HotAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/view/IHotFragment.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+    <option name="x" value="80" />
+    <option name="y" value="35" />
+    <option name="width" value="1220" />
+    <option name="height" value="810" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <hideEmptyPackages AndroidView="false" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -292,21 +274,6 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="invest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -316,6 +283,15 @@
               <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="invest" type="462c0819:PsiDirectoryNode" />
               <item name="all" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="invest" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
+              <item name="adapter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
@@ -350,6 +326,42 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="invest" type="462c0819:PsiDirectoryNode" />
+              <item name="hot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="invest" type="462c0819:PsiDirectoryNode" />
+              <item name="hot" type="462c0819:PsiDirectoryNode" />
+              <item name="adapter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="invest" type="462c0819:PsiDirectoryNode" />
+              <item name="hot" type="462c0819:PsiDirectoryNode" />
+              <item name="contract" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="invest" type="462c0819:PsiDirectoryNode" />
+              <item name="hot" type="462c0819:PsiDirectoryNode" />
+              <item name="presenter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="invest" type="462c0819:PsiDirectoryNode" />
+              <item name="hot" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -359,18 +371,29 @@
             </path>
             <path>
               <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="net" type="feadf853:AndroidModuleNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="net" type="feadf853:AndroidModuleNode" />
+              <item name="framework" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
+              <item name="framework" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
+              <item name="framework" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="framework" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -427,16 +450,21 @@
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.2.1" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.p2p.bawei.p2pinvest1801.invest.hot.adapter" />
+    </key>
     <key name="android.template.packageName">
       <recent name="com.p2p.bawei.p2pinvest1801" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.p2p.bawei.p2pinvest1801.invest.hot.presenter" />
+      <recent name="com.p2p.bawei.p2pinvest1801.invest.hot.contract" />
       <recent name="com.p2p.bawei.p2pinvest1801.invest.all.view" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\android_Work\six\P2PInvest1801\app\src\main\java\com\p2p\bawei\p2pinvest1801\invest\hot" />
       <recent name="F:\android_Work\six\P2PInvest1801\app\src\main\res\drawable" />
       <recent name="F:\android_Work\six\P2PInvest1801\app\src\main\res\layout" />
-      <recent name="F:\android_Work\six\P2PInvest1801\app\src\main\java\com\p2p\bawei\p2pinvest1801\invest\hot" />
       <recent name="F:\android_Work\six\P2PInvest1801\app\src\main\java\com\p2p\bawei\p2pinvest1801\invest\commend" />
       <recent name="F:\android_Work\six\P2PInvest1801\app\src\main\java\com\p2p\bawei\p2pinvest1801\invest\all" />
     </key>
@@ -530,7 +558,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
@@ -541,15 +568,16 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="0" visible="true" weight="0.34560907" />
+      <window_info anchor="bottom" id="Find" weight="0.5509915" />
+      <window_info anchor="bottom" id="Run" order="0" visible="true" weight="0.29745042" />
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Android Profiler" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.26487252" />
-      <window_info anchor="bottom" id="Logcat" order="8" weight="0.5991501" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.27053824" />
+      <window_info anchor="bottom" id="Logcat" order="8" weight="0.48725212" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
@@ -559,186 +587,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/net/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1081">
-          <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/net/src/main/java/com/example/net/RetrofitManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/contract/HomeContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/src/main/res/layout/framework_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/example/framework/BaseMVPFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/example/framework/BaseMVPActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/guarantee_icon.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/common_title.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/net/src/main/java/com/example/net/bean/HomeBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="73" column="27" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="27" />
-          <folding>
-            <element signature="e#963#964#0" expanded="true" />
-            <element signature="e#990#991#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-            <element signature="e#1059#1060#0" expanded="true" />
-            <element signature="e#1089#1090#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
-            <element signature="e#1153#1154#0" expanded="true" />
-            <element signature="e#1183#1184#0" expanded="true" />
-            <element signature="e#1220#1221#0" expanded="true" />
-            <element signature="e#1249#1250#0" expanded="true" />
-            <element signature="e#1297#1298#0" expanded="true" />
-            <element signature="e#1333#1334#0" expanded="true" />
-            <element signature="e#2251#2252#0" expanded="true" />
-            <element signature="e#2289#2290#0" expanded="true" />
-            <element signature="e#2344#2345#0" expanded="true" />
-            <element signature="e#2390#2391#0" expanded="true" />
-            <element signature="e#2441#2442#0" expanded="true" />
-            <element signature="e#2480#2481#0" expanded="true" />
-            <element signature="e#2544#2545#0" expanded="true" />
-            <element signature="e#2592#2593#0" expanded="true" />
-            <element signature="e#3230#3231#0" expanded="true" />
-            <element signature="e#3271#3272#0" expanded="true" />
-            <element signature="e#3315#3316#0" expanded="true" />
-            <element signature="e#3359#3360#0" expanded="true" />
-            <element signature="e#3403#3404#0" expanded="true" />
-            <element signature="e#3451#3452#0" expanded="true" />
-            <element signature="e#3509#3510#0" expanded="true" />
-            <element signature="e#3567#3568#0" expanded="true" />
-            <element signature="e#3613#3614#0" expanded="true" />
-            <element signature="e#3663#3664#0" expanded="true" />
-            <element signature="e#3725#3726#0" expanded="true" />
-            <element signature="e#3787#3788#0" expanded="true" />
-            <element signature="e#3827#3828#0" expanded="true" />
-            <element signature="e#3871#3872#0" expanded="true" />
-            <element signature="e#3921#3922#0" expanded="true" />
-            <element signature="e#3971#3972#0" expanded="true" />
-            <element signature="e#4010#4011#0" expanded="true" />
-            <element signature="e#4053#4054#0" expanded="true" />
-            <element signature="e#4101#4102#0" expanded="true" />
-            <element signature="e#4149#4150#0" expanded="true" />
-            <element signature="e#4192#4193#0" expanded="true" />
-            <element signature="e#4239#4240#0" expanded="true" />
-            <element signature="e#4295#4296#0" expanded="true" />
-            <element signature="e#4351#4352#0" expanded="true" />
-            <element signature="e#4397#4398#0" expanded="true" />
-            <element signature="e#4447#4448#0" expanded="true" />
-            <element signature="e#4509#4510#0" expanded="true" />
-            <element signature="e#4571#4572#0" expanded="true" />
-            <element signature="e#4614#4615#0" expanded="true" />
-            <element signature="e#4661#4662#0" expanded="true" />
-            <element signature="e#4717#4718#0" expanded="true" />
-            <element signature="e#4773#4774#0" expanded="true" />
-            <element signature="e#5179#5180#0" expanded="true" />
-            <element signature="e#5220#5221#0" expanded="true" />
-            <element signature="e#5264#5265#0" expanded="true" />
-            <element signature="e#5308#5309#0" expanded="true" />
-            <element signature="e#5351#5352#0" expanded="true" />
-            <element signature="e#5398#5399#0" expanded="true" />
-            <element signature="e#5454#5455#0" expanded="true" />
-            <element signature="e#5510#5511#0" expanded="true" />
-            <element signature="e#5551#5552#0" expanded="true" />
-            <element signature="e#5596#5597#0" expanded="true" />
-            <element signature="e#5648#5649#0" expanded="true" />
-            <element signature="e#5700#5701#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_icommend.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/commend/view/ICommendFragment.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_ihot.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/view/IHotFragment.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/81e112c9ed7838d7d71cbe5f5442c5ee/res/values/values.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -747,20 +595,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/my_textview.xml" />
-    <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/example/framework/BaseFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/invest_bg_select.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="54" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/toggle_selector.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -769,12 +603,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_more.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/more/view/MoreFragment.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -787,12 +621,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
           <caret line="29" column="72" lean-forward="true" selection-start-line="29" selection-start-column="72" selection-end-line="29" selection-end-column="72" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/user/view/UserFragment.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -809,20 +643,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_user.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1356">
           <caret line="76" column="52" lean-forward="true" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/InvestAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -860,12 +684,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_welcome.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/common/src/main/java/com/example/common/InvestConstant.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -902,34 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/InvestFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_invest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/presenter/HomePresenterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/net/src/main/java/com/example/net/InvestApiService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -940,71 +736,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/view/RoundProgressBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_iall.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="113" lean-forward="true" selection-start-line="94" selection-start-column="7" selection-end-line="113" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/view/HomeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="114" column="16" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/invest_all_item.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/Item_RoundProgressBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/adapter/AllAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1061,40 +797,295 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/contract/ProductContract.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/color_shap.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+        <state relative-caret-position="92">
+          <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/presenter/HomePresenterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1115#1305#0" expanded="true" />
+            <element signature="e#1304#1305#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/example/common/view/MyLoadingBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/contract/HomeContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/IAllFragment.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.0.0-rc01/bb1c2a507570b0637ea921fb4de536f67d195b0d/recyclerview-1.0.0-rc01-sources.jar!/androidx/recyclerview/widget/StaggeredGridLayoutManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-157">
-          <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
+        <state relative-caret-position="158">
+          <caret line="227" column="46" lean-forward="true" selection-start-line="227" selection-start-column="46" selection-end-line="227" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="73" selection-start-line="8" selection-start-column="4" selection-end-line="12" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/view/RoundProgressBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="122" column="19" selection-start-line="122" selection-start-column="19" selection-end-line="122" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#694#695#0" expanded="true" />
-            <element signature="e#737#738#0" expanded="true" />
-            <element signature="e#789#790#0" expanded="true" />
-            <element signature="e#844#845#0" expanded="true" />
-            <element signature="e#1245#1246#0" expanded="true" />
-            <element signature="e#1261#1262#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/view/HomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="68" column="32" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2939#3192#0" expanded="true" />
+            <element signature="e#3191#3192#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.1.0/b9ebb04df2cb0cad4419af3c658690bc82aa5706/fragment-1.1.0-sources.jar!/androidx/fragment/app/FragmentManagerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="891" selection-start-line="891" selection-end-line="891" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/presenter/HotPresenterImpl.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/contract/HotContract.java" />
+    <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/example/framework/BaseFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/invest_bg_select.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/commend/view/ICommendFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#378#379#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/adapter/AllAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="63" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/example/framework/BaseMVPFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/contract/ProductContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/presenter/ProductPresenterImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="272">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1128#1318#0" expanded="true" />
-            <element signature="e#1317#1318#0" expanded="true" />
+            <element signature="e#1258#1558#0" expanded="true" />
+            <element signature="e#1557#1558#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/presenter/ProductPresenterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/contract/ProductContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/InvestAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_invest.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_iall.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/InvestFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_ihot.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-23">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_icommend.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/MaequeeText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#171#172#0" expanded="true" />
+            <element signature="e#201#202#0" expanded="true" />
+            <element signature="e#458#459#0" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/invest_hot_item.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/text_shape_bg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/adapter/HotAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/hot/view/IHotFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1097#1098#0" expanded="true" />
+            <element signature="e#1144#1145#0" expanded="true" />
+            <element signature="e#1901#2111#0" expanded="true" />
+            <element signature="e#2110#2111#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/Item_RoundProgressBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="127" column="21" lean-forward="true" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
+          <folding>
+            <element signature="e#3360#3361#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/invest/all/view/IAllFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

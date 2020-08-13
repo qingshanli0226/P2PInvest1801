@@ -24,12 +24,18 @@ public class ProductPresenterImpl extends ProductContract.ProductPresenter {
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
+                        if (iHttpView == null){
+                            return;
+                        }
                         iHttpView.showLoaing();
                     }
                 })
                 .doFinally(new Action() {
                     @Override
                     public void run() throws Exception {
+                        if (iHttpView == null){
+                            return;
+                        }
                         iHttpView.hideLoading();
                     }
                 })
@@ -41,10 +47,12 @@ public class ProductPresenterImpl extends ProductContract.ProductPresenter {
 
                     @Override
                     public void onNext(ProductBean productBean) {
-                        if (productBean.getCode() == 200){
+                        if (iHttpView == null) {
+                            return;
+                        } else if (productBean.getCode() == 200) {
                             iHttpView.onProductData(productBean);
-                        }else {
-                            iHttpView.showError("ERROR:" + productBean.getCode(), productBean.getMsg());
+                        } else {
+                            iHttpView.showError("ERROR" + productBean.getCode(), productBean.getMsg());
                         }
                     }
 
