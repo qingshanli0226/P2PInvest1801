@@ -23,14 +23,14 @@
             android:id="@+id/toolBarLeftImg"/>
 
         <TextView
+            android:id="@+id/toolBarTitle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/textSize30"
+            android:layout_height="49dp"
+            android:layout_centerInParent="true"
             android:text="首页"
             android:textColor="#27B8EE"
-            android:textStyle="bold"
-            android:layout_centerInParent="true"
-            android:id="@+id/toolBarTitle"/>
+            android:textSize="@dimen/textSize30"
+            android:textStyle="bold" />
 
         <ImageView
             android:layout_width="@dimen/textSize40"

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundProgress">
+        <attr name="circle_color" format="color"></attr>
+        <attr name="arc_color" format="color"></attr>
+        <attr name="stoke_width" format="integer"></attr>
+        <attr name="text_size" format="dimension"></attr>
+        <attr name="text_color" format="color"></attr>
+        <attr name="round_size" format="integer"></attr>
+        <attr name="max" format="integer"></attr>
+        <attr name="progress" format="integer"></attr>
+    </declare-styleable>
+</resources>

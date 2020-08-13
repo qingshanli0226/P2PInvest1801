@@ -42,6 +42,7 @@ public class WelcomeActivity extends BaseMVPActivity<HomePresenterImpl, HomeCont
     private int handlerCount = 0;
 
     private VersionBean newVersionBean;
+    private BannerBean newBannerBean;
 
     //banner数据源
     private ArrayList<String> bannerArrayList = new ArrayList<>();
@@ -79,6 +80,7 @@ public class WelcomeActivity extends BaseMVPActivity<HomePresenterImpl, HomeCont
             public void onClick(DialogInterface dialog, int which) {
                 Bundle bundle = new Bundle();
                 bundle.putStringArrayList(FinanceConstant.BUNDLE_BANNER,bannerArrayList);
+                bundle.putParcelable("hj",newBannerBean);
                 lunachActivity(MainActivity.class,bundle);
                 finish();
             }
@@ -179,6 +181,7 @@ public class WelcomeActivity extends BaseMVPActivity<HomePresenterImpl, HomeCont
         for (int i = 0; i <imageArrBeans.size() ; i++) {
             bannerArrayList.add(imageArrBeans.get(i).getIMAURL());
         }
+        newBannerBean = bannerBean;
         handler.sendEmptyMessage(1);
     }
 

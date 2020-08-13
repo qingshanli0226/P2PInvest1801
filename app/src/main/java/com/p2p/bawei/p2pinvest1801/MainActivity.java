@@ -1,9 +1,12 @@
 package com.p2p.bawei.p2pinvest1801;
 
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.common.FinanceConstant;
 import com.example.framework.base.BaseActivity;
+import com.example.net.mode.BannerBean;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -25,6 +29,7 @@ import java.util.ArrayList;
 public class MainActivity extends BaseActivity {
 
     private CommonTabLayout common;
+
     //common数据源
     private ArrayList<CustomTabEntity> customTabEntities = new ArrayList<>();
     private ArrayList<String> arrayList = new ArrayList<>();
@@ -36,6 +41,7 @@ public class MainActivity extends BaseActivity {
 
     //banner数据源
     private ArrayList<String> stringArrayList;
+    private BannerBean bannerBean;
 
     @Override
     protected void initData() {
@@ -82,9 +88,13 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initView() {
         common = (CommonTabLayout) findViewById(R.id.common);
+
         //获取传递过来的banner数据
         Bundle bundleExtra = getIntent().getBundleExtra(FinanceConstant.BUNDLE);
         stringArrayList = bundleExtra.getStringArrayList(FinanceConstant.BUNDLE_BANNER);
+        bannerBean = bundleExtra.getParcelable("hj");
+//        printLog("123123");
+//        printLog(bannerBean.getResult().getImageArr().get(0).getIMAURL());
 
         //创建Fragment实例对象
         createFragment();
@@ -114,6 +124,9 @@ public class MainActivity extends BaseActivity {
     private void createFragment() {
         if(homeFragment == null){
             homeFragment = new HomeFragment(stringArrayList);
+            Bundle bundle = new Bundle();
+            bundle.putParcelable("hj1",bannerBean);
+            homeFragment.setArguments(bundle);
         }
         if(investFragment == null){
             investFragment = new InvestFragment();
