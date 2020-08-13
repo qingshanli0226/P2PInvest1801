@@ -155,7 +155,7 @@ public class ProgressView extends View {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
-            invalidate();//只是触发onDraw方法
+            invalidate();//触发onDraw方法
             if (progressAngle <= offseAngle) {
                 progressAngle += stepAngle;
                 handler.sendEmptyMessageDelayed(1, 20);
@@ -164,17 +164,11 @@ public class ProgressView extends View {
         }
     };
 
-    //将dp转化为px
-    public  int dp2px(int dp){
-        //获取手机密度
-        float density = getContext().getResources().getDisplayMetrics().density;
-        return (int) (dp * density + 0.5);//实现四舍五入
-    }
 
     public void setFlagBig(boolean flagBig) {
         this.flagBig = flagBig;
-
-        requestLayout();//同时触发onMeasure onLayout， onDraw方法
+//同时触发onMeasure，onLayout，onDraw方法
+        requestLayout();
         progressAngle = 0;
         handler.sendEmptyMessageDelayed(1, 1000);
     }
