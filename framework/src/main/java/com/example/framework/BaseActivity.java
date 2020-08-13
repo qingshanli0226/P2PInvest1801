@@ -43,6 +43,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -94,5 +95,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
+
 
 }
