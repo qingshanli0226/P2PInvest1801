@@ -1,8 +1,13 @@
 package com.p2p.bawei.p2pinvest1801.bean;
 
-import java.util.List;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class HomeBean {
+import java.util.List;
+/**
+ * Home 数据
+ */
+public class HomeBean implements Parcelable {
 
     /**
      * code : 200
@@ -13,6 +18,23 @@ public class HomeBean {
     private int code;
     private String msg;
     private ResultBean result;
+
+    protected HomeBean(Parcel in) {
+        code = in.readInt();
+        msg = in.readString();
+    }
+
+    public static final Creator<HomeBean> CREATOR = new Creator<HomeBean>() {
+        @Override
+        public HomeBean createFromParcel(Parcel in) {
+            return new HomeBean(in);
+        }
+
+        @Override
+        public HomeBean[] newArray(int size) {
+            return new HomeBean[size];
+        }
+    };
 
     public int getCode() {
         return code;
@@ -36,6 +58,17 @@ public class HomeBean {
 
     public void setResult(ResultBean result) {
         this.result = result;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(code);
+        dest.writeString(msg);
     }
 
     public static class ResultBean {

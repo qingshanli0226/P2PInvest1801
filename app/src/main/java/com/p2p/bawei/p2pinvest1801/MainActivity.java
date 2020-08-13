@@ -1,18 +1,20 @@
 package com.p2p.bawei.p2pinvest1801;
 
 import android.os.Bundle;
-import android.view.KeyEvent;
+import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.next.easynavigation.view.EasyNavigationBar;
+import com.p2p.bawei.p2pinvest1801.bean.HomeBean;
 import com.p2p.bawei.p2pinvest1801.fragment.HomeFragment;
 import com.p2p.bawei.p2pinvest1801.fragment.InvestFragment;
 import com.p2p.bawei.p2pinvest1801.fragment.MineFragment;
 import com.p2p.bawei.p2pinvest1801.fragment.MoreFragment;
+import com.youth.banner.Banner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +31,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         easyBar = findViewById(R.id.easyBar);
 
+//        getIntent()
+//        Bundle bundle = getIntent().getBundleExtra("bundle");
+//        HomeBean home = bundle.getParcelable("home");
+//        Log.i("liuxuan", "MainActivity: "+home.getMsg());
+
+
+//        HomeBean home1 = getIntent().getParcelableExtra("home");
+//        HomeBean home = bundle.getParcelable("home");
+
+//        Log.i("liuxuan", "onCreate:  getCode" + home.getCode());
+
+
         fragmentList = new ArrayList<>();
-        fragmentList.add(new HomeFragment());
+        HomeFragment homeFragment = new HomeFragment();
+//        homeFragment.setArguments(bundle);
+
+        fragmentList.add(homeFragment);
         fragmentList.add(new InvestFragment());
         fragmentList.add(new MineFragment());
         fragmentList.add(new MoreFragment());
@@ -66,10 +83,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .build();
-
-
-
-
 
     }
 }
