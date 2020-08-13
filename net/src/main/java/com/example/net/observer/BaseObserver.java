@@ -22,7 +22,7 @@ public abstract class BaseObserver<T> extends DisposableObserver<T> implements I
 
     @Override
     public void onError(Throwable e) {
-
+        error(e.getMessage());
     }
 
     @Override

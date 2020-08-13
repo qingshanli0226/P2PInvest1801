@@ -14,6 +14,7 @@ import com.p2p.bawei.p2pinvest1801.mvp.presenter.IPresenter;
 
 public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IView, IActivity, View.OnClickListener {
     protected P mPresenter;
+    private long thisTime;
 
     @Override
     protected void onDestroy() {
@@ -41,6 +42,20 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
 
     @Override
     public void hideView() {
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        long l = System.currentTimeMillis();
+        long jian = l - thisTime;
+        if (jian > 1000) {
+            thisTime = l;
+            jian = 0;
+            showMessage("再次点击退出应用");
+        } else if (jian <= 1000) {
+            finish();
+        }
 
     }
 
