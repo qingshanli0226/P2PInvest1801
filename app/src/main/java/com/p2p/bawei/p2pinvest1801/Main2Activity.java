@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.TextView;
 
 import com.p2p.bawei.p2pinvest1801.fragmentfour.FragmentFour;
 import com.p2p.bawei.p2pinvest1801.fragmentone.FragmentOne;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 public class Main2Activity extends BaseActivity {
     private ViewPager viewpager;
     private TabLayout tabIdLayout;
+    private TextView tvIdAct;
     private ArrayList<Fragment> list = new ArrayList<>();
 
     @Override
@@ -33,6 +35,7 @@ public class Main2Activity extends BaseActivity {
     public void initView() {
         viewpager = findViewById(R.id.viewpager);
         tabIdLayout = findViewById(R.id.tab_id_layout);
+        tvIdAct = findViewById(R.id.tv_id_act);
 
         initTab();
 
@@ -75,6 +78,15 @@ public class Main2Activity extends BaseActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
                 viewpager.setCurrentItem(position);
+                if (position == 0){
+                    tvIdAct.setText("首页");
+                }else if (position ==1){
+                    tvIdAct.setText("投资");
+                }else if (position == 2){
+                    tvIdAct.setText("我的资产");
+                }else if (position == 3){
+                    tvIdAct.setText("更多");
+                }
             }
 
             @Override
@@ -91,10 +103,10 @@ public class Main2Activity extends BaseActivity {
     }
 
     private void initTab() {
-        tabIdLayout.addTab(tabIdLayout.newTab().setText("1").setIcon(R.mipmap.ic_launcher));
-        tabIdLayout.addTab(tabIdLayout.newTab().setText("2").setIcon(R.mipmap.ic_launcher));
-        tabIdLayout.addTab(tabIdLayout.newTab().setText("3").setIcon(R.mipmap.ic_launcher));
-        tabIdLayout.addTab(tabIdLayout.newTab().setText("4").setIcon(R.mipmap.ic_launcher));
+        tabIdLayout.addTab(tabIdLayout.newTab().setText("首页").setIcon(R.mipmap.ic_launcher));
+        tabIdLayout.addTab(tabIdLayout.newTab().setText("投资").setIcon(R.mipmap.ic_launcher));
+        tabIdLayout.addTab(tabIdLayout.newTab().setText("我的资产").setIcon(R.mipmap.ic_launcher));
+        tabIdLayout.addTab(tabIdLayout.newTab().setText("更多").setIcon(R.mipmap.ic_launcher));
     }
 
     @Override

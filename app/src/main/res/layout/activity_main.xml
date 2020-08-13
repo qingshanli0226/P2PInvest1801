@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"/>
 
     <ImageView
-        android:src="@drawable/ab"
+        android:src="@drawable/a"
         android:id="@+id/iv_id_activity"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

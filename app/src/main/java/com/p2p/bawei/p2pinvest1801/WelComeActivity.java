@@ -106,6 +106,7 @@ public class WelComeActivity extends BaseActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(WelComeActivity.this, Main2Activity.class);
                         startActivity(intent);
+                        finish();
                     }
                 })
                 .setNegativeButton("确定", new DialogInterface.OnClickListener() {
@@ -136,9 +137,9 @@ public class WelComeActivity extends BaseActivity {
                 progressDialog.setProgress(index++);
                 if (progressDialog.getProgress() == 100) {
                     timer.cancel();
-                    finish();
                     Intent intent = new Intent(WelComeActivity.this, Main2Activity.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         }, 0, 100);
