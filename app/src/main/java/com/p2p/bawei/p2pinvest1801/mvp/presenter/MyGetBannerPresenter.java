@@ -3,6 +3,7 @@ package com.p2p.bawei.p2pinvest1801.mvp.presenter;
 import android.util.Log;
 
 import com.example.common.mvp.presenter.BasePresenter;
+import com.p2p.bawei.p2pinvest1801.bean.EdtivitnEnitiy;
 import com.p2p.bawei.p2pinvest1801.bean.MyBannerEntity;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.MyContract;
 
@@ -36,4 +37,28 @@ public class MyGetBannerPresenter extends BasePresenter<MyContract.mModle,MyCont
             }
         });
     }
+    public void geteditiy(){
+        mModel.getedtivity(new Observer<EdtivitnEnitiy>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(EdtivitnEnitiy edtivitnEnitiy) {
+                mView.getedtivity(edtivitnEnitiy);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.p2p.bawei.p2pinvest1801.mvp.view;
+package com.p2p.bawei.p2pinvest1801.mvp.view.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -78,10 +78,7 @@ public class MyMainActivity extends BaseActivity  {
 
     @Override
     public void initdata() {
-        Intent intent = getIntent();
-        MyBannerEntity myBannerEntity = (MyBannerEntity) intent.getSerializableExtra("banner");
-        List<MyBannerEntity.ResultBean.ImageArrBean> imageArr = myBannerEntity.getResult().getImageArr();
-        Log.e("list_size", "initdata: "+imageArr.get(0).getIMAPAURL() );
+
 
     }
 

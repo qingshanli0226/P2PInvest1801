@@ -1,11 +1,10 @@
-package com.p2p.bawei.p2pinvest1801.mvp.view;
+package com.p2p.bawei.p2pinvest1801.mvp.view.activity;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
-import android.os.Bundle;
 import android.os.Message;
 import android.util.Log;
 import android.widget.ImageView;
@@ -13,13 +12,12 @@ import android.widget.TextView;
 
 import com.example.common.mvp.view.BaseActivity;
 import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.bean.EdtivitnEnitiy;
 import com.p2p.bawei.p2pinvest1801.bean.MyBannerEntity;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.MyContract;
 import com.p2p.bawei.p2pinvest1801.mvp.model.MyGetbanner;
 import com.p2p.bawei.p2pinvest1801.mvp.presenter.MyGetBannerPresenter;
 
-import java.io.Serializable;
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -30,13 +28,14 @@ public class MainActivity extends BaseActivity<MyGetBannerPresenter> implements 
     private TextView djs;
     private int hand_temp=0;
     private MyBannerEntity myBannerEntity1;
+    private EdtivitnEnitiy edtivitnEnitiy1;
     private Handler handler=new Handler(){
         @Override
         public void handleMessage( Message msg) {
             super.handleMessage(msg);
             if (msg.what==1){
                 hand_temp++;
-                if (hand_temp>=2){
+                if (hand_temp>=3){
                     getpush();
                 }
             }
@@ -44,8 +43,9 @@ public class MainActivity extends BaseActivity<MyGetBannerPresenter> implements 
     };
     private int bar=0;
     private void dload() {
+//        +edtivitnEnitiy1.getResult().getVersion()
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setMessage("检查到新版本是否更新");
+        builder.setMessage("检查到新版本"+"!是否更新");
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -88,7 +88,7 @@ public class MainActivity extends BaseActivity<MyGetBannerPresenter> implements 
     }
 
     private void getpush() {
-        Intent intent = new Intent(MainActivity.this,MyMainActivity.class);
+        Intent intent = new Intent(MainActivity.this, MyMainActivity.class);
         intent.putExtra("banner",  myBannerEntity1);
         startActivity(intent);
         finish();
@@ -98,6 +98,17 @@ public class MainActivity extends BaseActivity<MyGetBannerPresenter> implements 
     public void getbanner(MyBannerEntity myBannerEntity) {
          myBannerEntity1 = myBannerEntity;
         if (myBannerEntity!=null){
+            Message message = new Message();
+            message.what=1;
+            handler.sendMessage(message);
+        }
+    }
+
+    @Override
+    public void getedtivity(EdtivitnEnitiy edtivitnEnitiy) {
+         edtivitnEnitiy1 = edtivitnEnitiy;
+        Log.e("edtivity", "getedtivity: 版本信息"+edtivitnEnitiy.getResult().getVersion() );
+        if (edtivitnEnitiy!=null){
             Message message = new Message();
             message.what=1;
             handler.sendMessage(message);
@@ -142,15 +153,13 @@ public class MainActivity extends BaseActivity<MyGetBannerPresenter> implements 
                 }
             }
         },0,1000);
-
-
-
     }
 
     @Override
     public void initInJect() {
         mPresenter=new MyGetBannerPresenter(new MyGetbanner(),this);
         mPresenter.getbanner();
+        mPresenter.geteditiy();
     }
 
 }
