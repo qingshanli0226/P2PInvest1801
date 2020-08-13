@@ -1,17 +1,20 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.lib_core.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.baseview.BaseProgressView;
 import com.p2p.bawei.p2pinvest1801.bean.HomeBean;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.HomeContract;
 import com.p2p.bawei.p2pinvest1801.mvp.model.HomeModel;
 import com.p2p.bawei.p2pinvest1801.mvp.presenter.HomePresenter;
 import com.youth.banner.Banner;
+import com.youth.banner.Transformer;
 import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
@@ -24,10 +27,12 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     private Banner mainHomeViewBanner;
     private TextView mainHomeViewBannerText;
     private List<String> banner_data_list = new ArrayList<>();
+    private BaseProgressView mainHomeViewBaseProgressView;
     @Override
     public void initView() {
         mainHomeViewBanner = (Banner) findViewById(R.id.main_home_view_banner);
         mainHomeViewBannerText = (TextView) findViewById(R.id.main_home_view_banner_text);
+        mainHomeViewBaseProgressView = (BaseProgressView) findViewById(R.id.main_home_view_BaseProgressView);
 
 
     }
@@ -55,6 +60,11 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         //banner数据
         List<HomeBean.ResultBean.ImageArrBean> imageArr = result.getImageArr();
         initBannerData(imageArr);
+
+        HomeBean.ResultBean.ProInfoBean proInfo = result.getProInfo();
+        int i = Integer.parseInt(proInfo.getProgress());
+        mainHomeViewBaseProgressView.setProgress(i);
+        Log.e("HomeFragment -> initHomeData", "initHomeData: "+i );
     }
 
     //获取banner数据并启动banner
@@ -63,7 +73,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
             banner_data_list.add(list.get(i).getIMAURL());
         }
         if (banner_data_list.size() >= 0){
-            mainHomeViewBanner.setBannerStyle(Banner.LAYER_TYPE_SOFTWARE);
+            mainHomeViewBanner.setBannerAnimation(Transformer.DepthPage);
             mainHomeViewBanner.setImages(banner_data_list);
             mainHomeViewBanner.setImageLoader(new ImageLoader() {
                 @Override

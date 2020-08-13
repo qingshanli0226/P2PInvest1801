@@ -93,12 +93,12 @@ public class WelComeActivity extends BaseActivity<HomePresenter> implements Home
                 Message message = new Message();
                 message.what = 1;
                 message.obj = number+"";
+                handler.sendMessage(message);
                 if (number <= 0){
                     Message message1 = new Message();
                     message1.what = 0;
                     handler.sendMessage(message1);
                 }
-                handler.sendMessage(message);
                 num+=0.1f;
                 number--;
                 //渐变

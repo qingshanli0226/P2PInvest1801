@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="#ECECEC"
     android:layout_height="match_parent">
 
     <TextView
@@ -14,11 +16,11 @@
         android:layout_height="50dp" />
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="250dp">
         <com.youth.banner.Banner
             android:id="@+id/main_home_view_banner"
             android:layout_width="match_parent"
-            android:layout_height="180dp"></com.youth.banner.Banner>
+            android:layout_height="250dp"></com.youth.banner.Banner>
         <TextView
             android:textSize="15sp"
             android:id="@+id/main_home_view_banner_text"
@@ -26,6 +28,54 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </RelativeLayout>
-
-
+    <ImageView
+        android:src="@drawable/hometitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <com.p2p.bawei.p2pinvest1801.baseview.BaseProgressView
+        android:id="@+id/main_home_view_BaseProgressView"
+        app:circleColor="#00ff00"
+        app:circleSize="35"
+        app:sectorColor="#fff000"
+        app:sectorSize="35"
+        app:textColor="#bbb"
+        app:textSize="30"
+        app:diameter="200"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+        <TextView
+            android:text="预期年利率: 8.00 %"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    <LinearLayout
+        android:paddingTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_weight="1"
+            android:background="#ECECEC"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:textColor="#fff"
+            android:text="立即加入"
+            android:layout_weight="8"
+            android:background="@drawable/home_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_weight="1"
+            android:background="#ECECEC"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:paddingTop="5dp"
+        android:layout_gravity="center"
+        android:text="风险保障金有硅谷银行监管"
+        android:drawableLeft="@drawable/guarantee_icon"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>

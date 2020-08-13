@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="BaseProgressView">
+        <attr name="textColor" format="color"></attr>
+        <attr name="textSize" format="integer"></attr>
+        <attr name="circleColor" format="color"></attr>
+        <attr name="circleSize" format="float"></attr>
+        <attr name="sectorSize" format="integer"></attr>
+        <attr name="sectorColor" format="color"></attr>
+        <attr name="diameter" format="integer"></attr>
+        <attr name="text" format="string"></attr>
+    </declare-styleable>
+
+</resources>
