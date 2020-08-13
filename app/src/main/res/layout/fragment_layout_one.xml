@@ -1,16 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:gravity="center"
-        android:textSize="30dp"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:text="Fragment1"
+    <com.youth.banner.Banner
+        android:id="@+id/banner_f1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="200dp">
+    </com.youth.banner.Banner>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <TextView
+            android:layout_marginLeft="50dp"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:text="硅谷彩虹新手计划"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:src="@drawable/huomiao"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textColor="#F1558A"
+            android:layout_gravity="center"
+            android:text="推荐"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <Button
+            android:background="@drawable/check_border"
+            android:layout_marginLeft="50dp"
+            android:text="本息保障"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"/>
+        <Button
+            android:background="@drawable/check_border"
+            android:layout_marginLeft="20dp"
+            android:text="每日计息"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"/>
+        <Button
+            android:background="@drawable/check_border"
+            android:layout_marginLeft="20dp"
+            android:text="高额收益"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    
+    <com.p2p.bawei.p2pinvest1801.fragmentone.MyView
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="100dp">
+    </com.p2p.bawei.p2pinvest1801.fragmentone.MyView>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="预期年利率：8.00%"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:textColor="#fff"
+        android:text="立即加入"
+        android:background="#f00"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="风险保障金由硅谷银行监管"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
