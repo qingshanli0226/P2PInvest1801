@@ -4,14 +4,15 @@ android {
     compileSdkVersion 30
     buildToolsVersion "29.0.3"
 
+
     defaultConfig {
-        minSdkVersion 23
+        minSdkVersion 15
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles 'consumer-rules.pro'
+
     }
 
     buildTypes {
@@ -22,7 +23,6 @@ android {
     }
 
 }
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //网络框架
@@ -39,9 +39,9 @@ dependencies {
     //异步线程d
     api 'io.reactivex.rxjava2:rxjava:2.2.6'
     api 'io.reactivex.rxjava2:rxandroid:2.1.1'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.android.support:appcompat-v7:+'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':common')
 }

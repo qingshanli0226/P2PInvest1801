@@ -12,7 +12,7 @@ public class NetCommon {
     //3.ip地址修改成wifi的ip地址
     //4.手机一定要连接电脑分享的wifi
 //    public static final String BASE = "http://192.168.191.1:8080";
-    public static final String BASE = "http://49.233.93.155:8080";
+    public static final String BASE = "http://49.233.93.155:8080/";
     public static String BASE_URL = "";
     // 请求Json数据基本URL
     public static final String BASE_URL_JSON = "/atguigu/json/";
