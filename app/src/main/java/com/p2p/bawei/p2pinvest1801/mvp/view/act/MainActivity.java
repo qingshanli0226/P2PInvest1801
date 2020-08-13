@@ -61,10 +61,7 @@ public class MainActivity extends BaseActivity<MainPre> implements MainContact.V
                tt.setText("  "+time+"  S");
                 if(time<=0){
                     timer.cancel();
-//                    num++;
-//                    if(num>=1){
                         initdialog();
-//                    }
                 }
             }
         }

@@ -14,7 +14,10 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.Share;
+import com.p2p.bawei.p2pinvest1801.zdyview.ProgressView;
 import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
+import com.youth.banner.Transformer;
 import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
@@ -24,12 +27,17 @@ public class Fragment1 extends Fragment {
     View view;
     private Banner ban;
     private List<String> Blist=new ArrayList<>();
+    private ProgressView pro;
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.f1,container,false);
         ban = view.findViewById(R.id.ban);
+        pro = view.findViewById(R.id.pro);
         intiban();
+        pro.setprogress(90);
         return view;
     }
     private void intiban() {
@@ -42,6 +50,9 @@ public class Fragment1 extends Fragment {
             public void displayImage(Context context, Object path, ImageView imageView) {
                 Glide.with(context).load(path).into(imageView);
             }
-        }).start();
+        });
+        ban.setIndicatorGravity(BannerConfig.TITLE_TEXT_COLOR);
+        ban.setBannerAnimation(Transformer.DepthPage);
+        ban.start();
     }
 }

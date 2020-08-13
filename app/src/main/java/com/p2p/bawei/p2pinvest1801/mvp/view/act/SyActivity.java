@@ -44,7 +44,6 @@ public class SyActivity extends AppCompatActivity {
         bar.titleItems(title)
                 .normalIconItems(wei)
                 .selectIconItems(zhong)
-                .canScroll(true)
                 .fragmentList(flist)
                 .fragmentManager(getSupportFragmentManager())
                 .mode(EasyNavigationBar.NavigationMode.MODE_NORMAL)

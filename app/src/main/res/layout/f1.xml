@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#F3F3F3"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
         android:layout_width="match_parent"
@@ -11,11 +14,50 @@
         android:background="#009688"/>
     <com.youth.banner.Banner
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="150dp"
+        android:background="#F3F3F3"
         android:id="@+id/ban"
-        android:layout_weight="2"></com.youth.banner.Banner>
-    <LinearLayout
+       ></com.youth.banner.Banner>
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8"></LinearLayout>
+        android:layout_height="120dp"
+        android:src="@mipmap/tu1"
+        android:scaleType="fitXY"/>
+    <com.p2p.bawei.p2pinvest1801.zdyview.ProgressView
+        android:layout_marginLeft="120dp"
+        android:background="#F3F3F3"
+        android:id="@+id/pro"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        app:textSize="30sp"
+        app:stokeSize="30"
+        app:circleColor="@color/colorBlue"
+        app:arcColor="@color/colorRed"
+        app:roundSize="300"
+        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="预期年利率：8.00%"
+            android:textSize="28sp"
+            android:paddingTop="6dp"
+            android:paddingLeft="90dp"
+            android:textColor="#000"/>
+    <Button
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:text="立即加入"
+        android:textColor="#fff"
+        android:layout_marginLeft="55dp"
+        android:textSize="30sp"
+        android:background="@drawable/yuan"
+       />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:drawableLeft="@mipmap/guarantee_icon"
+        android:text="风险保障金由硅谷银行监管"
+        android:paddingLeft="80dp"
+        android:paddingTop="5dp"
+        android:textSize="20sp"/>
 </LinearLayout>
