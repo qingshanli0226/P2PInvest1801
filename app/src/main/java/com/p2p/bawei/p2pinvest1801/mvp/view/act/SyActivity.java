@@ -2,6 +2,7 @@ package com.p2p.bawei.p2pinvest1801.mvp.view.act;
 
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -69,7 +70,6 @@ public class SyActivity extends AppCompatActivity {
                     }
                 })
                 .build();
-
 
 }
 

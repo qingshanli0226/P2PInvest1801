@@ -1,9 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/f2_li"
     android:layout_height="match_parent">
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="投资"
+        android:paddingLeft="165dp"
+        android:textSize="36sp"
+        android:textColor="#03A9F4"
+        android:background="#122733"/>
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:tabIndicatorHeight="50dp"
+        app:tabSelectedTextColor="#E91E63"
+        app:tabIndicatorColor="#03A9F4"
+        android:id="@+id/f2_tab">
+    </com.google.android.material.tabs.TabLayout>
+    <com.sunfusheng.marqueeview.MarqueeView
+        android:id="@+id/marqueeView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:mvAnimDuration="3000"
+        app:mvDirection="left_to_right"
+        app:mvInterval="3000"
+        app:mvTextColor="#E91E63"
+        app:mvTextSize="28sp"
+        app:mvSingleLine="true"/>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="投资"/>
+        android:id="@+id/f2_pager">
+    </androidx.viewpager.widget.ViewPager>
 </LinearLayout>
