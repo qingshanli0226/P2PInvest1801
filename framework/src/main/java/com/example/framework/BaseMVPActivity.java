@@ -17,8 +17,10 @@ public abstract class BaseMVPActivity<T extends IPresenter, V extends IView> ext
         loadingBar = findViewById(R.id.loadingBar);//在framwork里定义这个loadingbar控件，只是为了让编译器通过检查
         initPresenter();
         iHttpPresenter.attachView((V) this);
-        initData();
+        initHttpData();
     }
+
+    protected abstract void initHttpData();
 
     protected abstract void initPresenter();
 

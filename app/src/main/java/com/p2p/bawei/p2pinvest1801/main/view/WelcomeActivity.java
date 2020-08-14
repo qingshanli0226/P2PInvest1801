@@ -60,6 +60,8 @@ public class WelcomeActivity extends BaseActivity {
         rlWelcome = findViewById(R.id.rl_welcome);
         tvWelcomeVersion = findViewById(R.id.tv_welcome_version);
 
+
+
         //弹出得请求更新对话框
         initDialog();
         //启动动画
@@ -67,6 +69,7 @@ public class WelcomeActivity extends BaseActivity {
         //判断网络连接
         net();
     }
+
 
     private void initDialog() {
         //创建构造者

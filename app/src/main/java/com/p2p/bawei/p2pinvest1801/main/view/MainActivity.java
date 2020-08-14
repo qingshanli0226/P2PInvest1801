@@ -1,6 +1,8 @@
 package com.p2p.bawei.p2pinvest1801.main.view;
 
+import android.Manifest;
 import android.graphics.Color;
+import android.os.Build;
 import android.view.KeyEvent;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -42,13 +44,21 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(new String[]{
+                    Manifest.permission.CALL_PHONE,
+                    Manifest.permission.READ_PHONE_STATE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+            }, 9999);
+        }
         mainFrameLayout = findViewById(R.id.main_framelayout);
         mainCommon = findViewById(R.id.main_common);
 
         //初始化common
         initCommon();
-
     }
+
 
     private void initCommon() {
         initFragment();

@@ -2,6 +2,8 @@ package com.p2p.bawei.p2pinvest1801.more.view;
 
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +22,7 @@ import androidx.fragment.app.Fragment;
 import com.example.framework.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.more.activity.GuiGuInvestActivity;
+import com.p2p.bawei.p2pinvest1801.more.activity.RegisterActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -123,9 +126,12 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener {
     }
 
     private void regist() {
+        launchActivity(RegisterActivity.class, new Bundle());
     }
 
     private void contact() {
+
+
         //创建构造者
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         //添加对话框内容
@@ -136,7 +142,10 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //调用URL打电话
-
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:" + "010-56253825"));//数据电话
+                startActivity(intent);
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
