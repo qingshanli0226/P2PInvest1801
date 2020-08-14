@@ -4,13 +4,17 @@ import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.common.FinanceConstant;
 import com.example.framework.base.BaseActivity;
@@ -38,6 +42,8 @@ public class MainActivity extends BaseActivity {
     private InvestFragment investFragment;
     private MeFragment meFragment;
     private MoreFragment moreFragment;
+
+    private long firstTime = 0;
 
     //banner数据源
     private ArrayList<String> stringArrayList;
@@ -98,8 +104,8 @@ public class MainActivity extends BaseActivity {
 
         //创建Fragment实例对象
         createFragment();
+        initFragment();
 
-        addFragment(homeFragment);
     }
 
     //显示Fragment的方法
@@ -109,16 +115,21 @@ public class MainActivity extends BaseActivity {
                 .hide(investFragment)
                 .hide(meFragment)
                 .hide(moreFragment)
-                .replace(R.id.frame,fragment)
                 .show(fragment)
                 .commit();
     }
 
-    //默认显示Fragment的方法
-    public void addFragment(Fragment fragment){
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.frame,fragment)
-                .commit();
+    public void initFragment(){
+        FragmentManager supportFragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.frame,homeFragment);
+        fragmentTransaction.add(R.id.frame,investFragment);
+        fragmentTransaction.add(R.id.frame,meFragment);
+        fragmentTransaction.add(R.id.frame,moreFragment);
+        fragmentTransaction.hide(investFragment);
+        fragmentTransaction.hide(meFragment);
+        fragmentTransaction.hide(moreFragment);
+        fragmentTransaction.commit();
     }
 
     private void createFragment() {
@@ -151,4 +162,18 @@ public class MainActivity extends BaseActivity {
         return textView;
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){
+            if(System.currentTimeMillis() - firstTime > 2000){
+                showMessage("请在两秒内再按一次退出App");
+                firstTime = System.currentTimeMillis();
+            } else{
+                finish();
+                System.exit(0);
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }

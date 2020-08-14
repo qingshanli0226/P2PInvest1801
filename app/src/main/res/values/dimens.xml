@@ -1,3 +1,4 @@
 <resources>
     <dimen name="textSize20">20sp</dimen>
+    <dimen name="textSize15">15sp</dimen>
 </resources>

@@ -3,13 +3,18 @@ package com.p2p.bawei.p2pinvest1801.fragment;
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.os.Parcelable;
 import android.os.SystemClock;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.bumptech.glide.Glide;
+import com.example.common.view.ToolBar;
 import com.example.framework.base.BaseFragment;
 import com.example.net.mode.BannerBean;
 import com.p2p.bawei.p2pinvest1801.R;
@@ -30,10 +35,9 @@ public class HomeFragment extends BaseFragment {
     private RoundProgress homeRoundProgress;
     private TextView homeYear;
     private ImageView homeAnim;
-    private Timer timer;
     private AnimationDrawable animationDrawable;
-    private int count = 0;
-    private int countOne = 0;
+    //是否开启线程
+    private boolean isStart = true;
 
     //banner数据源
     private ArrayList<String> stringArrayList;
@@ -68,10 +72,10 @@ public class HomeFragment extends BaseFragment {
         //设置文本
         homeTv.setText(bannerBean.getResult().getProInfo().getName());
         homeYear.setText("预期年利率 ："+bannerBean.getResult().getProInfo().getYearRate()+"%");
-        if(countOne == 0){
+        if(isStart){
             //开启线程
             thread.start();
-            countOne++;
+            isStart = false;
         }
 
         //添加数据
@@ -99,24 +103,6 @@ public class HomeFragment extends BaseFragment {
         homeRoundProgress = (RoundProgress) findViewById(R.id.homeRoundProgress);
         homeYear = (TextView) findViewById(R.id.homeYear);
         homeAnim = (ImageView) findViewById(R.id.homeAnim);
-        timer = new Timer();
-//        timer.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                homeAnim.setVisibility(View.VISIBLE);
-//                 findViewById(R.id.toolBar).setVisibility(View.GONE);
-//                 homeAnim.setBackgroundResource(R.drawable.zhen_anim);
-//                animationDrawable = (AnimationDrawable) homeAnim.getBackground();
-//                animationDrawable.start();
-//                if(count < 3){
-//                   count++;
-//                } else{
-//                    findViewById(R.id.toolBar).setVisibility(View.VISIBLE);
-//            homeAnim.setVisibility(View.GONE);
-//            animationDrawable.stop();
-//                }
-//            }
-//        },0,1000);
 
         //获取banner数据
         Bundle arguments = getArguments();

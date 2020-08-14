@@ -6,16 +6,18 @@
     android:orientation="vertical">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:visibility="gone"
-        android:id="@+id/homeAnim"/>
+        android:id="@+id/homeAnim"
+        android:layout_gravity="center"/>
 
     <com.example.common.view.ToolBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:id="@+id/toolBar"></com.example.common.view.ToolBar>
+        android:id="@+id/toolBar"
+        app:left_show="false"
+        app:right_show="false"></com.example.common.view.ToolBar>
 
     <View
         android:layout_width="match_parent"

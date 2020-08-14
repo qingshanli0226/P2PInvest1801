@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="dim_foreground_light_inverse_disabled">#80bebebe</color>
+
+    <color name="investTrue">#27B8EE</color>
+    <color name="investFalse">#EBEBEB</color>
 </resources>

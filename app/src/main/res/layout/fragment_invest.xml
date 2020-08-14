@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
     <com.example.common.view.ToolBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:id="@+id/toolBar"></com.example.common.view.ToolBar>
+        android:id="@+id/toolBar"
+        app:left_show="false"
+        app:right_show="false"
+        app:title_text="投资"></com.example.common.view.ToolBar>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/textSize20"
-        android:text="invest"/>
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/investTab"
+        app:tabSelectedTextColor="#DF383C"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        app:tabBackground="@drawable/invest_bac"></com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/investVp"></androidx.viewpager.widget.ViewPager>
 
 </LinearLayout>

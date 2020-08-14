@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.example.common.view.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/toolBar"></com.example.common.view.ToolBar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#EBEBEB">
+
+        <com.p2p.bawei.p2pinvest1801.ui.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="硅谷金融壕运当头，首投返现最高188元"
+            android:textSize="25sp"
+            android:layout_gravity="center_vertical"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:textColor="#E84869"/>
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/investListRv"></androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

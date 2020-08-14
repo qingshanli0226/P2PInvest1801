@@ -1,6 +1,7 @@
 package com.example.net;
 
 import com.example.net.mode.BannerBean;
+import com.example.net.mode.InvestListBean;
 import com.example.net.mode.VersionBean;
 
 import io.reactivex.Observable;
@@ -13,4 +14,7 @@ public interface FinanceApi {
 
     @GET("atguigu/json/P2PInvest/update.json")
     Observable<VersionBean> getVersionData();
+
+    @GET("atguigu/json/P2PInvest/product.json")
+    Observable<InvestListBean> getInvestListData();
 }

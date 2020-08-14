@@ -17,4 +17,8 @@
         <item name="android:textColor">@android:color/black</item>
     </style>
 
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">@dimen/textSize15</item>
+    </style>
+
 </resources>
