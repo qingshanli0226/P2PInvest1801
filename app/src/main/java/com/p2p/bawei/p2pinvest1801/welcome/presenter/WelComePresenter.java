@@ -26,36 +26,19 @@ public class WelComePresenter extends BasePresenter<WelContract.View, WelContrac
             public void success(WelComeUpAppBean welComeUpAppBean) {
                 String code = welComeUpAppBean.getResult().getVersion();
                 String version = AppCode.getInstance().getVersion();
-                Log.e("hq", "success: "+code+version );
-                if (!code.equals(version)){
+                Log.e("hq", "success: " + code + version);
+                if (!code.equals(version)) {
                     mView.upAppCode(welComeUpAppBean.getResult());
-                }else {
+                } else {
                     mView.upAppCode(null);
                 }
             }
 
             @Override
             public void error(String errorMessage) {
-                Log.e("hq", "error: "+errorMessage );
+                Log.e("hq", "error: " + errorMessage);
             }
         });
     }
-    public void downLoadApp(){
-        mModel.DownLoadApp(new BaseObserver<RequestBody>() {
-            @Override
-            public void success(RequestBody requestBody) {
-                try {
-                    long contentLength = requestBody.contentLength();
-                    Log.e("hq", "success: "+contentLength );
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
 
-            @Override
-            public void error(String errorMessage) {
-
-            }
-        });
-    }
 }

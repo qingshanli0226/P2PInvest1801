@@ -29,15 +29,4 @@ public class WelComeModel extends BaseModel implements WelContract.Model {
                 .subscribe(baseObserver);
     }
 
-    @Override
-    public void DownLoadApp(BaseObserver<RequestBody> baseObserver) {
-        HttpManager.getHttpManager().setPath("http://49.233.93.155:8080");
-        HttpManager.getHttpManager()
-                .getRetrofit()
-                .create(Api.class)
-                .downLoadApp()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(baseObserver);
-    }
 }

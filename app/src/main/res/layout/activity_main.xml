@@ -8,14 +8,14 @@
     tools:context=".MainActivity">
 
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/com_fragment_vp"
-
+    <LinearLayout
+        android:id="@+id/com_box"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_weight="9"
         android:layout_height="0dp">
 
-    </androidx.viewpager.widget.ViewPager>
+    </LinearLayout>
 
     <com.flyco.tablayout.CommonTabLayout
         android:id="@+id/com_tab"

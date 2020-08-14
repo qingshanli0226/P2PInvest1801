@@ -3,6 +3,7 @@ package com.p2p.bawei.p2pinvest1801.mvp.view;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -46,7 +47,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
     }
 
     @Override
-    public void onBackPressed() {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
         long l = System.currentTimeMillis();
         long jian = l - thisTime;
         if (jian > 1000) {
@@ -56,8 +57,9 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
         } else if (jian <= 1000) {
             finish();
         }
-
+        return false;
     }
+
 
     @Override
     public void showMessage(String message) {

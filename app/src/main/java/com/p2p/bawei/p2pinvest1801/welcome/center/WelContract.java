@@ -12,12 +12,10 @@ import okhttp3.RequestBody;
 public interface WelContract {
     interface View extends IView {
         void upAppCode(WelComeUpAppBean.ResultBean str);
-        void upApp(boolean flag);
     }
 
     interface Model extends IModel {
         void getAppCode(BaseObserver<WelComeUpAppBean> baseObserver);
 
-        void DownLoadApp(BaseObserver<RequestBody> baseObserver);
     }
 }
