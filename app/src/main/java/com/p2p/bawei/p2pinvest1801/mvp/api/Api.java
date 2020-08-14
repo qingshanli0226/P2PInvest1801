@@ -2,6 +2,7 @@ package com.p2p.bawei.p2pinvest1801.mvp.api;
 
 import com.p2p.bawei.p2pinvest1801.bean.EdtivitnEnitiy;
 import com.p2p.bawei.p2pinvest1801.bean.MyBannerEntity;
+import com.p2p.bawei.p2pinvest1801.bean.MyInestEntivity;
 
 import java.util.List;
 
@@ -14,4 +15,6 @@ public interface Api {
     Observable<MyBannerEntity> getbanner();
     @GET("atguigu/json/P2PInvest/update.json")
     Observable<EdtivitnEnitiy> getedtivity();
+    @GET("atguigu/json/P2PInvest/product.json")
+    Observable<MyInestEntivity> getintivity();
 }

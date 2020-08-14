@@ -11,6 +11,7 @@ import com.next.easynavigation.view.EasyNavigationBar;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.bean.MyBannerEntity;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.MyContract;
+import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.MyInvest;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.Myfragment;
 
 import java.io.Serializable;
@@ -35,7 +36,7 @@ public class MyMainActivity extends BaseActivity  {
         es = (EasyNavigationBar) findViewById(R.id.es);
 
         list_fragment.add(new Myfragment());
-        list_fragment.add(new Myfragment());
+        list_fragment.add(new MyInvest());
         list_fragment.add(new Myfragment());
         list_fragment.add(new Myfragment());
 
