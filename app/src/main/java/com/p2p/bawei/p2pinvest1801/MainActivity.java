@@ -1,20 +1,16 @@
 package com.p2p.bawei.p2pinvest1801;
 
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.next.easynavigation.view.EasyNavigationBar;
-import com.p2p.bawei.p2pinvest1801.bean.HomeBean;
-import com.p2p.bawei.p2pinvest1801.fragment.HomeFragment;
-import com.p2p.bawei.p2pinvest1801.fragment.InvestFragment;
+import com.p2p.bawei.p2pinvest1801.home.mvp.view.fragment.HomeFragment;
+import com.p2p.bawei.p2pinvest1801.invest.mvp.view.fragment.InvestFragment;
 import com.p2p.bawei.p2pinvest1801.fragment.MineFragment;
 import com.p2p.bawei.p2pinvest1801.fragment.MoreFragment;
-import com.youth.banner.Banner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 .normalIconItems(normalIconItems)
                 .selectIconItems(selectIconItems)
                 .fragmentList(fragmentList)
-                .canScroll(true)//侧滑切换
+                .canScroll(false)//侧滑切换
 //                .centerImageRes(R.mipmap.ic_launcher_round) //最中间图片
                 .fragmentManager(getSupportFragmentManager())
                 .mode(EasyNavigationBar.NavigationMode.MODE_NORMAL)

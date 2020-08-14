@@ -1,9 +1,7 @@
 package com.p2p.bawei.p2pinvest1801.welcome;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -12,18 +10,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.framwork.mvp.view.BaseActivity;
 import com.p2p.bawei.p2pinvest1801.MainActivity;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.bean.HomeBean;
+import com.p2p.bawei.p2pinvest1801.home.bean.HomeBean;
 import com.p2p.bawei.p2pinvest1801.bean.UpDateBean;
-import com.p2p.bawei.p2pinvest1801.mvp.contract.HomeContract;
-import com.p2p.bawei.p2pinvest1801.mvp.model.HomeModel;
-import com.p2p.bawei.p2pinvest1801.mvp.presenter.HomePresenter;
+import com.p2p.bawei.p2pinvest1801.home.mvp.contract.HomeContract;
+import com.p2p.bawei.p2pinvest1801.home.mvp.model.HomeModel;
+import com.p2p.bawei.p2pinvest1801.home.mvp.presenter.HomePresenter;
 
-import java.sql.Time;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -120,6 +116,8 @@ public class WelcomeActivity extends BaseActivity<HomePresenter> implements Home
                         Toast.makeText(WelcomeActivity.this, "确定", Toast.LENGTH_SHORT).show();
                     }
                 })
+                .create()
                 .show();
+
     }
 }
