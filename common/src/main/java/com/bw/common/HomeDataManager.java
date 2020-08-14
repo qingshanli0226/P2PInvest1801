@@ -1,33 +1,42 @@
 package com.bw.common;
 
 import com.bw.net.bean.HomeBean;
+import com.bw.net.bean.UpdataBean;
 
-public class HomeDataManager  {
+public class HomeDataManager {
 
-    private HomeBean homeBean;
+    private static HomeBean homeBean = null;
+    private static UpdataBean updataBean = null;
+
     private HomeDataManager() {
 
     }
 
-    public HomeBean getHomeBean() {
-        return homeBean;
+    public void saveUpdataBean(UpdataBean updataBean) {
+        this.updataBean = updataBean;
     }
 
-    public void setHomeBean(HomeBean homeBean) {
+    public void saveHomeBean(HomeBean homeBean) {
         this.homeBean = homeBean;
     }
 
-    public boolean isHave(){
+    public boolean isHave() {
 
-        return homeBean!=null;
+        return homeBean != null;
     }
 
-    private static HomeDataManager homeDataManager;
-    public static HomeDataManager getInstance(){
-        if (homeDataManager==null){
-            synchronized (String.class){
-                if (homeDataManager==null){
-                    homeDataManager=new HomeDataManager();
+    public boolean isHaveUpdate() {
+
+        return updataBean != null;
+    }
+
+    private static HomeDataManager homeDataManager = null;
+
+    public static HomeDataManager getInstance() {
+        if (homeDataManager == null) {
+            synchronized (String.class) {
+                if (homeDataManager == null) {
+                    homeDataManager = new HomeDataManager();
                 }
             }
         }

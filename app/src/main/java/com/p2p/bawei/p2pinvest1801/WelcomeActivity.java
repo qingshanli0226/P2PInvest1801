@@ -6,10 +6,10 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bw.common.HomeDataManager;
 import com.bw.framwork.view.BaseActivity;
@@ -39,8 +39,9 @@ public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdCont
             }
             if (num < 0) {
                 timer.cancel();
-
-                initDalog();
+                if (!HomeDataManager.getInstance().isHaveUpdate()) {
+                    mPresenter.upDate();
+                }
             }
         }
     };
@@ -51,8 +52,12 @@ public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdCont
         wTime = findViewById(R.id.w_time);
 
         mPresenter = new HdPresenter(new HdModel(), this);
-        mPresenter.homeData();
-        mPresenter.upDate();
+        if (!HomeDataManager.getInstance().isHave()) {
+            mPresenter.homeData();
+        }
+
+
+
 
         ObjectAnimator alpha = ObjectAnimator.ofFloat(wImg, "alpha", 0, 1);
         alpha.setDuration(2000);
@@ -80,18 +85,18 @@ public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdCont
 
     @Override
     public void setHomeData(HomeBean homeData) {
-        HomeDataManager.getInstance().setHomeBean(homeData); //将请求到的首页数据放到单列类中。
+        HomeDataManager.getInstance().saveHomeBean(homeData); //将请求到的首页数据放到单列类中。
+
     }
 
     @Override
     public void setUpdateBean(UpdataBean updateBean) {
+        Log.i("wjh", "" + HomeDataManager.getInstance().isHaveUpdate());
+
         result = updateBean.getResult();
+        HomeDataManager.getInstance().saveUpdataBean(updateBean);
+        initDalog();
 
-    }
-
-    @Override
-    public void showMsg(Object msg) {
-        Toast.makeText(this, "" + msg, Toast.LENGTH_SHORT).show();
     }
 
     public void initDalog() {

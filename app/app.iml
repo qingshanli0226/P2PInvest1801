@@ -186,5 +186,8 @@
     <orderEntry type="module" module-name="common" />
     <orderEntry type="module" module-name="net" />
     <orderEntry type="module" module-name="framwork" />
+    <orderEntry type="module" module-name="common" />
+    <orderEntry type="module" module-name="net" />
+    <orderEntry type="module" module-name="framwork" />
   </component>
 </module>
