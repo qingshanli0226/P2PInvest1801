@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.example.common.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         app:center_text="首页"></com.example.common.ToolBar>
     <com.youth.banner.Banner
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="60dp"
         android:id="@+id/home_banner"></com.youth.banner.Banner>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/wc_ac_01"
+        android:id="@+id/image"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="努力加载中..."
+        android:textSize="25sp"
+        android:id="@+id/basetext"
+        android:layout_below="@id/image"
+        android:layout_centerInParent="true"/>
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_marginTop="220dp"
         android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="300dp"
@@ -31,17 +50,69 @@
                 android:src="@drawable/recommend"
                 android:layout_height="match_parent" />
         </RelativeLayout>
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="40dp"
+            android:layout_marginTop="80dp"
+            android:orientation="horizontal"
+            android:id="@+id/home_liner">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/botton"
+                android:text="本息保障"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/botton"
+                android:text="每日计息"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_marginRight="10dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/botton"
+                android:text="高额利益"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
         <com.p2p.bawei.p2pinvest1801.mvp.view.ProgressView
+            android:layout_below="@+id/home_liner"
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:stroke_width="15"
             android:id="@+id/home_progress"
             app:text_color="@android:color/holo_blue_dark"
-            app:round_size="100"
+            app:round_size="150"
             app:text_size="18sp"
             app:circle_color="@android:color/holo_red_dark"
             app:arc_color="@android:color/holo_blue_dark"
-            android:layout_marginTop="80dp"
             android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:text="预期年利率: "
+            android:layout_below="@id/home_progress"
+            android:id="@+id/home_anticipate"/>
+        <Button
+            android:layout_width="350dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="#fff"
+            android:background="@drawable/buttons"
+            android:layout_below="@id/home_anticipate"
+            android:text="立即加入"/>
     </RelativeLayout>
-</LinearLayout>
+
+</RelativeLayout>

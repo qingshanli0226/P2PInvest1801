@@ -44,7 +44,7 @@ public class MainActivity extends BaseActivity {
         investFragment = new InvestFragment();
         moreFragment = new MoreFragment();
         propertyFragment = new PropertyFragment();
-        addFragment(homeFragment);
+        addFragment();
     }
 
     @Override
@@ -82,9 +82,15 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
-    public void addFragment(Fragment fragment){
+    public void addFragment(){
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.main_framlayout, fragment)
+                .add(R.id.main_framlayout, homeFragment)
+                .add(R.id.main_framlayout, investFragment)
+                .add(R.id.main_framlayout, moreFragment)
+                .add(R.id.main_framlayout, propertyFragment)
+                .hide(investFragment)
+                .hide(moreFragment)
+                .hide(propertyFragment)
                 .commit();
     }
 
@@ -94,7 +100,6 @@ public class MainActivity extends BaseActivity {
                 .hide(investFragment)
                 .hide(moreFragment)
                 .hide(propertyFragment)
-                .replace(R.id.main_framlayout,fragment)
                 .show(fragment)
                 .commit();
     }

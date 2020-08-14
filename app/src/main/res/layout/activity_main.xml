@@ -20,5 +20,6 @@
         android:id="@+id/main_common"
         app:tl_textSelectColor="#3882D0"
         app:tl_textUnselectColor="#000"
+        android:background="#f9f9f9"
         android:layout_alignParentBottom="true"></com.flyco.tablayout.CommonTabLayout>
 </RelativeLayout>

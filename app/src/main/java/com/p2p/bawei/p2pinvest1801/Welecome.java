@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.view.animation.AccelerateInterpolator;
@@ -20,6 +21,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.framwork.mvp.view.BaseActivity;
 import com.example.net.BaseObserver;
 import com.example.net.P2PApi;
 import com.example.net.RetrofitManager;
@@ -32,7 +34,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 //欢迎页
-public class Welecome extends AppCompatActivity {
+public class Welecome extends BaseActivity {
     int handlercount = 0;
     Handler handler = new Handler(){
         @Override
@@ -78,10 +80,12 @@ public class Welecome extends AppCompatActivity {
     private TextView welcomeCount;
     int count = 3;
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.welcome);
+    public void initViews() {
         welcomeCount = (TextView) findViewById(R.id.welcome_count);
+    }
+
+    @Override
+    public void initDatas() {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -105,28 +109,55 @@ public class Welecome extends AppCompatActivity {
                         }
                     }
                     handler.sendEmptyMessage(0);
+                    Log.i("----for", "1111");
                 }
-                }
+            }
         }).start();
         RetrofitManager.getInstance().getRetrofit()
-                            .create(P2PApi.class)
-                            .versionlist()
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .subscribeOn(Schedulers.io())
-                            .subscribe(new BaseObserver<VersionBean>() {
-                                @Override
-                                public void onNext(VersionBean versionBean) {
-                                    if(versionBean.getCode() == 200){
-                                        title = versionBean.getResult().getDesc();
-                                        handler.sendEmptyMessage(0);
-                                    }else{
-                                        Toast.makeText(Welecome.this, "请求出错", Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                                @Override
-                                public void onRequestError(String code, String message) {
+                .create(P2PApi.class)
+                .versionlist()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new BaseObserver<VersionBean>() {
+                    @Override
+                    public void onNext(VersionBean versionBean) {
+                        if(versionBean.getCode() == 200){
+                            title = versionBean.getResult().getDesc();
+                            handler.sendEmptyMessage(0);
+                            Log.i("----version", "1111");
+                        }else{
+                            Toast.makeText(Welecome.this, "请求出错", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    @Override
+                    public void onRequestError(String code, String message) {
 
-                                }
-                            });
-            }
+                    }
+                });
+    }
+
+    @Override
+    public int bandLayout() {
+        return R.layout.welcome;
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
+
+    @Override
+    public void showMsg(String message) {
+
+    }
+
+    @Override
+    public void showError(String code, String message) {
+
+    }
 }

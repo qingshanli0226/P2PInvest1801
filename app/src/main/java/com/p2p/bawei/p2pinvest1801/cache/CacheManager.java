@@ -1,7 +1,11 @@
 package com.p2p.bawei.p2pinvest1801.cache;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.net.rtp.RtpStream;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 
@@ -31,41 +35,31 @@ public class CacheManager {
     private List<HomeBean.ResultBean.ImageArrBean> list = new ArrayList<>();
     private List<HomeBean.ResultBean> list_homebean = new ArrayList<>();
     private List<HomeBean.ResultBean.ProInfoBean> list_proinfobean = new ArrayList<>();
-    HomeFragment homeFragment = new HomeFragment();
+    private List<IShopcarDataChangeListener> iShopcarDataChangeListenerList = new ArrayList<>();
+    HomeFragment homeFragment;
     public synchronized static CacheManager getInstance(){
         if(cacheManager == null){
             cacheManager = new CacheManager();
         }
         return cacheManager;
     }
+    private Context context;
     public void init(Context context){
-
+        this.context = context;
+        homeFragment = new HomeFragment();
     }
-
     public void initInter(){
         RetrofitManager.getInstance().getRetrofit()
                 .create(P2PApi.class)
                 .homelist()
-                .delay(3000, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .doFinally(new Action() {
-                    @Override
-                    public void run() throws Exception {
-                        homeFragment.hideLoading();
-                    }
-                })
-                .doOnSubscribe(new Consumer<Disposable>() {
-                    @Override
-                    public void accept(Disposable disposable) throws Exception {
-                        homeFragment.showLoading();
-                    }
-                })
                 .subscribe(new BaseObserver<HomeBean>() {
                     @Override
                     public void onNext(HomeBean homeBean) {
-                        add(homeBean.getResult());
-                        Log.i("----", homeBean.getCode()+"");
+                        list_homebean.add(homeBean.getResult());
+                        add();
+                        notifyShopcarDataChanged();
                     }
                     @Override
                     public void onRequestError(String code, String message) {
@@ -76,11 +70,23 @@ public class CacheManager {
     public List<HomeBean.ResultBean.ImageArrBean> getList(){
         return list;
     }
-    public void add(HomeBean.ResultBean homeBean){
-        list.addAll(homeBean.getImageArr());
-        list_proinfobean.add(homeBean.getProInfo());
+    public void add(){
+        list.addAll(list_homebean.get(0).getImageArr());
+        list_proinfobean.add(list_homebean.get(0).getProInfo());
+        for (IShopcarDataChangeListener listener:iShopcarDataChangeListenerList) {
+            listener.onDataChanged(list_homebean);
+        }
     }
     public List<HomeBean.ResultBean.ProInfoBean> getList_proinfobean(){
         return list_proinfobean;
+    }
+
+    private void notifyShopcarDataChanged() {
+        for(IShopcarDataChangeListener listener:iShopcarDataChangeListenerList) {
+            listener.onDataChanged(list_homebean);
+        }
+    }
+    public interface IShopcarDataChangeListener {
+        void onDataChanged(List<HomeBean.ResultBean> shopcarBeanList);
     }
 }

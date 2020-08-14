@@ -1,7 +1,11 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,41 +33,50 @@ public class HomeFragment extends BaseFragment {
     private TextView homeTitle;
     private ProgressView homeProgress;
     List<HomeBean.ResultBean.ProInfoBean> list_proinfobean;
+    private ImageView image;
+    private TextView basetext;
+    private AnimationDrawable animationDrawable;
+
+    private TextView homeAnticipate;
     @Override
     public void initViews() {
+        image = (ImageView) findViewById(R.id.image);
+        animationDrawable = (AnimationDrawable)findViewById(R.id.image).getBackground();
+        basetext = (TextView) findViewById(R.id.basetext);
         homeBanner = (Banner) findViewById(R.id.home_banner);
         homeTitle = (TextView) findViewById(R.id.home_title);
         homeProgress = (ProgressView) findViewById(R.id.home_progress);
+        homeAnticipate = (TextView) findViewById(R.id.home_anticipate);
         list_proinfobean = CacheManager.getInstance().getList_proinfobean();
         Log.i("----listsize", list_proinfobean.size()+"");
-        if(list_proinfobean.size() != 0){
-            homeTitle.setText(list_proinfobean.get(0).getName());
-            String progress = list_proinfobean.get(0).getProgress();
-            homeProgress.setProgress(Integer.parseInt(progress));
-        }else{
-            Toast.makeText(getContext(), "没有数据", Toast.LENGTH_SHORT).show();
-        }
+        homeTitle.setText(list_proinfobean.get(0).getName());
+        String progress = list_proinfobean.get(0).getProgress();
+        homeProgress.setProgress(Integer.parseInt(progress));
+        list = CacheManager.getInstance().getList();
+        homeAnticipate.setText("预期年利率:  "+list_proinfobean.get(0).getYearRate()+"%");
     }
 
     @Override
     public void initDatas() {
-        list = CacheManager.getInstance().getList();
-        for (int i = 0; i < list.size(); i++) {
-            String imaurl = list.get(i).getIMAURL();
-            list_banner.add(imaurl);
-            Log.i("----list", list_banner.get(i));
-        }
-        homeBanner.setImages(list_banner);
-        homeBanner.setImageLoader(new ImageLoader() {
-            @Override
-            public void displayImage(Context context, Object path, ImageView imageView) {
-                Glide.with(context)
-                        .load(path)
-                        .into(imageView);
+            for (int i = 0; i < list.size(); i++) {
+                String imaurl = list.get(i).getIMAURL();
+                list_banner.add(imaurl);
+                Log.i("----list", list_banner.get(i));
             }
-        });
-        homeBanner.setBannerTitles(Arrays.asList(text));
-        homeBanner.start();
+            homeBanner.setImages(list_banner);
+            homeBanner.setImageLoader(new ImageLoader() {
+                @Override
+                public void displayImage(Context context, Object path, ImageView imageView) {
+                    Glide.with(context)
+                            .load(path)
+                            .into(imageView);
+                }
+            });
+            Log.i("----list_banner", list_banner.size() + "");
+            homeBanner.setBannerTitles(Arrays.asList(text));
+            homeBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
+            homeBanner.start();
+            list_banner.clear();
     }
 
     @Override
@@ -73,12 +86,15 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public void showLoading() {
-
+        image.setVisibility(View.VISIBLE);
+        animationDrawable.start();
+        basetext.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideLoading() {
-
+        image.setVisibility(View.GONE);
+        basetext.setVisibility(View.GONE);
     }
 
     @Override

@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <com.example.common.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:center_text="投资"></com.example.common.ToolBar>
+    <com.flyco.tablayout.CommonTabLayout
+        android:layout_width="match_parent"
+        android:id="@+id/invest_common"
+        app:tl_textSelectColor="#FF0000"
+        app:tl_indicator_color="#3F51B5"
+        app:tl_textsize="20sp"
+        app:tl_indicator_height="60dp"
+        app:tl_textUnselectColor="#000"
+        android:layout_height="60dp"></com.flyco.tablayout.CommonTabLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/invest_viewpage">
+    </androidx.viewpager.widget.ViewPager>
 </LinearLayout>
