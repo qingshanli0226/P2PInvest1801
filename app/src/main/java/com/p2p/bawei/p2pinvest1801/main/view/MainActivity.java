@@ -1,7 +1,9 @@
 package com.p2p.bawei.p2pinvest1801.main.view;
 
 import android.graphics.Color;
+import android.view.KeyEvent;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -12,9 +14,9 @@ import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.main.entity.CommonEntity;
 import com.p2p.bawei.p2pinvest1801.home.view.HomeFragment;
 import com.p2p.bawei.p2pinvest1801.invest.InvestFragment;
+import com.p2p.bawei.p2pinvest1801.main.entity.CommonEntity;
 import com.p2p.bawei.p2pinvest1801.more.view.MoreFragment;
 import com.p2p.bawei.p2pinvest1801.user.view.UserFragment;
 
@@ -28,6 +30,7 @@ public class MainActivity extends BaseActivity {
     private InvestFragment investFragment;
     private UserFragment userFragment;
     private MoreFragment moreFragment;
+    private long exitTime = 0;
 
     //数据
     private ArrayList<CustomTabEntity> customTabEntityList = new ArrayList<>();
@@ -118,5 +121,22 @@ public class MainActivity extends BaseActivity {
     @Override
     protected int getLayout() {
         return R.layout.activity_main;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK ){
+            //判断用户两次按键的时间差是否在一个预期值之内，是的话直接直接退出，不是的话提示用户再按一次后退键退出。
+            if(System.currentTimeMillis() - exitTime > 2000){
+                Toast.makeText(this,"再点击一次，退出当前应用",Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
+                //当返回true时，表示已经完整地处理了这个事件，并不希望其他的回调方法再次进行处理，而当返回false时，
+                // 表示并没有完全处理完该事件，更希望其他回调方法继续对其进行处理，
+                return true;
+            }else{
+                removeAll(); //结束当前activity
+            }
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

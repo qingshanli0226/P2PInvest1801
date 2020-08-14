@@ -6,7 +6,6 @@ import android.widget.TextView;
 
 import com.example.framework.BaseActivity;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.main.view.MainActivity;
 
 public class GuiGuInvestActivity extends BaseActivity {
 
@@ -30,8 +29,7 @@ public class GuiGuInvestActivity extends BaseActivity {
         ivTitleBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
-                launchActivity(MainActivity.class, null);
+                removeCurrentActivity();
             }
         });
     }
@@ -40,5 +38,6 @@ public class GuiGuInvestActivity extends BaseActivity {
     protected int getLayout() {
         return R.layout.activity_gui_gu_invest;
     }
+
 
 }

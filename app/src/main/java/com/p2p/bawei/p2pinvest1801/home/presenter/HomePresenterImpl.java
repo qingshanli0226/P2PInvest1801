@@ -24,12 +24,18 @@ public class HomePresenterImpl extends HomeContract.HomePresenter {
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
+                        if (iHttpView == null) {
+                            return;
+                        }
                         iHttpView.showLoaing();
                     }
                 })
                 .doFinally(new Action() {
                     @Override
                     public void run() throws Exception {
+                        if (iHttpView == null) {
+                            return;
+                        }
                         iHttpView.hideLoading();
                     }
                 })
@@ -41,7 +47,9 @@ public class HomePresenterImpl extends HomeContract.HomePresenter {
 
                     @Override
                     public void onNext(HomeBean homeBean) {
-                        if (homeBean.getCode() == 200) {
+                        if (iHttpView == null) {
+                            return;
+                        } else if (homeBean.getCode() == 200) {
                             iHttpView.onHomeData(homeBean);
                         } else {
                             iHttpView.showError("ERROR:" + homeBean.getCode(), homeBean.getMsg());
