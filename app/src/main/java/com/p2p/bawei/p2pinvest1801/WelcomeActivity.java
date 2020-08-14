@@ -9,11 +9,13 @@ import android.os.Handler;
 import android.os.Message;
 
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.common.NetCommon;
+import com.example.framework2.mvp.view.BaseActivity;
 import com.example.net.activity_bean.IndexBean;
 import com.example.net.activity_bean.UpdateBean;
 import com.example.net.api_srever.ApiServer;
@@ -26,7 +28,7 @@ import java.util.TimerTask;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
-public class WelcomeActivity extends AppCompatActivity {
+public class WelcomeActivity extends BaseActivity {
     @SuppressLint("HandlerLeak")
     private Handler handler =new Handler(){
         @Override
@@ -56,7 +58,12 @@ public class WelcomeActivity extends AppCompatActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                if (start==0){
+                start--;
+                if (start!=0){
+                    handler.sendEmptyMessage(start);
+
+                }else {
+                    handler.sendEmptyMessage(start);
                     handler.sendEmptyMessage(6);
                     timer.cancel();
 //                    if (!isUpdate){
@@ -69,9 +76,6 @@ public class WelcomeActivity extends AppCompatActivity {
 //                    }
 
 
-                }else {
-                    start--;
-                    handler.sendEmptyMessage(start);
                 }
 
             }
@@ -88,6 +92,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 .subscribe(new BaseObserver<UpdateBean>() {
                     @Override
                     public void success(UpdateBean updateBean) {
+                        CacheManager.getInstance().setUpdateBean(updateBean);
                         UpdateBean.ResultBean result = updateBean.getResult();
                         Log.e("FFF", "success: "+result.getVersion() );
                     }
@@ -108,6 +113,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 .subscribe(new BaseObserver<IndexBean>() {
                     @Override
                     public void success(IndexBean indexBean) {
+                        CacheManager.getInstance().setIndexBean(indexBean);
                         Log.e("FFF", "success: "+indexBean.getMsg()+indexBean.getCode() );
                     }
 
@@ -142,9 +148,24 @@ public class WelcomeActivity extends AppCompatActivity {
                 .create().show();
     }
 
-    private void initView() {
+    public void initView() {
         start=3;
         time_number = (TextView) findViewById(R.id.time_number);
         time_number.setText(start+"");
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public int bandLayout() {
+        return R.layout.activity_welcome;
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
