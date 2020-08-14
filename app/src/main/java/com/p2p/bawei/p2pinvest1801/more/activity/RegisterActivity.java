@@ -112,8 +112,6 @@ public class RegisterActivity extends BaseMVPActivity<RegisterPresenterImpl, Reg
                 }
                 iHttpPresenter.getRegister(name, pwd);
                 printLog("success");
-                //返回
-                removeCurrentActivity();
                 break;
         }
     }
