@@ -13,6 +13,8 @@ import com.next.easynavigation.view.EasyNavigationBar;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.adapter.MyFragmentAdapter;
 import com.p2p.bawei.p2pinvest1801.view.fragment.HomeFragment;
+import com.p2p.bawei.p2pinvest1801.view.fragment.MoneyFragment;
+import com.p2p.bawei.p2pinvest1801.view.fragment.MyMoneyFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void initTab() {
         list_fragment.add(new HomeFragment());
-        list_fragment.add(new HomeFragment());
-        list_fragment.add(new HomeFragment());
-        list_fragment.add(new HomeFragment());
+        list_fragment.add(new MoneyFragment());
+        list_fragment.add(new MyMoneyFragment());
+        list_fragment.add(new MoneyFragment());
 
 
     }

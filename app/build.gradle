@@ -40,4 +40,6 @@ dependencies {
 //android版本
     implementation 'com.github.Vincent7Wong:EasyNavigation:1.5.0'
 
+    implementation 'com.roughike:bottom-bar:2.3.1'
+
 }

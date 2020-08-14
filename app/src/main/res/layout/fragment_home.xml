@@ -5,29 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#162934">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#00BCD4"
-            android:textSize="30sp"
-            android:text="首页"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="170dp"
-            />
-
-    </LinearLayout>
 
     <com.youth.banner.Banner
         android:id="@+id/banner"
+        app:image_scale_type="fit_xy"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"></com.youth.banner.Banner>
+        android:layout_weight="3"></com.youth.banner.Banner>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,7 +39,7 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="40dp"
+                android:layout_height="35dp"
                 android:background="@drawable/button_back"
                 android:text="本息保障"
                 android:textSize="18sp"
@@ -63,7 +48,7 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="40dp"
+                android:layout_height="35dp"
                 android:background="@drawable/button_back"
                 android:text="每日计息"
                 android:textSize="18sp"
@@ -73,7 +58,7 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="40dp"
+                android:layout_height="35dp"
                 android:background="@drawable/button_back"
                 android:text="高额收益"
                 android:layout_marginLeft="10dp"
@@ -89,19 +74,20 @@
         android:layout_height="0dp"
         android:layout_weight="2"
         app:circle_color="@android:color/holo_blue_dark"
-        app:stroke_width="5"
+        app:stroke_width="20"
         app:round_size="100dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="2.5"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="预期年利润：8.00%"
+            android:layout_marginTop="10dp"
             android:textSize="22sp"
             android:layout_gravity="center_horizontal"/>
 
