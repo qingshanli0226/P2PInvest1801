@@ -18,9 +18,11 @@
         android:layout_width="match_parent"
         android:layout_height="250dp">
         <com.youth.banner.Banner
+
+            app:image_scale_type="fit_xy"
             android:id="@+id/main_home_view_banner"
             android:layout_width="match_parent"
-            android:layout_height="250dp"></com.youth.banner.Banner>
+            android:layout_height="200dp"></com.youth.banner.Banner>
         <TextView
             android:textSize="15sp"
             android:id="@+id/main_home_view_banner_text"

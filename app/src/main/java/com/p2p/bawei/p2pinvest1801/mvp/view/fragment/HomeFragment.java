@@ -1,6 +1,7 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
