@@ -18,7 +18,6 @@ import com.p2p.bawei.p2pinvest1801.bean.MyAllBean;
 import com.p2p.bawei.p2pinvest1801.contract.MyAllContract;
 import com.p2p.bawei.p2pinvest1801.model.MyAllModel;
 import com.p2p.bawei.p2pinvest1801.presenter.MyAllPresenter;
-import com.p2p.bawei.p2pinvest1801.view.ProgressView;
 
 import java.util.List;
 

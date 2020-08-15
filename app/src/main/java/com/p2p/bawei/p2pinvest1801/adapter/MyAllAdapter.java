@@ -36,7 +36,8 @@ public class MyAllAdapter extends BaseQuickAdapter<MyAllBean.ResultBean, BaseVie
 
         final ProgressView progressView = helper.getView(R.id.progress_view);
 
-        progressView.setProgress(60);
+
+        progressView.setProgress(Integer.parseInt(item.getProgress()));
 
         new Handler().post(new Runnable() {
             @Override

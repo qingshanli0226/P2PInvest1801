@@ -41,12 +41,14 @@
                 android:id="@+id/text_money"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="10dp"/>
 
             <TextView
                 android:id="@+id/text_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="10dp"/>
 
         </LinearLayout>
@@ -67,6 +69,7 @@
                 android:id="@+id/text_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="10dp"/>
 
             <TextView
@@ -74,6 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="本息保障"
+                android:layout_gravity="center_horizontal"
                 android:textSize="16sp"
                 android:layout_margin="10dp"/>
 
@@ -96,12 +100,14 @@
                 android:id="@+id/text_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="10dp"/>
 
             <TextView
                 android:id="@+id/text_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="10dp"/>
 
         </LinearLayout>
