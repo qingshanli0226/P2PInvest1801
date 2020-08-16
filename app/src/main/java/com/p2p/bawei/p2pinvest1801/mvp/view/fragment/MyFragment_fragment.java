@@ -1,5 +1,6 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 
+import android.graphics.Color;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -15,7 +16,7 @@ import java.util.List;
 
 public class MyFragment_fragment extends BaseFragment<MyGetInvestPresenter> implements MyInvestContract.mView {
     private RecyclerView rv;
-    @Override
+      @Override
     public int BondLayout() {
         return R.layout.myfragmentfragment;
     }

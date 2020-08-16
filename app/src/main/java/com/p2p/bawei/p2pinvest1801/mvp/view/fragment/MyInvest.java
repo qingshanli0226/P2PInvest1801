@@ -36,7 +36,7 @@ public class MyInvest extends BaseFragment {
         list_title.add("热门理财");
         list_fragment_fragment.add(new MyFragment_fragment());
         list_fragment_fragment.add(new Myfragment());
-        list_fragment_fragment.add(new Myfragment());
+        list_fragment_fragment.add(new MyFragment_FlowLayout());
         MyViewPageAdapter myViewPageAdapter = new MyViewPageAdapter(getChildFragmentManager(), list_title, list_fragment_fragment);
         vp.setAdapter(myViewPageAdapter);
         tl.setupWithViewPager(vp);

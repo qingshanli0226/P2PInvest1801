@@ -3,6 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent">
+    <com.p2p.bawei.p2pinvest1801.mvp.view.MypaomadengView
+        android:id="@+id/pm"
+        android:text="硅谷金融豪运当头，首投返现最高188元"
+        android:ellipsize="marquee"
+        android:textSize="50dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:singleLine="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
