@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
     <com.example.common.view.ToolBar
         android:layout_width="match_parent"
@@ -10,10 +10,10 @@
         android:visibility="gone"
         android:id="@+id/toolBar"></com.example.common.view.ToolBar>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/textSize20"
-        android:text="hot"/>
+    <com.p2p.bawei.p2pinvest1801.ui.FlowLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/hotFlowLayout"
+        android:background="#27B8EE"></com.p2p.bawei.p2pinvest1801.ui.FlowLayout>
 
 </LinearLayout>

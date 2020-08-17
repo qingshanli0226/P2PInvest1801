@@ -1,5 +1,9 @@
 package com.p2p.bawei.p2pinvest1801.fragment;
 
+import android.graphics.drawable.AnimationDrawable;
+import android.view.View;
+import android.widget.ImageView;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,12 +14,19 @@ import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.adapter.ProductListAdapter;
 import com.p2p.bawei.p2pinvest1801.contract.ProductListContract;
 import com.p2p.bawei.p2pinvest1801.presenter.ProductListPresenterImpl;
+import com.p2p.bawei.p2pinvest1801.ui.MyLoadingView;
 
 import java.util.ArrayList;
 
 public class ProductListFragment extends BaseMVPFragment<ProductListPresenterImpl, ProductListContract.ProductListView> implements ProductListContract.ProductListView {
 
     private RecyclerView investListRv;
+    private ImageView listImg;
+    private AnimationDrawable animationDrawable;
+    private MyLoadingView listLoadingView;
+
+
+
     //数据源
     private ArrayList<InvestListBean.ResultBean> resultBeans = new ArrayList<>();
     //适配器
@@ -38,6 +49,9 @@ public class ProductListFragment extends BaseMVPFragment<ProductListPresenterImp
     @Override
     protected void initView() {
         investListRv = (RecyclerView) findViewById(R.id.investListRv);
+//        listImg = (ImageView) findViewById(R.id.listImg);
+//        animationDrawable = (AnimationDrawable) listImg.getDrawable();
+        listLoadingView = (MyLoadingView) findViewById(R.id.listLoadingView);
 
     }
 
@@ -69,11 +83,16 @@ public class ProductListFragment extends BaseMVPFragment<ProductListPresenterImp
 
     @Override
     public void showLoading() {
-
+        listLoadingView.setVisibility(View.VISIBLE);
+//        listImg.setVisibility(View.VISIBLE);
+//        animationDrawable.start();
     }
 
     @Override
     public void hideLoading() {
-
+        listLoadingView.setVisibility(View.GONE);
+        listLoadingView.stop();
+//        listImg.setVisibility(View.GONE);
+//        animationDrawable.stop();
     }
 }

@@ -84,12 +84,11 @@
                 <LinearLayout
                     android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="13dp">
+                    android:layout_height="wrap_content">
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:src="@mipmap/ssdk_auth_title_back"/>
+                        android:src="@drawable/ssdk_auth_title_back"/>
                     
                     <ImageView
                         android:layout_width="20dp"
@@ -145,12 +144,11 @@
                 <LinearLayout
                     android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="13dp">
+                    android:layout_height="wrap_content">
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:src="@mipmap/ssdk_auth_title_back"/>
+                        android:src="@drawable/ssdk_auth_title_back"/>
 
                     <ImageView
                         android:layout_width="20dp"
@@ -205,12 +203,11 @@
                 <LinearLayout
                     android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="13dp">
+                    android:layout_height="wrap_content">
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:src="@mipmap/ssdk_auth_title_back"/>
+                        android:src="@drawable/ssdk_auth_title_back"/>
 
                     <ImageView
                         android:layout_width="20dp"
