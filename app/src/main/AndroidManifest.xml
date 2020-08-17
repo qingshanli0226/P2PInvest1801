@@ -18,6 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".mvp.view.activity.MyMainActivity"></activity>
+        <activity android:name=".mvp.view.activity.MyMessagesActivity"></activity>
     </application>
+
 
 </manifest>

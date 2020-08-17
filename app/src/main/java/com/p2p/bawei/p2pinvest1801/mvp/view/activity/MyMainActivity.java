@@ -11,6 +11,7 @@ import com.next.easynavigation.view.EasyNavigationBar;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.bean.MyBannerEntity;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.MyContract;
+import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.MyFragment_MyMoney;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.MyInvest;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.Myfragment;
 
@@ -37,7 +38,7 @@ public class MyMainActivity extends BaseActivity  {
 
         list_fragment.add(new Myfragment());
         list_fragment.add(new MyInvest());
-        list_fragment.add(new Myfragment());
+        list_fragment.add(new MyFragment_MyMoney());
         list_fragment.add(new Myfragment());
 
         es.titleItems(list_ttt).normalIconItems(list_pic).selectIconItems(list_pic_t)
