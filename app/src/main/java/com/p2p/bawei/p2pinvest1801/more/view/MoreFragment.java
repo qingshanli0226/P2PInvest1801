@@ -116,13 +116,37 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener {
     }
 
     private void reset() {
-
+        //重置手势密码
+        Toast.makeText(getActivity(), "重置手势密码", Toast.LENGTH_SHORT).show();
+        toggleMore.setChecked(false);
     }
 
     private void togglemore() {
-        //设置图片大小
+        //创建构造者
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        //添加对话框内容
+        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setTitle("设置手势密码");
+        builder.setMessage("是否现在设置手势密码");
+        builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //设置手势密码
+                toggleMore.setChecked(true);
 
-
+            }
+        });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getActivity(), "取消设置手势密码", Toast.LENGTH_SHORT).show();
+                toggleMore.setChecked(false);
+            }
+        });
+        //创建对话框
+        AlertDialog alertDialog = builder.create();
+        //显示对话框
+        alertDialog.show();
     }
 
     private void regist() {
@@ -130,8 +154,6 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener {
     }
 
     private void contact() {
-
-
         //创建构造者
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         //添加对话框内容

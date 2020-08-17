@@ -9,8 +9,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-
-
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -21,7 +19,8 @@
         android:theme="@style/AppTheme"
         android:useEmbeddedDex="true"
         android:usesCleartextTraffic="true">
-        <activity android:name=".more.activity.RegisterActivity"></activity>
+        <activity android:name=".user.activity.LoginActivity"></activity>
+        <activity android:name=".more.activity.RegisterActivity" />
         <activity
             android:name=".more.activity.GuiGuInvestActivity"
             android:launchMode="singleTop" />

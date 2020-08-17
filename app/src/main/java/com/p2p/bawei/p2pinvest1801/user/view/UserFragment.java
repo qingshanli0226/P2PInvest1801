@@ -28,7 +28,10 @@ public class UserFragment extends BaseFragment {
     @Override
     protected void initView() {
         tvTitle = findViewById(R.id.tv_title);
-        tvTitle.setText("我的账户");
+        tvTitle.setText("我的资产");
 
     }
+
+
+
 }

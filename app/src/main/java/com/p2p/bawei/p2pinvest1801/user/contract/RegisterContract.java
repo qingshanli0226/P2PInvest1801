@@ -10,7 +10,7 @@ public class RegisterContract {
     }
 
     public static abstract class RegisterPresenter extends BasePresenter<IRgisterView> {
-        public abstract void getRegister(String name,String password);
+        public abstract void getRegister(String name,String password,String phone);
     }
 
 }

@@ -3,6 +3,7 @@ package com.example.net;
 
 import com.example.net.bean.BaseBean;
 import com.example.net.bean.HomeBean;
+import com.example.net.bean.LoginBean;
 import com.example.net.bean.ProductBean;
 
 import java.util.HashMap;
@@ -29,6 +30,9 @@ public interface InvestApiService {
     Observable<BaseBean<String>> onUserRegister(@FieldMap HashMap<String, String> params);
 
     //用户登录
+    @POST("login")
+    @FormUrlEncoded
+    Observable<LoginBean> onUserLogin(@FieldMap HashMap<String,String> params);
 
     //用户自动登录
 

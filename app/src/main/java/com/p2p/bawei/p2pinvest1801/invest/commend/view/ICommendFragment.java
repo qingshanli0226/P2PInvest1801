@@ -11,7 +11,6 @@ import com.p2p.bawei.p2pinvest1801.R;
  */
 public class ICommendFragment extends BaseFragment {
 
-
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_icommend;
@@ -26,4 +25,6 @@ public class ICommendFragment extends BaseFragment {
     protected void initView() {
 
     }
+
+
 }

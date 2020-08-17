@@ -90,13 +90,13 @@ public class RegisterActivity extends BaseMVPActivity<RegisterPresenterImpl, Reg
                 printLog("register");
 
                 //注册
-                String num = etRegisterNumber.getText().toString().trim();
+                String phone = etRegisterNumber.getText().toString().trim();
                 String name = etRegisterName.getText().toString().trim();
                 String pwd = etRegisterPwd.getText().toString().trim();
                 String pwdA = etRegisterPwdagain.getText().toString().trim();
 
                 //作输入合法判断
-                if (num.equals("") || num == null || num.length() > 11) {
+                if (phone.equals("") || phone == null || phone.length() > 11) {
                     etRegisterNumber.setText("");
                     Toast.makeText(this, "电话不合法", Toast.LENGTH_SHORT).show();
                     return;
@@ -110,7 +110,7 @@ public class RegisterActivity extends BaseMVPActivity<RegisterPresenterImpl, Reg
                     etRegisterPwdagain.setText("");
                     return;
                 }
-                iHttpPresenter.getRegister(name, pwd);
+                iHttpPresenter.getRegister(name, pwd, phone);
                 printLog("success");
                 break;
         }
@@ -118,7 +118,9 @@ public class RegisterActivity extends BaseMVPActivity<RegisterPresenterImpl, Reg
 
     @Override
     public void onRegister(String registerResult) {
-        Toast.makeText(this, registerResult, Toast.LENGTH_SHORT).show();
+        //返回上级
+        removeCurrentActivity();
+        showMessage(registerResult);
         printLog(registerResult);
     }
 }

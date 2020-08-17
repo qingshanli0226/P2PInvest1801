@@ -18,11 +18,12 @@ import io.reactivex.schedulers.Schedulers;
 
 public class RegisterPresenterImpl extends RegisterContract.RegisterPresenter {
     @Override
-    public void getRegister(String name, String password) {
+    public void getRegister(String name, String password,String phone) {
 
         HashMap<String, String> params = new HashMap<>();
         params.put("name", name);
         params.put("password", password);
+        params.put("phone", phone);
 
         RetrofitManager.getInvestApiService()
                 .onUserRegister(params)
