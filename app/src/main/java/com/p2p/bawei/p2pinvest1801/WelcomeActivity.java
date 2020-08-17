@@ -1,6 +1,7 @@
 package com.p2p.bawei.p2pinvest1801;
 
 import android.animation.ObjectAnimator;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
@@ -26,7 +27,7 @@ import java.util.TimerTask;
 public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdContract.View {
 
     private UpdataBean.ResultBean result;
-    private int num = 3;
+    private int num = 1;
     private ImageView wImg;
     private TextView wTime;
     private Timer timer;
@@ -110,7 +111,31 @@ public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdCont
         builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                final ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
+                progressDialog.setMessage("正在更新。。");
+                progressDialog.setMax(100);
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                progressDialog.show();
 
+
+
+                final Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                    int progress=0;
+
+                    @Override
+                    public void run() {
+                        if (progress==100){
+                            timer.cancel();
+                            progressDialog.dismiss();
+                            startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+                            finish();
+                        }else {
+                            progressDialog.setProgress(progress++);
+                        }
+
+                    }
+                },0,100);
             }
         });
 
@@ -124,7 +149,21 @@ public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdCont
 
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacksAndMessages(null);
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
 
     }
 }

@@ -1,8 +1,10 @@
 package com.p2p.bawei.p2pinvest1801.activity;
 
+
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
+import com.bw.common.view.BottomBar;
 import com.bw.framwork.view.BaseActivity;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.fragment.HomePageFragment;
@@ -13,9 +15,19 @@ import com.p2p.bawei.p2pinvest1801.fragment.MoreFragment;
 public class MainActivity extends BaseActivity {    //王俊豪练习项目
 
     private FragmentTransaction transaction;
+    private BottomBar bottomBar;
     @Override
     public void initView() {
+
         setFragment(0);
+
+        bottomBar=findViewById(R.id.myBottomBar);
+        bottomBar.setBottomBarSelectListener(new BottomBar.IBottomBarSelectListener() {
+            @Override
+            public void onBottomBarSelected(int selectIndex) {
+                setFragment(selectIndex);
+            }
+        });
     }
 
     @Override
@@ -95,4 +107,19 @@ public class MainActivity extends BaseActivity {    //王俊豪练习项目
         }
     }
 
+    @Override
+    protected void onDestroy() {  //内存优化，防止内存泄漏
+        super.onDestroy();
+        bottomBar.unBottomBarSelectListener();
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
 }

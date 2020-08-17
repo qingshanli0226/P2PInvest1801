@@ -25,7 +25,7 @@ public class MyProgressBar extends View {
     private float circle_width;
     private int progress=0;
     private int startAngle=0;
-    private int stepAngle=1;
+    private int stepAngle=2;
     private float offseAngle=0;
     private int progressAngle;
     private int textColor;

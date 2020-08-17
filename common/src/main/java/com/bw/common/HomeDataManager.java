@@ -5,8 +5,16 @@ import com.bw.net.bean.UpdataBean;
 
 public class HomeDataManager {
 
-    private static HomeBean homeBean = null;
-    private static UpdataBean updataBean = null;
+    private HomeBean homeBean = null;
+    private UpdataBean updataBean = null;
+
+    public HomeBean getHomeBean() {
+        return homeBean;
+    }
+
+    public UpdataBean getUpdataBean() {
+        return updataBean;
+    }
 
     private HomeDataManager() {
 

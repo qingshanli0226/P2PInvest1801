@@ -21,9 +21,9 @@ public class RetrofitManager {  //网络请求框架
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(httpLoggingInterceptor)
-                .connectTimeout(60 * 1000, TimeUnit.SECONDS)
-                .readTimeout(60 * 1000, TimeUnit.SECONDS)
-                .writeTimeout(60 * 1000, TimeUnit.SECONDS)
+                .connectTimeout(1, TimeUnit.MINUTES)
+                .readTimeout(1, TimeUnit.MINUTES)
+                .writeTimeout(1, TimeUnit.MINUTES)
                 .build();
 
         retrofit = new Retrofit.Builder()

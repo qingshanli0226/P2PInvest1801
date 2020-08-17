@@ -18,4 +18,14 @@ public class MoreFragment extends BaseFragment {
     public int bandLayout() {
         return R.layout.morefragment;
     }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
 }

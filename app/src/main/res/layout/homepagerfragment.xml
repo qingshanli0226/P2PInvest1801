@@ -4,10 +4,88 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <com.bw.common.view.ToolBar
+        android:id="@+id/main_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-2dp"
+        app:text="首页"
+        app:text_size="25sp"
+        app:toolBar_text_color="#03A9F4">
+
+    </com.bw.common.view.ToolBar>
+
+    <com.youth.banner.Banner
+        android:id="@+id/main_banner"
+        android:layout_below="@+id/main_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+    </com.youth.banner.Banner>
+
+    <TextView
+        android:id="@+id/main_text"
+        android:layout_below="@+id/main_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/main_ll"
+        android:layout_below="@+id/main_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:background="@drawable/yuan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="15dp"
+            android:text="本息保障"
+            android:gravity="center"
+            android:layout_margin="15dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+        <TextView
+            android:background="@drawable/yuan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="15dp"
+            android:text="每日利息"
+            android:gravity="center"
+            android:layout_margin="15dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+        <TextView
+            android:background="@drawable/yuan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="15dp"
+            android:text="高额收益"
+            android:gravity="center"
+            android:layout_margin="15dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+
+    </LinearLayout>
+
     <com.bw.common.view.MyProgressBar
+        android:layout_below="@+id/main_ll"
         android:id="@+id/myPro"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         android:gravity="center"
         android:layout_centerInParent="true"
         app:circle_width="100dp"
@@ -18,4 +96,23 @@
         app:text_color="#3F51B5"
         />
 
+    <TextView
+        android:id="@+id/main_text_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/myPro"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_text_num"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="立即加入"
+        android:textSize="25sp"
+        android:background="@drawable/yuan2"
+        android:textColor="#fff"/>
 </RelativeLayout>

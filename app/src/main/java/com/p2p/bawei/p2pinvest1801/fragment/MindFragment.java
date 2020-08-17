@@ -19,4 +19,14 @@ public class MindFragment extends BaseFragment {
     public int bandLayout() {
         return R.layout.mindfragment;
     }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
 }
