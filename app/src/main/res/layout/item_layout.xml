@@ -39,19 +39,35 @@
 
             </TextView>
 
-            <TextView
-                android:id="@+id/number_price"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_10"
                 android:layout_weight="1">
 
-            </TextView>
+                <TextView
+                    android:id="@+id/number_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#f00">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="万">
+
+                </TextView>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/number"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/manage_list_count">
 
             </TextView>
         </LinearLayout>
@@ -71,19 +87,36 @@
 
             </TextView>
 
-            <TextView
-                android:id="@+id/number_lv"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_10"
                 android:layout_weight="1">
 
-            </TextView>
+                <TextView
+                    android:id="@+id/number_lv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#f00">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%">
+
+                </TextView>
+            </LinearLayout>
+
 
             <TextView
                 android:layout_width="wrap_content"
-                android:text="本息保障"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/manage_list_guarantee"
+                android:text="本息保障">
 
             </TextView>
         </LinearLayout>
@@ -103,19 +136,35 @@
 
             </TextView>
 
-            <TextView
-                android:id="@+id/number_day"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_10"
                 android:layout_weight="1">
 
-            </TextView>
+                <TextView
+                    android:id="@+id/number_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#f00">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="天">
+
+                </TextView>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/number_person"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/manage_list_member">
 
             </TextView>
         </LinearLayout>
@@ -123,13 +172,14 @@
 
         <com.p2p.bawei.p2pinvest1801.view.ProgressView
             android:id="@+id/progress_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:round_size="100dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             app:arc_color="#0080FF"
+            app:round_size="50dp"
             app:circle_color="#6C6C6C"
-            app:stroke_width="20"
-            app:text_size="20dp">
+            app:stroke_width="10"
+            app:text_color="#000"
+            app:text_size="15dp">
 
         </com.p2p.bawei.p2pinvest1801.view.ProgressView>
     </LinearLayout>

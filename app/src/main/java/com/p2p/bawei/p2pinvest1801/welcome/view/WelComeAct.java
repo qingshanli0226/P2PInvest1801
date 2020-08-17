@@ -15,7 +15,6 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.example.common.AppCode;
@@ -27,7 +26,6 @@ import com.p2p.bawei.p2pinvest1801.mvp.view.BaseActivity;
 import com.p2p.bawei.p2pinvest1801.welcome.model.WelComeModel;
 import com.p2p.bawei.p2pinvest1801.welcome.presenter.WelComePresenter;
 import com.p2p.bawei.p2pinvest1801.welcome.center.WelContract;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;

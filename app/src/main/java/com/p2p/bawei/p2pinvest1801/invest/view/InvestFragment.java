@@ -4,29 +4,23 @@ import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.adapter.MyAdapter;
-import com.p2p.bawei.p2pinvest1801.bean.InvestBean;
-import com.p2p.bawei.p2pinvest1801.invest.contract.InvestContract;
-import com.p2p.bawei.p2pinvest1801.invest.model.InvestModel;
-import com.p2p.bawei.p2pinvest1801.invest.presenter.InvestPresenter;
-import com.p2p.bawei.p2pinvest1801.mvp.view.BaseActivity;
 import com.p2p.bawei.p2pinvest1801.mvp.view.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class InvestFragment extends BaseFragment<InvestPresenter> implements InvestContract.View {
+public class InvestFragment extends BaseFragment {
     private TextView mAllInvest;
     private TextView mTuiInvest;
     private TextView mHotInvest;
-    private RecyclerView mListRv;
-    private List<InvestBean.ResultBean> resultBeans;
-    private MyAdapter myAdapter;
+    private ViewPager mListVp;
+
 
     @Override
     public void onClick(View v) {
@@ -34,12 +28,15 @@ public class InvestFragment extends BaseFragment<InvestPresenter> implements Inv
         switch (v.getId()) {
             case R.id.all_invest:
                 upTab(mAllInvest);
+                mListVp.setCurrentItem(0);
                 break;
             case R.id.tui_invest:
                 upTab(mTuiInvest);
+                mListVp.setCurrentItem(1);
                 break;
             case R.id.hot_invest:
                 upTab(mHotInvest);
+                mListVp.setCurrentItem(2);
                 break;
         }
     }
@@ -56,18 +53,10 @@ public class InvestFragment extends BaseFragment<InvestPresenter> implements Inv
         txt.setTextColor(Color.RED);
     }
 
-    @Override
-    public void upDate(InvestBean investBean) {
-        if (resultBeans == null) {
-            resultBeans = new ArrayList<>();
-        }
-        resultBeans = investBean.getResult();
-        myAdapter.getData().addAll(resultBeans);
-        myAdapter.notifyDataSetChanged();
-    }
 
     @Override
     public void initView() {
+        mListVp = (ViewPager) findViewById(R.id.list_vp);
         mAllInvest = (TextView) findViewById(R.id.all_invest);
         mTuiInvest = (TextView) findViewById(R.id.tui_invest);
         mHotInvest = (TextView) findViewById(R.id.hot_invest);
@@ -75,20 +64,57 @@ public class InvestFragment extends BaseFragment<InvestPresenter> implements Inv
         mTuiInvest.setOnClickListener(this);
         mHotInvest.setOnClickListener(this);
 
-        mListRv = (RecyclerView) findViewById(R.id.list_rv);
-        mListRv.setLayoutManager(new LinearLayoutManager(getContext()));
-        myAdapter = new MyAdapter(R.layout.item_layout, resultBeans);
-        mListRv.setAdapter(myAdapter);
+        final List<Fragment> list = new ArrayList<>();
+        list.add(new InvestFirstFragment());
+        list.add(new InvestFirstFragment());
+        list.add(new InvestHotFragment());
+        mListVp.setAdapter(new FragmentStatePagerAdapter(getChildFragmentManager()) {
+            @NonNull
+            @Override
+            public Fragment getItem(int position) {
+                return list.get(position);
+            }
+
+            @Override
+            public int getCount() {
+                return list.size();
+            }
+        });
+        mListVp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        upTab(mAllInvest);
+                        break;
+                    case 1:
+                        upTab(mTuiInvest);
+                        break;
+                    case 2:
+                        upTab(mHotInvest);
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     @Override
     public void initData() {
-        mPresenter.getData();
     }
 
     @Override
     public void initPresenter() {
-        mPresenter = new InvestPresenter(this, new InvestModel());
+
     }
 
     @Override

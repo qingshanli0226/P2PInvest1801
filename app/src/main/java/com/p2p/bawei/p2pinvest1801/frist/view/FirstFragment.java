@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-
 import com.bumptech.glide.Glide;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.bean.FirstBean;
@@ -15,15 +14,12 @@ import com.p2p.bawei.p2pinvest1801.frist.presenter.FirstPresenter;
 import com.p2p.bawei.p2pinvest1801.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.view.ProgressView;
 import com.youth.banner.Banner;
-import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
 import com.youth.banner.listener.OnBannerListener;
 import com.youth.banner.loader.ImageLoader;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.youth.banner.BannerConfig.NUM_INDICATOR;
 
 public class FirstFragment extends BaseFragment<FirstPresenter> implements FirstContract.View {
     private ProgressView mProgressMe;

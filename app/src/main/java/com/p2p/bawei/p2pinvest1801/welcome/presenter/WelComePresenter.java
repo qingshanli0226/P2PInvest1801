@@ -8,10 +8,6 @@ import com.p2p.bawei.p2pinvest1801.bean.WelComeUpAppBean;
 import com.p2p.bawei.p2pinvest1801.mvp.presenter.BasePresenter;
 import com.p2p.bawei.p2pinvest1801.welcome.center.WelContract;
 
-import java.io.IOException;
-
-import okhttp3.MediaType;
-import okhttp3.RequestBody;
 
 public class WelComePresenter extends BasePresenter<WelContract.View, WelContract.Model> {
 

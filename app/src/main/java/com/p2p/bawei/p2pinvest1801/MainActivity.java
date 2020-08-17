@@ -1,14 +1,8 @@
 package com.p2p.bawei.p2pinvest1801;
 
-import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-
 import com.example.net.connecct.NetConnect;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
@@ -36,10 +30,10 @@ public class MainActivity extends BaseActivity {
         mComTab = (CommonTabLayout) findViewById(R.id.com_tab);
         firstFragment = new FirstFragment();
         investFragment = new InvestFragment();
-        list.add(new TabBean("首页", R.drawable.b1, R.drawable.a1));
-        list.add(new TabBean("投资", R.drawable.b4, R.drawable.a4));
-        list.add(new TabBean("我的资产", R.drawable.b2, R.drawable.a2));
-        list.add(new TabBean("更多", R.drawable.b3, R.drawable.a3));
+        list.add(new TabBean("首页", R.drawable.bottom02, R.drawable.bottom01));
+        list.add(new TabBean("投资", R.drawable.bottom04, R.drawable.bottom03));
+        list.add(new TabBean("我的资产", R.drawable.bottom06, R.drawable.bottom05));
+        list.add(new TabBean("更多", R.drawable.bottom08, R.drawable.bottom07));
         mComTab.setTabData(list);
         initFragment();
         mComTab.setOnTabSelectListener(new OnTabSelectListener() {

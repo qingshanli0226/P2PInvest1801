@@ -18,7 +18,6 @@ public class BanAct extends BaseActivity {
 
     @Override
     public void initView() {
-
         mBanWeb = (WebView) findViewById(R.id.ban_web);
         mBanWeb.getSettings().setJavaScriptEnabled(true);
         mBanWeb.getSettings().setBuiltInZoomControls(true);

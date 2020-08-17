@@ -7,6 +7,8 @@ import com.p2p.bawei.p2pinvest1801.bean.FirstBean;
 import com.p2p.bawei.p2pinvest1801.frist.contract.FirstContract;
 import com.p2p.bawei.p2pinvest1801.mvp.model.BaseModel;
 
+import java.util.concurrent.TimeUnit;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 

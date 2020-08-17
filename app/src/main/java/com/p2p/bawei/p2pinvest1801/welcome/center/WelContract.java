@@ -5,9 +5,6 @@ import com.p2p.bawei.p2pinvest1801.bean.WelComeUpAppBean;
 import com.p2p.bawei.p2pinvest1801.mvp.model.IModel;
 import com.p2p.bawei.p2pinvest1801.mvp.view.IView;
 
-import java.io.File;
-
-import okhttp3.RequestBody;
 
 public interface WelContract {
     interface View extends IView {

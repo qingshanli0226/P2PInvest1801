@@ -6,14 +6,8 @@ import com.p2p.bawei.p2pinvest1801.Api;
 import com.p2p.bawei.p2pinvest1801.bean.WelComeUpAppBean;
 import com.p2p.bawei.p2pinvest1801.mvp.model.BaseModel;
 import com.p2p.bawei.p2pinvest1801.welcome.center.WelContract;
-
-import java.io.File;
-import java.util.concurrent.TimeUnit;
-
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
-import okhttp3.RequestBody;
-
 public class WelComeModel extends BaseModel implements WelContract.Model {
 
 
