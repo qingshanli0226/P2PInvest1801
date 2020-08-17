@@ -11,9 +11,9 @@ import android.widget.RadioGroup;
 
 import com.next.easynavigation.view.EasyNavigationBar;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.adapter.MyFragmentAdapter;
 import com.p2p.bawei.p2pinvest1801.view.fragment.HomeFragment;
 import com.p2p.bawei.p2pinvest1801.view.fragment.MoneyFragment;
+import com.p2p.bawei.p2pinvest1801.view.fragment.MoreFragment;
 import com.p2p.bawei.p2pinvest1801.view.fragment.MyMoneyFragment;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private EasyNavigationBar easyBar;
 
     private List<Fragment> list_fragment = new ArrayList<>();
-    private String[] list_title = {"首页","投资","我的投资","更多"};
+    private String[] list_title = {"首页","投资","我的资产","更多"};
     private int[] list_unselect = {R.drawable.bottom01,R.drawable.bottom03,R.drawable.bottom05,R.drawable.bottom07};
     private int[] list_select = {R.drawable.bottom02,R.drawable.bottom04,R.drawable.bottom06,R.drawable.bottom08};
 
@@ -45,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
         list_fragment.add(new HomeFragment());
         list_fragment.add(new MoneyFragment());
         list_fragment.add(new MyMoneyFragment());
-        list_fragment.add(new MoneyFragment());
-
+        list_fragment.add(new MoreFragment());
 
     }
 

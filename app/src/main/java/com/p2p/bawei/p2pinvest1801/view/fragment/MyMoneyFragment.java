@@ -8,11 +8,36 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MyMoneyFragment extends Fragment {
+import com.bw.lib_core.view.BaseFragment;
+import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.bean.MyAllBean;
+import com.p2p.bawei.p2pinvest1801.contract.MyAllContract;
+import com.p2p.bawei.p2pinvest1801.presenter.MyAllPresenter;
 
-    @Nullable
+public class MyMoneyFragment extends BaseFragment<MyAllPresenter> implements MyAllContract.View {
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+    public int bandLayout() {
+        return R.layout.fragment_my_money;
+    }
+
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initInject() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void initAdapter(MyAllBean myAllBean) {
+
     }
 }

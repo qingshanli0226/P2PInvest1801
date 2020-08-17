@@ -19,7 +19,7 @@ public abstract class BaseFragment<P extends IPresenter> extends Fragment implem
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        inflate = inflater.inflate(bandLayout(), container, false);
+        inflate = inflater.inflate(bandLayout(),null);
         return inflate;
     }
 

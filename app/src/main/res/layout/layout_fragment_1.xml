@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/text_title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:textSize="22sp"
         android:layout_marginLeft="20dp"
         android:textColor="#000"/>
@@ -21,7 +21,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:orientation="horizontal"
         android:layout_marginLeft="20dp">
 
@@ -115,19 +115,18 @@
         <com.p2p.bawei.p2pinvest1801.view.ProgressView
             android:id="@+id/progress_view"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="120dp"
             android:layout_weight="1.5"
-            app:circle_color="@android:color/holo_blue_dark"
+            app:circle_color="@android:color/darker_gray"
             app:stroke_width="20"
-            app:round_size="100dp" />
+            app:round_size="90dp" />
 
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="10dp"
         android:background="#25ABDC"
-        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"/>
 
 
