@@ -2,6 +2,7 @@ package com.p2p.bawei.p2pinvest1801.mvp.view.activity;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -127,6 +128,7 @@ public class WelComeActivity extends BaseActivity<HomePresenter> implements Home
     //获取服务端版本信息
     private void getVersion(){
         OkGo.<String>get("http://49.233.93.155:8080/ atguigu/json/P2PInvest/update.json").execute(new StringCallback() {
+            @SuppressLint("LongLogTag")
             @Override
             public void onSuccess(Response<String> response) {
                 String body = response.body();

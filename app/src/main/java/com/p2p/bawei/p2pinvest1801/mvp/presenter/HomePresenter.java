@@ -23,8 +23,10 @@ public class HomePresenter extends BasePresenter<HomeContract.Model,HomeContract
 
             @Override
             public void onNext(HomeBean homeBean) {
-                Log.e("HomePresenter -> getData -> getData -> onNext", "onNext: 请求成功" );
-                mView.initHomeData(homeBean);
+                if (mView!=null){
+                    Log.e("HomePresenter -> getData -> getData -> onNext", "onNext: 请求成功" );
+                    mView.initHomeData(homeBean);
+                }
             }
 
             @Override

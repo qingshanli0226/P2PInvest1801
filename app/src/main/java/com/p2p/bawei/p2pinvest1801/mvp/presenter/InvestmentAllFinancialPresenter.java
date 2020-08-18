@@ -25,8 +25,11 @@ public class InvestmentAllFinancialPresenter extends BasePresenter<InvestmentAll
 
             @Override
             public void onNext(InvestmentBean investmentBean) {
-                Log.e("InvestmentAllFinancialPresenter -> getDta -> onNext", "onNext: " );
-                mView.initAllData(investmentBean);
+                if (mView!=null){
+                    Log.e("InvestmentAllFinancialPresenter -> getDta -> onNext", "onNext: " );
+                    mView.initAllData(investmentBean);
+                }
+
             }
 
             @Override

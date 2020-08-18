@@ -12,22 +12,20 @@ import com.p2p.bawei.p2pinvest1801.divideritemdecoration.BaseDividerItemDecorati
 import com.p2p.bawei.p2pinvest1801.mvp.contract.InvestmentAllFinancialContract;
 import com.p2p.bawei.p2pinvest1801.mvp.model.InvestmentAllFinancialModel;
 import com.p2p.bawei.p2pinvest1801.mvp.presenter.InvestmentAllFinancialPresenter;
+import com.p2p.bawei.p2pinvest1801.tool.InvestmentDataTool;
 import com.sunfusheng.marqueeview.MarqueeView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class InvestmentFragmentAllFinancialFragment extends BaseFragment<InvestmentAllFinancialPresenter> implements InvestmentAllFinancialContract.View {
-    private MarqueeView mainInvestmentAllFinancialViewMarqueeView;
     private RecyclerView mainInvestmentAllFinancialViewRecyclerView;
     private List<InvestmentBean.ResultBean> list = new ArrayList<>();
     private BaseInvestmentFragmentAllFinancialAdapter baseInvestmentFragmentAllFinancialAdapter;
     @Override
     public void initView() {
         mainInvestmentAllFinancialViewRecyclerView = (RecyclerView) findViewById(R.id.main_investment_all_financial_view_RecyclerView);
-        String a = ("硅谷金融好运当头,首投反现最高可达188元");
-        mainInvestmentAllFinancialViewMarqueeView = (MarqueeView) findViewById(R.id.main_investment_all_financial_view_MarqueeView);
-        mainInvestmentAllFinancialViewMarqueeView.startWithText(a);
+
         baseInvestmentFragmentAllFinancialAdapter = new BaseInvestmentFragmentAllFinancialAdapter(R.layout.main_investment_all_financial_item, list);
         mainInvestmentAllFinancialViewRecyclerView.setAdapter(baseInvestmentFragmentAllFinancialAdapter);
         mainInvestmentAllFinancialViewRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -55,8 +53,10 @@ public class InvestmentFragmentAllFinancialFragment extends BaseFragment<Investm
 
     @Override
     public void initAllData(InvestmentBean investmentBean) {
+
         //请求到的数据
         List<InvestmentBean.ResultBean> result = investmentBean.getResult();
+        InvestmentDataTool.list.addAll(result);
         list.addAll(result);
         baseInvestmentFragmentAllFinancialAdapter.notifyDataSetChanged();
 

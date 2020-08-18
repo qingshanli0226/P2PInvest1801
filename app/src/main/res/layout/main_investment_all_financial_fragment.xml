@@ -6,15 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <com.sunfusheng.marqueeview.MarqueeView
-        app:mvDirection="right_to_left"
-        app:mvTextColor="@color/colorRed"
-        app:mvSingleLine="true"
-        android:background="#EBEBEB"
-        android:id="@+id/main_investment_all_financial_view_MarqueeView"
+    <com.p2p.bawei.p2pinvest1801.baseview.BaseTextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        />
+        android:focusableInTouchMode="true"
+        android:focusedByDefault="true"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:textSize="30dp"
+        android:text="喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵tian"
+        android:layout_height="wrap_content" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/main_investment_all_financial_view_RecyclerView"
         android:layout_width="match_parent"

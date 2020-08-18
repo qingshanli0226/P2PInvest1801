@@ -3,11 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="推荐理财"
-        android:textSize="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
     
 
 </LinearLayout>
