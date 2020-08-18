@@ -8,10 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-
+import com.example.baselibrary.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.mvp.view.BaseFragment;
-
 import java.util.ArrayList;
 import java.util.List;
 

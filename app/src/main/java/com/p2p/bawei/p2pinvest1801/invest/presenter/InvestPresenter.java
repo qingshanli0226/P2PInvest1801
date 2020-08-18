@@ -1,9 +1,9 @@
 package com.p2p.bawei.p2pinvest1801.invest.presenter;
 
+import com.example.baselibrary.mvp.presenter.BasePresenter;
 import com.example.net.observer.BaseObserver;
 import com.p2p.bawei.p2pinvest1801.bean.InvestBean;
 import com.p2p.bawei.p2pinvest1801.invest.contract.InvestContract;
-import com.p2p.bawei.p2pinvest1801.mvp.presenter.BasePresenter;
 
 public class InvestPresenter extends BasePresenter<InvestContract.View, InvestContract.Model> {
     public InvestPresenter(InvestContract.View mView, InvestContract.Model mModel) {

@@ -11,14 +11,11 @@ public class AppCode {
 
     public static AppCode getInstance() {
         if (appCode == null) {
-            appCode = new AppCode(context);
+            appCode = new AppCode();
         }
         return appCode;
     }
 
-    public AppCode(Context context) {
-        this.context = context;
-    }
 
     public String getVersion() {
 

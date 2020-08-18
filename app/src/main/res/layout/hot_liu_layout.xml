@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.p2p.bawei.p2pinvest1801.view.MyGroup
+    <com.example.baselibrary.view.MyGroup
         android:id="@+id/liu"
         android:background="#e8e8e8"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/dp_10">
 
-    </com.p2p.bawei.p2pinvest1801.view.MyGroup>
+    </com.example.baselibrary.view.MyGroup>
 </LinearLayout>

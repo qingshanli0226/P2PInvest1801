@@ -13,7 +13,7 @@ public class MyInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
-        Request.Builder builder = request.newBuilder().addHeader("a", "a");
+        Request.Builder builder = request.newBuilder().addHeader("a", null);
         return chain.proceed(builder.build());
     }
 }

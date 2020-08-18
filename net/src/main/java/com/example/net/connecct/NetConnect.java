@@ -1,18 +1,15 @@
 package com.example.net.connecct;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 public class NetConnect {
     private Context context;
-    private static NetConnect netConnect;
 
-    public static NetConnect getNetConnect() {
-        if (netConnect == null) {
-            netConnect = new NetConnect();
-        }
-        return netConnect;
+    public NetConnect(Context context) {
+        this.context = context;
     }
 
     public boolean isNet() {
@@ -29,7 +26,7 @@ public class NetConnect {
         if (context != null) {
             ConnectivityManager mConnectivityManager = (ConnectivityManager) context
                     .getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo mNetworkInfo = mConnectivityManager.getActiveNetworkInfo();
+            @SuppressLint("MissingPermission") NetworkInfo mNetworkInfo = mConnectivityManager.getActiveNetworkInfo();
             if (mNetworkInfo != null) {
                 return mNetworkInfo.isAvailable();
             }

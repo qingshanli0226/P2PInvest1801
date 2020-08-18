@@ -74,7 +74,7 @@
             </TextView>
         </LinearLayout>
 
-        <com.p2p.bawei.p2pinvest1801.view.ProgressView
+        <com.example.baselibrary.view.ProgressView
             android:id="@+id/progress_me"
             android:layout_width="match_parent"
             android:layout_height="140dp"
@@ -83,7 +83,7 @@
             app:stroke_width="15"
             app:text_color="@android:color/holo_green_dark">
 
-        </com.p2p.bawei.p2pinvest1801.view.ProgressView>
+        </com.example.baselibrary.view.ProgressView>
 
         <TextView
             android:layout_width="match_parent"
@@ -96,6 +96,7 @@
         </TextView>
 
         <Button
+            android:id="@+id/btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"

@@ -6,19 +6,19 @@ import android.widget.ImageView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.baselibrary.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.adapter.MyAdapter;
 import com.p2p.bawei.p2pinvest1801.bean.InvestBean;
 import com.p2p.bawei.p2pinvest1801.invest.contract.InvestContract;
 import com.p2p.bawei.p2pinvest1801.invest.model.InvestModel;
 import com.p2p.bawei.p2pinvest1801.invest.presenter.InvestPresenter;
-import com.p2p.bawei.p2pinvest1801.mvp.view.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class InvestFirstFragment extends BaseFragment<InvestPresenter> implements InvestContract.View {
-    private RecyclerView mListRv;
+
     private List<InvestBean.ResultBean> resultBeans;
     private MyAdapter myAdapter;
     private ImageView mAnimationBase;
@@ -31,7 +31,7 @@ public class InvestFirstFragment extends BaseFragment<InvestPresenter> implement
 
     @Override
     public void initView() {
-        mListRv = (RecyclerView) findViewById(R.id.list_rv);
+        RecyclerView mListRv = (RecyclerView) findViewById(R.id.list_rv);
         mListRv.setLayoutManager(new LinearLayoutManager(getContext()));
         myAdapter = new MyAdapter(R.layout.item_layout, resultBeans);
         mListRv.setAdapter(myAdapter);

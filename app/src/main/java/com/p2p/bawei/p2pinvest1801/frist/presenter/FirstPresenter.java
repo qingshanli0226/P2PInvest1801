@@ -2,10 +2,10 @@ package com.p2p.bawei.p2pinvest1801.frist.presenter;
 
 import android.util.Log;
 
+import com.example.baselibrary.mvp.presenter.BasePresenter;
 import com.example.net.observer.BaseObserver;
 import com.p2p.bawei.p2pinvest1801.bean.FirstBean;
 import com.p2p.bawei.p2pinvest1801.frist.contract.FirstContract;
-import com.p2p.bawei.p2pinvest1801.mvp.presenter.BasePresenter;
 
 public class FirstPresenter extends BasePresenter<FirstContract.View, FirstContract.Model> {
 

@@ -5,8 +5,8 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebView;
 
+import com.example.baselibrary.mvp.view.BaseActivity;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.mvp.view.BaseActivity;
 
 public class BanAct extends BaseActivity {
     private WebView mBanWeb;
@@ -30,7 +30,9 @@ public class BanAct extends BaseActivity {
     public void initData() {
         Intent intent = getIntent();
         String web_url = intent.getStringExtra("web_url");
-        mBanWeb.loadUrl(web_url);
+        if (web_url!=null){
+            mBanWeb.loadUrl(web_url);
+        }
     }
 
     @Override

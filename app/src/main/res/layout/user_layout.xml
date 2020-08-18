@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#456">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="资产管理"
+                android:textColor="#0080FF"
+                android:textSize="30dp">
+
+            </TextView>
+
+            <ImageView
+                android:id="@+id/setting_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/my_setting_icon">
+
+            </ImageView>
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1F97C3">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/dp_10"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/user_head_pic"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/my_user_default">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/user_name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:text="Hi,WelCome!"
+                android:textColor="#fff">
+
+            </TextView>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#EDEDED"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="学习提示"
+            android:textColor="#f00">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:text="充值我们将以集成支付宝sdk支付金额演示充值功能"
+            android:textColor="#000">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提现业务:在p2p金融平台中,提现都不是实时到账的,而是审核提现,系统将会告知24小时内进行转账,如果未收到,请联系客服..."
+            android:textColor="#000">
+
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/my_recharge_bg">
+
+            </Button>
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@drawable/my_withdraw_bg">
+
+            </Button>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text=""
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/my_invest_manage"
+        android:drawableRight="@drawable/right">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/my_reward_manage"
+
+        android:drawableRight="@drawable/right">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/my_asset_manage"
+
+        android:drawableRight="@drawable/right">
+
+    </TextView>
+</LinearLayout>

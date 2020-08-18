@@ -14,17 +14,8 @@ public class HttpManager {
     private static HttpManager httpManager;
     private String path;
     private Retrofit retrofit;
-    private Gson gson;
-
     public Retrofit getRetrofit() {
         return create();
-    }
-
-    public Gson getGson() {
-        if (gson == null) {
-            gson = new Gson();
-        }
-        return gson;
     }
 
     private Retrofit create() {
@@ -52,8 +43,6 @@ public class HttpManager {
         }
         return httpManager;
     }
-
-
 
 
 }

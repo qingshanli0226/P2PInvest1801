@@ -1,24 +1,21 @@
 package com.p2p.bawei.p2pinvest1801.invest.view;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.baselibrary.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.mvp.view.BaseFragment;
-import com.p2p.bawei.p2pinvest1801.view.MyGroup;
+import com.example.baselibrary.view.MyGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class InvestHotFragment extends BaseFragment {
-    private MyGroup mLiu;
     List<String> list = new ArrayList<>();
     private int[] color = {0xFFFF34B3, 0xFF9ACD32, 0xFF9400D3, 0xFFEE9A00, 0xFF9C54FF, 0xFF3B78};
 
@@ -30,7 +27,7 @@ public class InvestHotFragment extends BaseFragment {
     @SuppressLint("WrongConstant")
     @Override
     public void initView() {
-        mLiu = (MyGroup) findViewById(R.id.liu);
+        MyGroup mLiu = (MyGroup) findViewById(R.id.liu);
         list = new ArrayList<>();
         list.add("新手福利计划");
         list.add("财神道90天计划");

@@ -5,18 +5,20 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+
 import com.bumptech.glide.Glide;
+import com.example.baselibrary.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.bean.FirstBean;
 import com.p2p.bawei.p2pinvest1801.frist.contract.FirstContract;
 import com.p2p.bawei.p2pinvest1801.frist.model.FirstModel;
 import com.p2p.bawei.p2pinvest1801.frist.presenter.FirstPresenter;
-import com.p2p.bawei.p2pinvest1801.mvp.view.BaseFragment;
-import com.p2p.bawei.p2pinvest1801.view.ProgressView;
+import com.example.baselibrary.view.ProgressView;
 import com.youth.banner.Banner;
 import com.youth.banner.Transformer;
 import com.youth.banner.listener.OnBannerListener;
 import com.youth.banner.loader.ImageLoader;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +28,6 @@ public class FirstFragment extends BaseFragment<FirstPresenter> implements First
     private Banner mFirstBanner;
     private List<String> titles = new ArrayList<>();
     private List<FirstBean.ResultBean.ImageArrBean> imageArr;
-
     @Override
     public void onClick(View v) {
 
@@ -47,7 +48,7 @@ public class FirstFragment extends BaseFragment<FirstPresenter> implements First
             @Override
             public void OnBannerClick(int position) {
                 String imapaurl = imageArr.get(position).getIMAPAURL();
-                startActivity(new Intent(getContext(),BanAct.class).putExtra("web_url",imapaurl));
+                startActivity(new Intent(getContext(), BanAct.class).putExtra("web_url", imapaurl));
             }
         });
     }

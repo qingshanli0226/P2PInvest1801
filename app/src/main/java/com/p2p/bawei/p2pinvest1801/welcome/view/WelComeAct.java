@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
+import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -15,50 +16,46 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
-import com.example.common.AppCode;
+import com.example.baselibrary.mvp.view.BaseActivity;
 import com.example.net.connecct.NetConnect;
 import com.p2p.bawei.p2pinvest1801.MainActivity;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.bean.WelComeUpAppBean;
-import com.p2p.bawei.p2pinvest1801.mvp.view.BaseActivity;
 import com.p2p.bawei.p2pinvest1801.welcome.model.WelComeModel;
 import com.p2p.bawei.p2pinvest1801.welcome.presenter.WelComePresenter;
 import com.p2p.bawei.p2pinvest1801.welcome.center.WelContract;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 
 public class WelComeAct extends BaseActivity<WelComePresenter> implements WelContract.View {
-    private ImageView mWelComeP2PPic;
-    private boolean first;
     private TextView mTimeDao;
-    private Handler handler = new Handler();
+    private int index = 6;
 
     @Override
     public void onClick(View v) {
 
     }
 
-    int index = 6;
 
     @Override
     public void initView() {
-        if (Build.VERSION.SDK_INT >= 23) {
+        if (Build.VERSION.SDK_INT >= 25) {
             requestPermissions(new String[]{
                     Manifest.permission.WRITE_EXTERNAL_STORAGE,
                     Manifest.permission.READ_EXTERNAL_STORAGE
             }, 100);
         }
-        mWelComeP2PPic = (ImageView) findViewById(R.id.WelCome_P2P_pic);
-        mTimeDao = (TextView) findViewById(R.id.time_dao);
-        new AppCode(this);
+        ImageView mWelComeP2PPic = findViewById(R.id.WelCome_P2P_pic);
+        mTimeDao = findViewById(R.id.time_dao);
         Glide.with(this).load(R.drawable.a).transform(new CenterCrop()).into(mWelComeP2PPic);
 
         final ObjectAnimator alpha = ObjectAnimator.ofFloat(mWelComeP2PPic, "alpha", 0, 1);
@@ -120,6 +117,7 @@ public class WelComeAct extends BaseActivity<WelComePresenter> implements WelCon
     }
 
     private void timeDao() {
+        final Handler handler = new Handler();
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -164,9 +162,10 @@ public class WelComeAct extends BaseActivity<WelComePresenter> implements WelCon
                         int contentLength = httpURLConnection.getContentLength();
                         progressDialog.setMax(contentLength);
                         int progress = progressDialog.getProgress();
-                        FileOutputStream fileOutputStream = new FileOutputStream(new File("/sdcard/Download/a.apk"));
+                        String path = Environment.getExternalStorageDirectory().getPath();
+                        FileOutputStream fileOutputStream = new FileOutputStream(new File(path + "a.apk"));
                         byte[] bytes = new byte[1024];
-                        int len = -1;
+                        int len;
                         while ((len = inputStream.read(bytes)) != -1) {
                             fileOutputStream.write(bytes, 0, len);
                             progress += len;
@@ -176,8 +175,6 @@ public class WelComeAct extends BaseActivity<WelComePresenter> implements WelCon
                     } else {
                         Log.e("hq", "run: " + responseCode);
                     }
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

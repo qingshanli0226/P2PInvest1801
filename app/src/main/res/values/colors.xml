@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="tabSelect">#00DCFF</color>
+    <color name="colorack">#00000000</color>
+    <color name="textColor">#6274A2</color>
 </resources>

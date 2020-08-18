@@ -170,7 +170,7 @@
         </LinearLayout>
 
 
-        <com.p2p.bawei.p2pinvest1801.view.ProgressView
+        <com.example.baselibrary.view.ProgressView
             android:id="@+id/progress_item"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -181,6 +181,6 @@
             app:text_color="#000"
             app:text_size="15dp">
 
-        </com.p2p.bawei.p2pinvest1801.view.ProgressView>
+        </com.example.baselibrary.view.ProgressView>
     </LinearLayout>
 </LinearLayout>

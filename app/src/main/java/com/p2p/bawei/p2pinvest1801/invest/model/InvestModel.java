@@ -1,14 +1,11 @@
 package com.p2p.bawei.p2pinvest1801.invest.model;
 
+import com.example.baselibrary.mvp.model.BaseModel;
 import com.example.net.http.HttpManager;
 import com.example.net.observer.BaseObserver;
 import com.p2p.bawei.p2pinvest1801.Api;
 import com.p2p.bawei.p2pinvest1801.bean.InvestBean;
 import com.p2p.bawei.p2pinvest1801.invest.contract.InvestContract;
-import com.p2p.bawei.p2pinvest1801.mvp.model.BaseModel;
-
-import java.util.concurrent.TimeUnit;
-
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 

@@ -6,7 +6,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.bean.InvestBean;
-import com.p2p.bawei.p2pinvest1801.view.ProgressView;
+import com.example.baselibrary.view.ProgressView;
 import java.util.List;
 
 public class MyAdapter extends BaseQuickAdapter<InvestBean.ResultBean, BaseViewHolder> {
