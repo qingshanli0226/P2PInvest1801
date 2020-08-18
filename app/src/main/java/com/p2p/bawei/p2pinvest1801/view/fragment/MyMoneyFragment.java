@@ -1,5 +1,6 @@
 package com.p2p.bawei.p2pinvest1801.view.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -7,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.bw.lib_core.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
@@ -14,7 +16,9 @@ import com.p2p.bawei.p2pinvest1801.bean.MyAllBean;
 import com.p2p.bawei.p2pinvest1801.contract.MyAllContract;
 import com.p2p.bawei.p2pinvest1801.presenter.MyAllPresenter;
 
-public class MyMoneyFragment extends BaseFragment<MyAllPresenter> implements MyAllContract.View {
+public class MyMoneyFragment extends BaseFragment<MyAllPresenter> implements MyAllContract.View, View.OnClickListener {
+
+    private ImageView settings;
 
     @Override
     public int bandLayout() {
@@ -24,6 +28,8 @@ public class MyMoneyFragment extends BaseFragment<MyAllPresenter> implements MyA
     @Override
     public void initView() {
 
+        settings = (ImageView) findViewById(R.id.settings);
+        settings.setOnClickListener(this);
     }
 
     @Override
@@ -39,5 +45,15 @@ public class MyMoneyFragment extends BaseFragment<MyAllPresenter> implements MyA
     @Override
     public void initAdapter(MyAllBean myAllBean) {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.settings:
+                Intent intent = new Intent(getActivity(),UserMessageActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 }

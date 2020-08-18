@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import com.p2p.bawei.p2pinvest1801.R;
 
@@ -19,6 +20,9 @@ public class WelComeActivity extends AppCompatActivity {
 
     private Handler handler = new Handler();
     int index = 3;
+    private ImageView imageWelcome;
+    private int image_alph=1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +32,15 @@ public class WelComeActivity extends AppCompatActivity {
             requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
         }
 
+        initView();
         initIntent();
 
+
+    }
+
+    private void initView() {
+
+        imageWelcome = (ImageView) findViewById(R.id.image_welcome);
 
     }
 
@@ -92,6 +103,26 @@ public class WelComeActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
+                        final Timer timer = new Timer();
+                        timer.schedule(new TimerTask() {
+                            @Override
+                            public void run() {
+
+                                try {
+                                    Thread.sleep(2000);
+                                    imageWelcome.setAlpha(image_alph--);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+
+                                if(imageWelcome.getAlpha()==0){
+                                    timer.cancel();
+                                    finish();
+                                    Intent intent = new Intent(WelComeActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                }
+                            }
+                        },0,1000);
                         Intent intent = new Intent(WelComeActivity.this, MainActivity.class);
                         startActivity(intent);
 
