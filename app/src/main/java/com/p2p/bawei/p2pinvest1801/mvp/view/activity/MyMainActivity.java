@@ -1,21 +1,15 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.activity;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.View;
-
 import com.example.common.mvp.view.BaseActivity;
 import com.next.easynavigation.view.EasyNavigationBar;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.bean.MyBannerEntity;
-import com.p2p.bawei.p2pinvest1801.mvp.contract.MyContract;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.MyFragment_MyMoney;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.MyInvest;
+import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.MyMorFragment;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.Myfragment;
-
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +33,7 @@ public class MyMainActivity extends BaseActivity  {
         list_fragment.add(new Myfragment());
         list_fragment.add(new MyInvest());
         list_fragment.add(new MyFragment_MyMoney());
-        list_fragment.add(new Myfragment());
+        list_fragment.add(new MyMorFragment());
 
         es.titleItems(list_ttt).normalIconItems(list_pic).selectIconItems(list_pic_t)
                 .fragmentList(list_fragment)

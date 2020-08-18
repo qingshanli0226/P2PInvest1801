@@ -49,5 +49,13 @@ dependencies {
     implementation 'com.youth.banner:banner:1.4.10'//轮播图
     implementation 'com.github.bumptech.glide:glide:4.9.0'//glide依赖
     implementation 'com.github.LRH1993:AutoFlowLayout:1.0.5'//viewgroup
+//    implementation 'com.github.wildma:PictureSelector:2.0.0'
+//    implementation 'com.blankj:utilcode:1.27.6'
+    //导入LeakCanary的依赖，去定位页面的内存泄漏问题。
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'
+
 
 }

@@ -4,29 +4,62 @@
     android:orientation="vertical"
     android:layout_height="match_parent">
     <TextView
-        android:text="充值"
+        android:text="提现"
         android:textSize="50dp"
         android:gravity="center"
         android:textColor="#26B7ED"
         android:background="#102531"
         android:layout_width="match_parent"
         android:layout_height="80dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:background="#5F5E5E"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <TextView
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:text="支付宝:151428109@qq.com"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="#5F5E5E"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:background="#5F5E5E"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
         <LinearLayout
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
                 android:textColor="#000"
                 android:textSize="20sp"
-                android:text="充值金额"
+                android:text="提现金额 |"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <EditText
-                android:id="@+id/ed_topup"
-                android:hint="请输入充值金额"
+                android:hint="请输入100元以上金额"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
+        <View
+            android:background="#5F5E5E"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+    </LinearLayout>
     <LinearLayout
         android:layout_margin="10dp"
         android:layout_width="match_parent"
@@ -38,7 +71,7 @@
             android:layout_height="wrap_content" />
         <TextView
             android:textColor="#F00F0F"
-            android:text="0"
+            android:text="888888"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
@@ -48,9 +81,8 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
     <Button
-        android:id="@+id/but_topup"
         android:layout_margin="20dp"
-        android:text="充值"
+        android:text="提现"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <LinearLayout
@@ -64,31 +96,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
-            android:text="1.所有投资保险金将有第三方平台托管。"
+            android:text="1.若您未在本平台理财,账户金额在3个月以后才能进行提现申请。"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
-            android:text="2.线上,线下充值手续费全免。"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="3.请注意您的银行卡充值限额,以免造成不便。"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="4.如果充值进行的没有及时到账.,请与客服联系。"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="5.禁止信用卡套现,虚假交易等行为,已经发现给予以处罚,包括但不限于;限制收款,冻结账户,永久停止服务等。"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="6.如果您的账户充值金额为用于投资在本平台的理财服务3个月之后才能进行体现申请。"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="7.如果已在手机客户端充值.则电脑端或手机端体现都只能使用该银行卡.除非原卡丢失,损坏或停用,否则一经绑定银行卡,将不得更换.此情况下,请联系客服并提供由银行卡提供的书面证明材料。"
+            android:text="2.如果已绑定过银行卡的快捷签约,绑定后,无论在电脑pc端或手机端提现都只能使用该银行卡.除非原卡丢失,损坏或停用,否则一经绑定银行卡,将不得更换.此种情况下,请提供由银行提供的书面证明材料。"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>

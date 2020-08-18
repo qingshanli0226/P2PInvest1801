@@ -4,14 +4,10 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-
-import java.util.ArrayList;
 import java.util.List;
-
 public class MyFragmentAdapter extends FragmentPagerAdapter {
     private List<String> list_title;
     private List<Fragment> list_fragment;
-
     public MyFragmentAdapter(FragmentManager fm, List<String> list_title, List<Fragment> list_fragment) {
         super(fm);
         this.list_title = list_title;

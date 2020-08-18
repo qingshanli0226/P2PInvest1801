@@ -1,17 +1,14 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 
-import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-
 import com.example.common.mvp.view.BaseFragment;
 import com.example.library.AutoFlowLayout;
 import com.example.library.FlowAdapter;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.adapter.MyFragmentfragmentAdapter;
 import com.p2p.bawei.p2pinvest1801.bean.MyInestEntivity;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.MyInvestContract;
 import com.p2p.bawei.p2pinvest1801.mvp.model.MyInvestModel;

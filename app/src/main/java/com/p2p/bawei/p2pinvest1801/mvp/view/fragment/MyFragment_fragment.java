@@ -1,9 +1,6 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
-
-import android.graphics.Color;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
 import com.example.common.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.adapter.MyFragmentfragmentAdapter;

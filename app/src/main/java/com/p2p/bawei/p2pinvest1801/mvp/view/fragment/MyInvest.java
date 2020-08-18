@@ -4,12 +4,9 @@ import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-
 import com.example.common.mvp.view.BaseFragment;
-import com.next.easynavigation.view.EasyNavigationBar;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.adapter.MyViewPageAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 

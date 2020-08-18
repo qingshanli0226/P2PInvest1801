@@ -3,12 +3,11 @@ package com.p2p.bawei.p2pinvest1801.mvp.api;
 import com.p2p.bawei.p2pinvest1801.bean.EdtivitnEnitiy;
 import com.p2p.bawei.p2pinvest1801.bean.MyBannerEntity;
 import com.p2p.bawei.p2pinvest1801.bean.MyInestEntivity;
-
-import java.util.List;
+import com.p2p.bawei.p2pinvest1801.bean.MyRegisterEntity;
 
 import io.reactivex.Observable;
-import io.reactivex.Observer;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 public interface Api {
     @GET("atguigu/json/P2PInvest/index.json")
@@ -17,4 +16,7 @@ public interface Api {
     Observable<EdtivitnEnitiy> getedtivity();
     @GET("atguigu/json/P2PInvest/product.json")
     Observable<MyInestEntivity> getintivity();
+    @POST("register")
+    Observable<MyRegisterEntity> getregister();
+
 }

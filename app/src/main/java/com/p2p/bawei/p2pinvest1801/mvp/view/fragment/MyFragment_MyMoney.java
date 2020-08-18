@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import com.example.common.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.mvp.view.activity.MyMessagesActivity;
+import com.p2p.bawei.p2pinvest1801.mvp.view.activity.MyTop_Up_Activity;
+import com.p2p.bawei.p2pinvest1801.mvp.view.activity.MyWithdrawDepositActivity;
 
 public class MyFragment_MyMoney extends BaseFragment {
     private Button topUp;
@@ -40,14 +42,14 @@ public class MyFragment_MyMoney extends BaseFragment {
             @Override
             public void onClick(View v) {
                 //充值
-
+                startActivity(new Intent(getActivity(), MyTop_Up_Activity.class));
             }
         });
         //提现
         withdrawDeposit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(getActivity(), MyWithdrawDepositActivity.class));
             }
         });
     }
