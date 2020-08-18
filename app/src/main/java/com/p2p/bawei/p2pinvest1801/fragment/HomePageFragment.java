@@ -89,4 +89,10 @@ public class HomePageFragment extends BaseFragment {
     public void hideLoading() {
 
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        myProgressBar.unMyProgressBar();
+    }
 }

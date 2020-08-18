@@ -13,6 +13,7 @@ public class AllPresenter extends BasePresenter<AllContract.Model,AllContract.Vi
     public AllPresenter(AllContract.Model mModel, AllContract.View mView) {
         super(mModel, mView);
     }
+    private Disposable mdisposable = null;
 
     public void data(){
         mModel.getData(new MyCallBack<AllLCBean>() {
@@ -32,6 +33,7 @@ public class AllPresenter extends BasePresenter<AllContract.Model,AllContract.Vi
             @Override
             public void accept(Disposable disposable) throws Exception {
                 mView.showLoading();
+                mdisposable=disposable;
             }
         },new Action() {
             @Override
@@ -39,5 +41,13 @@ public class AllPresenter extends BasePresenter<AllContract.Model,AllContract.Vi
                 mView.hideLoading();
             }
         });
+    }
+
+    @Override
+    public void ondestory() {
+        super.ondestory();
+        if (!mdisposable.isDisposed()){ //中断请求数据释放资源
+            mdisposable.dispose();
+        }
     }
 }

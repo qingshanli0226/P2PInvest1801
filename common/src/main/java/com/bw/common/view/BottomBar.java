@@ -144,6 +144,7 @@ public class BottomBar extends FrameLayout {
                         break;
                     case SHOPCAR_INDEX:
                         shopcarimg.setImageResource(R.drawable.bottom06);
+                        radioButton.setTextColor(Color.RED);
                         break;
                     case MINE_INDEX:
                         mineimg.setImageResource(R.drawable.bottom08);

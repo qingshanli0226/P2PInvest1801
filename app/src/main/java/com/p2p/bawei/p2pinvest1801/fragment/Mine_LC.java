@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bw.framwork.view.BaseFragment;
 import com.bw.net.bean.AllLCBean;
@@ -22,6 +23,7 @@ public class Mine_LC extends BaseFragment<AllPresenter> implements AllContract.V
     private ArrayList<AllLCBean.ResultBean> data = new ArrayList<>();
     private ImageView dogeimg;
     private AnimationDrawable dogeimgBackground;
+    private TextView loadingtext;
 
 
     @Override
@@ -29,6 +31,7 @@ public class Mine_LC extends BaseFragment<AllPresenter> implements AllContract.V
         mineLcRv = (RecyclerView) findViewById(R.id.mine_lc_rv);
         dogeimg = findViewById(R.id.doge_img);
         dogeimgBackground = (AnimationDrawable) dogeimg.getBackground();
+        loadingtext=findViewById(R.id.loading_text);
 
         adapter = new Mine_LCAdapter(R.layout.minelcrv_item, data);
         mineLcRv.setAdapter(adapter);
@@ -58,13 +61,17 @@ public class Mine_LC extends BaseFragment<AllPresenter> implements AllContract.V
 
     @Override
     public void showLoading() {
+        mineLcRv.setVisibility(View.GONE);
         dogeimg.setVisibility(View.VISIBLE);
+        loadingtext.setVisibility(View.VISIBLE);
         dogeimgBackground.start();
     }
 
     @Override
     public void hideLoading() {
+        mineLcRv.setVisibility(View.VISIBLE);
         dogeimg.setVisibility(View.GONE);
+        loadingtext.setVisibility(View.GONE);
         dogeimgBackground.stop();
     }
 }

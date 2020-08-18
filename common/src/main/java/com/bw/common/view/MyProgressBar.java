@@ -133,4 +133,9 @@ public class MyProgressBar extends View {
         }
     };
 
+    public void unMyProgressBar(){
+        handler.removeCallbacksAndMessages(null);
+    }
+
+
 }

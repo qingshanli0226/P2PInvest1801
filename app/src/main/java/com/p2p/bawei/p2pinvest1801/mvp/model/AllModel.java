@@ -22,7 +22,7 @@ public class AllModel extends BaseModel implements AllContract.Model {
         RetrofitManager.getInstance().retrofit
                 .create(Api.class)
                 .getAllLCBean()
-                .delay(3, TimeUnit.SECONDS)
+                .delay(2, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .doOnSubscribe(consumer)
