@@ -1,6 +1,5 @@
 package com.p2p.bawei.p2pinvest1801;
 
-
 import com.p2p.bawei.p2pinvest1801.bean.FoodBean;
 
 import io.reactivex.Observable;

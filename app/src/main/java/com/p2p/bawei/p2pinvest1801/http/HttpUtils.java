@@ -13,7 +13,7 @@ public class HttpUtils {
     private Retrofit retrofit;
     private String url;
 
-    public static HttpUtils getHttpUtiles() {
+    public static HttpUtils getHttpUtils() {
         if (httpUtils == null){
             httpUtils = new HttpUtils();
         }
