@@ -57,5 +57,9 @@ dependencies {
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'
 
+    implementation 'com.andrognito.patternlockview:patternlockview:1.0.0'
+    // Optional, for RxJava2 adapter
+    implementation 'com.andrognito.patternlockview:patternlockview-reactive:1.0.0'
+    implementation 'com.alibaba:fastjson:1.2.41' //fastjson
 
 }

@@ -23,6 +23,8 @@
         <activity android:name=".mvp.view.activity.MyTop_Up_Activity"></activity>
         <activity android:name=".mvp.view.activity.MyWithdrawDepositActivity"></activity>
         <activity android:name=".mvp.view.activity.MyUserregisActivity"></activity>
+        <activity android:name=".mvp.view.activity.MyHelperActivity"></activity>
+        <activity android:name=".mvp.view.activity.MyGestureActivity"></activity>
     </application>
 
 

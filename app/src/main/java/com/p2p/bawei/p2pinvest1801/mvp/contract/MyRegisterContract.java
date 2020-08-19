@@ -8,9 +8,11 @@ import io.reactivex.Observer;
 
 public interface MyRegisterContract  {
     interface mModle extends IModel {
-        void getregister(Observer<MyRegisterEntity> observer);
+        void getregister(String name,String paw,Observer<MyRegisterEntity> observer);
     }
     interface mView extends IView {
         void getregister(MyRegisterEntity myRegisterEntity);
+        String getusername();
+        String getpaw();
     }
 }

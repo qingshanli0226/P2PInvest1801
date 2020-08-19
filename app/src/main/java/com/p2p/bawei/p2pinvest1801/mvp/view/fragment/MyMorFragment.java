@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 import com.example.common.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.mvp.view.activity.MainActivity;
+import com.p2p.bawei.p2pinvest1801.mvp.view.activity.MyGestureActivity;
+import com.p2p.bawei.p2pinvest1801.mvp.view.activity.MyHelperActivity;
 import com.p2p.bawei.p2pinvest1801.mvp.view.activity.MyUserregisActivity;
 
 public class MyMorFragment extends BaseFragment implements View.OnClickListener {
@@ -69,6 +72,7 @@ public class MyMorFragment extends BaseFragment implements View.OnClickListener 
                         @Override
                         public void onClick(View v) {
                             Toast.makeText(getContext(), "设置", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getActivity(), MyGestureActivity.class));
                             popupWindow.dismiss();
                         }
                     });
@@ -96,6 +100,46 @@ public class MyMorFragment extends BaseFragment implements View.OnClickListener 
         switch (id){
             case R.id.userregis:
                 startActivity(new Intent(getContext(), MyUserregisActivity.class));
+                break;
+            case R.id.agegespassword:
+                Toast.makeText(getContext(), "重置手势密码", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.ccservice:
+                final PopupWindow popupWindow = new PopupWindow();
+                popupWindow.setWidth(450);
+                popupWindow.setHeight(800);
+                popupWindow.setOutsideTouchable(true);
+                View inflate = getLayoutInflater().inflate(R.layout.ssmm, null);
+                popupWindow.setContentView(inflate);
+                popupWindow.showAtLocation(ccservice, Gravity.CENTER_HORIZONTAL,0,100);
+                Button bt_sure = inflate.findViewById(R.id.bt_sure);
+                Button bt_cancle = inflate.findViewById(R.id.bt_cancle);
+                bt_sure.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        popupWindow.dismiss();
+                    }
+                });
+                bt_cancle.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popupWindow.dismiss();
+                    }
+                });
+                Toast.makeText(getContext(), "联系客服", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.userfeedback:
+
+                Toast.makeText(getContext(), "用户反馈", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.friendsshare:
+
+                Toast.makeText(getContext(), "分享给好友", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.inregard:
+                startActivity(new Intent(getActivity(), MyHelperActivity.class));
+                Toast.makeText(getContext(), "关于硅谷理财", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

@@ -33,7 +33,7 @@ public class HttpManager {
                 .readTimeout(5, TimeUnit.SECONDS)
                 .build();
          retrofit = new Retrofit.Builder().client(client)
-                .baseUrl("http://49.233.93.155:8080/")
+                .baseUrl("http://49.233.93.155:9999/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
