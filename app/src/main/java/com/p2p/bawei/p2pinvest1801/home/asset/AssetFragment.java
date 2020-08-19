@@ -1,4 +1,4 @@
-package com.p2p.bawei.p2pinvest1801.home;
+package com.p2p.bawei.p2pinvest1801.home.asset;
 
 
 import android.os.Bundle;
@@ -14,19 +14,18 @@ import com.p2p.bawei.p2pinvest1801.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class InvestkFragment extends Fragment {
+public class AssetFragment extends Fragment {
 
 
-    public InvestkFragment() {
-        // Required empty public constructor
-    }
+
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_investk, container, false);
+        View view = inflater.inflate(R.layout.fragment_asset, container, false);
+
+        return view;
     }
 
 }

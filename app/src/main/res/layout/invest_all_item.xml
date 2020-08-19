@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_height="150dp">
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/item_invest_all_name"
+            android:text="新手福利计划"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:src="@drawable/right"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+    <View
+        android:background="#E6DDDD"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_marginTop="15dp"
+                android:text="产品金额"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+            <TextView
+                android:id="@+id/item_invest_all_money"
+
+                android:layout_marginTop="5dp"
+                android:text="10万"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+            <TextView
+                android:id="@+id/item_invest_all_minTouMoney"
+                android:drawableLeft="@drawable/product_part1_icon"
+                android:layout_marginTop="5dp"
+                android:text="100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_marginTop="15dp"
+                android:text="预期年利率"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+            <TextView
+                android:id="@+id/item_invest_all_yearRate"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="8.00%"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+            <TextView
+                android:drawableLeft="@drawable/product_part4_icon"
+                android:layout_marginTop="5dp"
+                android:text="本息保障"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:text="锁定期"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp" />
+                <TextView
+                    android:id="@+id/item_invest_all_suodingDays"
+                    android:layout_marginTop="5dp"
+                    android:text="30天"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp" />
+                <TextView
+                    android:id="@+id/item_invest_all_memberNum"
+
+                    android:drawableLeft="@drawable/product_part3_icon"
+                    android:layout_marginTop="5dp"
+                    android:text="100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <com.p2p.bawei.p2pinvest1801.ProgressView
+                android:id="@+id/item_invest_all_progress"
+                android:layout_width="60dp"
+                android:layout_gravity="center"
+                app:circle_color="@android:color/darker_gray"
+                app:arc_color="@android:color/holo_blue_dark"
+                app:stroke_width="5"
+                app:round_size="40dp"
+                app:text_color="@android:color/holo_blue_dark"
+                android:layout_height="60dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

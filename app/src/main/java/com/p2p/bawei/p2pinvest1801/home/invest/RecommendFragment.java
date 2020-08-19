@@ -1,4 +1,4 @@
-package com.p2p.bawei.p2pinvest1801.home;
+package com.p2p.bawei.p2pinvest1801.home.invest;
 
 
 import android.os.Bundle;
@@ -14,10 +14,10 @@ import com.p2p.bawei.p2pinvest1801.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MoreFragment extends Fragment {
+public class RecommendFragment extends Fragment {
 
 
-    public MoreFragment() {
+    public RecommendFragment() {
         // Required empty public constructor
     }
 
@@ -26,7 +26,7 @@ public class MoreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_more, container, false);
+        return inflater.inflate(R.layout.fragment_recommend, container, false);
     }
 
 }

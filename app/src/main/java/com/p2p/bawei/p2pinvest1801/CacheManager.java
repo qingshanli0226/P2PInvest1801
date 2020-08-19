@@ -1,6 +1,7 @@
 package com.p2p.bawei.p2pinvest1801;
 
 import com.example.net.activity_bean.IndexBean;
+import com.example.net.activity_bean.InvestBean;
 import com.example.net.activity_bean.UpdateBean;
 
 public class CacheManager {
@@ -16,6 +17,15 @@ public class CacheManager {
     }
     private IndexBean indexBean;
     private UpdateBean updateBean;
+    private InvestBean investBean;
+
+    public InvestBean getInvestBean() {
+        return investBean;
+    }
+
+    public void setInvestBean(InvestBean investBean) {
+        this.investBean = investBean;
+    }
 
     public IndexBean getIndexBean() {
         return indexBean;

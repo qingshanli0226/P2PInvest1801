@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.common.NetCommon;
 import com.example.framework2.mvp.view.BaseActivity;
 import com.example.net.activity_bean.IndexBean;
+import com.example.net.activity_bean.InvestBean;
 import com.example.net.activity_bean.UpdateBean;
 import com.example.net.api_srever.ApiServer;
 import com.example.net.http.HttpManager;
@@ -54,6 +55,7 @@ public class WelcomeActivity extends BaseActivity {
         initView();
         initIndex();
         initVersion();
+        initInvest();
         timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -80,6 +82,25 @@ public class WelcomeActivity extends BaseActivity {
 
             }
         }, 1000,1000);
+    }
+
+    private void initInvest() {
+        HttpManager.getHttpManager().getRetrofit()
+                .create(ApiServer.class)
+                .getInvestk()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new BaseObserver<InvestBean>() {
+                    @Override
+                    public void success(InvestBean investBean) {
+                        CacheManager.getInstance().setInvestBean(investBean);
+                    }
+
+                    @Override
+                    public void error(String errorCode, String errorMessage) {
+
+                    }
+                });
     }
 
     private void initVersion() {
@@ -115,6 +136,7 @@ public class WelcomeActivity extends BaseActivity {
                     public void success(IndexBean indexBean) {
                         CacheManager.getInstance().setIndexBean(indexBean);
                         Log.e("FFF", "success: "+indexBean.getMsg()+indexBean.getCode() );
+
                     }
 
                     @Override
@@ -133,7 +155,7 @@ public class WelcomeActivity extends BaseActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        isUpdate=true;
+
                     }
                 })
                 .setNegativeButton("否", new DialogInterface.OnClickListener() {
@@ -142,7 +164,7 @@ public class WelcomeActivity extends BaseActivity {
                         Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
                         startActivity(intent);
                         WelcomeActivity.this.finish();
-                        isUpdate=false;
+
                     }
                 })
                 .create().show();

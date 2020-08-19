@@ -1,6 +1,7 @@
 package com.example.net.api_srever;
 
 import com.example.net.activity_bean.IndexBean;
+import com.example.net.activity_bean.InvestBean;
 import com.example.net.activity_bean.UpdateBean;
 
 import io.reactivex.Observable;
@@ -11,4 +12,7 @@ public interface ApiServer {
     Observable<IndexBean> getIndex();
     @GET("atguigu/json/P2PInvest/update.json")
     Observable<UpdateBean> getVersion();
+
+    @GET("atguigu/json/P2PInvest/product.json")
+    Observable<InvestBean> getInvestk();
 }

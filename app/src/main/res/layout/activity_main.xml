@@ -20,17 +20,31 @@
             android:textAlignment="center"
             android:text="首页"
             android:textSize="30dp"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_action_settings"
+            android:id="@+id/asset_set"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            />
     </RelativeLayout>
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/me_vp"
-        android:layout_weight="13"></androidx.viewpager.widget.ViewPager>
+        android:layout_weight="13">
+
+    </androidx.viewpager.widget.ViewPager>
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:id="@+id/me_tab"
-        app:tabMode="auto"
+        app:tabMaxWidth="0dp"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
         app:tabSelectedTextColor="#26B8EE"
         android:layout_height="0dp"
-        android:layout_weight="1"></com.google.android.material.tabs.TabLayout>
+        android:layout_weight="1">
+
+    </com.google.android.material.tabs.TabLayout>
 </LinearLayout>
