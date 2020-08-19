@@ -44,19 +44,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
 
     }
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        long l = System.currentTimeMillis();
-        long jian = l - thisTime;
-        if (jian > 1000) {
-            thisTime = l;
-            jian = 0;
-            showMessage("再次点击退出应用");
-        } else if (jian <= 1000) {
-            finish();
-        }
-        return false;
-    }
+
 
 
     @Override

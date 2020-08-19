@@ -14,12 +14,15 @@ public class UserFragment extends BaseFragment {
 
     @Override
     public void onClick(View view) {
-
+        if (view.getId() == R.id.user_head_pic) {
+            ARouter.getInstance().build(ARouterCode.USER_LOGIN_ACT).navigation();
+        }
     }
 
     @Override
     public void initView() {
         ARouter.getInstance().inject(getContext());
+        findViewById(R.id.user_head_pic).setOnClickListener(this);
     }
 
     @Override

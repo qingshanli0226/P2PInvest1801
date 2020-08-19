@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.p2p.bawei.p2pinvest1801">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/TranslucentTheme"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:ignore="UnusedAttribute">
         <activity
             android:name=".welcome.view.WelComeAct"
             android:launchMode="singleInstance">
@@ -31,6 +33,11 @@
         </activity>
         <activity android:name=".frist.view.BanAct" />
         <activity android:name=".invest.view.InvestFragment" />
+        <activity android:name=".user_act.view.LoginAct" />
+        <activity android:name=".user_act.view.RegisterAct" />
+        <activity android:name=".lock.LockAct" />
+        <activity android:name=".lock.LockFragment" />
+        <activity android:name=".user.TouManagerAct" />
     </application>
 
 </manifest>
