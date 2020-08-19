@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.p2p.bawei.p2pinvest1801.fragmentfour.FragmentFour;
@@ -19,6 +20,7 @@ public class Main2Activity extends BaseActivity {
     private ViewPager viewpager;
     private TabLayout tabIdLayout;
     private TextView tvIdAct;
+    private ImageView ivIdAct;
     private ArrayList<Fragment> list = new ArrayList<>();
 
     @Override
@@ -36,6 +38,7 @@ public class Main2Activity extends BaseActivity {
         viewpager = findViewById(R.id.viewpager);
         tabIdLayout = findViewById(R.id.tab_id_layout);
         tvIdAct = findViewById(R.id.tv_id_act);
+        ivIdAct = findViewById(R.id.iv_id_act);
 
         initTab();
 
@@ -80,12 +83,16 @@ public class Main2Activity extends BaseActivity {
                 viewpager.setCurrentItem(position);
                 if (position == 0){
                     tvIdAct.setText("首页");
+                    ivIdAct.setVisibility(View.INVISIBLE);
                 }else if (position ==1){
                     tvIdAct.setText("投资");
+                    ivIdAct.setVisibility(View.INVISIBLE);
                 }else if (position == 2){
                     tvIdAct.setText("我的资产");
+                    ivIdAct.setVisibility(View.VISIBLE);
                 }else if (position == 3){
                     tvIdAct.setText("更多");
+                    ivIdAct.setVisibility(View.INVISIBLE);
                 }
             }
 
