@@ -2,6 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="#f3f3f3"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,9 +10,8 @@
         android:background="#28baed"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_weight="2"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="150dp">
         <ImageView
             android:id="@+id/iv_id_f3"
             android:src="@drawable/ic_launcher_background"
@@ -29,11 +29,10 @@
     <LinearLayout
         android:orientation="vertical"
         android:background="#f3f3f3"
-        android:layout_weight="3"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="230dp">
         <TextView
-            android:layout_marginTop="10dp"
+            android:paddingTop="10dp"
             android:layout_marginLeft="10dp"
             android:textColor="#f00"
             android:textSize="20dp"
@@ -56,37 +55,37 @@
             android:layout_height="wrap_content"/>
 
         <LinearLayout
+            android:paddingBottom="10dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:layout_height="wrap_content">
             <Button
                 android:id="@+id/bt_ChongZhi"
                 android:textSize="20dp"
                 android:textColor="#e84768"
                 android:text="充值"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/button_left"
                 android:layout_width="170dp"
-                android:layout_height="70dp"/>
+                android:layout_height="60dp"/>
             <Button
                 android:id="@+id/bt_TiXian"
                 android:textSize="20dp"
                 android:text="提现"
                 android:textColor="#28baed"
                 android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/button_right"
                 android:layout_width="170dp"
-                android:layout_height="70dp"/>
+                android:layout_height="60dp"/>
 
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
+        android:background="#fff"
         android:orientation="vertical"
-        android:layout_weight="3"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="200dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="70dp">
