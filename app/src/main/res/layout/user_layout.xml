@@ -51,7 +51,6 @@
             android:orientation="vertical">
 
             <ImageView
-
                 android:id="@+id/user_head_pic"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -132,7 +131,6 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:text=""
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/my_invest_manage"
         android:drawableRight="@drawable/right">
@@ -140,6 +138,7 @@
     </TextView>
 
     <TextView
+        android:id="@+id/zhu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/my_reward_manage"
@@ -149,6 +148,7 @@
     </TextView>
 
     <TextView
+        android:id="@+id/yuan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/my_asset_manage"

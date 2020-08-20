@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ProgressView">
-        <attr name="circle_color" format="color"/>
-        <attr name="arc_color" format="color"/>
-        <attr name="stroke_width" format="integer"/>
-        <attr name="text_size" format="dimension"/>
-        <attr name="text_color" format="color"/>
-        <attr name="round_size" format="dimension"/>
+        <attr name="circle_color" format="color" />
+        <attr name="arc_color" format="color" />
+        <attr name="stroke_width" format="integer" />
+        <attr name="text_size" format="dimension" />
+        <attr name="text_color" format="color" />
+        <attr name="round_size" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="HistogramVIew">
+        <attr name="image_color" format="color"/>
+        <attr name="title_color" format="color"/>
+        <attr name="number_color" format="color"/>
+        <attr name="histogram_style" format="string">
+            <enum name="Zhu" value="1" />
+            <enum name="Yuan" value="2" />
+        </attr>
     </declare-styleable>
 </resources>

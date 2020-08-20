@@ -47,7 +47,8 @@ public class MainActivity extends BaseActivity {
 
         if (Build.VERSION.SDK_INT >= 25) {
             requestPermissions(new String[]{
-                    Manifest.permission.ACCESS_NETWORK_STATE
+                    Manifest.permission.ACCESS_NETWORK_STATE,
+                    Manifest.permission.CAMERA,
             }, 100258);
         }
 
