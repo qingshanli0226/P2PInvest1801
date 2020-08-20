@@ -37,7 +37,7 @@ public abstract class BaseFragment extends Fragment {
     protected abstract void initView();
 
     //注解。表示一个资源id，不能随便传递一个整型
-    public <T extends View> T findViewById(@IdRes int id) {
+    protected  <T extends View> T findViewById(@IdRes int id) {
         return rootView.findViewById(id);
     }
 

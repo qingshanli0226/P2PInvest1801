@@ -20,14 +20,8 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class InvestFragment extends BaseFragment {
-    private TextView tvTitle;
-    private TabLayout tablayout;
-    private ViewPager viewpager;
-
-    private List<String> titleList = new ArrayList<>();
-    private List<Fragment> fragmentList = new ArrayList<>();
-
-    private InvestAdapter investAdapter;
+    private final List<String> titleList = new ArrayList<>();
+    private final List<Fragment> fragmentList = new ArrayList<>();
 
     @Override
     protected int getLayoutId() {
@@ -41,9 +35,9 @@ public class InvestFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-        tvTitle = findViewById(R.id.tv_title);
-        tablayout = findViewById(R.id.tablayout);
-        viewpager = findViewById(R.id.viewpager);
+        TextView tvTitle = findViewById(R.id.tv_title);
+        TabLayout tablayout = findViewById(R.id.tablayout);
+        ViewPager viewpager = findViewById(R.id.viewpager);
 
         fragmentList.add(new IAllFragment());
         fragmentList.add(new ICommendFragment());
@@ -53,7 +47,7 @@ public class InvestFragment extends BaseFragment {
         titleList.add("推荐理财");
         titleList.add("热门理财");
 
-        investAdapter = new InvestAdapter(getActivity().getSupportFragmentManager(), fragmentList, titleList);
+        InvestAdapter investAdapter = new InvestAdapter(getActivity().getSupportFragmentManager(), fragmentList, titleList);
         viewpager.setAdapter(investAdapter);
         tablayout.setupWithViewPager(viewpager);
         tvTitle.setText("投资");

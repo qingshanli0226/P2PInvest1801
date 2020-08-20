@@ -47,23 +47,23 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     //启动新的activity
-    protected void goToActivity(Class Activity,Bundle bundle){
-        Intent intent = new Intent(this,Activity);
+    protected void goToActivity(Class Activity, Bundle bundle) {
+        Intent intent = new Intent(this, Activity);
         //携带数据
-        if(bundle != null && bundle.size() != 0){
-            intent.putExtra("data",bundle);
+        if (bundle != null && bundle.size() != 0) {
+            intent.putExtra("data", bundle);
         }
 
         startActivity(intent);
     }
 
     //销毁当前的Activity
-    public void removeCurrentActivity(){
+    protected void removeCurrentActivity() {
         ActivityManager.getInstance().removeCurrent();
     }
 
     //销毁所有的activity
-    public void removeAll(){
+    protected void removeAll() {
         ActivityManager.getInstance().removeAll();
     }
 
@@ -75,7 +75,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         printLog("onDestroy..............");
     }
 
-    protected void destroy() {
+    private void destroy() {
 
     }
 
@@ -88,7 +88,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-    public void pause() {
+    private void pause() {
     }
 
 
@@ -100,10 +100,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-    public void resume() {
+    private void resume() {
     }
-
-
 
 
 }

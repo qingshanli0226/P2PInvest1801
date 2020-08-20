@@ -36,11 +36,11 @@ public class HomeFragment extends BaseMVPFragment<HomePresenterImpl, HomeContrac
     private MyLoadingBar loadingBar;
     private Banner banner;
     //获取banner数据
-    private List<String> stringList = new ArrayList<>();
+    private final List<String> stringList = new ArrayList<>();
     private RoundProgressBar roundProHome;
     private TextView tvRoundPro;
-    private Timer timer = new Timer();
-    private Handler handler = new Handler() {
+    private final Timer timer = new Timer();
+    private final Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);

@@ -11,8 +11,6 @@ import com.example.common.R;
 
 public class MyLoadingBar extends LinearLayout {
 
-    private ImageView iv;
-
     public MyLoadingBar(Context context) {
         super(context);
     }
@@ -21,7 +19,7 @@ public class MyLoadingBar extends LinearLayout {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.loading_view, this);
 
-        iv = findViewById(R.id.my_loadingbar);
+        ImageView iv = findViewById(R.id.my_loadingbar);
         AnimationDrawable drawable = (AnimationDrawable) iv.getDrawable();
         drawable.start();
 

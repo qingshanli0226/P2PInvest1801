@@ -9,10 +9,6 @@ import com.p2p.bawei.p2pinvest1801.R;
 
 public class GuiGuInvestActivity extends BaseActivity {
 
-    private TextView tvTitle;
-    private ImageView ivTitleBack;
-
-
     @Override
     protected void initData() {
 
@@ -20,8 +16,8 @@ public class GuiGuInvestActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        tvTitle = findViewById(R.id.tv_title);
-        ivTitleBack = findViewById(R.id.iv_title_back);
+        TextView tvTitle = findViewById(R.id.tv_title);
+        ImageView ivTitleBack = findViewById(R.id.iv_title_back);
 
         tvTitle.setText("关于硅谷理财");
         ivTitleBack.setVisibility(View.VISIBLE);

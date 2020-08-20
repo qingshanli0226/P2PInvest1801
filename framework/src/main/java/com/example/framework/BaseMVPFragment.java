@@ -12,7 +12,7 @@ import com.example.common.view.MyLoadingBar;
 public abstract class BaseMVPFragment<T extends IPresenter, V extends IView> extends BaseFragment {
 
     protected T ihttpPresenter;
-    protected MyLoadingBar loadingBar;//基类来定义加载的UI的形式
+    private MyLoadingBar loadingBar;//基类来定义加载的UI的形式
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

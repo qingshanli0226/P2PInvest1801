@@ -10,8 +10,8 @@ import java.util.List;
 
 public class InvestAdapter extends FragmentStatePagerAdapter {
 
-    private List<Fragment> fragmentList;
-    private List<String> titleList;
+    private final List<Fragment> fragmentList;
+    private final List<String> titleList;
 
     public InvestAdapter(@NonNull FragmentManager fm,List<Fragment> fragmentList, List<String> titleList) {
         super(fm);

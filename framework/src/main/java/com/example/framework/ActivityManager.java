@@ -10,14 +10,14 @@ public class ActivityManager {
 
     }
 
-    public static ActivityManager activityManager = new ActivityManager();
+    private static final ActivityManager activityManager = new ActivityManager();
 
-    public static ActivityManager getInstance(){
+    public static ActivityManager getInstance() {
         return activityManager;
     }
 
     //提供栈的对象
-    private Stack<Activity> activityStack = new Stack<>();
+    private final Stack<Activity> activityStack = new Stack<>();
 
     //activity的添加
     public void add(Activity activity) {

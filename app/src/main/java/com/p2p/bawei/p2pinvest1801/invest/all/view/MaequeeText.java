@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+
 public class MaequeeText extends TextView {
     public MaequeeText(Context context) {
         super(context);

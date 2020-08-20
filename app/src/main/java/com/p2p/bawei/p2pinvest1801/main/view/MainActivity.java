@@ -1,6 +1,5 @@
 package com.p2p.bawei.p2pinvest1801.main.view;
 
-import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,7 +8,6 @@ import android.graphics.Color;
 import android.os.Build;
 import android.text.TextUtils;
 import android.view.KeyEvent;
-import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -32,7 +30,6 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends BaseActivity {
-    private FrameLayout mainFrameLayout;
     private CommonTabLayout mainCommon;
     private HomeFragment homeFragment;
     private InvestFragment investFragment;
@@ -41,7 +38,7 @@ public class MainActivity extends BaseActivity {
     private long exitTime = 0;
 
     //数据
-    private ArrayList<CustomTabEntity> customTabEntityList = new ArrayList<>();
+    private final ArrayList<CustomTabEntity> customTabEntityList = new ArrayList<>();
 
     @Override
     protected void initData() {
@@ -52,13 +49,22 @@ public class MainActivity extends BaseActivity {
     protected void initView() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(new String[]{
-                    Manifest.permission.CALL_PHONE,
-                    Manifest.permission.READ_PHONE_STATE,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.READ_EXTERNAL_STORAGE
-            }, 9999);
+                    "android.permission.CALL_PHONE",
+                    "android.permission.READ_PHONE_STATE",
+                    "android.permission.ACCESS_NETWORK_STATE",
+                    "android.permission.WRITE_EXTERNAL_STORAGE",
+                    "android.permission.READ_EXTERNAL_STORAGE",
+                    "android.permission.ACCESS_WIFI_STATE",
+                    "android.permission.WAKE_LOCK",
+                    "android.permission.READ_PHONE_STATE",
+                    "android.permission.BROADCAST_PACKAGE_ADDED",
+                    "android.permission.BROADCAST_PACKAGE_CHANGED",
+                    "android.permission.BROADCAST_PACKAGE_INSTALL",
+                    "android.permission.BROADCAST_PACKAGE_REPLACED",
+                    "android.permission.GET_TASKS",
+                    "android.permission.RECEIVE_BOOT_COMPLETED"
+            }, 10101010);
         }
-        mainFrameLayout = findViewById(R.id.main_framelayout);
         mainCommon = findViewById(R.id.main_common);
 
         //初始化common
@@ -180,12 +186,6 @@ public class MainActivity extends BaseActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         //进入登录页面
                         launchActivity(LoginActivity.class, null);
-                    }
-                })
-                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
                     }
                 })
                 .setCancelable(false)

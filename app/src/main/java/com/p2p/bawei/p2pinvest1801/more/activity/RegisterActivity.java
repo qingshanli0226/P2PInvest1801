@@ -15,13 +15,10 @@ import com.p2p.bawei.p2pinvest1801.user.presenter.RegisterPresenterImpl;
 
 public class RegisterActivity extends BaseMVPActivity<RegisterPresenterImpl, RegisterContract.IRgisterView> implements RegisterContract.IRgisterView, View.OnClickListener {
     private MyLoadingBar loadingBar;
-    private ImageView ivTitleBack;
-    private TextView tvTitle;
     private EditText etRegisterNumber;
     private EditText etRegisterName;
     private EditText etRegisterPwd;
     private EditText etRegisterPwdagain;
-    private Button btnRegister;
 
     @Override
     protected void initHttpData() {
@@ -41,14 +38,14 @@ public class RegisterActivity extends BaseMVPActivity<RegisterPresenterImpl, Reg
     @Override
     protected void initView() {
         loadingBar = findViewById(R.id.loadingBar);
-        ivTitleBack = findViewById(R.id.iv_title_back);
-        tvTitle = findViewById(R.id.tv_title);
+        ImageView ivTitleBack = findViewById(R.id.iv_title_back);
+        TextView tvTitle = findViewById(R.id.tv_title);
 
         etRegisterNumber = findViewById(R.id.et_register_number);
         etRegisterName = findViewById(R.id.et_register_name);
         etRegisterPwd = findViewById(R.id.et_register_pwd);
         etRegisterPwdagain = findViewById(R.id.et_register_pwdagain);
-        btnRegister = findViewById(R.id.btn_register);
+        Button btnRegister = findViewById(R.id.btn_register);
 
         tvTitle.setText("用户注册");
         ivTitleBack.setVisibility(View.VISIBLE);

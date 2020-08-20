@@ -6,7 +6,7 @@ import com.example.net.bean.HomeBean;
 import com.example.net.bean.LoginBean;
 import com.example.net.bean.ProductBean;
 
-import java.util.HashMap;
+import java.util.Map;
 
 import io.reactivex.Observable;
 import retrofit2.http.FieldMap;
@@ -27,12 +27,12 @@ public interface InvestApiService {
     //用户注册
     @POST("register")
     @FormUrlEncoded
-    Observable<BaseBean<String>> onUserRegister(@FieldMap HashMap<String, String> params);
+    Observable<BaseBean<String>> onUserRegister(@FieldMap Map<String, String> params);
 
     //用户登录
     @POST("login")
     @FormUrlEncoded
-    Observable<LoginBean> onUserLogin(@FieldMap HashMap<String,String> params);
+    Observable<LoginBean> onUserLogin(@FieldMap Map<String,String> params);
 
     //用户自动登录
 

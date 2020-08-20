@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#66BEE6FF"
+    tools:context=".more.activity.TogglemoreActivity">
+
+    <TextView
+        android:background="#000"
+        android:textColor="#FFF"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textSize="20sp"
+        android:text="绘制手势密码"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.github.ihsg.patternlocker.PatternIndicatorView
+        android:id="@+id/pattern_indicator_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp" />
+
+    <TextView
+        android:id="@+id/pattern_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="绘制解锁图案"
+        android:textColor="@color/colorAccent" />
+
+    <com.github.ihsg.patternlocker.PatternLockerView
+        app:plv_color="@color/colorGray"
+        app:plv_errorColor="@color/product_red_common"
+        app:plv_lineWidth="5dp"
+        app:plv_hitColor="@color/maintextSelectColor"
+        android:id="@+id/pattern_lock_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="50dp" />
+
+</LinearLayout>

@@ -3,9 +3,9 @@ package com.p2p.bawei.p2pinvest1801.main.entity;
 import com.flyco.tablayout.listener.CustomTabEntity;
 
 public class CommonEntity implements CustomTabEntity {
-    private String titles;
-    private int selectIcon;
-    private int unSelectIcon;
+    private final String titles;
+    private  final int selectIcon;
+    private  final int unSelectIcon;
 
     public CommonEntity(String titles, Integer selectIcon, Integer unSelectIcon) {
         this.titles = titles;

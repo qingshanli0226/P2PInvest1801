@@ -25,11 +25,8 @@ public class RoundProgressBar extends View {
     private Paint paint;
     //默认控件大小
     private int defoutSize;
-    //默认线条宽度
-    private int defoutLine;
-    private int strokeWidth;
 
-    private PointF pointF = new PointF();
+    private final PointF pointF = new PointF();
 
 
     public RoundProgressBar(Context context) {
@@ -49,8 +46,7 @@ public class RoundProgressBar extends View {
         startAngle = 0;
         sweepAngle = 0;
         defoutSize = 140;
-        defoutLine = 10;
-        strokeWidth = 10;
+        int  defoutLine = 10;
 
         rectF = new RectF();
 
@@ -86,6 +82,7 @@ public class RoundProgressBar extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
+        int  strokeWidth = 10;
 
         pointF.x = w >> 1;
         pointF.y = h >> 1;

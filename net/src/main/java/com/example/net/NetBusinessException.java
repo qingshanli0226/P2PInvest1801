@@ -15,7 +15,7 @@ public class NetBusinessException extends Exception {
         return errorCode;
     }
 
-    public void setErrorCode(String errorCode) {
+    private void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
 
@@ -23,7 +23,7 @@ public class NetBusinessException extends Exception {
         return errorMessage;
     }
 
-    public void setErrorMessage(String errorMessage) {
+    private void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
 }

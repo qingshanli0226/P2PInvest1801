@@ -13,7 +13,7 @@ import java.util.List;
 
 public class HotAdapter extends BaseQuickAdapter<ProductBean.ResultBean, BaseViewHolder> {
 
-    private String[] color = {
+    private final String[] color = {
             "#FF34B3", "#9ACD32", "#9400D3", "#EE9A00",
             "#483D8B", "#1E90FF", "#00BFFF", "#F0a420"
     };

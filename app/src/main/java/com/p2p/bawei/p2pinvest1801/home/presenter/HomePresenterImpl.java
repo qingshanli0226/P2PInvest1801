@@ -23,7 +23,7 @@ public class HomePresenterImpl extends HomeContract.HomePresenter {
                 .subscribeOn(Schedulers.io())
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
-                    public void accept(Disposable disposable) throws Exception {
+                    public void accept(Disposable disposable) {
                         if (iHttpView == null) {
                             return;
                         }
@@ -32,7 +32,7 @@ public class HomePresenterImpl extends HomeContract.HomePresenter {
                 })
                 .doFinally(new Action() {
                     @Override
-                    public void run() throws Exception {
+                    public void run()  {
                         if (iHttpView == null) {
                             return;
                         }

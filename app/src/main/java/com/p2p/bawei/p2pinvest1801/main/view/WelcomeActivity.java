@@ -29,7 +29,7 @@ import java.util.TimerTask;
 
 public class WelcomeActivity extends BaseActivity {
     private RelativeLayout rlWelcome;
-    private Handler handler = new Handler() {
+    private final Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
@@ -57,6 +57,10 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+
+
+
+
         rlWelcome = findViewById(R.id.rl_welcome);
         tvWelcomeVersion = findViewById(R.id.tv_welcome_version);
 
@@ -145,7 +149,7 @@ public class WelcomeActivity extends BaseActivity {
         //判断网络连接状态
         ConnectivityManager manager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (manager.getActiveNetworkInfo() != null) {
-            showMessage("网络已连接");
+//            showMessage("网络已连接");
         } else {
             showMessage("无网络连接");
         }

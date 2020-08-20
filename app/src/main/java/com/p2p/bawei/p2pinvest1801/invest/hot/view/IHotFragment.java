@@ -24,8 +24,7 @@ import java.util.List;
  */
 public class IHotFragment extends BaseMVPFragment<ProductPresenterImpl, ProductContract.IProductView> implements ProductContract.IProductView {
     private MyLoadingBar loadingBar;
-    private RecyclerView hotRv;
-    private List<ProductBean.ResultBean> resultBeanList = new ArrayList<>();
+    private final List<ProductBean.ResultBean> resultBeanList = new ArrayList<>();
 
     private HotAdapter hotAdapter;
 
@@ -52,7 +51,7 @@ public class IHotFragment extends BaseMVPFragment<ProductPresenterImpl, ProductC
     @Override
     protected void initView() {
         loadingBar = findViewById(R.id.loadingBar);
-        hotRv = findViewById(R.id.hot_rv);
+        RecyclerView hotRv = findViewById(R.id.hot_rv);
         resultBeanList.clear();
         hotAdapter = new HotAdapter(R.layout.invest_hot_item, resultBeanList);
 

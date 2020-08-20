@@ -24,12 +24,8 @@ import java.util.List;
 public class IAllFragment extends BaseMVPFragment<ProductPresenterImpl, ProductContract.IProductView> implements ProductContract.IProductView {
 
     private MyLoadingBar loadingBar;
-    private List<ProductBean.ResultBean> resultBeanList = new ArrayList<>();
-    private RecyclerView allRv;
-
-
     private AllAdapter allAdapter;
-
+    private List<ProductBean.ResultBean> resultBeanList = new ArrayList<>();
 
     @Override
     protected void initHttpData() {
@@ -54,7 +50,7 @@ public class IAllFragment extends BaseMVPFragment<ProductPresenterImpl, ProductC
     @Override
     protected void initView() {
         loadingBar = findViewById(R.id.loadingBar);
-        allRv = findViewById(R.id.all_rv);
+        RecyclerView allRv = findViewById(R.id.all_rv);
 
         allAdapter = new AllAdapter(R.layout.invest_all_item, resultBeanList);
         allRv.setAdapter(allAdapter);
