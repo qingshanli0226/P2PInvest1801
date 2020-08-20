@@ -25,11 +25,11 @@ public class MyUserregisActivity extends BaseActivity<MyRegisterPresenter> imple
 
     @Override
     public void initview() {
-        phone = (EditText) findViewById(R.id.phone);
-        username = (EditText) findViewById(R.id.username);
-        paw = (EditText) findViewById(R.id.paw);
-        agpaw = (EditText) findViewById(R.id.agpaw);
-        butRegister = (Button) findViewById(R.id.but_register);
+        phone = findViewById(R.id.phone);
+        username = findViewById(R.id.username);
+        paw = findViewById(R.id.paw);
+        agpaw = findViewById(R.id.agpaw);
+        butRegister = findViewById(R.id.but_register);
     }
 
     @Override
@@ -48,6 +48,8 @@ public class MyUserregisActivity extends BaseActivity<MyRegisterPresenter> imple
                 if (pawstr.equals(agpawstr)){
                     mPresenter.getregister();
                 }else {
+
+
                     Toast.makeText(MyUserregisActivity.this, "两次密码输入不正确!", Toast.LENGTH_SHORT).show();
                     return;
                 }

@@ -28,7 +28,7 @@ public class MyFragment_FlowLayout extends BaseFragment<MyGetInvestPresenter> im
 
     @Override
     public void initview() {
-        fl = (AutoFlowLayout) findViewById(R.id.fl);
+        fl =  findViewById(R.id.fl);
 
     }
 

@@ -20,7 +20,7 @@ public class MyFragment_fragment extends BaseFragment<MyGetInvestPresenter> impl
 
     @Override
     public void initview() {
-        rv = (RecyclerView) findViewById(R.id.rv);
+        rv =  findViewById(R.id.rv);
     }
 
     @Override

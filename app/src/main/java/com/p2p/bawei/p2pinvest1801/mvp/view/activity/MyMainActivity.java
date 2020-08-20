@@ -28,7 +28,7 @@ public class MyMainActivity extends BaseActivity  {
     @Override
     public void initview() {
 
-        es = (EasyNavigationBar) findViewById(R.id.es);
+        es =  findViewById(R.id.es);
 
         list_fragment.add(new Myfragment());
         list_fragment.add(new MyInvest());

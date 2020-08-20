@@ -2,6 +2,8 @@ package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -62,7 +64,31 @@ public class Myfragment extends BaseFragment {
 
 
     }
+    private Bitmap getpic(int height,int width){
+        ImageView imageView = new ImageView(getContext());
+        int picHeightmpleSize = imageView.getMeasuredHeight();
+        int picWidthmpleSize = imageView.getMeasuredWidth();
+        //第一次采样，主要采集图片边框，算出图片的尺寸
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;//通过该标志位，确定第一次采样只采集边框
+        BitmapFactory.decodeResource(getResources(), R.mipmap.adr,options);
+        //计算出图片的宽度和高度
+        int picWidth = options.outWidth;
+        int picHeight = options.outHeight;
+        //计算出缩放比例
+        int sampleSize = 1;
+        while (picHeightmpleSize>height || picWidthmpleSize > width) {
+            sampleSize = sampleSize*2;
+        }
+        //第一次采样结束
 
+        //第二次采样，就是按照这个比例采集像素
+        options.inJustDecodeBounds = false;//不是采集边框，而是按比例采集像素
+        options.inSampleSize = sampleSize;
+        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+
+        return BitmapFactory.decodeResource(getResources(),R.mipmap.adr, options);
+    }
     @Override
     public void initInJect() {
 

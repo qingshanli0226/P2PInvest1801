@@ -65,16 +65,7 @@ public class MyBannerEntity implements Serializable {
         }
 
         public static class ProInfoBean implements Serializable{
-            /**
-             * id : 1
-             * memberNum : 100
-             * minTouMoney : 100
-             * money : 10
-             * name : 硅谷彩虹新手计划
-             * progress : 90
-             * suodingDays : 30
-             * yearRate : 8.00
-             */
+
 
             private String id;
             private String memberNum;

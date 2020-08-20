@@ -19,8 +19,8 @@ public class MyWithdrawDepositActivity extends BaseActivity {
 
     @Override
     public void initview() {
-        edWithdraw = (EditText) findViewById(R.id.ed_withdraw);
-        butWithdraw = (Button) findViewById(R.id.but_withdraw);
+        edWithdraw = findViewById(R.id.ed_withdraw);
+        butWithdraw = findViewById(R.id.but_withdraw);
     }
 
     @Override

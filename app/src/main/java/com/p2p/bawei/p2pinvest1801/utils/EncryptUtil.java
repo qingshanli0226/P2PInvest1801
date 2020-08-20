@@ -17,8 +17,10 @@ public class EncryptUtil  {
     //输入字符串，然后返回该字符串的信息摘要
     public static String enrypByMd5(String message) {
         byte[] hash;
-
         try {
+//            hash = MessageDigest.getInstance("MD5").digest(
+//                    message.getBytes("UTF-8")
+//            );
             hash = MessageDigest.getInstance("MD5").digest(
                     message.getBytes("UTF-8"));
         } catch (NoSuchAlgorithmException e) {
@@ -28,7 +30,11 @@ public class EncryptUtil  {
             e.printStackTrace();
             return null;
         }
-
+//        StringBuilder stringBuilder = new StringBuilder(hash.length * 2);
+//        for (byte b : hash) {
+//            if ((b & 0xFF) < 0x10 )stringBuilder.append("0");
+//            stringBuilder.append(Integer.toHexString(b & 0xFF));
+//        }
         StringBuilder hex = new StringBuilder(hash.length * 2);
         for (byte b : hash) {
             if ((b & 0xFF) < 0x10)
@@ -67,8 +73,7 @@ public class EncryptUtil  {
             sb.append(key+"="+value+"&");
         }
         sb.append("encrypt=md5");
-        String sign = enrypByMd5(sb.toString());
-        return sign;
+        return enrypByMd5(sb.toString());
     }
 
     //使用Base64对jsonobject里面的参数值进行加密

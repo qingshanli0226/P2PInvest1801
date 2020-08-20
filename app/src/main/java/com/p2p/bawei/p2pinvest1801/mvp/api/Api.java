@@ -4,11 +4,10 @@ import com.p2p.bawei.p2pinvest1801.bean.EdtivitnEnitiy;
 import com.p2p.bawei.p2pinvest1801.bean.MyBannerEntity;
 import com.p2p.bawei.p2pinvest1801.bean.MyInestEntivity;
 import com.p2p.bawei.p2pinvest1801.bean.MyRegisterEntity;
-
+import java.util.Map;
 import io.reactivex.Observable;
-import okhttp3.RequestBody;
-import retrofit2.http.Body;
-import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
@@ -20,6 +19,7 @@ public interface Api {
     @GET("atguigu/json/P2PInvest/product.json")
     Observable<MyInestEntivity> getintivity();
     @POST("register")
-    Observable<MyRegisterEntity> getregister(@Body RequestBody body);
+    @FormUrlEncoded
+    Observable<MyRegisterEntity> getregister(@FieldMap Map<String,String> params);
 
 }

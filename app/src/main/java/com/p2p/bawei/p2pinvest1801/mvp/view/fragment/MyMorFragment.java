@@ -1,7 +1,4 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
-
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Gravity;
 import android.view.View;
@@ -11,14 +8,15 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Switch;
 import android.widget.Toast;
-
 import com.example.common.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.mvp.view.activity.MainActivity;
 import com.p2p.bawei.p2pinvest1801.mvp.view.activity.MyGestureActivity;
 import com.p2p.bawei.p2pinvest1801.mvp.view.activity.MyHelperActivity;
 import com.p2p.bawei.p2pinvest1801.mvp.view.activity.MyUserregisActivity;
-
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.media.UMImage;
 public class MyMorFragment extends BaseFragment implements View.OnClickListener {
     private LinearLayout userregis;
     private LinearLayout gespassword;
@@ -134,7 +132,9 @@ public class MyMorFragment extends BaseFragment implements View.OnClickListener 
                 Toast.makeText(getContext(), "用户反馈", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.friendsshare:
-
+                UMImage image = new UMImage(getActivity(), R.mipmap.adr);//本地文件
+                new ShareAction(getActivity()).withText("硅谷金融").withMedia(image).setDisplayList(SHARE_MEDIA.SINA,SHARE_MEDIA.QQ,SHARE_MEDIA.WEIXIN)
+                        .setCallback(shareListener).open();
                 Toast.makeText(getContext(), "分享给好友", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.inregard:
@@ -143,4 +143,43 @@ public class MyMorFragment extends BaseFragment implements View.OnClickListener 
                 break;
         }
     }
+    private UMShareListener shareListener = new UMShareListener() {
+        /**
+         * @descrption 分享开始的回调
+         * @param platform 平台类型
+         */
+        @Override
+        public void onStart(SHARE_MEDIA platform) {
+
+        }
+
+        /**
+         * @descrption 分享成功的回调
+         * @param platform 平台类型
+         */
+        @Override
+        public void onResult(SHARE_MEDIA platform) {
+            Toast.makeText(getActivity(),"成功了",Toast.LENGTH_LONG).show();
+        }
+
+        /**
+         * @descrption 分享失败的回调
+         * @param platform 平台类型
+         * @param t 错误原因
+         */
+        @Override
+        public void onError(SHARE_MEDIA platform, Throwable t) {
+            Toast.makeText(getActivity(),"失败"+t.getMessage(),Toast.LENGTH_LONG).show();
+        }
+
+        /**
+         * @descrption 分享取消的回调
+         * @param platform 平台类型
+         */
+        @Override
+        public void onCancel(SHARE_MEDIA platform) {
+            Toast.makeText(getActivity(),"取消了",Toast.LENGTH_LONG).show();
+
+        }
+    };
 }

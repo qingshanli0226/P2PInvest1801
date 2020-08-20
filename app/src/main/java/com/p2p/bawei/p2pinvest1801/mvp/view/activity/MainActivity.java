@@ -1,11 +1,14 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.activity;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -123,8 +126,16 @@ public class MainActivity extends BaseActivity<MyGetBannerPresenter> implements 
 
     @Override
     public void initview() {
-        jb = (ImageView) findViewById(R.id.jb);
-        djs = (TextView) findViewById(R.id.djs);
+        jb =  findViewById(R.id.jb);
+        djs =  findViewById(R.id.djs);
+        if(Build.VERSION.SDK_INT>=23){
+            String[] mPermissionList = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.CALL_PHONE,Manifest.permission.READ_LOGS,Manifest.permission.READ_PHONE_STATE, Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.SET_DEBUG_APP,Manifest.permission.SYSTEM_ALERT_WINDOW,Manifest.permission.GET_ACCOUNTS,Manifest.permission.WRITE_APN_SETTINGS};
+            ActivityCompat.requestPermissions(this,mPermissionList,123);
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+
     }
 
     @Override
