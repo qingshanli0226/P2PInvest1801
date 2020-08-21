@@ -6,11 +6,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 public class NetConnect {
-    private Context context;
 
-    public NetConnect(Context context) {
-        this.context = context;
-    }
 
     public boolean isNet() {
         return isNet;

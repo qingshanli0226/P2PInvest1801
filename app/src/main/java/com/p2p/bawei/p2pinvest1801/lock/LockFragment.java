@@ -1,13 +1,12 @@
 package com.p2p.bawei.p2pinvest1801.lock;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.View;
-import android.widget.LinearLayout;
 
 import com.example.baselibrary.mvp.view.BaseActivity;
-import com.example.baselibrary.mvp.view.BaseFragment;
 import com.github.ihsg.patternlocker.OnPatternChangeListener;
 import com.github.ihsg.patternlocker.PatternLockerView;
 import com.p2p.bawei.p2pinvest1801.R;
@@ -15,10 +14,9 @@ import com.p2p.bawei.p2pinvest1801.R;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.Objects;
 
+@SuppressLint("Registered")
 public class LockFragment extends BaseActivity {
-    private PatternLockerView mLockGo;
     private String lock_str;
 
     @Override
@@ -28,7 +26,7 @@ public class LockFragment extends BaseActivity {
 
     @Override
     public void initView() {
-        mLockGo = (PatternLockerView) findViewById(R.id.lock_go);
+        PatternLockerView mLockGo =  findViewById(R.id.lock_go);
         SharedPreferences lock = getSharedPreferences("lock", Context.MODE_PRIVATE);
         lock_str = lock.getString("lock_str", null);
         mLockGo.setOnPatternChangedListener(new OnPatternChangeListener() {
@@ -49,7 +47,7 @@ public class LockFragment extends BaseActivity {
                     stringBuilder.append(integer);
                 }
                 if (stringBuilder.toString().equals(lock_str)) {
-                    Log.e("hq", "onChange: "+list.toString() );
+                    Log.e("hq", "onChange: " + list.toString());
                     finish();
                 }
             }

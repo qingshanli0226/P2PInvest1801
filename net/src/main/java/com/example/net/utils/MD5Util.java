@@ -14,8 +14,7 @@ public class MD5Util {
             byte[] digest = md5.digest();
             char[] chars = new char[digest.length * 2];
             int k = 0;
-            for (int i = 0; i < digest.length; i++) {
-                byte aChar = digest[i];
+            for (byte aChar : digest) {
                 chars[k++] = hexDigsits[aChar >>> 4 & 0xf];
                 chars[k++] = hexDigsits[aChar & 0xf];
             }

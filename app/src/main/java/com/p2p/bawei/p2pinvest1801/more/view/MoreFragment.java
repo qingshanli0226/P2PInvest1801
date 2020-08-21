@@ -3,6 +3,7 @@ package com.p2p.bawei.p2pinvest1801.more.view;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
@@ -38,10 +39,15 @@ public class MoreFragment extends BaseFragment {
             case R.id.count_phone_txt:
                 break;
             case R.id.user_request_txt:
+                Log.e("hq", "onClick: ");
                 break;
             case R.id.share_fired_txt:
+                Log.e("hq", "onClick: " + 1);
+
                 break;
             case R.id.guiGu_about_txt:
+                Log.e("hq", "onClick: " + 2);
+
                 break;
         }
     }
@@ -64,7 +70,7 @@ public class MoreFragment extends BaseFragment {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 String lock_str = lock.getString("lock_str", null);
                 if (lock_str == null) {
-                    startActivity(new Intent(getContext(),LockAct.class));
+                    startActivity(new Intent(getContext(), LockAct.class));
                 }
                 SharedPreferences.Editor edit = lock.edit();
                 edit.putBoolean("lockFlag", b);

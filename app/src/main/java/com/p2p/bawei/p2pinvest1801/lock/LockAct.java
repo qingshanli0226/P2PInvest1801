@@ -1,12 +1,10 @@
 package com.p2p.bawei.p2pinvest1801.lock;
 
 import android.content.SharedPreferences;
-import android.util.Log;
 import android.view.View;
 
 import com.example.baselibrary.mvp.view.BaseActivity;
 import com.github.ihsg.patternlocker.OnPatternChangeListener;
-import com.github.ihsg.patternlocker.PatternIndicatorView;
 import com.github.ihsg.patternlocker.PatternLockerView;
 import com.p2p.bawei.p2pinvest1801.R;
 
@@ -29,7 +27,7 @@ public class LockAct extends BaseActivity {
 
     @Override
     public void initView() {
-        mPatternLockView = (PatternLockerView) findViewById(R.id.pattern_lock_view);
+        mPatternLockView = findViewById(R.id.pattern_lock_view);
         lock = getSharedPreferences("lock", MODE_PRIVATE);
     }
 
@@ -77,7 +75,7 @@ public class LockAct extends BaseActivity {
     private void keep(@NotNull List<Integer> list) {
         StringBuilder lockStr = new StringBuilder();
         for (Integer integer : list) {
-            lockStr.append(String.valueOf(integer));
+            lockStr.append(integer);
         }
         SharedPreferences.Editor edit = lock.edit();
         edit.putString("lock_str", lockStr.toString());

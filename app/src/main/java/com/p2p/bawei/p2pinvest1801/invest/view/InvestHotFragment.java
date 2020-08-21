@@ -14,6 +14,7 @@ import com.example.baselibrary.view.MyGroup;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class InvestHotFragment extends BaseFragment {
     List<String> list = new ArrayList<>();
@@ -58,7 +59,7 @@ public class InvestHotFragment extends BaseFragment {
             GradientDrawable drawable = new GradientDrawable();
             drawable.setShape(GradientDrawable.RECTANGLE);
             drawable.setGradientType(GradientDrawable.RECTANGLE);
-            drawable.setCornerRadius(60);
+            drawable.setCornerRadius(10);
 
             int nowcolor = color[(int) (color.length * Math.random())];
             drawable.setColor(nowcolor);
@@ -68,11 +69,11 @@ public class InvestHotFragment extends BaseFragment {
             tv.setPadding(28, 10, 28, 10);
             tv.setText(list.get(i));
             tv.setMaxEms(10);
-            tv.setTextSize(25);
+            tv.setTextSize(15);
             tv.setSingleLine();
             tv.setLayoutParams(layoutParams);
             tv.setBackground(drawable);
-            mLiu.addView(tv, layoutParams);
+            Objects.requireNonNull(mLiu).addView(tv, layoutParams);
             final int finalI = i;
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override

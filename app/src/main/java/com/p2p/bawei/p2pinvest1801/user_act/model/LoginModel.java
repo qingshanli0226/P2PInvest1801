@@ -6,13 +6,10 @@ import com.example.baselibrary.mvp.model.BaseModel;
 import com.example.net.http.HttpManager;
 import com.example.net.http.MD5Utils;
 import com.example.net.observer.BaseObserver;
-import com.example.net.utils.MD5Util;
 import com.p2p.bawei.p2pinvest1801.Api;
 import com.p2p.bawei.p2pinvest1801.user_act.bean.LoginBean;
 import com.p2p.bawei.p2pinvest1801.user_act.contract.LoginContract;
 
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.TreeMap;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;

@@ -4,13 +4,7 @@ public class NetBusinessException extends Exception  {
     private String Code;
     private String Message;
 
-    @Override
-    public String toString() {
-        return "NetBusinessException{" +
-                "Code='" + Code + '\'' +
-                ", Message='" + Message + '\'' +
-                '}';
-    }
+
 
     public String getCode() {
         return Code;

@@ -1,14 +1,11 @@
 package com.p2p.bawei.p2pinvest1801.user;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.Build;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
@@ -16,13 +13,9 @@ import androidx.annotation.Nullable;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.example.baselibrary.mvp.view.BaseFragment;
 import com.example.common.ARouterCode;
-import com.p2p.bawei.p2pinvest1801.Picture;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.YuanAct;
-import com.p2p.bawei.p2pinvest1801.ZhuAct;
 import com.wildma.pictureselector.PictureBean;
 import com.wildma.pictureselector.PictureSelector;
 
@@ -43,7 +36,7 @@ public class UserFragment extends BaseFragment {
                 flag = true;
             } else {
                 if (!flag2) {
-                    Bitmap bitmap = samplePic(100, 100);
+                    Bitmap bitmap = samplePic();
                     mHeadPic.setImageBitmap(bitmap);
                     flag2 = true;
                 } else {
@@ -61,6 +54,10 @@ public class UserFragment extends BaseFragment {
             Intent intent = new Intent(getContext(), YuanAct.class);
             startActivity(intent);
         }
+        if (view.getId() == R.id.zhe) {
+            Intent intent = new Intent(getContext(), ZheAct.class);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -69,6 +66,7 @@ public class UserFragment extends BaseFragment {
 
         findViewById(R.id.zhu).setOnClickListener(this);
         findViewById(R.id.yuan).setOnClickListener(this);
+        findViewById(R.id.zhe).setOnClickListener(this);
 
         mHeadPic = (ImageView) findViewById(R.id.user_head_pic);
         mHeadPic.setOnClickListener(this);
@@ -79,7 +77,7 @@ public class UserFragment extends BaseFragment {
 
     }
 
-    private Bitmap samplePic(int width, int height) {
+    private Bitmap samplePic() {
 
         //第一次采样，主要采集图片边框，算出图片的尺寸
         BitmapFactory.Options options = new BitmapFactory.Options();
@@ -90,7 +88,7 @@ public class UserFragment extends BaseFragment {
         int picHeight = options.outHeight;
         //计算出缩放比例
         int sampleSize = 1;
-        while (picHeight / sampleSize > height || picWidth / sampleSize > width) {
+        while (picHeight / sampleSize > 100 || picWidth / sampleSize > 100) {
             sampleSize = sampleSize * 2;
         }
         //第一次采样结束
@@ -121,6 +119,7 @@ public class UserFragment extends BaseFragment {
         if (requestCode == PictureSelector.SELECT_REQUEST_CODE) {
             if (data != null) {
                 PictureBean pictureBean = data.getParcelableExtra(PictureSelector.PICTURE_RESULT);
+                assert pictureBean != null;
                 if (pictureBean.isCut()) {
                     mHeadPic.setImageBitmap(BitmapFactory.decodeFile(pictureBean.getPath()));
                 } else {

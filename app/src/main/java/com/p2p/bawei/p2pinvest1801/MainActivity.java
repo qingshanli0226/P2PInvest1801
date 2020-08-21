@@ -1,10 +1,8 @@
 package com.p2p.bawei.p2pinvest1801;
 
 import android.Manifest;
-import android.app.ActionBar;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Build;
 import android.view.KeyEvent;
 import android.view.View;
@@ -18,7 +16,7 @@ import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.p2p.bawei.p2pinvest1801.bean.TabBean;
-import com.p2p.bawei.p2pinvest1801.frist.view.FirstFragment;
+import com.p2p.bawei.p2pinvest1801.first.view.FirstFragment;
 import com.p2p.bawei.p2pinvest1801.invest.view.InvestFragment;
 import com.p2p.bawei.p2pinvest1801.lock.LockFragment;
 import com.p2p.bawei.p2pinvest1801.more.view.MoreFragment;
@@ -32,7 +30,6 @@ public class MainActivity extends BaseActivity {
     private InvestFragment investFragment;
     private UserFragment userFragment;
     private MoreFragment moreFragment;
-    private LockFragment lockFragment;
     private ArrayList<CustomTabEntity> list = new ArrayList<>();
 
     private long thisTime;
@@ -44,7 +41,6 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initView() {
         SharedPreferences lockFlag = getSharedPreferences("lock", MODE_PRIVATE);
-
         if (Build.VERSION.SDK_INT >= 25) {
             requestPermissions(new String[]{
                     Manifest.permission.ACCESS_NETWORK_STATE,
@@ -52,12 +48,11 @@ public class MainActivity extends BaseActivity {
             }, 100258);
         }
 
-        CommonTabLayout mComTab = (CommonTabLayout) findViewById(R.id.com_tab);
+        CommonTabLayout mComTab =  findViewById(R.id.com_tab);
         firstFragment = new FirstFragment();
         investFragment = new InvestFragment();
         userFragment = new UserFragment();
         moreFragment = new MoreFragment();
-        lockFragment = new LockFragment();
         list.add(new TabBean("首页", R.drawable.bottom02, R.drawable.bottom01));
         list.add(new TabBean("投资", R.drawable.bottom04, R.drawable.bottom03));
         list.add(new TabBean("我的资产", R.drawable.bottom06, R.drawable.bottom05));
@@ -135,9 +130,8 @@ public class MainActivity extends BaseActivity {
         long jian = l - thisTime;
         if (jian > 1000) {
             thisTime = l;
-            jian = 0;
             showMessage("再次点击退出应用");
-        } else if (jian <= 1000) {
+        } else {
             finish();
         }
         return false;

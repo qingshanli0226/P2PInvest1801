@@ -12,7 +12,7 @@ public class MD5Utils {
         try {
             MessageDigest md5 = MessageDigest.getInstance("MD5");
             md5.update(str.getBytes("GBK"));
-            StringBuffer stringBuffer = new StringBuffer();
+            StringBuilder stringBuffer = new StringBuilder();
             for (byte b : md5.digest()) {
                 stringBuffer.append(String.format("%02x", b & 0xff));
             }
@@ -27,7 +27,7 @@ public class MD5Utils {
         TreeMap<String, String> treeMap1 = new TreeMap<>();
         for (String s : treeMap1.keySet()) {
             String s1 = treeMap1.get(s);
-            byte[] encode = Base64.encode(s1.getBytes(), Base64.DEFAULT);
+            byte[] encode = Base64.encode(s1 != null ? s1.getBytes() : new byte[0], Base64.DEFAULT);
             String s2 = new String(encode);
             treeMap1.put(s, s2);
         }

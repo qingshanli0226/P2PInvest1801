@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.ihsg:PatternLocker:2.5.6@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/98e0148575e6b6b8edf5dfbeecf7d609/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/98e0148575e6b6b8edf5dfbeecf7d609/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75c6378f5b4118a3be9f8bd992b41fb0/jetified-PatternLocker-2.5.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75c6378f5b4118a3be9f8bd992b41fb0/jetified-PatternLocker-2.5.6/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

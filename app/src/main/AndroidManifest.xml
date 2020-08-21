@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".App"
@@ -25,23 +25,42 @@
             android:launchMode="singleInstance">
 
         </activity>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".frist.view.BanAct" />
-        <activity android:name=".invest.view.InvestFragment" />
-        <activity android:name=".user_act.view.LoginAct" />
-        <activity android:name=".user_act.view.RegisterAct" />
-        <activity android:name=".lock.LockAct" />
-        <activity android:name=".lock.LockFragment" />
+        <activity android:name=".first.view.BanAct" />
+        <activity
+            android:name=".user_act.view.LoginAct"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".user_act.view.RegisterAct"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".lock.LockAct"
+            android:launchMode="singleTask" />
         <activity android:name=".user.TouManagerAct" />
-        <activity android:name=".Picture" />
-        <activity android:name=".ZhuAct" />
-        <activity android:name=".YuanAct" />
+        <activity android:name=".user.Picture" />
+        <activity
+            android:name=".user.ZhuAct"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".user.YuanAct"
+            android:launchMode="singleTask" />
+        <activity android:name=".lock.LockFragment" />
+        <activity android:name=".user.ZheAct" />
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="360" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="640" />
     </application>
 
 </manifest>

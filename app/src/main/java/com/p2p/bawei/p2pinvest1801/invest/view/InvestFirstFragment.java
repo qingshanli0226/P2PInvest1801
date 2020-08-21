@@ -31,7 +31,7 @@ public class InvestFirstFragment extends BaseFragment<InvestPresenter> implement
 
     @Override
     public void initView() {
-        RecyclerView mListRv = (RecyclerView) findViewById(R.id.list_rv);
+        RecyclerView mListRv =  findViewById(R.id.list_rv);
         mListRv.setLayoutManager(new LinearLayoutManager(getContext()));
         myAdapter = new MyAdapter(R.layout.item_layout, resultBeans);
         mListRv.setAdapter(myAdapter);

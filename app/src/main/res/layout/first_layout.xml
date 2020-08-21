@@ -21,6 +21,12 @@
         </TextView>
     </androidx.appcompat.widget.Toolbar>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
 
         <com.youth.banner.Banner
             android:id="@+id/first_banner"
@@ -30,10 +36,10 @@
         </com.youth.banner.Banner>
 
         <TextView
+            android:id="@+id/first_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="硅谷彩虹新手计划"
             android:textColor="#000"
             android:textSize="20dp">
 
@@ -81,7 +87,8 @@
             app:arc_color="@android:color/holo_red_dark"
             app:circle_color="@android:color/holo_blue_dark"
             app:stroke_width="15"
-            app:text_color="@android:color/holo_green_dark">
+            app:text_color="@android:color/holo_green_dark"
+            app:text_size="@dimen/dp_20">
 
         </com.example.baselibrary.view.ProgressView>
 
@@ -104,5 +111,7 @@
             android:text="立即加入">
 
         </Button>
+    </LinearLayout>
+
 
 </LinearLayout>

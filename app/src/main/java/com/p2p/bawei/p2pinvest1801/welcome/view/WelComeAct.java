@@ -39,6 +39,7 @@ import java.net.URL;
 public class WelComeAct extends BaseActivity<WelComePresenter> implements WelContract.View {
     private TextView mTimeDao;
     private int index = 6;
+    private Handler handler = new Handler();
 
     @Override
     public void onClick(View v) {
@@ -54,8 +55,8 @@ public class WelComeAct extends BaseActivity<WelComePresenter> implements WelCon
                     Manifest.permission.READ_EXTERNAL_STORAGE
             }, 100);
         }
-        ImageView mWelComeP2PPic = findViewById(R.id.WelCome_P2P_pic);
         mTimeDao = findViewById(R.id.time_dao);
+        ImageView mWelComeP2PPic = findViewById(R.id.WelCome_P2P_pic);
         Glide.with(this).load(R.drawable.a).transform(new CenterCrop()).into(mWelComeP2PPic);
 
         final ObjectAnimator alpha = ObjectAnimator.ofFloat(mWelComeP2PPic, "alpha", 0, 1);
@@ -67,12 +68,12 @@ public class WelComeAct extends BaseActivity<WelComePresenter> implements WelCon
         alpha.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
-
             }
 
             @Override
             public void onAnimationEnd(Animator animation) {
                 mPresenter.getData();
+
             }
 
             @Override
@@ -117,8 +118,7 @@ public class WelComeAct extends BaseActivity<WelComePresenter> implements WelCon
     }
 
     private void timeDao() {
-        final Handler handler = new Handler();
-        new Thread(new Runnable() {
+        Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 for (int i = 0; i < 5; i++) {
@@ -141,7 +141,8 @@ public class WelComeAct extends BaseActivity<WelComePresenter> implements WelCon
                     }
                 }
             }
-        }).start();
+        });
+        thread.start();
     }
 
     private void upApp(final String str) {
@@ -150,7 +151,7 @@ public class WelComeAct extends BaseActivity<WelComePresenter> implements WelCon
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         progressDialog.show();
-        new Thread(new Runnable() {
+        Thread hq = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -179,7 +180,8 @@ public class WelComeAct extends BaseActivity<WelComePresenter> implements WelCon
                     e.printStackTrace();
                 }
             }
-        }).start();
+        });
+        hq.start();
 
     }
 
@@ -192,6 +194,11 @@ public class WelComeAct extends BaseActivity<WelComePresenter> implements WelCon
     @Override
     public int bandLayout() {
         return R.layout.activity_wel_come;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     @Override
