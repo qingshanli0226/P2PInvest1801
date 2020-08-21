@@ -8,6 +8,7 @@
          android:gravity="fill_vertical"
          android:layout_margin="@dimen/dp_10"
          android:text="用户注册"
+         android:id="@+id/more_user_reg"
          android:drawableLeft="@drawable/icon_more_regist"
          android:textColor="#2E628A"
          android:textSize="30dp"/>
@@ -16,6 +17,7 @@
         android:background="#969292"
         android:layout_height="1dp"/>
     <RelativeLayout
+        android:id="@+id/more_geste"
         android:gravity="fill_vertical"
         android:layout_margin="@dimen/dp_10"
         android:layout_width="match_parent"
@@ -40,6 +42,7 @@
         android:background="#969292"
         android:layout_height="1dp"/>
     <TextView
+        android:id="@+id/more_reset_geste"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="fill_vertical"
@@ -53,6 +56,7 @@
         android:background="#969292"
         android:layout_height="1dp"/>
     <RelativeLayout
+        android:id="@+id/more_call"
         android:gravity="fill_vertical"
         android:layout_margin="@dimen/dp_10"
         android:layout_width="match_parent"
@@ -79,6 +83,7 @@
         android:background="#969292"
         android:layout_height="1dp"/>
     <TextView
+        android:id="@+id/more_feedback"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="fill_vertical"
@@ -92,6 +97,7 @@
         android:background="#969292"
         android:layout_height="1dp"/>
     <TextView
+        android:id="@+id/more_share"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="fill_vertical"
@@ -105,6 +111,7 @@
         android:background="#969292"
         android:layout_height="1dp"/>
     <TextView
+        android:id="@+id/more_about"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="fill_vertical"

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:orientation="vertical"
+       android:padding="@dimen/dp_20"
+       android:background="@color/colorBlack"
+       android:layout_height="@dimen/dp_100">
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="1"
+           android:gravity="fill_vertical"
+           android:textColor="@color/color_white"
+           android:text="联系客服"
+           android:textSize="@dimen/dp_25"/>
+       <TextView
+           android:layout_width="match_parent"
+           android:textColor="@color/color_white"
+           android:layout_height="0dp"
+           android:textSize="@dimen/dp_20"
+           android:gravity="fill_vertical"
+           android:layout_weight="1"
+           android:text="是否现在联系客服:010-56253825"/>
+   </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#B3ABAB"
+        android:layout_height="@dimen/dp_50">
+        <Button
+            android:layout_width="0dp"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/call_yes"
+            android:text="确定"
+            android:background="@color/color_white"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/call_no"
+            android:layout_margin="@dimen/dp_10"
+            android:text="取消"
+            android:background="@color/color_white"/>
+
+    </LinearLayout>
+</LinearLayout>

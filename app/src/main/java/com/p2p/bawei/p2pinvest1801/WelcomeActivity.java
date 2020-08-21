@@ -1,5 +1,6 @@
 package com.p2p.bawei.p2pinvest1801;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -22,11 +23,14 @@ import com.example.net.activity_bean.UpdateBean;
 import com.example.net.api_srever.ApiServer;
 import com.example.net.http.HttpManager;
 import com.example.net.observer.BaseObserver;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 public class WelcomeActivity extends BaseActivity {
@@ -50,6 +54,28 @@ public class WelcomeActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        new RxPermissions(this).request(Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.CALL_PHONE)
+                .subscribe(new Observer<Boolean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Boolean aBoolean) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
         setContentView(R.layout.activity_welcome);
         HttpManager.getHttpManager().setPath(NetCommon.BASE);
         initView();
