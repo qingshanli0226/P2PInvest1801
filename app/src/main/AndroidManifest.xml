@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/TranslucentTheme">
+        <activity android:name=".fragment.fragmentfour.activity.gesturelocksctivity.GestureLockActivity"></activity>
+        <activity android:name=".fragment.fragmentfour.activity.aboutactivity.AboutActivity" />
         <activity
-            android:name=".activity.registerfragment.RegisterActivity"
-            android:theme="@style/TranslucentTheme"/>
+            android:name=".fragment.fragmentfour.activity.registeractivity.RegisterActivity"
+            android:theme="@style/TranslucentTheme" />
         <activity
             android:name=".Main2Activity"
             android:theme="@style/TranslucentTheme" />
@@ -25,11 +27,11 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
 
 </manifest>

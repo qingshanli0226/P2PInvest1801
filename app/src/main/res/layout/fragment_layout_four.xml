@@ -44,6 +44,7 @@
         android:background="#969292"
         android:layout_height="1dp"/>
     <TextView
+        android:id="@+id/tv_set_hand"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="fill_vertical"
@@ -57,15 +58,14 @@
         android:background="#969292"
         android:layout_height="1dp"/>
     <RelativeLayout
-        android:id="@+id/to_lx_kf"
         android:gravity="fill_vertical"
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <TextView
+            android:id="@+id/tv_to_lxkf"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-
             android:text="联系客服"
             android:drawableLeft="@drawable/icon_more_contact"
             android:textColor="#2E628A"

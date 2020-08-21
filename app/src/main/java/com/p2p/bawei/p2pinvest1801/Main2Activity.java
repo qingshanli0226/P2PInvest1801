@@ -84,15 +84,32 @@ public class Main2Activity extends BaseActivity {
                 if (position == 0){
                     tvIdAct.setText("首页");
                     ivIdAct.setVisibility(View.INVISIBLE);
+                    tabIdLayout.getTabAt(position).setIcon(R.drawable.bottom02);
+                    tabIdLayout.getTabAt(position+1).setIcon(R.drawable.bottom03);
+                    tabIdLayout.getTabAt(position+2).setIcon(R.drawable.bottom05);
+                    tabIdLayout.getTabAt(position+3).setIcon(R.drawable.bottom07);
                 }else if (position ==1){
                     tvIdAct.setText("投资");
                     ivIdAct.setVisibility(View.INVISIBLE);
+                    tabIdLayout.getTabAt(position).setIcon(R.drawable.bottom04);
+                    tabIdLayout.getTabAt(position-1).setIcon(R.drawable.bottom01);
+                    tabIdLayout.getTabAt(position+1).setIcon(R.drawable.bottom05);
+                    tabIdLayout.getTabAt(position+2).setIcon(R.drawable.bottom07);
                 }else if (position == 2){
                     tvIdAct.setText("我的资产");
                     ivIdAct.setVisibility(View.VISIBLE);
+                    tabIdLayout.getTabAt(position).setIcon(R.drawable.bottom06);
+                    tabIdLayout.getTabAt(position-2).setIcon(R.drawable.bottom01);
+                    tabIdLayout.getTabAt(position-1).setIcon(R.drawable.bottom03);
+                    tabIdLayout.getTabAt(position+1).setIcon(R.drawable.bottom07);
+
                 }else if (position == 3){
                     tvIdAct.setText("更多");
                     ivIdAct.setVisibility(View.INVISIBLE);
+                    tabIdLayout.getTabAt(position).setIcon(R.drawable.bottom08);
+                    tabIdLayout.getTabAt(position-1).setIcon(R.drawable.bottom05);
+                    tabIdLayout.getTabAt(position-2).setIcon(R.drawable.bottom03);
+                    tabIdLayout.getTabAt(position-3).setIcon(R.drawable.bottom01);
                 }
             }
 
@@ -110,10 +127,10 @@ public class Main2Activity extends BaseActivity {
     }
 
     private void initTab() {
-        tabIdLayout.addTab(tabIdLayout.newTab().setText("首页").setIcon(R.mipmap.ic_launcher));
-        tabIdLayout.addTab(tabIdLayout.newTab().setText("投资").setIcon(R.mipmap.ic_launcher));
-        tabIdLayout.addTab(tabIdLayout.newTab().setText("我的资产").setIcon(R.mipmap.ic_launcher));
-        tabIdLayout.addTab(tabIdLayout.newTab().setText("更多").setIcon(R.mipmap.ic_launcher));
+        tabIdLayout.addTab(tabIdLayout.newTab().setText("首页").setIcon(R.drawable.bottom02));
+        tabIdLayout.addTab(tabIdLayout.newTab().setText("投资").setIcon(R.drawable.bottom03));
+        tabIdLayout.addTab(tabIdLayout.newTab().setText("我的资产").setIcon(R.drawable.bottom05));
+        tabIdLayout.addTab(tabIdLayout.newTab().setText("更多").setIcon(R.drawable.bottom07));
     }
 
     @Override
