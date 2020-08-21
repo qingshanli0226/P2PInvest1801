@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.example.common.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
@@ -15,6 +16,9 @@ public class MyFragment_MyMoney extends BaseFragment {
     private Button topUp;
     private Button withdrawDeposit;
     private ImageView setting;
+    private RelativeLayout investmentLine;
+    private RelativeLayout histogram;
+    private RelativeLayout chart;
     @Override
     public int BondLayout() {
         return R.layout.myfragmentmymoney;
@@ -25,6 +29,10 @@ public class MyFragment_MyMoney extends BaseFragment {
         topUp = (Button) findViewById(R.id.top_up);
         withdrawDeposit = (Button) findViewById(R.id.withdraw_deposit);
         setting = (ImageView) findViewById(R.id.setting);
+        investmentLine = (RelativeLayout) findViewById(R.id.investment_line);
+        histogram = (RelativeLayout) findViewById(R.id.histogram);
+        chart = (RelativeLayout) findViewById(R.id.chart);
+
     }
 
     @Override
@@ -53,6 +61,15 @@ public class MyFragment_MyMoney extends BaseFragment {
                 startActivity(new Intent(getActivity(), MyWithdrawDepositActivity.class));
             }
         });
+        //则线图
+        investmentLine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),MyLineActivity.class));
+            }
+        });
+        //柱状图
+        //饼状图
     }
 
     @Override

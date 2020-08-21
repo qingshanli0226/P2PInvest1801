@@ -32,7 +32,7 @@ public class MyInvest extends BaseFragment {
         list_title.add("推荐理财");
         list_title.add("热门理财");
         list_fragment_fragment.add(new MyFragment_fragment());
-        list_fragment_fragment.add(new Myfragment());
+        list_fragment_fragment.add(new MyFragment_pic_3JI());
         list_fragment_fragment.add(new MyFragment_FlowLayout());
         tl.setSelectedTabIndicatorHeight(100);
         tl.setSelectedTabIndicatorColor(Color.BLUE);

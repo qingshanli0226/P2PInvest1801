@@ -1,46 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.p2p.bawei.p2pinvest1801">
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:name=".application.AppApplication"
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".application.AppApplication"
-        android:fullBackupContent="true"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".mvp.view.fragment.MyLineActivity"></activity>
         <activity android:name=".mvp.view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
-        <activity android:name=".mvp.view.activity.MyMainActivity"></activity>
-        <activity android:name=".mvp.view.activity.MyMessagesActivity"></activity>
-        <activity android:name=".mvp.view.activity.MyTop_Up_Activity"></activity>
-        <activity android:name=".mvp.view.activity.MyWithdrawDepositActivity"></activity>
-        <activity android:name=".mvp.view.activity.MyUserregisActivity"></activity>
-        <activity android:name=".mvp.view.activity.MyHelperActivity"></activity>
-        <activity android:name=".mvp.view.activity.MyGestureActivity"></activity>
-
+        <activity android:name=".mvp.view.activity.MyMainActivity" />
+        <activity android:name=".mvp.view.activity.MyMessagesActivity" />
+        <activity android:name=".mvp.view.activity.MyTop_Up_Activity" />
+        <activity android:name=".mvp.view.activity.MyWithdrawDepositActivity" />
+        <activity android:name=".mvp.view.activity.MyUserregisActivity" />
+        <activity android:name=".mvp.view.activity.MyHelperActivity" />
+        <activity android:name=".mvp.view.activity.MyGestureActivity" />
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
-            android:noHistory="true" >
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -52,9 +50,8 @@
         </activity>
         <activity
             android:name="com.tencent.connect.common.AssistActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:configChanges="orientation|keyboardHidden|screenSize"/>
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     </application>
-
 
 </manifest>

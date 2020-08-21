@@ -7,7 +7,6 @@ import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.example.common.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
@@ -16,7 +15,6 @@ import com.p2p.bawei.p2pinvest1801.mysef.MyPragessagerView;
 import com.youth.banner.Banner;
 import com.youth.banner.Transformer;
 import com.youth.banner.loader.ImageLoader;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +39,6 @@ public class Myfragment extends BaseFragment {
 
     @Override
     public void initdata() {
-
         Intent intent = getActivity().getIntent();
         MyBannerEntity myBannerEntity = (MyBannerEntity) intent.getSerializableExtra("banner");
         List<MyBannerEntity.ResultBean.ImageArrBean> imageArr = myBannerEntity.getResult().getImageArr();
@@ -61,8 +58,6 @@ public class Myfragment extends BaseFragment {
             }
         });
         bann.start();
-
-
     }
     private Bitmap getpic(int height,int width){
         ImageView imageView = new ImageView(getContext());
@@ -81,7 +76,6 @@ public class Myfragment extends BaseFragment {
             sampleSize = sampleSize*2;
         }
         //第一次采样结束
-
         //第二次采样，就是按照这个比例采集像素
         options.inJustDecodeBounds = false;//不是采集边框，而是按比例采集像素
         options.inSampleSize = sampleSize;

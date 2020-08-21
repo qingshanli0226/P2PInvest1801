@@ -63,6 +63,9 @@ dependencies {
     // Optional, for RxJava2 adapter
     implementation 'com.andrognito.patternlockview:patternlockview-reactive:1.0.0'
     implementation 'com.alibaba:fastjson:1.2.41'
+    //折线图
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.2.5'
+    implementation 'com.lzy.net:okgo:3.0.4'//okgo依赖
     //fastjson
     implementation files('libs/umeng-common-2.1.0.jar')
     implementation files('libs/umeng-share-core-6.9.6.jar')

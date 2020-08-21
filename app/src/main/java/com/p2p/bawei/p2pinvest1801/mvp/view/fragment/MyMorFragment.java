@@ -1,5 +1,6 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -128,6 +129,27 @@ public class MyMorFragment extends BaseFragment implements View.OnClickListener 
                 Toast.makeText(getContext(), "联系客服", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.userfeedback:
+                 final PopupWindow popupWindow1 = new PopupWindow();
+                popupWindow1.setWidth(450);
+                popupWindow1.setHeight(800);
+                popupWindow1.setOutsideTouchable(true);
+                View inflate1 = getLayoutInflater().inflate(R.layout.feedbback, null);
+                popupWindow1.setContentView(inflate1);
+                popupWindow1.showAtLocation(ccservice, Gravity.CENTER_HORIZONTAL,0,100);
+                Button ok= inflate1.findViewById(R.id.ok);
+                Button no= inflate1.findViewById(R.id.no);
+                ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getContext(), "发送反馈信息成功", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                no.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popupWindow1.dismiss();
+                    }
+                });
 
                 Toast.makeText(getContext(), "用户反馈", Toast.LENGTH_SHORT).show();
                 break;

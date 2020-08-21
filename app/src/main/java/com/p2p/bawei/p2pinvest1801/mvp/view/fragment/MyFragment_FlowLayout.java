@@ -45,6 +45,7 @@ public class MyFragment_FlowLayout extends BaseFragment<MyGetInvestPresenter> im
 
     @Override
     public void getinvest(MyInestEntivity myInestEntivity) {
+        list_string.clear();
         List<MyInestEntivity.ResultBean> beans = myInestEntivity.getResult();
         for (int i = 0; i < beans.size(); i++) {
             list_string.add(beans.get(i).getName());

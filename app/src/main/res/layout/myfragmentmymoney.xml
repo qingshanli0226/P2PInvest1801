@@ -103,6 +103,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <RelativeLayout
+            android:id="@+id/investment_line"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp">
@@ -122,6 +123,7 @@
                 android:layout_height="1dp"></View>
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/histogram"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp">
@@ -141,6 +143,7 @@
                 android:layout_height="1dp"></View>
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/chart"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp">

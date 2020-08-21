@@ -30,7 +30,7 @@ public class MyMessagesActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 PictureSelector.create(MyMessagesActivity.this,100).selectPicture(true);
-                
+
             }
         });
     }
