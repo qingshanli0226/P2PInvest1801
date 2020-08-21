@@ -1,4 +1,4 @@
-package com.p2p.bawei.p2pinvest1801.fragmentthree;
+package com.p2p.bawei.p2pinvest1801.fragment.fragmentthree;
 
 import android.widget.ImageView;
 

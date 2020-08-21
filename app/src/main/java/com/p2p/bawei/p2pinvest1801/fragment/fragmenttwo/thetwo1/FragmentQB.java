@@ -1,14 +1,13 @@
-package com.p2p.bawei.p2pinvest1801.fragmenttwo.thetwo3;
-
-import android.view.View;
+package com.p2p.bawei.p2pinvest1801.fragment.fragmenttwo.thetwo1;
 
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.mvp.view.BaseFragment;
 
-public class FragmentRM extends BaseFragment {
+public class FragmentQB extends BaseFragment {
+
     @Override
     public int banLayout() {
-        return R.layout.fragment_two_in3;
+        return R.layout.fragment_two_in1;
     }
 
     @Override

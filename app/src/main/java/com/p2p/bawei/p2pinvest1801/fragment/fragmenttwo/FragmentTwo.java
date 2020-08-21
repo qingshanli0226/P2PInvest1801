@@ -1,4 +1,4 @@
-package com.p2p.bawei.p2pinvest1801.fragmenttwo;
+package com.p2p.bawei.p2pinvest1801.fragment.fragmenttwo;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -6,9 +6,9 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.fragmenttwo.thetwo1.FragmentQB;
-import com.p2p.bawei.p2pinvest1801.fragmenttwo.thetwo2.FragmentTJ;
-import com.p2p.bawei.p2pinvest1801.fragmenttwo.thetwo3.FragmentRM;
+import com.p2p.bawei.p2pinvest1801.fragment.fragmenttwo.thetwo1.FragmentQB;
+import com.p2p.bawei.p2pinvest1801.fragment.fragmenttwo.thetwo2.FragmentTJ;
+import com.p2p.bawei.p2pinvest1801.fragment.fragmenttwo.thetwo3.FragmentRM;
 import com.p2p.bawei.p2pinvest1801.mvp.view.BaseFragment;
 
 import java.util.ArrayList;

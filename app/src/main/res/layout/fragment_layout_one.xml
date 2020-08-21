@@ -59,11 +59,11 @@
             android:layout_height="match_parent"/>
     </LinearLayout>
     
-    <com.p2p.bawei.p2pinvest1801.fragmentone.MyView
+    <com.p2p.bawei.p2pinvest1801.fragment.fragmentone.MyView
         android:layout_gravity="center"
         android:layout_width="150dp"
         android:layout_height="100dp">
-    </com.p2p.bawei.p2pinvest1801.fragmentone.MyView>
+    </com.p2p.bawei.p2pinvest1801.fragment.fragmentone.MyView>
 
     <TextView
         android:layout_marginTop="10dp"

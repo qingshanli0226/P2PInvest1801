@@ -1,6 +1,4 @@
-package com.p2p.bawei.p2pinvest1801.fragmenttwo.thetwo2;
-
-import android.view.View;
+package com.p2p.bawei.p2pinvest1801.fragment.fragmenttwo.thetwo2;
 
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.mvp.view.BaseFragment;

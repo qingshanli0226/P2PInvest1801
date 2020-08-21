@@ -1,4 +1,4 @@
-package com.p2p.bawei.p2pinvest1801.fragmentone;
+package com.p2p.bawei.p2pinvest1801.fragment.fragmentone;
 
 import android.content.Context;
 import android.widget.ImageView;

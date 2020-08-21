@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">硅谷金融</string>
+    <string name="textView1">我是一个长Text，我又是一个长Text，我还是一个长Text，我依然是一个长Text</string>
 </resources>

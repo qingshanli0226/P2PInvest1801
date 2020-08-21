@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.p2p.bawei.p2pinvest1801.fragmentfour.FragmentFour;
-import com.p2p.bawei.p2pinvest1801.fragmentone.FragmentOne;
-import com.p2p.bawei.p2pinvest1801.fragmentthree.FragmentThree;
-import com.p2p.bawei.p2pinvest1801.fragmenttwo.FragmentTwo;
+import com.p2p.bawei.p2pinvest1801.fragment.fragmentfour.FragmentFour;
+import com.p2p.bawei.p2pinvest1801.fragment.fragmentone.FragmentOne;
+import com.p2p.bawei.p2pinvest1801.fragment.fragmentthree.FragmentThree;
+import com.p2p.bawei.p2pinvest1801.fragment.fragmenttwo.FragmentTwo;
 import com.p2p.bawei.p2pinvest1801.mvp.view.BaseActivity;
 
 import java.util.ArrayList;
