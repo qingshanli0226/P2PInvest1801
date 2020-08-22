@@ -9,11 +9,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import com.p2p.bawei.p2pinvest1801.R;
 
+@SuppressWarnings({"ALL", "CanBeFinal"})
 public class BaseProgressView extends View {
 
     private int circleColor;//圆的颜色
@@ -65,7 +65,6 @@ public class BaseProgressView extends View {
         //获取控件宽高
         progressViewWidth = getMeasuredWidth();
         progressViewHight = getMeasuredHeight();
-        Log.e("BaseProgressView -> onMeasure", "宽:"+progressViewWidth+"高:"+progressViewHight);
     }
 
     @Override
@@ -92,7 +91,7 @@ public class BaseProgressView extends View {
         Paint paint2 = new Paint();
         paint2.setStyle(Paint.Style.STROKE);
         paint2.setColor(textColor);
-        paint2.setStrokeWidth(5);
+        paint2.setStrokeWidth(2);
         paint2.setTextSize(textSize);
         int text = (sweepAngle*100)/360;
         canvas.drawText(text+"%",progressViewWidth/2 - diameter / 8 ,progressViewHight/2 ,paint2);

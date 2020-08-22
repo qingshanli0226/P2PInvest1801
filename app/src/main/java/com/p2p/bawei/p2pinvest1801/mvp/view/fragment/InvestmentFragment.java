@@ -3,7 +3,6 @@ package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.widget.TableLayout;
 
 import com.example.lib_core.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
@@ -13,14 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InvestmentFragment extends BaseFragment {
-    private TabLayout mainInvestmentViewTabLayout;
-    private ViewPager mainInvestmentViewViewpager;
+
     private List<Fragment> fragment_list = new ArrayList<>();//fragment集合
     private List<String> title_list = new ArrayList<>();//tab标题
     @Override
     public void initView() {
-        mainInvestmentViewTabLayout = (TabLayout) findViewById(R.id.main_investment_view_tabLayout);
-        mainInvestmentViewViewpager = (ViewPager) findViewById(R.id.main_investment_view_viewpager);
+        TabLayout mainInvestmentViewTabLayout = (TabLayout) findViewById(R.id.main_investment_view_tabLayout);
+        ViewPager mainInvestmentViewViewpager = (ViewPager) findViewById(R.id.main_investment_view_viewpager);
         //初始化fragment
         InvestmentFragmentAllFinancialFragment investmentFragmentAllFinancialFragment = new InvestmentFragmentAllFinancialFragment();
         InvestmentFragmentRecommendAFinancialFragment investmentFragmentRecommendAFinancialFragment = new InvestmentFragmentRecommendAFinancialFragment();

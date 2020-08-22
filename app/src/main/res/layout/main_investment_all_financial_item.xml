@@ -128,7 +128,7 @@
                 app:sectorColor="#fff000"
                 app:sectorSize="2"
                 app:textColor="#bbb"
-                app:textSize="10"
+                app:textSize="15"
                 app:diameter="80"
                 android:layout_width="50dp"
                 android:layout_height="50dp" />

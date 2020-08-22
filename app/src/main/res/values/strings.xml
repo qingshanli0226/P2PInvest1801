@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">喵喵</string>
+    <string name="welcome_img">欢迎页面图片</string>
+    <string name="assets_pop_back">充值页面返回按钮</string>
+
 </resources>

@@ -1,10 +1,7 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 
 import android.content.Context;
-import android.provider.ContactsContract;
-import android.util.Log;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.lib_core.mvp.view.BaseFragment;
@@ -26,21 +23,16 @@ import java.util.List;
  */
 public class HomeFragment extends BaseFragment<HomePresenter> implements HomeContract.View {
     private Banner mainHomeViewBanner;
-    private TextView mainHomeViewBannerText;
-    private List<String> banner_data_list = new ArrayList<>();
+    private final List<String> banner_data_list = new ArrayList<>();
     private BaseProgressView mainHomeViewBaseProgressView;
     @Override
     public void initView() {
-        mainHomeViewBanner = (Banner) findViewById(R.id.main_home_view_banner);
-        mainHomeViewBannerText = (TextView) findViewById(R.id.main_home_view_banner_text);
-        mainHomeViewBaseProgressView = (BaseProgressView) findViewById(R.id.main_home_view_BaseProgressView);
-
-
+        mainHomeViewBanner = findViewById(R.id.main_home_view_banner);
+        mainHomeViewBaseProgressView =  findViewById(R.id.main_home_view_BaseProgressView);
     }
 
     @Override
     public void initData() {
-
     }
 
     @Override
@@ -65,7 +57,6 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         HomeBean.ResultBean.ProInfoBean proInfo = result.getProInfo();
         int i = Integer.parseInt(proInfo.getProgress());
         mainHomeViewBaseProgressView.setProgress(i);
-        Log.e("HomeFragment -> initHomeData", "initHomeData: "+i );
     }
 
     //获取banner数据并启动banner
@@ -73,7 +64,6 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         for (int i = 0 ; i < list.size() ; i++){
             banner_data_list.add(list.get(i).getIMAURL());
         }
-        if (banner_data_list.size() >= 0){
             mainHomeViewBanner.setBannerAnimation(Transformer.DepthPage);
             mainHomeViewBanner.setImages(banner_data_list);
             mainHomeViewBanner.setImageLoader(new ImageLoader() {
@@ -83,7 +73,6 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
                 }
             });
             mainHomeViewBanner.start();
-        }
     }
 
 }

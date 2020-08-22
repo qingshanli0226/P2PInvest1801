@@ -4,5 +4,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorRed">#F44336</color>
-    <color name="colorBlue">#2196F3</color>
+    @ColorInt <color name="colorBlue">#27B8EE</color>
+    <color name="colorTransparent">#00000000</color>
 </resources>

@@ -2,13 +2,8 @@ package com.p2p.bawei.p2pinvest1801.mvp.view.activity;
 
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RadioGroup;
 
 import com.example.lib_core.mvp.view.BaseActivity;
 import com.next.easynavigation.view.EasyNavigationBar;
@@ -29,11 +24,13 @@ public class MainActivity extends BaseActivity {
     private List<Fragment> fragment_List = new ArrayList<>();
     @Override
     public void initView() {
+
+
         fragment_List.add(new HomeFragment());
         fragment_List.add(new InvestmentFragment());
         fragment_List.add(new AssetsFragment());
         fragment_List.add(new MoreFragment());
-        mainEasy = (EasyNavigationBar) findViewById(R.id.main_easy);
+        mainEasy =  findViewById(R.id.main_easy);
         mainEasy.defaultSetting()
                 .selectIconItems(select)
                 .normalIconItems(unSelect)

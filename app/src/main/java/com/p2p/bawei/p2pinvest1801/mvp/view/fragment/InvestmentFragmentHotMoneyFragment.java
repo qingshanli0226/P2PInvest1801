@@ -2,12 +2,8 @@ package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 
 import android.graphics.drawable.GradientDrawable;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.lib_core.mvp.view.BaseFragment;
 import com.fynn.fluidlayout.FluidLayout;
@@ -18,7 +14,6 @@ import com.p2p.bawei.p2pinvest1801.mvp.model.InvestmentAllFinancialModel;
 import com.p2p.bawei.p2pinvest1801.mvp.presenter.InvestmentAllFinancialPresenter;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class InvestmentFragmentHotMoneyFragment extends BaseFragment <InvestmentAllFinancialPresenter> implements InvestmentAllFinancialContract.View  {
@@ -27,7 +22,7 @@ public class InvestmentFragmentHotMoneyFragment extends BaseFragment <Investment
     private int[] color = {0xFFFF34B3,0xFFFF34B3,0xFFFF34B3,0xFFFF34B3,0xFFFF34B3, 0xFF9ACD32, 0xFF9400D3, 0xFFEE9A00, 0xFF9C54FF, 0xFF3B78};
     @Override
     public void initView() {
-        fluid = (FluidLayout) findViewById(R.id.fluid);
+        fluid = findViewById(R.id.fluid);
     }
 
     @Override

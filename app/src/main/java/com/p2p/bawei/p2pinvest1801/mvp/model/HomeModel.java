@@ -7,7 +7,6 @@ import com.p2p.bawei.p2pinvest1801.bean.HomeBean;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.HomeContract;
 
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 

@@ -3,9 +3,7 @@ package com.p2p.bawei.p2pinvest1801.mvp.model;
 import com.example.lib_core.http.Http;
 import com.example.lib_core.mvp.model.BaseModel;
 import com.p2p.bawei.p2pinvest1801.api.API;
-import com.p2p.bawei.p2pinvest1801.bean.HomeBean;
 import com.p2p.bawei.p2pinvest1801.bean.InvestmentBean;
-import com.p2p.bawei.p2pinvest1801.mvp.contract.HomeContract;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.InvestmentAllFinancialContract;
 
 import io.reactivex.Observer;

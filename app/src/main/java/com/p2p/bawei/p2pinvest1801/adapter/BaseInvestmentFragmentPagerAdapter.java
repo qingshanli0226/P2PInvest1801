@@ -5,12 +5,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BaseInvestmentFragmentPagerAdapter extends FragmentPagerAdapter {
-    private List<Fragment> fragment_list;//fragment集合
-    private List<String> title_list;//tab标题
+    private final List<Fragment> fragment_list;//fragment集合
+    private final List<String> title_list;//tab标题
 
     public BaseInvestmentFragmentPagerAdapter(FragmentManager fm, List<Fragment> fragment_list, List<String> title_list) {
         super(fm);

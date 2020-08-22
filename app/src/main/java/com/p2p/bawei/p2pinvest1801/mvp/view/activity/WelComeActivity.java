@@ -1,20 +1,17 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.activity;
 
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.lib_core.mvp.view.BaseActivity;
@@ -39,6 +36,7 @@ public class WelComeActivity extends BaseActivity<HomePresenter> implements Home
     private TextView welcomeCountdown;
     private float num = 0.6f;
     private int number = 3;//倒计时
+
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -84,8 +82,14 @@ public class WelComeActivity extends BaseActivity<HomePresenter> implements Home
     private Timer timer;
     @Override
     public void initView() {
-        welcomeCountdown = (TextView) findViewById(R.id.welcome_countdown);
-        welcomeImg = (ImageView) findViewById(R.id.welcome_img);
+
+        if(Build.VERSION.SDK_INT>=23){
+            String[] mPermissionList = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.CALL_PHONE,Manifest.permission.READ_LOGS,Manifest.permission.READ_PHONE_STATE, Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.SET_DEBUG_APP,Manifest.permission.SYSTEM_ALERT_WINDOW,Manifest.permission.GET_ACCOUNTS,Manifest.permission.WRITE_APN_SETTINGS};
+            ActivityCompat.requestPermissions(this,mPermissionList,123);
+        }
+
+        welcomeCountdown =findViewById(R.id.welcome_countdown);
+        welcomeImg =  findViewById(R.id.welcome_img);
 
         timer = new Timer();
         timer.schedule(new TimerTask() {

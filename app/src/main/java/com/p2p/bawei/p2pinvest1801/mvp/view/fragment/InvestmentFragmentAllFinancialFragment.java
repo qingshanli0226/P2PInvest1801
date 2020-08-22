@@ -6,25 +6,23 @@ import android.support.v7.widget.RecyclerView;
 import com.example.lib_core.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.adapter.BaseInvestmentFragmentAllFinancialAdapter;
-import com.p2p.bawei.p2pinvest1801.adapter.BaseInvestmentFragmentPagerAdapter;
 import com.p2p.bawei.p2pinvest1801.bean.InvestmentBean;
 import com.p2p.bawei.p2pinvest1801.divideritemdecoration.BaseDividerItemDecoration;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.InvestmentAllFinancialContract;
 import com.p2p.bawei.p2pinvest1801.mvp.model.InvestmentAllFinancialModel;
 import com.p2p.bawei.p2pinvest1801.mvp.presenter.InvestmentAllFinancialPresenter;
 import com.p2p.bawei.p2pinvest1801.tool.InvestmentDataTool;
-import com.sunfusheng.marqueeview.MarqueeView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class InvestmentFragmentAllFinancialFragment extends BaseFragment<InvestmentAllFinancialPresenter> implements InvestmentAllFinancialContract.View {
-    private RecyclerView mainInvestmentAllFinancialViewRecyclerView;
+
     private List<InvestmentBean.ResultBean> list = new ArrayList<>();
     private BaseInvestmentFragmentAllFinancialAdapter baseInvestmentFragmentAllFinancialAdapter;
     @Override
     public void initView() {
-        mainInvestmentAllFinancialViewRecyclerView = (RecyclerView) findViewById(R.id.main_investment_all_financial_view_RecyclerView);
+        RecyclerView mainInvestmentAllFinancialViewRecyclerView = findViewById(R.id.main_investment_all_financial_view_RecyclerView);
 
         baseInvestmentFragmentAllFinancialAdapter = new BaseInvestmentFragmentAllFinancialAdapter(R.layout.main_investment_all_financial_item, list);
         mainInvestmentAllFinancialViewRecyclerView.setAdapter(baseInvestmentFragmentAllFinancialAdapter);

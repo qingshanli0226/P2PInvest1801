@@ -2,12 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="#aaa"
+    android:background="#FAFAFA"
     android:layout_height="match_parent">
     <LinearLayout
         android:background="@drawable/lock_title_bg"
         android:layout_width="match_parent"
         android:layout_height="50dp">
+        <ImageView
+            android:contentDescription="@string/assets_pop_back"
+            android:id="@+id/assets_pop_back"
+            android:src="@drawable/left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <TextView
             android:gravity="center"
             android:textColor="#24A9DB"
@@ -16,5 +22,128 @@
             android:layout_width="match_parent"
             android:layout_height="50dp" />
     </LinearLayout>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:background="#aaa"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+    <LinearLayout
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textSize="20dp"
+            android:gravity="center"
+            android:text="充值金额:"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:gravity="center"
+            android:text="|"
+            android:paddingLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <EditText
+            android:inputType="number"
+            android:paddingLeft="15dp"
+            android:id="@+id/assets_pop_money"
+            android:hint="请输入充值金额"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:background="#aaa"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+    <LinearLayout
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <TextView
+            android:text="您的账户目前可用余额:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/colorRed"
+            android:text="0元"
+            android:id="@+id/assets_pop_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:background="#FAFAFA"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:textColor="#fff"
+            android:background="@drawable/btn_02"
+            android:id="@+id/assets_pop_top_up_btn"
+            android:layout_weight="20"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:text="充值"
+            android:layout_width="0dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:background="#FAFAFA"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="30dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="温馨提示："
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+        android:textColor="#aaa"
+        android:text="1、所有投资保证金将有第三方托管。"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#aaa"
+            android:text="2、线上、线下充值手续费全免。"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#aaa"
+            android:text="3、请注意您的银行卡充值限额，以免造成不便。"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#aaa"
+            android:text="4、如果充值进的没有及时到账，请联系客服。"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#aaa"
+            android:text="5、喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵。"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#aaa"
+            android:text="6、喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵。"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#aaa"
+            android:text="7、喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵。"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </LinearLayout>
