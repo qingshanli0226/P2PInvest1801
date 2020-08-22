@@ -1,12 +1,17 @@
 package com.p2p.bawei.p2pinvest1801;
 
+import android.Manifest;
+import android.app.AlertDialog;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +27,7 @@ import com.example.net.mode.BannerBean;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.p2p.bawei.p2pinvest1801.activity.LoginActivity;
 import com.p2p.bawei.p2pinvest1801.fragment.HomeFragment;
 import com.p2p.bawei.p2pinvest1801.fragment.InvestFragment;
 import com.p2p.bawei.p2pinvest1801.fragment.MeFragment;
@@ -31,6 +37,9 @@ import com.p2p.bawei.p2pinvest1801.mode.CommonCustomTabEntity;
 import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity {
+
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     private CommonTabLayout common;
 
@@ -77,6 +86,8 @@ public class MainActivity extends BaseActivity {
                         showFragment(meFragment);
                         TextView titleView = common.getTitleView(position);
                         titleView.setTextColor(Color.RED);
+                        //判断登录状态
+                        isLogin();
                         break;
                     case 3:
                         showFragment(moreFragment);
@@ -91,8 +102,48 @@ public class MainActivity extends BaseActivity {
         });
     }
 
+    private void isLogin() {
+        //获取登录状态
+        boolean aBoolean = sharedPreferences.getBoolean(FinanceConstant.ISLOGIN, false);
+        if(aBoolean){
+            //登录过
+        } else{
+            //第一次登录
+            //弹出对话框
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            View inflate = LayoutInflater.from(this).inflate(R.layout.myview_login, null);
+            builder.setView(inflate);
+            final AlertDialog alertDialog = builder.create();
+            //设置外部点击不可取消
+//            alertDialog.setCanceledOnTouchOutside(false);
+            alertDialog.setCancelable(false);
+            alertDialog.show();
+
+            //获取yesLogin按钮
+            Button yesLogin = inflate.findViewById(R.id.yesLogin);
+
+            //点击跳转到登录页面
+            yesLogin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alertDialog.dismiss();
+                    lunachActivity(LoginActivity.class,null);
+                }
+            });
+        }
+    }
+
     @Override
     protected void initView() {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            //获取权限
+            requestPermissions(new String[]{Manifest.permission.CAMERA,Manifest.permission.CALL_PHONE},120);
+        }
+
+        //获取sp的实例
+        sharedPreferences = CacheManager.getInstance().getSharedPreferences();
+        editor = CacheManager.getInstance().getEditor();
+
         common = (CommonTabLayout) findViewById(R.id.common);
 
         //获取传递过来的banner数据

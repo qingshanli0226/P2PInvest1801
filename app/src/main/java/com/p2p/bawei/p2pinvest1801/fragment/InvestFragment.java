@@ -16,21 +16,19 @@ import java.util.ArrayList;
 
 public class InvestFragment extends BaseFragment {
 
-    private ToolBar toolBar;
-    private TabLayout investTab;
-    private ViewPager investVp;
+    ToolBar toolBar;
+    TabLayout investTab;
+    ViewPager investVp;
 
     //Fragment数据源
     private ArrayList<Fragment> fragments = new ArrayList<>();
-    private ProductListFragment productListFragment;
-    private ProductRecommondFragment productRecommondFragment;
-    private ProductHotFragment productHotFragment;
+    ProductListFragment productListFragment;
+    ProductRecommondFragment productRecommondFragment;
+    ProductHotFragment productHotFragment;
     //标题数据源
     private ArrayList<String> tabLayoutTitles = new ArrayList<>();
     //适配器
     private InvestAdapter investAdapter;
-
-
 
     @Override
     protected int getLayoutId() {
@@ -75,13 +73,5 @@ public class InvestFragment extends BaseFragment {
             productHotFragment = new ProductHotFragment();
 
     }
-
-//    public TextView getTabView(int position){
-//        View inflate = LayoutInflater.from(this).inflate(R.layout.common_layout, null);
-//        TextView textView = inflate.findViewById(R.id.commonTv);
-//        textView.setText(arrayList.get(position));
-//        return textView;
-//    }
-
 
 }

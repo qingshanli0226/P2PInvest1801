@@ -1,19 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
     <com.example.common.view.ToolBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:id="@+id/toolBar"></com.example.common.view.ToolBar>
+        android:id="@+id/toolBar"
+        app:left_show="false"
+        app:title_text="我的资产"></com.example.common.view.ToolBar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/commom_top">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/my_user_default"
+            android:layout_centerInParent="true"
+            android:id="@+id/meUserImg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Hi,welcome!"
+            android:textColor="#fff"
+            android:layout_below="@+id/meUserImg"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:id="@+id/meName"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#EEEEEE"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="学习提示:"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="#000"
+                android:text="充值我们将以集成支付宝sdk支付金额演示充值功能" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="#000"
+                android:text="提现业务:在p2p金融平台中,提现都不是实时到账的,而是审核提现,系统将会告知24小时内进行转账,如果未收到,请联系客服..." />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/meRecharge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="9dp"
+                android:layout_weight="1"
+                android:src="@drawable/my_recharge_bg" />
+
+            <ImageView
+                android:id="@+id/meWithdraw"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_weight="1"
+                android:src="@drawable/my_withdraw_bg" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--充分使用textview属性代替LinearLayout布局-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textSize="20sp"
+        android:drawableLeft="@drawable/my_invest_manage"
+        android:text="投资管理"
+        android:gravity="center_vertical"
+        android:layout_marginTop="1dp"
+        android:background="#fff"
+        android:drawablePadding="8dp"
+        android:drawableRight="@mipmap/right"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/textSize20"
-        android:text="me"/>
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textSize="20sp"
+        android:drawableLeft="@drawable/my_reward_manage"
+        android:text="投资管理(直观)"
+        android:gravity="center_vertical"
+        android:layout_marginTop="1dp"
+        android:background="#fff"
+        android:drawablePadding="8dp"
+        android:drawableRight="@mipmap/right"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textSize="20sp"
+        android:drawableLeft="@drawable/my_asset_manage"
+        android:text="资产管理"
+        android:gravity="center_vertical"
+        android:layout_marginTop="1dp"
+        android:background="#fff"
+        android:drawablePadding="8dp"
+        android:drawableRight="@mipmap/right"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"/>
+
+
 
 </LinearLayout>

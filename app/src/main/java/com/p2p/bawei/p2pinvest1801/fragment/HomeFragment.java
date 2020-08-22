@@ -34,8 +34,7 @@ public class HomeFragment extends BaseFragment {
     private TextView homeTv;
     private RoundProgress homeRoundProgress;
     private TextView homeYear;
-    private ImageView homeAnim;
-    private AnimationDrawable animationDrawable;
+    ImageView homeAnim;
     //是否开启线程
     private boolean isStart = true;
 

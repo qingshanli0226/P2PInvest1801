@@ -10,7 +10,7 @@
         android:layout_height="200dp"
         android:visibility="gone"
         android:id="@+id/homeAnim"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center" />
 
     <com.example.common.view.ToolBar
         android:layout_width="match_parent"

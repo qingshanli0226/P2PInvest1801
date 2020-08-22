@@ -2,7 +2,7 @@ package com.example.common;
 
 public class FinanceConstant {
 
-    public static String BASE_URL = "http://49.233.93.155:8080/";
+    public static String BASE_URL = "http://49.233.93.155:9999/";
 
     public static String BUNDLE = "BUNDLE";
 
@@ -21,4 +21,17 @@ public class FinanceConstant {
 
     public static final String SOCKET_TIMEOUT_ERROR_CODE = "40000";
     public static final String SOCKET_TIMEOUT_ERROR_MESSAGE = "连接超时错误";
+
+    //Sp文件的名字
+    public static String SP_NAME = "finance.sp";
+    //是否打开手势密码
+    public static String ISOPEN = "isOpen";
+    //登录状态
+    public static String ISLOGIN = "isLogin";
+    //用户名
+    public static String NAME = "name";
+    //token值
+    public static String TOKEN = "token";
+    //phone手机号码
+    public static String PHONE = "phone";
 }

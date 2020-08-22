@@ -30,7 +30,6 @@ public class ProductHotFragment extends BaseFragment {
         //为布局添加内容
         for (int i = 0; i < names.size() ; i++) {
             addTextView(names.get(i));
-            printLog(names.get(i)+i);
         }
     }
 

@@ -2,10 +2,20 @@ package com.example.net;
 
 import com.example.net.mode.BannerBean;
 import com.example.net.mode.InvestListBean;
+import com.example.net.mode.LoginBean;
+import com.example.net.mode.RegisterBean;
+import com.example.net.mode.UnLoginBean;
 import com.example.net.mode.VersionBean;
 
+import java.util.Map;
+
 import io.reactivex.Observable;
+import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface FinanceApi {
     //atguigu/json/P2PInvest/index.json
@@ -17,4 +27,16 @@ public interface FinanceApi {
 
     @GET("atguigu/json/P2PInvest/product.json")
     Observable<InvestListBean> getInvestListData();
+
+    @POST("register")
+    @FormUrlEncoded
+    Observable<RegisterBean> getRegisterData(@FieldMap Map<String, String> params);
+
+    @POST("login")
+    @FormUrlEncoded
+    Observable<LoginBean> getLoginData(@FieldMap Map<String, String> params);
+
+    @POST("logout")
+    Observable<UnLoginBean> getLoginOutData();
+
 }

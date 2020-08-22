@@ -1,8 +1,11 @@
 package com.example.framework.base;
 
+import io.reactivex.disposables.Disposable;
+
 public class BasePresenter<V extends IView> implements IPresenter<V> {
 
     protected V iHttpView;
+    protected Disposable gDisposable;
 
     @Override
     public void attachView(V iHttpView) {
@@ -11,6 +14,9 @@ public class BasePresenter<V extends IView> implements IPresenter<V> {
 
     @Override
     public void detachView() {
+        if(gDisposable != null && !gDisposable.isDisposed()){
+            gDisposable.dispose();
+        }
         this.iHttpView = null;
     }
 }

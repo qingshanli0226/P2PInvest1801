@@ -33,7 +33,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class WelcomeActivity extends BaseMVPActivity<HomePresenterImpl, HomeContract.HomeView> implements HomeContract.HomeView {
-    private ImageView welcomeImg;
+    ImageView welcomeImg;
     private RelativeLayout relative;
     private TextView timerCount;
 

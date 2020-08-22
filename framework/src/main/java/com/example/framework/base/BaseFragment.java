@@ -21,7 +21,7 @@ public abstract class BaseFragment extends Fragment implements ToolBar.IToolBarC
 
     private static final String TAG = "BaseFragment";
     private View baseView;
-    private ToolBar toolBar;
+    ToolBar toolBar;
 
     @Nullable
     @Override

@@ -1,5 +1,7 @@
 package com.p2p.bawei.p2pinvest1801.presenter;
 
+import android.util.Log;
+
 import com.example.net.FinanceManager;
 import com.example.net.mode.InvestListBean;
 import com.p2p.bawei.p2pinvest1801.contract.ProductListContract;
@@ -23,13 +25,14 @@ public class ProductListPresenterImpl extends ProductListContract.ProductListPre
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
-                    public void accept(Disposable disposable) throws Exception {
+                    public void accept(Disposable disposable) {
+                        gDisposable = disposable;
                         iHttpView.showLoading();
                     }
                 })
                 .doFinally(new Action() {
                     @Override
-                    public void run() throws Exception {
+                    public void run(){
                         iHttpView.hideLoading();
                     }
                 })
@@ -41,6 +44,9 @@ public class ProductListPresenterImpl extends ProductListContract.ProductListPre
 
                     @Override
                     public void onNext(InvestListBean investListBean) {
+                        if(iHttpView == null){//页面销毁了就没有必要回调数据了
+                            return;
+                        }
                         if(investListBean.getCode() == 200){
                             iHttpView.onListData(investListBean);
                         } else{

@@ -15,7 +15,7 @@ import com.example.framework.R;
 public abstract class BaseActivity extends AppCompatActivity implements ToolBar.IToolBarClickListner {
 
     private static final String TAG = "BaseActivity";
-    private ToolBar toolBar;
+    ToolBar toolBar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

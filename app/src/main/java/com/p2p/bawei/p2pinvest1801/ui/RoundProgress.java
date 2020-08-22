@@ -21,14 +21,14 @@ public class RoundProgress extends View {
     private float text_size;//字体大小
     private int text_color;//字体颜色
 
-    private int stoke_width;//画笔的宽度
+    int stoke_width;//画笔的宽度
     private int max;// 圆环的最大值
     private int progress;//圆环的进度
 
     private int width;//当前视图的宽度
     private int height;//当前视图的高度
 
-    private Paint paint;
+    Paint paint;
 
     public RoundProgress(Context context) {
         super(context);

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/userMessageView">
+
+    <com.example.common.view.ToolBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolBar"
+        app:right_show="false"
+        app:title_text="用户信息"></com.example.common.view.ToolBar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/my_user_default"
+            android:layout_centerInParent="true"
+            android:id="@+id/userMessageImg"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="更改头像"
+            android:layout_below="@+id/userMessageImg"
+            android:layout_centerHorizontal="true"
+            android:textColor="#00BAFF"
+            android:layout_marginTop="10dp"
+            android:id="@+id/userMessageTv"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EBE8E8"
+        android:layout_marginTop="30dp"></View>
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="退出登录"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/register_button_bac"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:id="@+id/unLoginButton"/>
+
+</LinearLayout>

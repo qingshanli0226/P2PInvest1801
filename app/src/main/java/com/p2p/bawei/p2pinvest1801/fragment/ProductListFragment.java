@@ -25,7 +25,8 @@ public class ProductListFragment extends BaseMVPFragment<ProductListPresenterImp
     private AnimationDrawable animationDrawable;
     private MyLoadingView listLoadingView;
 
-
+    //判断是否请求一次
+    private boolean isStart = true;
 
     //数据源
     private ArrayList<InvestListBean.ResultBean> resultBeans = new ArrayList<>();
@@ -57,9 +58,11 @@ public class ProductListFragment extends BaseMVPFragment<ProductListPresenterImp
 
     @Override
     protected void initGetData() {
-            //获取数据
-            iHttpPresenter.onGetListData();
-
+            if(isStart){
+                //获取数据
+                iHttpPresenter.onGetListData();
+                isStart = false;
+            }
     }
 
     @Override

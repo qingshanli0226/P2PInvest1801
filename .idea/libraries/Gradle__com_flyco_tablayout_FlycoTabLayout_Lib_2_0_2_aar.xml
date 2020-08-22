@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4f59d5153e1fdde4c1104ab19ca2c4ff/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4f59d5153e1fdde4c1104ab19ca2c4ff/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9b5ec9b693f8ee08f2c35f4eeea1031b/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9b5ec9b693f8ee08f2c35f4eeea1031b/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
