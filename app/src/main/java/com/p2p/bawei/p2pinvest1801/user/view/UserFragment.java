@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.example.framework.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.user.activity.UserInfoActivity;
@@ -54,6 +56,7 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
         llZichan = findViewById(R.id.ll_zichan);
 
         ivTitleSetting.setOnClickListener(this);
+        ivMeIcon.setOnClickListener(this);
         recharge.setOnClickListener(this);
         withdraw.setOnClickListener(this);
         llTouzi.setOnClickListener(this);
@@ -69,6 +72,10 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_title_setting:
+                //跳转用户信息页面
+                launchActivity(UserInfoActivity.class, new Bundle());
+                break;
+            case R.id.iv_me_icon:
                 //跳转用户信息页面
                 launchActivity(UserInfoActivity.class, new Bundle());
                 break;
@@ -89,9 +96,18 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onStart() {
         super.onStart();
+        //更新用户信息
         SharedPreferences user_info = getActivity().getSharedPreferences("user_info", Context.MODE_PRIVATE);
         String name = user_info.getString("name", "未登录");
         tvMeName.setText(name);
         printLog("更新用户信息");
+
+        //更新头像
+        SharedPreferences headIcon = getActivity().getSharedPreferences("headIcon", Context.MODE_PRIVATE);
+        String icon = headIcon.getString("icon", "");
+        Glide.with(getContext())
+                .load(icon)
+                .transform(new CircleCrop())
+                .into(ivMeIcon);
     }
 }

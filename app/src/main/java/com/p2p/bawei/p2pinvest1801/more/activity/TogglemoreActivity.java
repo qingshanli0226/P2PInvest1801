@@ -2,6 +2,7 @@ package com.p2p.bawei.p2pinvest1801.more.activity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.TextView;
 
@@ -10,6 +11,7 @@ import com.github.ihsg.patternlocker.OnPatternChangeListener;
 import com.github.ihsg.patternlocker.PatternIndicatorView;
 import com.github.ihsg.patternlocker.PatternLockerView;
 import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.main.view.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +20,11 @@ public class TogglemoreActivity extends BaseActivity {
     private TextView patternText;
     private PatternIndicatorView patternIndicatorView;
     private PatternLockerView patternLockView;
-
+    private SharedPreferences box_isChecked;
     private List<Integer> lock_list = new ArrayList<>();//存储首次绘制
     private int content = 0;//验证次数
+    private TextView toggleTitle;
+    private boolean checked;
 
     @Override
     protected void initData() {
@@ -31,7 +35,12 @@ public class TogglemoreActivity extends BaseActivity {
     protected void initView() {
         patternIndicatorView = (PatternIndicatorView) findViewById(R.id.pattern_indicator_view);
         patternText = findViewById(R.id.pattern_text);
+        toggleTitle = findViewById(R.id.toggle_title);
+
         patternLockView = (PatternLockerView) findViewById(R.id.pattern_lock_view);
+
+        box_isChecked = getSharedPreferences("box_isChecked", Context.MODE_PRIVATE);
+        checked = box_isChecked.getBoolean("isChecked", false);
 
         patternLockView.setOnPatternChangedListener(new OnPatternChangeListener() {
             @Override
@@ -49,7 +58,28 @@ public class TogglemoreActivity extends BaseActivity {
             public void onComplete(PatternLockerView patternLockerView, List<Integer> list) {
                 //绘制完成
                 //判断是否是错误绘制
-                isDraw(patternLockerView, list);
+                //判断是否是登录验证
+                if (checked) {
+                    //登录验证手势密码
+                    String lock_str = box_isChecked.getString("lock_str", "");
+
+                    StringBuilder stringBuilder = new StringBuilder();
+                    for (Integer integer : list
+                    ) {
+                        stringBuilder.append(String.valueOf(integer));
+                    }
+
+                    if (!stringBuilder.toString().equals(lock_str.toString())) {
+                        patternText.setText("手势密码错误，请重新输入");
+                        return;
+                    }
+
+                    showMessage("登录成功");
+                    removeCurrentActivity();
+                } else {
+                    //做注册手势密码
+                    isDraw(patternLockerView, list);
+                }
             }
 
             @Override
@@ -100,9 +130,18 @@ public class TogglemoreActivity extends BaseActivity {
             if (content == 2) {
                 printLog("成功");
                 showMessage("手势密码设置成功");
+
+                StringBuilder stringBuilder = new StringBuilder();
+                for (Integer integer : list
+                ) {
+                    stringBuilder.append(String.valueOf(integer));
+                }
+
                 SharedPreferences box_isChecked = getSharedPreferences("box_isChecked", Context.MODE_PRIVATE);
                 SharedPreferences.Editor edit = box_isChecked.edit();
                 edit.putBoolean("isChecked", true);
+                edit.putString("lock_str", stringBuilder.toString());
+                edit.apply();
                 edit.commit();
                 removeCurrentActivity();
             }
@@ -118,8 +157,15 @@ public class TogglemoreActivity extends BaseActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+        launchActivity(MainActivity.class, new Bundle());
         return super.onKeyDown(keyCode, event);
     }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (checked) {
+            toggleTitle.setText("输入手势密码以解锁");
+        }
+    }
 }

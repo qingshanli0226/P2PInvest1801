@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,7 +14,7 @@
 
     <include layout="@layout/common_title" />
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
@@ -23,10 +23,10 @@
         <com.youth.banner.Banner
             android:id="@+id/banner"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/banner170"></com.youth.banner.Banner>
+            android:layout_height="450px"></com.youth.banner.Banner>
 
 
-        <LinearLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -36,31 +36,31 @@
                 android:id="@+id/tv_home_product"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:drawablePadding="4dp"
+                android:layout_marginTop="30px"
+                android:layout_marginBottom="30px"
+                android:drawablePadding="8px"
                 android:text="硅谷堂180计划第一期"
                 android:textColor="@color/product_detail_common"
-                android:textSize="30sp" />
+                android:textSize="60px" />
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="60px"
+                android:layout_height="60px"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="3dp"
+                android:layout_marginLeft="9px"
                 android:src="@drawable/recommend" />
-        </LinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
 
 
-        <LinearLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="10dp">
+            android:layout_height="80px"
+            android:layout_marginLeft="60px"
+            android:layout_marginRight="60px"
+            android:layout_marginBottom="20px">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/home_attribute_bg"
@@ -71,31 +71,31 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginLeft="16px"
+                android:layout_marginRight="16px"
                 android:layout_weight="1"
                 android:background="@drawable/home_attribute_bg"
                 android:gravity="center"
-                android:padding="5dp"
+                android:padding="10px"
                 android:text="每日计息"
                 android:textColor="@color/home_back_unselected" />
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/home_attribute_bg"
                 android:gravity="center"
-                android:padding="5dp"
+                android:padding="10px"
                 android:text="高额收益"
                 android:textColor="@color/home_back_unselected" />
-        </LinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
 
 
-        <RelativeLayout
+        <com.zhy.autolayout.AutoRelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="20px">
 
             <TextView
                 android:id="@+id/tv_roundPro"
@@ -107,48 +107,48 @@
 
             <com.p2p.bawei.p2pinvest1801.home.view.RoundProgressBar
                 android:id="@+id/roundPro_home"
-                android:layout_width="120dp"
-                android:layout_height="120dp" />
+                android:layout_width="150px"
+                android:layout_height="150px" />
 
-        </RelativeLayout>
+        </com.zhy.autolayout.AutoRelativeLayout>
 
 
-        <LinearLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="40px">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="预期年利率："
                 android:textColor="@color/product_detail_common"
-                android:textSize="20sp" />
+                android:textSize="50px" />
 
             <TextView
                 android:id="@+id/tv_home_yearrate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10% + 2%"
+                android:text="10%"
                 android:textColor="@color/product_detail_common"
-                android:textSize="20sp" />
+                android:textSize="40px" />
 
-        </LinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
 
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="47dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
+            android:layout_height="117px"
+            android:layout_marginLeft="60px"
+            android:layout_marginTop="30px"
+            android:layout_marginRight="60px"
             android:background="@drawable/home"
             android:text="立即加入"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="60px" />
 
 
-        <LinearLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -166,8 +166,8 @@
                 android:layout_height="wrap_content"
                 android:text="风险保障金由硅谷银行监管"
                 android:textColor="@color/home_back_unselected" />
-        </LinearLayout>
-    </LinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
-</LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>
 

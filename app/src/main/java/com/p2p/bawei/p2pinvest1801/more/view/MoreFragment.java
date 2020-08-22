@@ -1,13 +1,11 @@
 package com.p2p.bawei.p2pinvest1801.more.view;
 
 
-import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +18,6 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.framework.BaseFragment;
@@ -115,10 +112,6 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener, 
     }
 
     private void share() {
-        if (Build.VERSION.SDK_INT >= 23) {
-            String[] mPermissionList = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.CALL_PHONE, Manifest.permission.READ_LOGS, Manifest.permission.READ_PHONE_STATE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.SET_DEBUG_APP, Manifest.permission.SYSTEM_ALERT_WINDOW, Manifest.permission.GET_ACCOUNTS, Manifest.permission.WRITE_APN_SETTINGS};
-            ActivityCompat.requestPermissions(getActivity(), mPermissionList, 123);
-        }
         new ShareAction(getActivity())
                 .withText("hello")
                 .setDisplayList(SHARE_MEDIA.SINA, SHARE_MEDIA.QQ, SHARE_MEDIA.WEIXIN, SHARE_MEDIA.DINGTALK,
@@ -136,18 +129,13 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener, 
     }
 
     private void togglemore() {
-        if (isChecked) {
-            Toast.makeText(getActivity(), "取消设置手势密码", Toast.LENGTH_SHORT).show();
-            checkout();
-            return;
-        }
         //创建构造者
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
         //添加对话框内容
-        builder.setIcon(R.drawable.ic_head);
-        builder.setTitle("设置手势密码");
-        builder.setMessage("是否现在设置手势密码");
-        builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+        builder1.setIcon(R.drawable.ic_head);
+        builder1.setTitle("设置手势密码");
+        builder1.setMessage("是否现在设置手势密码");
+        builder1.setPositiveButton("确认", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //设置手势密码
@@ -157,7 +145,7 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener, 
                 launchActivity(TogglemoreActivity.class, new Bundle());
             }
         });
-        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+        builder1.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(getActivity(), "取消设置手势密码", Toast.LENGTH_SHORT).show();
@@ -165,7 +153,7 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener, 
             }
         });
         //创建对话框
-        AlertDialog alertDialog = builder.create();
+        AlertDialog alertDialog = builder1.create();
         //显示对话框
         alertDialog.show();
     }
@@ -210,16 +198,17 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener, 
 
     private void fankui() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        View view = LayoutInflater.from(getActivity()).inflate(R.layout.customer_dialog, null);
-        RadioButton cbFankuiTech = view.findViewById(R.id.cb_fankui_tech);
-        RadioButton cbFankuiInvest = view.findViewById(R.id.cb_fankui_invest);
-        RadioButton cbFankuiZixun = view.findViewById(R.id.cb_fankui_zixun);
-        EditText etFankuiContent = view.findViewById(R.id.et_fankui_content);
-        Button btnOk = view.findViewById(R.id.btn_ok);
-        Button btnNo = view.findViewById(R.id.btn_no);
+        View view1 = LayoutInflater.from(getActivity()).inflate(R.layout.customer_dialog, null);
+        RadioButton cbFankuiTech = view1.findViewById(R.id.cb_fankui_tech);
+        RadioButton cbFankuiInvest = view1.findViewById(R.id.cb_fankui_invest);
+        RadioButton cbFankuiZixun = view1.findViewById(R.id.cb_fankui_zixun);
+        EditText etFankuiContent = view1.findViewById(R.id.et_fankui_content);
+        Button btnOk = view1.findViewById(R.id.btn_ok);
+        Button btnNo = view1.findViewById(R.id.btn_no);
 
         //将视图插入到对话框中
-        builder.setView(view);
+        builder.setView(view1);
+
         final AlertDialog alertDialog = builder.create();
 
         btnOk.setOnClickListener(new View.OnClickListener() {
@@ -227,6 +216,7 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener, 
             public void onClick(View v) {
                 alertDialog.hide();
                 Toast.makeText(getActivity(), "发送反馈信息成功！", Toast.LENGTH_SHORT).show();
+                printLog("隐藏");
             }
         });
 
@@ -234,10 +224,11 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener, 
             @Override
             public void onClick(View v) {
                 alertDialog.hide();
+                printLog("隐藏");
             }
         });
-
         alertDialog.show();
+        printLog("展示");
     }
 
     @Override

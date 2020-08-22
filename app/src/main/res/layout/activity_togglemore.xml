@@ -9,6 +9,7 @@
     tools:context=".more.activity.TogglemoreActivity">
 
     <TextView
+        android:id="@+id/toggle_title"
         android:background="#000"
         android:textColor="#FFF"
         android:gravity="center"

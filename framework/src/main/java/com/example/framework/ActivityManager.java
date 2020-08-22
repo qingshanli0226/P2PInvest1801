@@ -7,12 +7,14 @@ import java.util.Stack;
 public class ActivityManager {
     //单例模式：饿汉式
     private ActivityManager() {
-
     }
 
-    private static final ActivityManager activityManager = new ActivityManager();
+    private static ActivityManager activityManager;
 
-    public static ActivityManager getInstance() {
+    public synchronized static ActivityManager getInstance() {
+        if (activityManager == null) {
+            activityManager = new ActivityManager();
+        }
         return activityManager;
     }
 
@@ -60,5 +62,6 @@ public class ActivityManager {
     public int size() {
         return activityStack.size();
     }
+
 
 }

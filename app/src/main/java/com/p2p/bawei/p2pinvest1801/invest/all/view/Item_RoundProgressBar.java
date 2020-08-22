@@ -45,7 +45,7 @@ public class Item_RoundProgressBar extends View {
     private void initData() {
         startAngle = 0;
         sweepAngle = 0;
-        defoutSize = 60;
+        defoutSize = 100;
         int defoutLine = 5;
 
         rectF = new RectF();
@@ -119,7 +119,7 @@ public class Item_RoundProgressBar extends View {
             return;
         }
         ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, index);
-        valueAnimator.setDuration(5000);
+        valueAnimator.setDuration(2000);
         valueAnimator.setInterpolator(new DecelerateInterpolator());
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override

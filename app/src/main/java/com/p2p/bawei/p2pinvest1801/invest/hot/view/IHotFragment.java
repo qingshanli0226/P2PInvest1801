@@ -56,7 +56,7 @@ public class IHotFragment extends BaseMVPFragment<ProductPresenterImpl, ProductC
         hotAdapter = new HotAdapter(R.layout.invest_hot_item, resultBeanList);
 
         hotRv.setAdapter(hotAdapter);
-        hotRv.setLayoutManager(new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.HORIZONTAL));
+        hotRv.setLayoutManager(new StaggeredGridLayoutManager(5, StaggeredGridLayoutManager.HORIZONTAL));
 
         hotAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override

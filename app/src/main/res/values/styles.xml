@@ -28,25 +28,25 @@
 
     <style name="MoreTextStyle">
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:drawablePadding">5dp</item>
+        <item name="android:drawablePadding">15px</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:padding">20dp</item>
+        <item name="android:padding">40px</item>
         <item name="android:textColor">@color/more_text</item>
-        <item name="android:textSize">25sp</item>
+        <item name="android:textSize">45px</item>
     </style>
 
     <style name="LoginStyle">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">55dp</item>
-        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:layout_height">150px</item>
+        <item name="android:layout_marginTop">19px</item>
         <item name="android:background">@color/white</item>
-        <item name="android:drawablePadding">8dp</item>
+        <item name="android:drawablePadding">28px</item>
         <item name="android:drawableRight">@drawable/right</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:paddingLeft">20dp</item>
-        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingLeft">40px</item>
+        <item name="android:paddingRight">40px</item>
         <item name="android:textColor">@color/product_detail_common</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">42px</item>
     </style>
 
 </resources>

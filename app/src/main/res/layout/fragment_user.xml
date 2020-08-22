@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,56 +8,53 @@
 
     <include layout="@layout/common_title" />
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <com.zhy.autolayout.AutoRelativeLayout
             android:id="@+id/rl_me"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="270px"
             android:background="@color/my_title_bg"
             android:gravity="center">
 
-            <RelativeLayout
+            <com.zhy.autolayout.AutoRelativeLayout
                 android:id="@+id/rl_me_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="4dp">
+                android:layout_marginTop="10px">
 
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/my_user_bg_icon" />
 
                 <ImageView
                     android:id="@+id/iv_me_icon"
-                    android:layout_width="62dp"
-                    android:layout_height="62dp"
+                    android:layout_width="162px"
+                    android:layout_height="162px"
                     android:layout_centerInParent="true"
                     android:scaleType="fitXY"
                     android:src="@drawable/my_user_default" />
-            </RelativeLayout>
+
+
+            </com.zhy.autolayout.AutoRelativeLayout>
 
             <TextView
                 android:id="@+id/tv_me_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rl_me_icon"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="10px"
                 android:gravity="center"
                 android:text="Hi,welcome!"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
-        </RelativeLayout>
+                android:textSize="28px" />
+        </com.zhy.autolayout.AutoRelativeLayout>
 
-        <LinearLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="20px"
             android:orientation="vertical">
 
             <TextView
@@ -69,40 +66,41 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10px"
                 android:text="充值我们将以集成支付宝sdk支付金额演示充值功能" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10px"
                 android:text="提现业务:在p2p金融平台中,提现都不是实时到账的,而是审核提现,系统将会告知24小时内进行转账,如果未收到,请联系客服..." />
-        </LinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
 
-        <LinearLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="23px"
             android:gravity="center">
 
             <ImageView
                 android:id="@+id/recharge"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="9dp"
+                android:layout_width="0px"
+                android:layout_height="110px"
+                android:layout_marginRight="9px"
                 android:layout_weight="1"
                 android:src="@drawable/my_recharge_bg" />
 
             <ImageView
                 android:id="@+id/withdraw"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="9dp"
+                android:layout_width="0px"
+                android:layout_height="110px"
+                android:layout_marginLeft="9px"
                 android:layout_weight="1"
                 android:src="@drawable/my_withdraw_bg" />
-        </LinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
 
         <TextView
+            android:layout_marginTop="50px"
             android:id="@+id/ll_touzi"
             style="@style/LoginStyle"
             android:drawableLeft="@drawable/my_invest_manage"
@@ -120,7 +118,7 @@
             android:drawableLeft="@drawable/my_asset_manage"
             android:text="资产管理" />
 
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
 
-</LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="9dp"
+    android:layout_margin="18px"
     android:orientation="vertical">
 
     <TextView
         android:background="@drawable/text_shape_bg"
         android:id="@+id/hot_item_tv"
-        android:padding="6dp"
+        android:padding="10px"
         android:text="屌丝迎娶白富美计划"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-</LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

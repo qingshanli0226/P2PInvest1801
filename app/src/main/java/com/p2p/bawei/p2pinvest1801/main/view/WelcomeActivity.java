@@ -29,6 +29,8 @@ import java.util.TimerTask;
 
 public class WelcomeActivity extends BaseActivity {
     private RelativeLayout rlWelcome;
+    private ProgressDialog progressDialog;
+    private int progress = 0;
     private final Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -41,6 +43,9 @@ public class WelcomeActivity extends BaseActivity {
                 case 2:
                     //更新版本UI
                     tvWelcomeVersion.setText(msg.obj.toString());
+                    break;
+                case 3:
+                    progressDialog.setProgress(progress);
                     break;
             }
 
@@ -57,14 +62,8 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
-
-
-
         rlWelcome = findViewById(R.id.rl_welcome);
         tvWelcomeVersion = findViewById(R.id.tv_welcome_version);
-
-
 
         //弹出得请求更新对话框
         initDialog();
@@ -86,10 +85,24 @@ public class WelcomeActivity extends BaseActivity {
         builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                final ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
+                progressDialog = new ProgressDialog(WelcomeActivity.this);
                 progressDialog.setMax(100);
                 //水平
                 progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+
+                //开启一个线程,更新版本
+                OkGo.<String>get(InvestConstant.BASE_RESOURCE_JSON_URL + "P2PInvest/update.json")
+                        .execute(new StringCallback() {
+                            @Override
+                            public void onSuccess(Response<String> response) {
+                                String json = response.body();
+                                UpdataBean.ResultBean result = new Gson().fromJson(json, UpdataBean.class).getResult();
+                                Message message = new Message();
+                                message.what = 2;
+                                message.obj = result.getVersion();
+                                handler.sendMessage(message);
+                            }
+                        });
 
                 //模拟定时器
                 final Timer timer = new Timer();
@@ -100,32 +113,18 @@ public class WelcomeActivity extends BaseActivity {
                  * 3.每隔几秒执行一次
                  */
                 timer.schedule(new TimerTask() {
-                    int progress = 0;
 
                     @Override
                     public void run() {
+                        progress++;
                         if (progress == 100) {
                             timer.cancel();//取消定时器
                             progressDialog.dismiss();//消失
-
-                            //开启一个线程,更新版本
-                            OkGo.<String>get(InvestConstant.BASE_RESOURCE_JSON_URL + "P2PInvest/update.json")
-                                    .execute(new StringCallback() {
-                                        @Override
-                                        public void onSuccess(Response<String> response) {
-                                            String json = response.body();
-                                            UpdataBean.ResultBean result = new Gson().fromJson(json, UpdataBean.class).getResult();
-                                            Message message = new Message();
-                                            message.what = 2;
-                                            message.obj = result.getVersion();
-                                            handler.sendMessage(message);
-                                        }
-                                    });
                             //跳转
                             launchActivity(MainActivity.class, null);
                             finish();
                         }
-                        progressDialog.setProgress(progress++);
+                        handler.sendEmptyMessage(3);
                     }
                 }, 1, 50);//1秒后执行，每隔100毫秒执行一次
                 progressDialog.show();

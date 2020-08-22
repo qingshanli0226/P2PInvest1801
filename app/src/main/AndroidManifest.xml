@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.p2p.bawei.p2pinvest1801">
 
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -17,18 +18,35 @@
     <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/app_icon"
         android:label="@string/app_name"
+        android:requiredForAllUsers="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:useEmbeddedDex="true"
         android:usesCleartextTraffic="true">
-        <activity android:name=".more.activity.TogglemoreActivity"></activity>
+
+        <meta-data android:name="design_width" android:value="1080"></meta-data>
+        <meta-data android:name="design_height" android:value="1920"></meta-data>
+
+        <provider
+            android:grantUriPermissions="true"
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.p2p.bawei.p2pinvest1801">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths" />
+        </provider>
+
+        <activity
+            android:name=".more.activity.TogglemoreActivity"
+            android:launchMode="singleTask" />
         <activity android:name=".user.activity.UserInfoActivity" />
         <activity android:name=".user.activity.LoginActivity" />
         <activity android:name=".more.activity.RegisterActivity" />

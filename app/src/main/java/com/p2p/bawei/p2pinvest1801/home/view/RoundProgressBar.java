@@ -45,8 +45,8 @@ public class RoundProgressBar extends View {
     private void initData() {
         startAngle = 0;
         sweepAngle = 0;
-        defoutSize = 140;
-        int  defoutLine = 10;
+        defoutSize = 230;
+        int defoutLine = 10;
 
         rectF = new RectF();
 
@@ -82,7 +82,7 @@ public class RoundProgressBar extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        int  strokeWidth = 10;
+        int strokeWidth = 10;
 
         pointF.x = w >> 1;
         pointF.y = h >> 1;
@@ -114,13 +114,14 @@ public class RoundProgressBar extends View {
 
     }
 
+    //外部传值设置进度
     public void setProgress(float index) {
         //防止数值越界
         if (index > 1 || index < 0) {
             return;
         }
         ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, index);
-        valueAnimator.setDuration(5000);
+        valueAnimator.setDuration(2300);
         valueAnimator.setInterpolator(new DecelerateInterpolator());
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -131,6 +132,5 @@ public class RoundProgressBar extends View {
             }
         });
         valueAnimator.start();
-
     }
 }

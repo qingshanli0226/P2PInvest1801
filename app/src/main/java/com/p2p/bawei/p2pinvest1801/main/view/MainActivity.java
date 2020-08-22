@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.home.view.HomeFragment;
 import com.p2p.bawei.p2pinvest1801.invest.InvestFragment;
 import com.p2p.bawei.p2pinvest1801.main.entity.CommonEntity;
+import com.p2p.bawei.p2pinvest1801.more.activity.TogglemoreActivity;
 import com.p2p.bawei.p2pinvest1801.more.view.MoreFragment;
 import com.p2p.bawei.p2pinvest1801.user.activity.LoginActivity;
 import com.p2p.bawei.p2pinvest1801.user.view.UserFragment;
@@ -36,6 +38,7 @@ public class MainActivity extends BaseActivity {
     private UserFragment userFragment;
     private MoreFragment moreFragment;
     private long exitTime = 0;
+    private boolean checked;
 
     //数据
     private final ArrayList<CustomTabEntity> customTabEntityList = new ArrayList<>();
@@ -47,6 +50,9 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+
+        isToggle();
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(new String[]{
                     "android.permission.CALL_PHONE",
@@ -62,13 +68,27 @@ public class MainActivity extends BaseActivity {
                     "android.permission.BROADCAST_PACKAGE_INSTALL",
                     "android.permission.BROADCAST_PACKAGE_REPLACED",
                     "android.permission.GET_TASKS",
-                    "android.permission.RECEIVE_BOOT_COMPLETED"
+                    "android.permission.RECEIVE_BOOT_COMPLETED",
+                    "android.permission.CAMERA",
+                    "android.permission.ACCESS_FINE_LOCATION",
+                    "android.permission.READ_LOGS"
             }, 10101010);
         }
         mainCommon = findViewById(R.id.main_common);
 
         //初始化common
         initCommon();
+
+    }
+
+    private void isToggle() {
+        //做一下手势密码的判断
+        SharedPreferences box_isChecked = getSharedPreferences("box_isChecked", Context.MODE_PRIVATE);
+        checked = box_isChecked.getBoolean("isChecked", false);
+        if (checked) {
+            //需要手势密码
+            launchActivity(TogglemoreActivity.class, new Bundle());
+        }
     }
 
 
@@ -121,6 +141,7 @@ public class MainActivity extends BaseActivity {
             doLogin();
         } else {
             //已经登录过，则直接加载用户的信息并显示
+//            isToggle();
         }
     }
 
@@ -160,6 +181,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             //判断用户两次按键的时间差是否在一个预期值之内，是的话直接直接退出，不是的话提示用户再按一次后退键退出。
             if (System.currentTimeMillis() - exitTime > 2000) {
@@ -191,4 +213,5 @@ public class MainActivity extends BaseActivity {
                 .setCancelable(false)
                 .show();
     }
+
 }

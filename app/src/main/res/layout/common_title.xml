@@ -1,48 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/layoutHeight45"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/layoutHeight44"
+        android:layout_height="86px"
         android:background="@drawable/lock_title_bg"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <ImageView
-            android:visibility="gone"
             android:id="@+id/iv_title_back"
-            android:layout_width="@dimen/layout30"
-            android:layout_height="@dimen/layout30"
-            android:layout_marginLeft="@dimen/margin10"
-            android:src="@drawable/left" />
+            android:layout_width="55px"
+            android:layout_height="55px"
+            android:layout_marginLeft="10px"
+            android:src="@drawable/left"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tv_title"
-            android:layout_width="0dp"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:text="首页"
             android:textColor="@color/title_text"
-            android:textSize="@dimen/textSize30" />
+            android:textSize="44px" />
 
         <ImageView
-            android:visibility="gone"
             android:id="@+id/iv_title_setting"
-            android:layout_width="@dimen/layout30"
-            android:layout_height="@dimen/layout30"
-            android:layout_marginRight="@dimen/margin10"
-            android:src="@drawable/my_setting_icon" />
+            android:layout_width="55px"
+            android:layout_height="55px"
+            android:layout_marginRight="10px"
+            android:src="@drawable/my_setting_icon"
+            android:visibility="gone" />
 
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/title_text"></View>
-
-</LinearLayout>
+        android:layout_height="1px"
+        android:background="@color/title_text" />
+</com.zhy.autolayout.AutoLinearLayout>

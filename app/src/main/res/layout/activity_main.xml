@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,24 +10,29 @@
     <FrameLayout
         android:id="@+id/main_framelayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="0px"
         android:layout_weight="16"></FrameLayout>
 
 
     <View
-        android:background="@color/title_text"
         android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_height="1px"
+        android:layout_marginBottom="6px"
+        android:background="@color/title_text" />
 
     <com.flyco.tablayout.CommonTabLayout
         android:id="@+id/main_common"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        app:tl_iconHeight="60px"
+        app:tl_iconWidth="60px"
         app:tl_textSelectColor="@color/maintextSelectColor"
-        app:tl_textUnselectColor="@color/maintextUnselectColor"
-        app:tl_iconHeight="@dimen/icon30"
-        app:tl_iconWidth="@dimen/icon30"
-        android:layout_weight="1"></com.flyco.tablayout.CommonTabLayout>
+        app:tl_textUnselectColor="@color/maintextUnselectColor"></com.flyco.tablayout.CommonTabLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10px" />
 
 
-</LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>
