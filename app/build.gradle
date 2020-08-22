@@ -39,9 +39,12 @@ dependencies {
     implementation project(path: ':net')
     implementation project(path: ':framwork')
     implementation project(path: ':common')//glide依赖
+    implementation 'com.alibaba:fastjson:1.2.41' //fastjson
 
-
-
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation 'com.github.ihsg:PatternLocker:2.5.6'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
     //网络框架
     implementation 'com.squareup.okhttp3:okhttp:3.11.0'
     //日志拦截器
@@ -60,4 +63,6 @@ dependencies {
     //权限动态申请
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:+'
     implementation 'org.greenrobot:greendao:3.3.0'
+
+    implementation 'com.zhy:autolayout:1.4.5'
 }

@@ -25,7 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Handler;
 
-public class HomeFragment extends BaseFragment {
+public class HomeFragment extends BaseFragment implements CacheManager.IDataChangeListener{
     private Banner homeBanner;
     List<HomeBean.ResultBean.ImageArrBean> list;
     List<String> list_banner = new ArrayList<>();
@@ -33,31 +33,34 @@ public class HomeFragment extends BaseFragment {
     private TextView homeTitle;
     private ProgressView homeProgress;
     List<HomeBean.ResultBean.ProInfoBean> list_proinfobean;
-    private ImageView image;
-    private TextView basetext;
-    private AnimationDrawable animationDrawable;
 
     private TextView homeAnticipate;
     @Override
     public void initViews() {
-        image = (ImageView) findViewById(R.id.image);
-        animationDrawable = (AnimationDrawable)findViewById(R.id.image).getBackground();
-        basetext = (TextView) findViewById(R.id.basetext);
         homeBanner = (Banner) findViewById(R.id.home_banner);
         homeTitle = (TextView) findViewById(R.id.home_title);
         homeProgress = (ProgressView) findViewById(R.id.home_progress);
         homeAnticipate = (TextView) findViewById(R.id.home_anticipate);
-        list_proinfobean = CacheManager.getInstance().getList_proinfobean();
-        Log.i("----listsize", list_proinfobean.size()+"");
-        homeTitle.setText(list_proinfobean.get(0).getName());
-        String progress = list_proinfobean.get(0).getProgress();
-        homeProgress.setProgress(Integer.parseInt(progress));
-        list = CacheManager.getInstance().getList();
-        homeAnticipate.setText("预期年利率:  "+list_proinfobean.get(0).getYearRate()+"%");
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        homeProgress.removehandler();
     }
 
     @Override
     public void initDatas() {
+        list = CacheManager.getInstance().getList();
+        list_proinfobean = CacheManager.getInstance().getList_proinfobean();
+        if(list.size() != 0 && list_proinfobean.size() != 0){
+            list_banner.clear();
+            Log.i("----list_img", list.size()+"");
+            Log.i("----list_pro", list_proinfobean.size()+"");
+            homeTitle.setText(list_proinfobean.get(0).getName());
+            String progress = list_proinfobean.get(0).getProgress();
+            homeProgress.setProgress(Integer.parseInt(progress));
+            homeAnticipate.setText("预期年利率:  "+list_proinfobean.get(0).getYearRate()+"%");
             for (int i = 0; i < list.size(); i++) {
                 String imaurl = list.get(i).getIMAURL();
                 list_banner.add(imaurl);
@@ -76,7 +79,7 @@ public class HomeFragment extends BaseFragment {
             homeBanner.setBannerTitles(Arrays.asList(text));
             homeBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
             homeBanner.start();
-            list_banner.clear();
+        }
     }
 
     @Override
@@ -86,15 +89,10 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public void showLoading() {
-        image.setVisibility(View.VISIBLE);
-        animationDrawable.start();
-        basetext.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideLoading() {
-        image.setVisibility(View.GONE);
-        basetext.setVisibility(View.GONE);
     }
 
     @Override
@@ -105,5 +103,17 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void showError(String code, String message) {
         Toast.makeText(getContext(), "code："+code+"错误信息："+message, Toast.LENGTH_SHORT).show();
+    }
+
+
+    @Override
+    public void onChange() {
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        CacheManager.getInstance().unRegisterDataChangeListener(this);
     }
 }

@@ -3,6 +3,7 @@ package com.p2p.bawei.p2pinvest1801.cache;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.rtp.RtpStream;
 import android.os.Handler;
 import android.os.Looper;
@@ -35,8 +36,7 @@ public class CacheManager {
     private List<HomeBean.ResultBean.ImageArrBean> list = new ArrayList<>();
     private List<HomeBean.ResultBean> list_homebean = new ArrayList<>();
     private List<HomeBean.ResultBean.ProInfoBean> list_proinfobean = new ArrayList<>();
-    private List<IShopcarDataChangeListener> iShopcarDataChangeListenerList = new ArrayList<>();
-    HomeFragment homeFragment;
+    private List<IDataChangeListener> dataChangeListenerList = new ArrayList<>();
     public synchronized static CacheManager getInstance(){
         if(cacheManager == null){
             cacheManager = new CacheManager();
@@ -46,8 +46,8 @@ public class CacheManager {
     private Context context;
     public void init(Context context){
         this.context = context;
-        homeFragment = new HomeFragment();
     }
+
     public void initInter(){
         RetrofitManager.getInstance().getRetrofit()
                 .create(P2PApi.class)
@@ -58,7 +58,6 @@ public class CacheManager {
                     @Override
                     public void onNext(HomeBean homeBean) {
                         list_homebean.add(homeBean.getResult());
-                        add();
                         notifyShopcarDataChanged();
                     }
                     @Override
@@ -73,20 +72,29 @@ public class CacheManager {
     public void add(){
         list.addAll(list_homebean.get(0).getImageArr());
         list_proinfobean.add(list_homebean.get(0).getProInfo());
-        for (IShopcarDataChangeListener listener:iShopcarDataChangeListenerList) {
-            listener.onDataChanged(list_homebean);
-        }
     }
     public List<HomeBean.ResultBean.ProInfoBean> getList_proinfobean(){
         return list_proinfobean;
     }
 
-    private void notifyShopcarDataChanged() {
-        for(IShopcarDataChangeListener listener:iShopcarDataChangeListenerList) {
-            listener.onDataChanged(list_homebean);
+    public void registerDataChangeListener(IDataChangeListener listener) {
+        if (!dataChangeListenerList.contains(listener)) {
+            dataChangeListenerList.add(listener);
         }
     }
-    public interface IShopcarDataChangeListener {
-        void onDataChanged(List<HomeBean.ResultBean> shopcarBeanList);
+    private void notifyShopcarDataChanged() {
+        for(IDataChangeListener listener:dataChangeListenerList) {
+            listener.onChange();
+        }
+    }
+    public void unRegisterDataChangeListener(IDataChangeListener listener) {
+        if (!dataChangeListenerList.contains(listener)) {
+            dataChangeListenerList.remove(listener);
+        }
+    }
+
+
+    public interface IDataChangeListener{
+        void onChange();
     }
 }

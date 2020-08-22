@@ -40,6 +40,7 @@ public class InvestFragment extends BaseFragment {
         investViewpage = (ViewPager) findViewById(R.id.invest_viewpage);
         viewpagerAdapter = new ViewpagerAdapter(getActivity().getSupportFragmentManager(), 1,list);
         investViewpage.setAdapter(viewpagerAdapter);
+        viewpagerAdapter.notifyDataSetChanged();
     }
 
     @Override

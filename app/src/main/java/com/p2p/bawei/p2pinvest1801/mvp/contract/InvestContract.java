@@ -6,12 +6,16 @@ import com.example.net.BaseObserver;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.InvestBean;
 
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
+import io.reactivex.functions.Consumer;
+
 public interface InvestContract {
     interface InvestModel extends IModel{
-        void requestInvest(BaseObserver<InvestBean> observer);
-
+        void requestInvest(BaseObserver<InvestBean> observer, Consumer<Disposable> consumer, Action action);
     }
     interface InvestView extends IView {
         void invest(InvestBean investbean);
+
     }
 }

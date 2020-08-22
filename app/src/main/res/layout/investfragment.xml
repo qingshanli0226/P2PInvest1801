@@ -19,7 +19,8 @@
         android:layout_height="60dp"></com.flyco.tablayout.CommonTabLayout>
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="540dp"
         android:id="@+id/invest_viewpage">
     </androidx.viewpager.widget.ViewPager>
+
 </LinearLayout>

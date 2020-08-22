@@ -86,7 +86,6 @@ public class ProgressView extends View {
         super.onLayout(changed, left, top, right, bottom);
     }
 
-    @SuppressLint("DrawAllocation")
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -120,6 +119,7 @@ public class ProgressView extends View {
         paint.getTextBounds(progresstext, 0, progresstext.length(), rect);
         canvas.drawText(progresstext, progressViewWidth/2-rect.width()/2, progressViewHeight/2+30-rect.height()/2, paint);
 
+
     }
     private int offseAngle;
     private int startAngle = 0;
@@ -127,10 +127,10 @@ public class ProgressView extends View {
     private int progressAngle;
     public void setProgress(int progress){
         this.progress = progress;
-
         offseAngle = (360*progress)/100;
         progressAngle = startAngle;
         handler.sendEmptyMessage(1);
+
     }
 
     Handler handler = new Handler(){
@@ -144,4 +144,7 @@ public class ProgressView extends View {
             }
         }
     };
+    public void removehandler(){
+        handler.removeMessages(1);
+    }
 }

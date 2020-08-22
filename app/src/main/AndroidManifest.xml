@@ -4,6 +4,7 @@
     package="com.p2p.bawei.p2pinvest1801">
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
+        android:name=".App"
         android:usesCleartextTraffic="true"
         android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
@@ -12,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data android:name="design_width" android:value="1080"></meta-data>
+        <meta-data android:name="design_height" android:value="1920"></meta-data>
+
         <activity android:name=".mvp.view.MainActivity" android:launchMode="singleTop">
 
         </activity>
@@ -22,6 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".mvp.view.fragment.user.RegisterActivity"></activity>
+        <activity android:name=".mvp.view.PatternActivity"></activity>
     </application>
 
 </manifest>

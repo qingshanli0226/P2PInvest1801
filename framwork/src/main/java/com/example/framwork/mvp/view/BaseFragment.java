@@ -19,23 +19,16 @@ import com.example.framwork.mvp.presenter.IPresenter;
 public abstract class BaseFragment<P extends IPresenter> extends Fragment implements IView,IFragment {
     protected P mPresenter;
     private View rootview;
-//    protected AnimationDrawable animationDrawable;
-//    protected ImageView image;
-//    protected TextView basetext;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootview = inflater.inflate(bandLayout(), container,false);
-//        animationDrawable = (AnimationDrawable)rootview.findViewById(R.id.image).getBackground();
-//        basetext = rootview.findViewById(R.id.basetext);
-//        image = rootview.findViewById(R.id.image);
         return rootview;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         initViews();
         initDatas();
     }

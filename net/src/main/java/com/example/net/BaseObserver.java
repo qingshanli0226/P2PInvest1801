@@ -27,7 +27,7 @@ public abstract class BaseObserver<T> implements Observer<T> {
             onRequestError("103", e.getMessage());
         }else if(e instanceof NetException){
             NetException netException = (NetException) e;
-            onRequestError("104",e.getMessage());
+            onRequestError(netException.getCode(),netException.getMessage());
         }
     }
 

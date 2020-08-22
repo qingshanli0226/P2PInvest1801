@@ -31,10 +31,12 @@ import com.p2p.bawei.p2pinvest1801.cache.CacheManager;
 import com.p2p.bawei.p2pinvest1801.mvp.view.MainActivity;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 //欢迎页
-public class Welecome extends BaseActivity {
+public class Welecome extends BaseActivity implements CacheManager.IDataChangeListener{
     int handlercount = 0;
     Handler handler = new Handler(){
         @Override
@@ -82,6 +84,7 @@ public class Welecome extends BaseActivity {
     @Override
     public void initViews() {
         welcomeCount = (TextView) findViewById(R.id.welcome_count);
+        CacheManager.getInstance().registerDataChangeListener(Welecome.this);
     }
 
     @Override
@@ -91,9 +94,7 @@ public class Welecome extends BaseActivity {
             public void run() {
                 synchronized (Welecome.this){
                     CacheManager.getInstance().initInter();
-                    handler.sendEmptyMessage(0);
                 }
-
             }
         }).start();
         new Thread(new Runnable() {
@@ -159,5 +160,18 @@ public class Welecome extends BaseActivity {
     @Override
     public void showError(String code, String message) {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        CacheManager.getInstance().unRegisterDataChangeListener(this);
+    }
+
+    @Override
+    public void onChange() {
+        Log.i("----change","1111");
+        CacheManager.getInstance().add();
+        handler.sendEmptyMessage(0);
     }
 }
