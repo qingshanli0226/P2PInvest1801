@@ -5,5 +5,18 @@
     <color name="colorBlue">#03A9F4</color>
     <color name="colorRed">#F44336</color>
     <color name="colorGreen">#4CAF50</color>
+    <color name="point_color">#BEB9BB</color>
+    <color name="point_select_color">#FFEB3B</color>
+    <color name="circle_color">#464344</color>
+    <color name="error_point_select_color">#00BCD4</color>
+    <color name="error_circle_color">#673AB7</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="color_orange">#FF9800</color>
+    <color name="color_supper_tip_normal">#633EE9</color>
+    <color name="bg_supper_selected">#D3C98D37</color>
+    <color name="zhu">#C0FF8D</color>
+
+
+
+
 </resources>

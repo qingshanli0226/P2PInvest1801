@@ -75,6 +75,7 @@ public class ProgressView extends View {
         paint.setColor(circleColor);
         paint.setStrokeWidth(stokeSize);
         canvas.drawCircle(progressViewWidth/2,progressViewHeight/2,roundize/2,paint);
+
         Paint paint1 = new Paint();
         paint1.setStyle(Paint.Style.STROKE);
         paint1.setColor(arcColor);

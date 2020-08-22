@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#AB67CC"
+    android:layout_height="match_parent">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="10"
+       android:orientation="horizontal">
+    <com.p2p.bawei.p2pinvest1801.zdyview.PColumn
+        android:id="@+id/column_one"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"/>
+
+    <com.p2p.bawei.p2pinvest1801.zdyview.PColumn
+        android:id="@+id/column_two"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"/>
+
+    <com.p2p.bawei.p2pinvest1801.zdyview.PColumn
+        android:id="@+id/column_three"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"/>
+       <com.p2p.bawei.p2pinvest1801.zdyview.PColumn
+           android:id="@+id/column_four"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1" />
+
+       <View
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="0.2"/>
+
+       <com.p2p.bawei.p2pinvest1801.zdyview.PColumn
+           android:id="@+id/column_five"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1" />
+
+       <View
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="0.2"/>
+
+       <com.p2p.bawei.p2pinvest1801.zdyview.PColumn
+           android:id="@+id/column_six"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"/>
+       <View
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="0.2"/>
+       <com.p2p.bawei.p2pinvest1801.zdyview.PColumn
+           android:id="@+id/column_seven"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1" />
+
+       <View
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="0.2"/>
+
+       <com.p2p.bawei.p2pinvest1801.zdyview.PColumn
+           android:id="@+id/column_egiht"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1" />
+
+       <View
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="0.2"/>
+
+       <com.p2p.bawei.p2pinvest1801.zdyview.PColumn
+           android:id="@+id/column_nine"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"/>
+       <View
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="0.2"/>
+       <com.p2p.bawei.p2pinvest1801.zdyview.PColumn
+           android:id="@+id/column_ten"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1" />
+
+       <View
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="0.2"/>
+
+       <com.p2p.bawei.p2pinvest1801.zdyview.PColumn
+           android:id="@+id/column_11"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1" />
+
+       <View
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="0.2"/>
+
+       <com.p2p.bawei.p2pinvest1801.zdyview.PColumn
+           android:id="@+id/column_12"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"/>
+       <View
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="0.2"/>
+
+   </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Jan"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Feb"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Mar"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Apr"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="May"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Jun"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Jul"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Aug"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Sep"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Okt"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Nov"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Dec"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"/>
+    </LinearLayout>
+
+</LinearLayout>

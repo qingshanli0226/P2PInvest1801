@@ -1,11 +1,13 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.act;
 
 
+import android.Manifest;
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -47,7 +49,14 @@ public class MainActivity extends BaseActivity<MainPre> implements MainContact.V
 
     @Override
     public void initView() {
-
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+            requestPermissions(new String[]{Manifest.permission.CAMERA
+                    ,Manifest.permission.WRITE_EXTERNAL_STORAGE
+                    ,Manifest.permission.READ_EXTERNAL_STORAGE
+                    ,Manifest.permission.CALL_PHONE
+            ,Manifest.permission.ACCESS_NETWORK_STATE
+            ,Manifest.permission.ACCESS_WIFI_STATE},1);
+        }
         tt = findViewById(R.id.tt);
         timer=new Timer();
         iv = findViewById(R.id.iv);
@@ -111,4 +120,42 @@ public class MainActivity extends BaseActivity<MainPre> implements MainContact.V
         }
         Log.i("zcx", "initBanner: "+Share.list.size());
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("zcx", "onStart: ");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("zcx", "onResume: ");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("zcx", "onPause: ");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i("zcx", "onRestart: ");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("zcx", "onStop: ");
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("zcx", "onDestroy: ");
+    }
 }
+

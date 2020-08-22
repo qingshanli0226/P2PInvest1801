@@ -1,8 +1,11 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.act;
 
 
+import android.Manifest;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -33,15 +36,22 @@ public class SyActivity extends AppCompatActivity {
     private int wei[]={R.drawable.bottom01,R.drawable.bottom03,R.drawable.bottom05,R.drawable.bottom07};
     private int zhong[]={R.drawable.bottom02,R.drawable.bottom04,R.drawable.bottom06,R.drawable.bottom08};
     private List<Fragment> flist=new ArrayList<>();
+    private ImageView img;
+    private AnimationDrawable animationDrawable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sy);
+//        img = findViewById(R.id.img);
+//        animationDrawable= (AnimationDrawable) img.getBackground();
         bar = findViewById(R.id.bar);
         flist.add(new Fragment1());
         flist.add(new Fragment2());
         flist.add(new Fragment3());
         flist.add(new Fragment4());
+        //开始动画
+//        animationDrawable.start();
+
         bar.titleItems(title)
                 .normalIconItems(wei)
                 .selectIconItems(zhong)
@@ -61,6 +71,7 @@ public class SyActivity extends AppCompatActivity {
                     public boolean onTabSelectEvent(View view, int position) {
                         bar.clearHintPoint(position);
                         bar.clearMsgPoint(position);
+                        Toast.makeText(SyActivity.this, ""+view.getId(), Toast.LENGTH_SHORT).show();
                         return false;
                     }
 

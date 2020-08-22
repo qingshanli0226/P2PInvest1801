@@ -34,7 +34,7 @@ public class Fragment2 extends BaseFragment implements MainContact.View {
     private MyChildAdapter myChildAdapter;
     private TabLayout f2Tab;
     private ViewPager f2Pager;
-    private MarqueeView marqueeView;
+//    private MarqueeView marqueeView;
     private List<String> stringList=new ArrayList<>();
     public static List<Fragment> fList=new ArrayList<>();
 
@@ -49,7 +49,7 @@ public class Fragment2 extends BaseFragment implements MainContact.View {
     public void initView() {
         f2Tab = findViewById(R.id.f2_tab);
         f2Pager = findViewById(R.id.f2_pager);
-        marqueeView = findViewById(R.id.marqueeView);
+//        marqueeView = findViewById(R.id.marqueeView);
         stringList.add("全部理财");
         stringList.add("推荐理财");
         stringList.add("热门理财");
@@ -64,15 +64,9 @@ public class Fragment2 extends BaseFragment implements MainContact.View {
         inittab(stringList);
         initpager();
         initScoll();
-        initanim();
     }
 
-    private void initanim() {
-        String notice = "硅谷金融壕运当头，首投返现最高达188元";
-        marqueeView.startWithText(notice);
-        // 在代码里设置自己的动画
-        marqueeView.startWithText(notice, R.anim.anim_left_out, R.anim.anim_right_in);
-    }
+
 
 
     private void initpager() {
@@ -90,6 +84,7 @@ public class Fragment2 extends BaseFragment implements MainContact.View {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 f2Pager.setCurrentItem(tab.getPosition());
+
             }
 
             @Override
@@ -125,16 +120,5 @@ public class Fragment2 extends BaseFragment implements MainContact.View {
 
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        marqueeView.startFlipping();
-    }
 
-
-    @Override
-    public void onStop() {
-        super.onStop();
-    marqueeView.stopFlipping();
-    }
 }

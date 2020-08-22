@@ -21,16 +21,6 @@
         app:tabIndicatorColor="#03A9F4"
         android:id="@+id/f2_tab">
     </com.google.android.material.tabs.TabLayout>
-    <com.sunfusheng.marqueeview.MarqueeView
-        android:id="@+id/marqueeView"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:mvAnimDuration="3000"
-        app:mvDirection="left_to_right"
-        app:mvInterval="3000"
-        app:mvTextColor="#E91E63"
-        app:mvTextSize="28sp"
-        app:mvSingleLine="true"/>
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"

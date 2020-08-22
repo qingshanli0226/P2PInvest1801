@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.fynn.fluidlayout:fluidlayout:1.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e8c67b3ae87012ac5b4d95af9d6fc60b/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e8c67b3ae87012ac5b4d95af9d6fc60b/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fynn.fluidlayout/fluidlayout/1.0/1a37fb2c84c74fbba6ae4335a6e9bb1ae144d1b7/fluidlayout-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -2,6 +2,7 @@ package com.p2p.bawei.p2pinvest1801.mvp.view.fra;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,10 +25,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fragment1 extends Fragment {
+    
     View view;
     private Banner ban;
     private List<String> Blist=new ArrayList<>();
     private ProgressView pro;
+
 
 
     @Nullable
@@ -38,6 +41,7 @@ public class Fragment1 extends Fragment {
         pro = view.findViewById(R.id.pro);
         intiban();
         pro.setprogress(90);
+        Log.i("zcxfra", "onCreateView: ");
         return view;
     }
     private void intiban() {
@@ -55,4 +59,13 @@ public class Fragment1 extends Fragment {
         ban.setBannerAnimation(Transformer.DepthPage);
         ban.start();
     }
+
+
+
+
+
+
+
+
+
 }
