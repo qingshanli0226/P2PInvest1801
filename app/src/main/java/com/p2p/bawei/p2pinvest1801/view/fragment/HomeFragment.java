@@ -31,7 +31,6 @@ public class HomeFragment extends BaseFragment<MyHomePresenter> implements MyHom
 
     @Override
     public void initView() {
-
         banner = (Banner) findViewById(R.id.banner);
         initBanner();
         progressView = (ProgressView) findViewById(R.id.progress_view);

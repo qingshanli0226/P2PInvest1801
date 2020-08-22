@@ -41,8 +41,8 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:src="@drawable/my_user_default"
             android:contentDescription="@string/app_name"
             android:layout_gravity="center_horizontal"
@@ -74,7 +74,7 @@
             android:text="学习提示:"
             android:textSize="20sp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -96,15 +96,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="horizontal">
+            android:layout_height="110dp"
+            android:orientation="horizontal"
+            android:id="@+id/linear">
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="30dp"
-                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/bt_cz"
                 android:text="充值"
                 android:textColor="@color/colorAccent"
@@ -116,7 +117,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="30dp"
-                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/bt_tx"
                 android:text="提现"
                 android:textColor="@color/colorAccent"

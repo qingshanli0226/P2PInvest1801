@@ -1,11 +1,16 @@
 package com.p2p.bawei.p2pinvest1801.view.activity;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -22,6 +27,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private EasyNavigationBar easyBar;
+    private LinearLayout linear;
 
     private List<Fragment> list_fragment = new ArrayList<>();
     private String[] list_title = {"首页","投资","我的资产","更多"};
@@ -50,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        linear = (LinearLayout) findViewById(R.id.linear);
         easyBar = (EasyNavigationBar) findViewById(R.id.easyBar);
         easyBar.titleItems(list_title)
                 .fragmentList(list_fragment)
@@ -76,6 +83,27 @@ public class MainActivity extends AppCompatActivity {
                     easyBar.setMsgPointCount(1,0);
                 }else if(position==3){
                     easyBar.setHintPoint(3,false);
+                }else if(position==2){
+                    final PopupWindow popupWindow = new PopupWindow();
+                    popupWindow.setHeight(700);
+                    popupWindow.setWidth(1100);
+                    popupWindow.setOutsideTouchable(true);
+                    View inflate = getLayoutInflater().inflate(R.layout.layout_my_more, null);
+                    popupWindow.setContentView(inflate);
+
+                    Button bt_sure = inflate.findViewById(R.id.bt_sure);
+                    popupWindow.showAtLocation(linear,Gravity.CENTER,0,0);
+
+
+
+                    bt_sure.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                            popupWindow.dismiss();
+                        }
+                    });
                 }
                 return false;
             }

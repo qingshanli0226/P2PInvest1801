@@ -103,26 +103,6 @@ public class WelComeActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        final Timer timer = new Timer();
-                        timer.schedule(new TimerTask() {
-                            @Override
-                            public void run() {
-
-                                try {
-                                    Thread.sleep(2000);
-                                    imageWelcome.setAlpha(image_alph--);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-
-                                if(imageWelcome.getAlpha()==0){
-                                    timer.cancel();
-                                    finish();
-                                    Intent intent = new Intent(WelComeActivity.this, MainActivity.class);
-                                    startActivity(intent);
-                                }
-                            }
-                        },0,1000);
                         Intent intent = new Intent(WelComeActivity.this, MainActivity.class);
                         startActivity(intent);
 
