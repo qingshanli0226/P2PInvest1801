@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment;
 import com.next.easynavigation.view.EasyNavigationBar;
 import com.p2p.bawei.p2pinvest1801.home.mvp.view.fragment.HomeFragment;
 import com.p2p.bawei.p2pinvest1801.invest.mvp.view.fragment.InvestFragment;
-import com.p2p.bawei.p2pinvest1801.fragment.MineFragment;
-import com.p2p.bawei.p2pinvest1801.fragment.MoreFragment;
+import com.p2p.bawei.p2pinvest1801.mine.mvp.view.fragment.MineFragment;
+import com.p2p.bawei.p2pinvest1801.more.mvp.view.fragment.MoreFragment;
 
 import java.util.ArrayList;
 import java.util.List;
