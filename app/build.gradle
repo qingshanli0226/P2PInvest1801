@@ -16,6 +16,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    greendao {
+        schemaVersion 1
+        daoPackage 'com.p2p.bawei.p2pinvest1801.cache.dao'
+        targetGenDir 'src/main/java'
+    }
 }
 
 dependencies {
@@ -74,4 +79,5 @@ dependencies {
     implementation files('libs/umeng-share-wechat-simplify-6.9.6.jar')
     implementation files('libs/umeng-shareboard-widget-6.9.6.jar')
     implementation files('libs/umeng-sharetool-6.9.6.jar')
+    implementation 'org.greenrobot:greendao:3.2.2'
 }
