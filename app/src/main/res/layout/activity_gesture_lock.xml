@@ -29,6 +29,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        app:plv_enableSkip="true"
+        app:plv_enableHapticFeedback="true"
+        app:plv_color="#00f"
+        app:plv_enableAutoClean="false"
+        app:plv_errorColor="#f00"
+        app:plv_fillColor="#fff"
+        app:plv_hitColor="@color/colorPrimary"
+        app:plv_lineWidth="3dp"/>
 
 </LinearLayout>

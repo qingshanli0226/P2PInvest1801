@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.fragmentthree.activity.TheOneActivity">
+
+    <com.p2p.bawei.p2pinvest1801.fragment.fragmentthree.myview.HistogramVIew
+        android:id="@+id/Hv_id"
+        app:histogram_style="Zhe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.p2p.bawei.p2pinvest1801.fragment.fragmentthree.myview.HistogramVIew>
+
+</LinearLayout>
