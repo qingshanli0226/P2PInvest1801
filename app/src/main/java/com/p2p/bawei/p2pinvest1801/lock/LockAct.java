@@ -55,6 +55,8 @@ public class LockAct extends BaseActivity {
                         for (int i = 0; i < list.size(); i++) {
                             if (!list.get(i).equals(lock_list.get(i))) {
                                 lock_flag = false;
+                                showMessage("图案不一致，请重新输入");
+                                flag = true;
                                 return;
                             }
                         }

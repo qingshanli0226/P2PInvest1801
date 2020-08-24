@@ -7,7 +7,6 @@ public class LoginBean {
      * message : 登录成功
      * result : {"id":"1704","name":"1704","password":"bawei","email":null,"phone":null,"point":null,"address":null,"money":null,"avatar":"/img/1438946011155.jpg","token":"c5b857de-7544-45db-9374-bc1e1d529b46AND1597775813271"}
      */
-
     private String code;
     private String message;
     private ResultBean result;

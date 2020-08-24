@@ -154,7 +154,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/my_asset_manage"
-
         android:drawableRight="@drawable/right">
 
     </TextView>

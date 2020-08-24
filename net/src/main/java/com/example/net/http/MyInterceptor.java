@@ -1,6 +1,7 @@
 package com.example.net.http;
 
 
+
 import java.io.IOException;
 
 import okhttp3.Interceptor;
@@ -13,7 +14,7 @@ public class MyInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
-        Request.Builder builder = request.newBuilder().addHeader("a", null);
+        Request.Builder builder = request.newBuilder().addHeader("token", "");
         return chain.proceed(builder.build());
     }
 }

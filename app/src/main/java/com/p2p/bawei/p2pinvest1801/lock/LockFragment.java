@@ -18,6 +18,7 @@ import java.util.List;
 @SuppressLint("Registered")
 public class LockFragment extends BaseActivity {
     private String lock_str;
+    private int number = 5;
 
     @Override
     public void onClick(View view) {
@@ -26,8 +27,8 @@ public class LockFragment extends BaseActivity {
 
     @Override
     public void initView() {
-        PatternLockerView mLockGo =  findViewById(R.id.lock_go);
-        SharedPreferences lock = getSharedPreferences("lock", Context.MODE_PRIVATE);
+        PatternLockerView mLockGo = findViewById(R.id.lock_go);
+        final SharedPreferences lock = getSharedPreferences("lock", Context.MODE_PRIVATE);
         lock_str = lock.getString("lock_str", null);
         mLockGo.setOnPatternChangedListener(new OnPatternChangeListener() {
             @Override
@@ -49,6 +50,16 @@ public class LockFragment extends BaseActivity {
                 if (stringBuilder.toString().equals(lock_str)) {
                     Log.e("hq", "onChange: " + list.toString());
                     finish();
+                } else {
+                    number--;
+                    if (number == 0){
+                        showMessage("图案错误，请重新登录!");
+                        SharedPreferences.Editor edit = lock.edit();
+                        edit.clear();
+                        finish();
+                    }else {
+                        showMessage("图案错误，您还有" + number + "机会");
+                    }
                 }
             }
 

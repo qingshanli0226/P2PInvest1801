@@ -27,7 +27,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.View, LoginContr
             @Override
             public void success(LoginBean loginBean) {
                 if (loginBean.getCode().equals("200")) {
-                    mView.goMain();
+                    mView.goMain(loginBean.getResult());
                 } else {
                     mView.showMessage(loginBean.getMessage());
                 }
@@ -35,8 +35,8 @@ public class LoginPresenter extends BasePresenter<LoginContract.View, LoginContr
 
             @Override
             public void error(String errorMessage) {
-                Log.e("hq", "error: "+errorMessage );
+                Log.e("hq", "error: " + errorMessage);
             }
-        },userName,userPWD);
+        }, userName, userPWD);
     }
 }

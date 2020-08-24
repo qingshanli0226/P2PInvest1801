@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B29E9E9E"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_20">
+
+    <Button
+        android:id="@+id/change_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="更改用户信息"
+        android:background="@drawable/btn_bg">
+
+    </Button>
+
+    <Button
+        android:id="@+id/up_head_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/btn_bg"
+        android:text="上传本地图像">
+
+    </Button>
+
+    <Button
+        android:id="@+id/show_head_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/btn_bg"
+        android:text="查看头像">
+
+    </Button>
+
+    <Button
+        android:id="@+id/head_pic_beck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_30"
+        android:background="@drawable/btn_bg"
+        android:text="取消">
+
+    </Button>
+</LinearLayout>

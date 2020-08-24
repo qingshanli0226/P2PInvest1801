@@ -11,7 +11,7 @@ public interface LoginContract {
 
         String getUserPWD();
 
-        void goMain();
+        void goMain(LoginBean.ResultBean loginBean);
     }
 
     interface Model extends IModel {
