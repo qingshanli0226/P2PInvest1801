@@ -1,7 +1,6 @@
 package com.p2p.bawei.p2pinvest1801.more.view;
 
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,6 +19,8 @@ import android.widget.ToggleButton;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import com.example.common.CacheManager;
+import com.example.common.InvestConstant;
 import com.example.framework.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.more.activity.GuiGuInvestActivity;
@@ -70,11 +71,9 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener, 
         tvMoreShare.setOnClickListener(this);
         tvMoreAbout.setOnClickListener(this);
 
+        box_isChecked = CacheManager.getCacheManager().getSharedPreferences();
 
-        box_isChecked = getActivity().getSharedPreferences("box_isChecked", Context.MODE_PRIVATE);
-
-        isChecked = box_isChecked.getBoolean("isChecked", false);
-
+        isChecked = box_isChecked.getBoolean(InvestConstant.SP_ISCHECKED, false);
     }
 
     @Override
@@ -159,9 +158,9 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener, 
     }
 
     private void checkout() {
-        SharedPreferences.Editor edit = box_isChecked.edit();
-        edit.clear();
-        edit.commit();
+        SharedPreferences.Editor editor = CacheManager.getCacheManager().getEditor();
+        editor.putBoolean(InvestConstant.SP_ISCHECKED,false);
+        editor.commit();
     }
 
     private void regist() {

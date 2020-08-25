@@ -23,13 +23,25 @@ import androidx.core.content.FileProvider;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterInside;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.example.common.CacheManager;
+import com.example.common.InvestConstant;
 import com.example.framework.BaseActivity;
+import com.example.net.RetrofitManager;
+import com.example.net.bean.UploadBean;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.main.view.MainActivity;
+import com.p2p.bawei.p2pinvest1801.utils.BitmapUtil;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 
 public class UserInfoActivity extends BaseActivity implements View.OnClickListener {
 
@@ -38,7 +50,6 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
     public static final int REQUEST_CAMERA = 102;
 
     private PopupWindow popupWindow;
-    private SharedPreferences iconSp;
 
     private ImageView ivUserIcon;
     private TextView tvUserChange;
@@ -46,12 +57,14 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
 
     private String path;
 
+
     @Override
     protected void initData() {
     }
 
     @Override
     protected void initView() {
+
         ImageView ivTitleBack = findViewById(R.id.iv_title_back);
         TextView tvTitle = findViewById(R.id.tv_title);
 
@@ -78,14 +91,20 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
         switch (v.getId()) {
             case R.id.iv_title_back:
                 //退出当前页面
-                removeCurrentActivity();
+                finish();
                 break;
             case R.id.btn_user_logout:
                 //退出登录
-                SharedPreferences sp = this.getSharedPreferences("user_info", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sp.edit();
-                editor.clear();
+                SharedPreferences.Editor editor = CacheManager.getCacheManager().getEditor();
+                editor.putString(InvestConstant.SP_USERNAME, "");
+                editor.putString(InvestConstant.SP_PASSWORD, "");
+                editor.putString(InvestConstant.SP_TOKEN, "");
+                editor.putString(InvestConstant.SP_ICON, "");
                 editor.commit();
+                Glide.with(this)
+                        .load(R.drawable.my_user_default)
+                        .transform(new CircleCrop())
+                        .into(ivUserIcon);
                 showMessage("退出登录");
                 //返回Main
                 launchActivity(MainActivity.class, null);
@@ -174,17 +193,18 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
         if (requestCode == REQUEST_PHOTO && resultCode == Activity.RESULT_OK) {
             Uri data1 = data.getData();//图库选择
             String s = String.valueOf(getRealPathFromUri(this, data1));
-//            ivUserIcon.setImageURI(data1);
-            //TODO:做二次采样
+            //TODO:做二次采样，压缩图片
+            initBitmap(s);
+
             Glide.with(this)
                     .load(s)
                     .transform(new CircleCrop())
                     .transform(new CenterInside())
                     .into(ivUserIcon);
-
             printLog("图库设置头像---" + s);
             saveIcon(s);
         } else if (requestCode == REQUEST_CAMERA && resultCode == Activity.RESULT_OK) {
+            initBitmap(path);
             Glide.with(this)
                     .load(BitmapFactory.decodeFile(path))
                     .transform(new CircleCrop())
@@ -195,7 +215,42 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
         }
     }
 
-    public static String getRealPathFromUri(Context context, Uri contentUri) {
+    //做压缩图片+上传到服务器
+    private void initBitmap(String path) {
+        String filePath = BitmapUtil.compressImage(path);
+        printLog("filePath--->" + filePath);
+
+        File file = new File(filePath);
+        RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+        //可以进行上传文件
+        RetrofitManager.getInvestApiService()
+                .uploadFile(requestBody)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<UploadBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(UploadBean uploadBean) {
+                        printLog("file--->" + uploadBean.getCode() + "---" + uploadBean.getMessage());
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    public String getRealPathFromUri(Context context, Uri contentUri) {
         Cursor cursor = null;
         try {
             String[] proj = {MediaStore.Images.Media.DATA};
@@ -220,25 +275,29 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
 
     private void saveIcon(String path) {
         //保存图片
-        iconSp = getSharedPreferences("headIcon", Context.MODE_PRIVATE);
-        SharedPreferences.Editor edit = iconSp.edit();
-        edit.clear();
-        edit.putString("icon", path);
-        edit.commit();
+        SharedPreferences.Editor editor = CacheManager.getCacheManager().getEditor();
+        editor.putString(InvestConstant.SP_ICON, path);
+        editor.commit();
         printLog("保存头像---" + path);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        //更新头像
-        SharedPreferences headIcon = getSharedPreferences("headIcon", Context.MODE_PRIVATE);
-        String icon = headIcon.getString("icon", "");
-        Glide.with(this)
-                .load(icon)
-                .transform(new CircleCrop())
-                .into(ivUserIcon);
-        printLog("更新头像---" + icon);
+        SharedPreferences sharedPreferences = CacheManager.getCacheManager().getSharedPreferences();
+        String icon = sharedPreferences.getString(InvestConstant.SP_ICON, "");
+        if (icon != null) {
+            //更新头像
+            Glide.with(this)
+                    .load(icon)
+                    .transform(new CircleCrop())
+                    .into(ivUserIcon);
+            printLog("更新头像---" + icon);
+        }else {
+            //从服务端下载头像
+
+        }
+
     }
 
     @Override

@@ -31,14 +31,19 @@
         android:theme="@style/AppTheme"
         android:useEmbeddedDex="true"
         android:usesCleartextTraffic="true">
+        <activity android:name=".user.activity.TouziActivity"></activity>
 
-        <meta-data android:name="design_width" android:value="1080"></meta-data>
-        <meta-data android:name="design_height" android:value="1920"></meta-data>
+        <meta-data
+            android:name="design_width"
+            android:value="1080" />
+        <meta-data
+            android:name="design_height"
+            android:value="1920" />
 
         <provider
-            android:grantUriPermissions="true"
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.p2p.bawei.p2pinvest1801">
+            android:authorities="com.p2p.bawei.p2pinvest1801"
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/paths" />
@@ -70,12 +75,12 @@
             android:name="com.umeng.socialize.media.WBShareCallBackActivity"
             android:configChanges="keyboardHidden|orientation"
             android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
             android:configChanges="keyboardHidden|orientation"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.sina.weibo.sdk.share.WbShareTransActivity"
             android:launchMode="singleTask"

@@ -80,7 +80,7 @@ public class RegisterActivity extends BaseMVPActivity<RegisterPresenterImpl, Reg
         switch (v.getId()) {
             case R.id.iv_title_back:
                 //回退上一级
-                removeCurrentActivity();
+                finish();
                 break;
             case R.id.btn_register:
 
@@ -116,7 +116,7 @@ public class RegisterActivity extends BaseMVPActivity<RegisterPresenterImpl, Reg
     @Override
     public void onRegister(String registerResult) {
         //返回上级
-        removeCurrentActivity();
+        finish();
         showMessage(registerResult);
         printLog(registerResult);
     }

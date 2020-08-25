@@ -25,7 +25,7 @@ public class GuiGuInvestActivity extends BaseActivity {
         ivTitleBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                removeCurrentActivity();
+                finish();
             }
         });
     }

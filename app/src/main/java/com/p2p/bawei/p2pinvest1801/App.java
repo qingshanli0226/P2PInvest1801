@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.Handler;
 import android.util.Log;
 
+import com.example.common.CacheManager;
+import com.p2p.bawei.p2pinvest1801.manager.UserManager;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 import com.umeng.commonsdk.UMConfigure;
@@ -26,6 +28,9 @@ public class App extends Application {
         handler = new Handler();
         mainThread = Thread.currentThread();//实例化当前Application的线程即为主线程
         mainThreadId = android.os.Process.myTid();//获取当前线程的id
+
+        CacheManager.getCacheManager().init(this);
+        UserManager.getUserManager().init(this);
 
         if (!LeakCanary.isInAnalyzerProcess(this)) {
             refWatcher = LeakCanary.install(this);

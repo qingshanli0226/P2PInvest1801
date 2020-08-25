@@ -1,6 +1,5 @@
 package com.p2p.bawei.p2pinvest1801.user.activity;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.view.KeyEvent;
 import android.view.View;
@@ -10,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.common.CacheManager;
+import com.example.common.InvestConstant;
 import com.example.common.view.MyLoadingBar;
 import com.example.framework.BaseMVPActivity;
 import com.example.net.bean.LoginBean;
@@ -87,17 +88,18 @@ public class LoginActivity extends BaseMVPActivity<LoginPresenterImpl, LoginCont
         //保存用户信息
         saveUser(loginResult);
         //返回上级
-        removeCurrentActivity();
+        finish();
         showMessage(loginResult.getMessage());
         printLog(loginResult.toString());
     }
 
     private void saveUser(LoginBean loginResult) {
-        SharedPreferences sp = this.getSharedPreferences("user_info", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putString("name", loginResult.getResult().getName());
-        editor.putString("password", loginResult.getResult().getPassword());
-        editor.commit();//必须提交，否则保存不成功
+        SharedPreferences.Editor editor = CacheManager.getCacheManager().getEditor();
+        editor.putString(InvestConstant.SP_USERNAME, loginResult.getResult().getName());
+        editor.putString(InvestConstant.SP_PASSWORD, loginResult.getResult().getPassword());
+        editor.putString(InvestConstant.SP_TOKEN, loginResult.getResult().getToken());//保存请求头
+        editor.putBoolean(InvestConstant.SP_ISLOGIN, true);
+        editor.commit();
         printLog("保存用户信息");
     }
 

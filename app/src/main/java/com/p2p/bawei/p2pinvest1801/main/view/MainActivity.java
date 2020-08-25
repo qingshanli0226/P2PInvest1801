@@ -1,7 +1,6 @@
 package com.p2p.bawei.p2pinvest1801.main.view;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -15,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.common.CacheManager;
+import com.example.common.InvestConstant;
 import com.example.framework.BaseActivity;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
@@ -72,7 +73,7 @@ public class MainActivity extends BaseActivity {
                     "android.permission.CAMERA",
                     "android.permission.ACCESS_FINE_LOCATION",
                     "android.permission.READ_LOGS"
-            }, 10101010);
+            }, 10100);
         }
         mainCommon = findViewById(R.id.main_common);
 
@@ -83,8 +84,8 @@ public class MainActivity extends BaseActivity {
 
     private void isToggle() {
         //做一下手势密码的判断
-        SharedPreferences box_isChecked = getSharedPreferences("box_isChecked", Context.MODE_PRIVATE);
-        checked = box_isChecked.getBoolean("isChecked", false);
+        SharedPreferences sharedPreferences = CacheManager.getCacheManager().getSharedPreferences();
+        checked = sharedPreferences.getBoolean(InvestConstant.SP_ISCHECKED, false);
         if (checked) {
             //需要手势密码
             launchActivity(TogglemoreActivity.class, new Bundle());
@@ -134,14 +135,11 @@ public class MainActivity extends BaseActivity {
     }
 
     private void isLogin() {
-        SharedPreferences user_info = this.getSharedPreferences("user_info", Context.MODE_PRIVATE);
-        String name = user_info.getString("name", "");
+        SharedPreferences sharedPreferences = CacheManager.getCacheManager().getSharedPreferences();
+        String name = sharedPreferences.getString(InvestConstant.SP_USERNAME, "");
         if (TextUtils.isEmpty(name)) {
             //本地没有保存过用户信息，给出提示：登录
             doLogin();
-        } else {
-            //已经登录过，则直接加载用户的信息并显示
-//            isToggle();
         }
     }
 
@@ -181,7 +179,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             //判断用户两次按键的时间差是否在一个预期值之内，是的话直接直接退出，不是的话提示用户再按一次后退键退出。
             if (System.currentTimeMillis() - exitTime > 2000) {
@@ -191,7 +188,7 @@ public class MainActivity extends BaseActivity {
                 // 表示并没有完全处理完该事件，更希望其他回调方法继续对其进行处理，
                 return true;
             } else {
-                removeAll(); //结束当前activity
+                finish();
             }
         }
         return super.onKeyDown(keyCode, event);

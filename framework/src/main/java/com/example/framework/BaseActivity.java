@@ -16,10 +16,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(getLayout());
 
-        //将当前的activity添加到ActivityManager中
-        ActivityManager.getInstance().add(this);
-
-
         initView();
         initData();
     }
@@ -56,17 +52,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
-
-    //销毁当前的Activity
-    protected void removeCurrentActivity() {
-        ActivityManager.getInstance().removeCurrent();
-    }
-
-    //销毁所有的activity
-    protected void removeAll() {
-        ActivityManager.getInstance().removeAll();
-    }
-
 
     @Override
     protected void onDestroy() {

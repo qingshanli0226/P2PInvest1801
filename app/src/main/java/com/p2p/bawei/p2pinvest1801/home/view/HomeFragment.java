@@ -148,4 +148,5 @@ public class HomeFragment extends BaseMVPFragment<HomePresenterImpl, HomeContrac
     public void hideLoading() {
         loadingBar.setVisibility(View.GONE);
     }
+
 }

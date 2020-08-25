@@ -22,10 +22,16 @@ allprojects {
     repositories {
         google()
         jcenter()
+
         maven { url "https://jitpack.io" }
         mavenCentral()
         maven { url 'https://dl.bintray.com/umsdk/release' }
         maven { url "https://jitpack.io" }
+
+        // 添加下面的内容
+        flatDir {
+            dirs 'libs'
+        }
     }
 }
 

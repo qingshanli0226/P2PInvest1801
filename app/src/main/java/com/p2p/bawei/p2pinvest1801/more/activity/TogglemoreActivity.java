@@ -1,11 +1,12 @@
 package com.p2p.bawei.p2pinvest1801.more.activity;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.TextView;
 
+import com.example.common.CacheManager;
+import com.example.common.InvestConstant;
 import com.example.framework.BaseActivity;
 import com.github.ihsg.patternlocker.OnPatternChangeListener;
 import com.github.ihsg.patternlocker.PatternIndicatorView;
@@ -39,8 +40,8 @@ public class TogglemoreActivity extends BaseActivity {
 
         patternLockView = (PatternLockerView) findViewById(R.id.pattern_lock_view);
 
-        box_isChecked = getSharedPreferences("box_isChecked", Context.MODE_PRIVATE);
-        checked = box_isChecked.getBoolean("isChecked", false);
+        box_isChecked = CacheManager.getCacheManager().getSharedPreferences();
+        checked = box_isChecked.getBoolean(InvestConstant.SP_ISCHECKED, false);
 
         patternLockView.setOnPatternChangedListener(new OnPatternChangeListener() {
             @Override
@@ -61,7 +62,7 @@ public class TogglemoreActivity extends BaseActivity {
                 //判断是否是登录验证
                 if (checked) {
                     //登录验证手势密码
-                    String lock_str = box_isChecked.getString("lock_str", "");
+                    String lock_str = box_isChecked.getString(InvestConstant.SP_LOCK_STR, "");
 
                     StringBuilder stringBuilder = new StringBuilder();
                     for (Integer integer : list
@@ -75,7 +76,7 @@ public class TogglemoreActivity extends BaseActivity {
                     }
 
                     showMessage("登录成功");
-                    removeCurrentActivity();
+                    finish();
                 } else {
                     //做注册手势密码
                     isDraw(patternLockerView, list);
@@ -137,13 +138,12 @@ public class TogglemoreActivity extends BaseActivity {
                     stringBuilder.append(String.valueOf(integer));
                 }
 
-                SharedPreferences box_isChecked = getSharedPreferences("box_isChecked", Context.MODE_PRIVATE);
-                SharedPreferences.Editor edit = box_isChecked.edit();
-                edit.putBoolean("isChecked", true);
-                edit.putString("lock_str", stringBuilder.toString());
-                edit.apply();
-                edit.commit();
-                removeCurrentActivity();
+                SharedPreferences.Editor editor = CacheManager.getCacheManager().getEditor();
+                editor.putBoolean(InvestConstant.SP_ISCHECKED, true);
+                editor.putString(InvestConstant.SP_LOCK_STR, stringBuilder.toString());
+                editor.apply();
+                editor.commit();
+                finish();
             }
         }
     }

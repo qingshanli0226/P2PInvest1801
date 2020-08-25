@@ -84,7 +84,6 @@ public class GlideManager {
     //从diskLruCache里读取数据
     public void getBitmapFromDiskLrucache(final String url, final IDiskLrucacheBitmap iDiskLrucacheBitmap) {
         //获取key
-
         Observable.create(new ObservableOnSubscribe<Bitmap>() {
             @Override
             public void subscribe(ObservableEmitter<Bitmap> e) throws Exception {

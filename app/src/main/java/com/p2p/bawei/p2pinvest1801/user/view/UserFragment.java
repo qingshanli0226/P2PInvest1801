@@ -1,7 +1,6 @@
 package com.p2p.bawei.p2pinvest1801.user.view;
 
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +11,8 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.example.common.CacheManager;
+import com.example.common.InvestConstant;
 import com.example.framework.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.user.activity.UserInfoActivity;
@@ -28,7 +29,6 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
     private TextView llTouziZhiguan;
     private TextView llZichan;
 
-
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_user;
@@ -42,7 +42,6 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
     @Override
     protected void initView() {
         TextView tvTitle = findViewById(R.id.tv_title);
-
         ImageView ivTitleSetting = findViewById(R.id.iv_title_setting);
         //登录的用户信息
         ivMeIcon = findViewById(R.id.iv_me_icon);
@@ -66,7 +65,10 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
         //标题
         tvTitle.setText("我的资产");
         ivTitleSetting.setVisibility(View.VISIBLE);
+
+
     }
+
 
     @Override
     public void onClick(View v) {
@@ -96,18 +98,18 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onStart() {
         super.onStart();
-        //更新用户信息
-        SharedPreferences user_info = getActivity().getSharedPreferences("user_info", Context.MODE_PRIVATE);
-        String name = user_info.getString("name", "未登录");
-        tvMeName.setText(name);
         printLog("更新用户信息");
+        SharedPreferences sharedPreferences = CacheManager.getCacheManager().getSharedPreferences();
+        String name = sharedPreferences.getString(InvestConstant.SP_USERNAME, "未登录");
+        tvMeName.setText(name);
 
-        //更新头像
-        SharedPreferences headIcon = getActivity().getSharedPreferences("headIcon", Context.MODE_PRIVATE);
-        String icon = headIcon.getString("icon", "");
-        Glide.with(getContext())
-                .load(icon)
-                .transform(new CircleCrop())
-                .into(ivMeIcon);
+        String icon = sharedPreferences.getString(InvestConstant.SP_ICON, "");
+        if (icon != null) {
+            //更新头像
+            Glide.with(getContext())
+                    .load(icon)
+                    .transform(new CircleCrop())
+                    .into(ivMeIcon);
+        }
     }
 }
