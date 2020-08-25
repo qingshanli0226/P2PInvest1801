@@ -4,12 +4,12 @@ package com.p2p.bawei.p2pinvest1801.invest;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
 import com.example.framework.BaseFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.invest.all.view.IAllFragment;
+import com.p2p.bawei.p2pinvest1801.invest.all.view.MyViewPager;
 import com.p2p.bawei.p2pinvest1801.invest.commend.view.ICommendFragment;
 import com.p2p.bawei.p2pinvest1801.invest.hot.view.IHotFragment;
 
@@ -37,7 +37,7 @@ public class InvestFragment extends BaseFragment {
     protected void initView() {
         TextView tvTitle = findViewById(R.id.tv_title);
         TabLayout tablayout = findViewById(R.id.tablayout);
-        ViewPager viewpager = findViewById(R.id.viewpager);
+        MyViewPager viewpager = findViewById(R.id.viewpager);
 
         fragmentList.add(new IAllFragment());
         fragmentList.add(new ICommendFragment());

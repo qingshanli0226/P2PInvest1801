@@ -9,6 +9,9 @@ import android.widget.LinearLayout;
 
 import com.example.common.R;
 
+/**
+ * 自定义加载进度条
+ */
 public class MyLoadingBar extends LinearLayout {
 
     public MyLoadingBar(Context context) {

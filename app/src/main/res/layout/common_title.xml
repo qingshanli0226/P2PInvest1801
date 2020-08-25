@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="86px"
         android:background="@drawable/lock_title_bg"
@@ -12,36 +12,37 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:visibility="gone"
+            android:layout_marginTop="7px"
             android:id="@+id/iv_title_back"
-            android:layout_width="55px"
-            android:layout_height="55px"
-            android:layout_marginLeft="10px"
+            android:layout_width="50px"
+            android:layout_height="50px"
+            android:layout_marginLeft="30px"
             android:src="@drawable/left"
-            android:visibility="gone" />
+            />
 
         <TextView
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
             android:id="@+id/tv_title"
-            android:layout_width="0px"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:gravity="center"
             android:text="首页"
             android:textColor="@color/title_text"
             android:textSize="44px" />
 
         <ImageView
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="7px"
             android:id="@+id/iv_title_setting"
-            android:layout_width="55px"
-            android:layout_height="55px"
-            android:layout_marginRight="10px"
+            android:layout_width="50px"
+            android:layout_height="50px"
+            android:layout_marginRight="30px"
             android:src="@drawable/my_setting_icon"
-            android:visibility="gone" />
+            />
 
-    </com.zhy.autolayout.AutoLinearLayout>
+    </com.zhy.autolayout.AutoRelativeLayout>
 
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/title_text" />
 </com.zhy.autolayout.AutoLinearLayout>

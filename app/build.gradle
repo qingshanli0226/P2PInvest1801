@@ -36,6 +36,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 
+
     // 支付宝sdk
 //    implementation (name: 'alipaySdk-15.7.5', ext: 'aar')
     //鲁班压缩

@@ -77,11 +77,11 @@ public class UserManager {
                             if (autologinBean.getCode().equals("200")) {
                                 Toast.makeText(context, "自动登录成功", Toast.LENGTH_SHORT).show();
                                 //把token存入SP文件中
-                                Log.i("hj", "onNext: " + autologinBean.getResult().getToken());
+                                Log.i("---", "onNext: " + autologinBean.getResult().getToken());
                                 editor.putString(InvestConstant.SP_TOKEN, autologinBean.getResult().getToken());
                                 editor.commit();
                             } else {
-                                Toast.makeText(context, "" + autologinBean.getMessage(), Toast.LENGTH_SHORT).show();
+                                Log.d("---", "onNext: "+ autologinBean.getMessage());
                             }
                         }
 

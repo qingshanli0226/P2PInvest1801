@@ -55,6 +55,7 @@ public class IAllFragment extends BaseMVPFragment<ProductPresenterImpl, ProductC
         allAdapter = new AllAdapter(R.layout.invest_all_item, resultBeanList);
         allRv.setAdapter(allAdapter);
         allRv.setLayoutManager(new LinearLayoutManager(getActivity()));
+
     }
 
     @Override

@@ -15,7 +15,10 @@ import com.example.common.CacheManager;
 import com.example.common.InvestConstant;
 import com.example.framework.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.user.activity.InvestmentActivity;
+import com.p2p.bawei.p2pinvest1801.user.activity.TouziActivity;
 import com.p2p.bawei.p2pinvest1801.user.activity.UserInfoActivity;
+import com.p2p.bawei.p2pinvest1801.user.activity.ZichanActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -82,14 +85,19 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
                 launchActivity(UserInfoActivity.class, new Bundle());
                 break;
             case R.id.recharge:
+                //充值
                 break;
             case R.id.withdraw:
+                //提现
                 break;
-            case R.id.ll_touzi:
+            case R.id.ll_touzi://投资管理
+                launchActivity(TouziActivity.class, new Bundle());
                 break;
-            case R.id.ll_touzi_zhiguan:
+            case R.id.ll_touzi_zhiguan://投资管理（直观）
+                launchActivity(InvestmentActivity.class, new Bundle());
                 break;
-            case R.id.ll_zichan:
+            case R.id.ll_zichan://资产管理
+                launchActivity(ZichanActivity.class, new Bundle());
                 break;
         }
     }
