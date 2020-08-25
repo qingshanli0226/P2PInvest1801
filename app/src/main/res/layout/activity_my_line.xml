@@ -1,15 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mvp.view.fragment.MyLineActivity">
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/wendu"
-        android:background="#4A31B9"
-        android:layout_centerInParent="true"
+    android:orientation="vertical"
+    tools:context=".mvp.view.activity.MyLineActivity">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginBottom="10dp"/>
-</RelativeLayout>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:src="@mipmap/ic_launcher"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:background="@android:color/holo_purple"
+            >
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/wendu"
+                android:background="#4A31B9"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="10dp"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:src="@mipmap/ic_launcher"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:src="@mipmap/ic_launcher"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:src="@mipmap/ic_launcher"/>
+    </LinearLayout>
+
+</ScrollView>

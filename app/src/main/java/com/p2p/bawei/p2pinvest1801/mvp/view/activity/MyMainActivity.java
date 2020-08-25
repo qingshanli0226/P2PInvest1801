@@ -38,7 +38,7 @@ public class MyMainActivity extends BaseActivity  {
         es.titleItems(list_ttt).normalIconItems(list_pic).selectIconItems(list_pic_t)
                 .fragmentList(list_fragment)
                 .fragmentManager(getSupportFragmentManager())
-                .canScroll(true)
+                .canScroll(false)
                 .normalTextColor(Color.parseColor("#535151"))
                 .selectTextColor(Color.parseColor("#1686F3"))
                 .mode(EasyNavigationBar.NavigationMode.MODE_NORMAL)

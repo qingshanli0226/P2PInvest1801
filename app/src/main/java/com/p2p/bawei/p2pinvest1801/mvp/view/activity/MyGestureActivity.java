@@ -35,7 +35,6 @@ public class MyGestureActivity extends AppCompatActivity {
             Log.d(getClass().getName(), "Pattern progress: " +
                     PatternLockUtils.patternToString(mPatternLockView, progressPattern));
         }
-
         @Override
         public void onComplete(List<PatternLockView.Dot> pattern) {
             Log.d(getClass().getName(), "Pattern complete: " +

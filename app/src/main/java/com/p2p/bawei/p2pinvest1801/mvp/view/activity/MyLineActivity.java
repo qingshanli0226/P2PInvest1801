@@ -1,4 +1,4 @@
-package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
+package com.p2p.bawei.p2pinvest1801.mvp.view.activity;
 
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +22,7 @@ public class MyLineActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_line);
         // 温度
         mLineChart = (LineChart) findViewById(R.id.wendu);
-        LineData mLineData  = getLineData(7, 40);
+        LineData mLineData  = getLineData(60, 60);
         showChart(mLineChart, mLineData , Color.rgb(114, 188, 223));
         //设置当前的折线图的描述
         mLineChart.setDescription("林丹出轨事件的关注度");
@@ -56,7 +56,7 @@ public class MyLineActivity extends AppCompatActivity {
         LineDataSet lineDataSet = new LineDataSet(yValues, "" /*测试折线图*/);
         //用y轴的集合来设置参数
         // 线宽
-        lineDataSet.setLineWidth(1.0f);
+        lineDataSet.setLineWidth(2.0f);
         // 显示的圆形大小
         lineDataSet.setCircleSize(2.5f);
         // 显示颜色
@@ -105,7 +105,7 @@ public class MyLineActivity extends AppCompatActivity {
         lineChart.setScaleEnabled(true);
 
         // if disabled, scaling can be done on x- and y-axis separately
-        lineChart.setPinchZoom(false);
+        lineChart.setPinchZoom(true);
 
         //lineChart.setBackgroundColor(Color.rgb(Integer.parseInt("7e", 16), Integer.parseInt("ce", 16), Integer.parseInt("f4", 16)));// 设置背景
         // 设置数据

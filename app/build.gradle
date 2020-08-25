@@ -4,11 +4,16 @@ android {
     compileSdkVersion 29
     defaultConfig {
         applicationId "com.p2p.bawei.p2pinvest1801"
-        minSdkVersion 24
+        minSdkVersion 22
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+
     }
     buildTypes {
         release {
@@ -16,11 +21,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    greendao {
-        schemaVersion 1
-        daoPackage 'com.p2p.bawei.p2pinvest1801.cache.dao'
-        targetGenDir 'src/main/java'
-    }
+//    greendao {
+//        schemaVersion 1
+//        daoPackage 'com.p2p.bawei.p2pinvest1801.cache.dao'
+//        targetGenDir 'src/main/java'
+//    }
 }
 
 dependencies {
@@ -79,5 +84,5 @@ dependencies {
     implementation files('libs/umeng-share-wechat-simplify-6.9.6.jar')
     implementation files('libs/umeng-shareboard-widget-6.9.6.jar')
     implementation files('libs/umeng-sharetool-6.9.6.jar')
-    implementation 'org.greenrobot:greendao:3.2.2'
+//    implementation 'org.greenrobot:greendao:3.2.2'
 }
