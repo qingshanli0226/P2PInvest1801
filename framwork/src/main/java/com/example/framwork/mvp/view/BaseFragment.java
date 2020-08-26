@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.common.ToolBar;
 import com.example.framwork.R;
 import com.example.framwork.mvp.presenter.IPresenter;
 
@@ -41,9 +42,10 @@ public abstract class BaseFragment<P extends IPresenter> extends Fragment implem
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if(mPresenter != null){
+        if (mPresenter != null) {
             mPresenter.destroy();
             mPresenter = null;
         }
     }
+
 }

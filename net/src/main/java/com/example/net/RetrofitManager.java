@@ -30,10 +30,11 @@ public class RetrofitManager {
 
     private void create() {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .connectTimeout(60*1000, TimeUnit.MILLISECONDS)
                 .readTimeout(60*1000, TimeUnit.MILLISECONDS)
                 .writeTimeout(60*1000, TimeUnit.MILLISECONDS)
+                .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                .addInterceptor(new TokenInterceptor())
                 .build();
         Retrofit.Builder retrofits = new Retrofit.Builder();
         retrofits.client(okHttpClient);

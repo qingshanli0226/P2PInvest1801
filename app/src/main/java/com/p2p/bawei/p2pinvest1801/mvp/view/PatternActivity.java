@@ -11,7 +11,6 @@ import com.p2p.bawei.p2pinvest1801.R;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PatternActivity extends BaseActivity {

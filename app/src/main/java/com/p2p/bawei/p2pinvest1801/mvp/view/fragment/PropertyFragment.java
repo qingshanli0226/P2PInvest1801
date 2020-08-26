@@ -3,16 +3,14 @@ package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,16 +25,24 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 
+import com.example.common.ToolBar;
+import com.example.common.bean.LoginBean;
+import com.example.common.bean.UploadBean;
+import com.example.framwork.mvp.user.UserManagers;
 import com.example.framwork.mvp.view.BaseFragment;
-import com.p2p.bawei.p2pinvest1801.MyDialog;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.user.RegisterActivity;
+import com.p2p.bawei.p2pinvest1801.cache.GlideCacheManager;
+import com.p2p.bawei.p2pinvest1801.mvp.view.Myportrait;
+import com.p2p.bawei.p2pinvest1801.mvp.contract.UploadContract;
+import com.p2p.bawei.p2pinvest1801.mvp.model.UploadModel;
+import com.p2p.bawei.p2pinvest1801.mvp.presenter.UploadPresenter;
+import com.p2p.bawei.p2pinvest1801.mvp.view.TouZiActivity;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class PropertyFragment extends BaseFragment {
+public class PropertyFragment extends BaseFragment<UploadPresenter> implements UploadContract.UploadView,ToolBar.ClicksListener,UserManagers.ILoginStatusChangeListener {
     private ImageView properTouxiang;
     private ImageView recharge;
     private ImageView withdraw;
@@ -44,9 +50,12 @@ public class PropertyFragment extends BaseFragment {
     private TextView llTouziZhiguan;
     private TextView llZichan;
     private LinearLayout properLin;
-
+    private TextView properName;
+    private ToolBar toolbar;
+    String path;
     @Override
     public void initViews() {
+        properName = (TextView) findViewById(R.id.proper_name);
         properTouxiang = (ImageView) findViewById(R.id.proper_touxiang);
         recharge = (ImageView) findViewById(R.id.recharge);
         withdraw = (ImageView) findViewById(R.id.withdraw);
@@ -54,7 +63,21 @@ public class PropertyFragment extends BaseFragment {
         llTouziZhiguan = (TextView) findViewById(R.id.ll_touzi_zhiguan);
         llZichan = (TextView) findViewById(R.id.ll_zichan);
         properLin = (LinearLayout) findViewById(R.id.proper_lin);
+        mPresenter = new UploadPresenter(new UploadModel(), this);
+        toolbar = (ToolBar) findViewById(R.id.toolbar);
+        Loginstate();
+        toolbar.setClicksListener(this);
+        UserManagers.getInstance().setLoginStatusChangeListener(this);
+    }
 
+    private void Loginstate() {
+        if(UserManagers.getInstance().isUserLogin()){
+            properTouxiang.setImageResource(R.drawable.my_user_bg_icon);
+            properName.setText(UserManagers.getInstance().getetname());
+        }else{
+            properTouxiang.setImageResource(R.drawable.my_user_default);
+            properName.setText("Hi,Welcome!");
+        }
     }
 
 
@@ -66,15 +89,25 @@ public class PropertyFragment extends BaseFragment {
                 initPopWindow();
             }
         });
+        llTouzi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), TouZiActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     Button pop_chose;
     Button pop_photo;
+    private Button popUpload;
+
     private void initPopWindow() {
-        final PopupWindow popupWindow = new PopupWindow(properLin, LinearLayout.LayoutParams.MATCH_PARENT, 500);
+        final PopupWindow popupWindow = new PopupWindow(properLin, LinearLayout.LayoutParams.MATCH_PARENT, 700);
         popupWindow.setOutsideTouchable(true);
         LayoutInflater from = LayoutInflater.from(getContext());
         View inflate = from.inflate(R.layout.popwindow, null);
         pop_chose = inflate.findViewById(R.id.pop_chose);
+        popUpload = inflate.findViewById(R.id.pop_upload);
         pop_photo = inflate.findViewById(R.id.pop_photo);
         popupWindow.setContentView(inflate);
         popupWindow.setBackgroundDrawable(new ColorDrawable(Color.GRAY));
@@ -91,6 +124,14 @@ public class PropertyFragment extends BaseFragment {
             public void onClick(View v) {
                 photo();
                 popupWindow.dismiss();
+            }
+        });
+
+        popUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPresenter.uploadP();
+
             }
         });
     }
@@ -152,38 +193,62 @@ public class PropertyFragment extends BaseFragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable final Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 101 && resultCode == Activity.RESULT_OK){
-            String data1 = data.getData().getPath();
-            properTouxiang.setImageURI(data.getData());
-//            cai(data1+".jpg");
+            String data1 = String.valueOf(getRealPathFromUri(getContext(),data.getData()));
+            Bitmap bitmap = GlideCacheManager.getInstance().samplePic(properTouxiang.getMeasuredWidth(), properTouxiang.getMeasuredHeight(), data1);
+            properTouxiang.setImageBitmap(bitmap);
         }else if(requestCode == 102 && resultCode == Activity.RESULT_OK){
 
         }
     }
 
-    private void cai(final String data1) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Log.i("----", data1);
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inJustDecodeBounds = true;
-                BitmapFactory.decodeFile(data1,options);
-                Log.i("----", options.outWidth+"");
-                Log.i("----", options.outHeight+"");
-                int picWidth = 10;
-                int picHeight = 10;
-                int sampleSize = 1;
-                while (picHeight/sampleSize > properTouxiang.getHeight() || picWidth / sampleSize > properTouxiang.getWidth()){
-                    sampleSize = sampleSize * 2;
-                }
-
-                options.inJustDecodeBounds = false;
-                options.inSampleSize = sampleSize;
-                options.inPreferredConfig  = Bitmap.Config.ARGB_8888;
-
-                Bitmap bitmap = BitmapFactory.decodeFile(data1, options);
-                Message.obtain(handler,1,bitmap).sendToTarget();
+    @Override
+    public void uploadView(UploadBean uploadBean) {
+        Toast.makeText(getContext(), ""+uploadBean.getCode()
+                +"返回字符串"+uploadBean.getMessage(), Toast.LENGTH_SHORT).show();
+    }
+    public String getRealPathFromUri(Context context, Uri contentUri) {
+        Cursor cursor = null;
+        try {
+            String[] proj = {MediaStore.Images.Media.DATA};
+            cursor = context.getContentResolver().query(contentUri, proj, null, null, null);
+            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            cursor.moveToFirst();
+            return cursor.getString(column_index);
+        } finally {
+            if (cursor != null) {
+                cursor.close();
             }
-        }).start();
+        }
+    }
+    @Override
+    public String url() {
+        return path;
+    }
+
+    @Override
+    public void leftclick() {
+
+    }
+
+    @Override
+    public void rightclick() {
+        Intent intent = new Intent(getContext(), Myportrait.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onLoginSuccess(LoginBean loginBean) {
+        Loginstate();
+    }
+
+    @Override
+    public void onLogoutSuccess() {
+        Loginstate();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        UserManagers.getInstance().removeLoginStatusChangeListener(this);
     }
 }

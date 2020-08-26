@@ -1,4 +1,4 @@
-package com.p2p.bawei.p2pinvest1801.mvp.view;
+package com.p2p.bawei.p2pinvest1801.mvp.view.mine;
 
 import android.content.Context;
 import android.graphics.Canvas;

@@ -1,4 +1,4 @@
-package com.p2p.bawei.p2pinvest1801;
+package com.p2p.bawei.p2pinvest1801.mvp.view.mine;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.p2p.bawei.p2pinvest1801.R;
 
 public class MyDialog extends Dialog {
     private TextView dasilogTitle;

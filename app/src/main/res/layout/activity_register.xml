@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -7,26 +7,28 @@
     <com.example.common.ToolBar
         android:layout_width="match_parent"
         app:center_text="用户注册"
+        app:right_show="true"
         app:left_show="true"
-        android:layout_height="60dp"></com.example.common.ToolBar>
+        android:id="@+id/toolbar"
+        android:layout_height="150px"></com.example.common.ToolBar>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="150px"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="265px"
             android:textColor="#000"
             android:gravity="center"
-            android:textSize="16sp"
+            android:textSize="45px"
             android:text="手机号:"
             android:layout_height="match_parent" />
         <EditText
             android:layout_width="match_parent"
             android:background="@null"
             android:hint="请输入手机号"
-            android:textSize="16sp"
+            android:textSize="45px"
             android:id="@+id/register_phone"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="15px"
             android:maxLines="1"
             android:singleLine="true"
             android:inputType="phone"
@@ -40,20 +42,21 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal">
+
         <TextView
-            android:layout_width="100dp"
-            android:textColor="#000"
+            android:layout_width="265px"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:textSize="16sp"
             android:text="用户名:"
-            android:layout_height="match_parent" />
+            android:textColor="#000"
+            android:textSize="45px" />
         <EditText
             android:layout_width="match_parent"
             android:background="@null"
-            android:hint="请输入手机号"
-            android:textSize="16sp"
-            android:layout_marginLeft="5dp"
+            android:hint="请输入用户名"
+            android:textSize="45px"
             android:id="@+id/register_user"
+            android:layout_marginLeft="15px"
             android:maxLines="1"
             android:singleLine="true"
             android:layout_height="match_parent" />
@@ -66,21 +69,21 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal">
-        <TextView
-            android:layout_width="100dp"
-            android:textColor="#000"
 
+        <TextView
+            android:layout_width="265px"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:textSize="16sp"
             android:text="密    码:"
-            android:layout_height="match_parent" />
+            android:textColor="#000"
+            android:textSize="45px" />
         <EditText
             android:layout_width="match_parent"
             android:background="@null"
-            android:hint="请输入手机号"
-            android:textSize="16sp"
+            android:hint="请输入密码"
+            android:textSize="45px"
             android:id="@+id/register_password"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="15px"
             android:maxLines="1"
             android:singleLine="true"
             android:inputType="numberPassword"
@@ -95,20 +98,20 @@
         android:layout_height="50dp"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="265px"
             android:textColor="#000"
             android:gravity="center"
-            android:textSize="16sp"
-            android:paddingLeft="15dp"
+            android:textSize="45px"
+            android:paddingLeft="30px"
             android:text="确认密码:"
             android:layout_height="match_parent" />
         <EditText
             android:layout_width="match_parent"
             android:background="@null"
-            android:hint="请输入手机号"
-            android:layout_marginLeft="5dp"
+            android:hint="请再次输入密码"
+            android:textSize="45px"
             android:id="@+id/register_pwd"
-            android:textSize="16sp"
+            android:layout_marginLeft="15px"
             android:maxLines="1"
             android:singleLine="true"
             android:inputType="numberPassword"
@@ -121,12 +124,12 @@
     <Button
         android:id="@+id/btn_register"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_height="130px"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
         android:layout_marginTop="15dp"
         android:background="@drawable/btn_01"
         android:text="注  册"
         android:textColor="#ffffff"
         android:textSize="18sp" />
-</LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

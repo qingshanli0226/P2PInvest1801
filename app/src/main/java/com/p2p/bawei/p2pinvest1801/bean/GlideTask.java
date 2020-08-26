@@ -1,4 +1,4 @@
-package com.p2p.bawei.p2pinvest1801;
+package com.p2p.bawei.p2pinvest1801.bean;
 
 import android.graphics.Bitmap;
 import android.widget.ImageView;

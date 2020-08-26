@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.example.framwork.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.mvp.view.MyFlow;
+import com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyFlow;
 
 public class HotFragment extends BaseFragment {
     private String mNames[] = {

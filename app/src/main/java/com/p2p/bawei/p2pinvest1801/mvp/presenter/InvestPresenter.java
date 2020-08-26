@@ -2,7 +2,7 @@ package com.p2p.bawei.p2pinvest1801.mvp.presenter;
 
 import com.example.framwork.mvp.presenter.BasePresenter;
 import com.example.net.BaseObserver;
-import com.example.net.bean.InvestBean;
+import com.example.common.bean.InvestBean;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.InvestContract;
 
 import io.reactivex.disposables.Disposable;

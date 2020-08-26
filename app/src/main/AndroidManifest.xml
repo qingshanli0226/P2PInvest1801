@@ -12,7 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:networkSecurityConfig="@xml/aaa"
+        android:theme="@style/TranslucentTheme">
         <meta-data android:name="design_width" android:value="1080"></meta-data>
         <meta-data android:name="design_height" android:value="1920"></meta-data>
 
@@ -26,8 +27,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mvp.view.fragment.user.RegisterActivity"></activity>
+        <activity android:name=".mvp.view.user.RegisterActivity"></activity>
         <activity android:name=".mvp.view.PatternActivity"></activity>
+        <activity android:name=".mvp.view.user.LoginActivity"></activity>
+        <activity android:name=".mvp.view.Myportrait"></activity>
+        <activity android:name=".mvp.view.TouZiActivity"></activity>
     </application>
 
 </manifest>

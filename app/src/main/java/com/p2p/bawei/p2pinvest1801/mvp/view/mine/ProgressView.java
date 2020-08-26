@@ -1,6 +1,5 @@
-package com.p2p.bawei.p2pinvest1801.mvp.view;
+package com.p2p.bawei.p2pinvest1801.mvp.view.mine;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -12,14 +11,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.net.bean.HomeBean;
 import com.p2p.bawei.p2pinvest1801.R;
-
-import java.util.List;
 
 public class ProgressView extends View {
     private int circle_color;

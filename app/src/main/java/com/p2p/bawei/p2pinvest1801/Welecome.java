@@ -1,38 +1,27 @@
 package com.p2p.bawei.p2pinvest1801;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.framwork.mvp.user.UserManagers;
 import com.example.framwork.mvp.view.BaseActivity;
 import com.example.net.BaseObserver;
+import com.example.net.NetModel;
 import com.example.net.P2PApi;
 import com.example.net.RetrofitManager;
-import com.example.net.bean.HomeBean;
-import com.example.net.bean.VersionBean;
+import com.example.common.bean.VersionBean;
 import com.p2p.bawei.p2pinvest1801.cache.CacheManager;
 import com.p2p.bawei.p2pinvest1801.mvp.view.MainActivity;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 //欢迎页
@@ -85,6 +74,11 @@ public class Welecome extends BaseActivity implements CacheManager.IDataChangeLi
     public void initViews() {
         welcomeCount = (TextView) findViewById(R.id.welcome_count);
         CacheManager.getInstance().registerDataChangeListener(Welecome.this);
+        CacheManager.getInstance().init(this);
+        UserManagers.getInstance().init(this);
+        NetModel.init(this);
+        //使用leakcannary来检测当前应用是否有页面内存泄漏.
+
     }
 
     @Override

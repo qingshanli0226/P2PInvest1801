@@ -3,5 +3,6 @@
     <declare-styleable name="ToolBar">
         <attr name="left_show" format="boolean"></attr>
         <attr name="center_text" format="string"></attr>
+        <attr name="right_show" format="boolean"></attr>
     </declare-styleable>
 </resources>

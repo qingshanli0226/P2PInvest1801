@@ -1,29 +1,17 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.framwork.mvp.view.BaseFragment;
-import com.example.net.BaseObserver;
-import com.example.net.bean.HomeBean;
-import com.example.net.bean.InvestBean;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.adapter.CommonAdapter;
-import com.p2p.bawei.p2pinvest1801.adapter.HomeAdapter;
 import com.p2p.bawei.p2pinvest1801.adapter.ViewpagerAdapter;
-import com.p2p.bawei.p2pinvest1801.mvp.contract.InvestContract;
-import com.p2p.bawei.p2pinvest1801.mvp.model.InvestModel;
-import com.p2p.bawei.p2pinvest1801.mvp.presenter.InvestPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +29,9 @@ public class InvestFragment extends BaseFragment {
         viewpagerAdapter = new ViewpagerAdapter(getActivity().getSupportFragmentManager(), 1,list);
         investViewpage.setAdapter(viewpagerAdapter);
         viewpagerAdapter.notifyDataSetChanged();
+
+
+
     }
 
     @Override

@@ -1,22 +1,15 @@
-package com.p2p.bawei.p2pinvest1801.mvp.view;
+package com.p2p.bawei.p2pinvest1801.mvp.view.mine;
 
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-import com.example.net.bean.InvestBean;
-import com.p2p.bawei.p2pinvest1801.MyViewBean;
+import com.p2p.bawei.p2pinvest1801.bean.MyViewBean;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class MyView extends SurfaceView implements SurfaceHolder.Callback {
     SurfaceHolder surfaceHolder;
@@ -33,6 +26,12 @@ public class MyView extends SurfaceView implements SurfaceHolder.Callback {
 
     public MyView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
     @Override

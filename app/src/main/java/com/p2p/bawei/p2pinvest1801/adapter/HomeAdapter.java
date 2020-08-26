@@ -1,15 +1,12 @@
 package com.p2p.bawei.p2pinvest1801.adapter;
 
-import android.view.View;
-
 import androidx.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.example.net.bean.HomeBean;
-import com.example.net.bean.InvestBean;
+import com.example.common.bean.InvestBean;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.mvp.view.ProgressView;
+import com.p2p.bawei.p2pinvest1801.mvp.view.mine.ProgressView;
 
 import java.util.List;
 

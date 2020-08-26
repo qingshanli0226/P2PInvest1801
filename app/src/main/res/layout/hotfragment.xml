@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.p2p.bawei.p2pinvest1801.mvp.view.MyFlow
+    <com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyFlow
         android:id="@+id/flowlayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.p2p.bawei.p2pinvest1801.mvp.view.MyFlow>
+        android:layout_height="match_parent"></com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyFlow>
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"

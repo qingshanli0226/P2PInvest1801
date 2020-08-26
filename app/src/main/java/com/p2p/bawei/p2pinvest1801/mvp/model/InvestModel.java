@@ -4,8 +4,7 @@ import com.example.framwork.mvp.model.BaseModel;
 import com.example.net.BaseObserver;
 import com.example.net.P2PApi;
 import com.example.net.RetrofitManager;
-import com.example.net.bean.HomeBean;
-import com.example.net.bean.InvestBean;
+import com.example.common.bean.InvestBean;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.InvestContract;
 
 import java.util.concurrent.TimeUnit;

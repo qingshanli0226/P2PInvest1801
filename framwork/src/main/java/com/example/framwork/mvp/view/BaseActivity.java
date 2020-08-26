@@ -18,14 +18,11 @@ import com.example.framwork.mvp.presenter.IPresenter;
 
 public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IActivity,IView {
     protected P mPresenter;
-    private ToolBar toolBar;
-    private long lastBackTime;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(bandLayout());
         initViews();
-        toolBar = findViewById(R.id.toolbar);
         initDatas();
     }
 

@@ -1,37 +1,28 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
+import com.example.framwork.mvp.user.UserManagers;
 import com.example.framwork.mvp.view.BaseActivity;
-import com.example.net.bean.HomeBean;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
-import com.p2p.bawei.p2pinvest1801.MyDialog;
+import com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyDialog;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.adapter.CommonAdapter;
-import com.p2p.bawei.p2pinvest1801.cache.CacheManager;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.HomeFragment;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.InvestFragment;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.MoreFragment;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.PropertyFragment;
-import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.user.RegisterActivity;
+import com.p2p.bawei.p2pinvest1801.mvp.view.user.LoginActivity;
 
 import java.util.ArrayList;
-import java.util.List;
 
 //主页面
 public class MainActivity extends BaseActivity {
@@ -51,6 +42,7 @@ public class MainActivity extends BaseActivity {
         investFragment = new InvestFragment();
         moreFragment = new MoreFragment();
         propertyFragment = new PropertyFragment();
+        UserManagers.getInstance().removeService();
         addFragment();
     }
 
@@ -75,10 +67,8 @@ public class MainActivity extends BaseActivity {
                         showFragment(propertyFragment);
                         TextView titleView = mainCommon.getTitleView(position);
                         titleView.setTextColor(Color.RED);
-                        SharedPreferences sharedPreferences = getSharedPreferences("1801A", Context.MODE_PRIVATE);
-                        boolean flag = sharedPreferences.getBoolean("flag", false);
-                        if(flag){
-
+                        if(UserManagers.getInstance().isUserLogin()){
+                            
                         }else{
                             startDiaslog();
                         }
@@ -98,12 +88,13 @@ public class MainActivity extends BaseActivity {
     }
 
     private void startDiaslog() {
-        MyDialog myDialog = new MyDialog(this);
+        final MyDialog myDialog = new MyDialog(this);
         myDialog.setDasilogEnsureListeren(new MyDialog.DasilogEnsureListeren() {
             @Override
             public void onEnsureOnclick() {
-                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
+                myDialog.dismiss();
             }
         });
         myDialog.show();

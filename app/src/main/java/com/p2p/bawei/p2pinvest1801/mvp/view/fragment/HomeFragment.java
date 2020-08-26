@@ -1,21 +1,17 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.util.Log;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.framwork.mvp.view.BaseFragment;
-import com.example.net.bean.HomeBean;
+import com.example.common.bean.HomeBean;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.cache.CacheManager;
-import com.p2p.bawei.p2pinvest1801.mvp.view.ProgressView;
+import com.p2p.bawei.p2pinvest1801.mvp.view.mine.ProgressView;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.loader.ImageLoader;
@@ -23,7 +19,6 @@ import com.youth.banner.loader.ImageLoader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Handler;
 
 public class HomeFragment extends BaseFragment implements CacheManager.IDataChangeListener{
     private Banner homeBanner;

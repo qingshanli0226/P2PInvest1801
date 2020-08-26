@@ -1,6 +1,6 @@
 package com.example.net;
 
-import com.example.net.bean.BaseBean;
+import com.example.common.bean.BaseBean;
 
 import io.reactivex.functions.Function;
 

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.veken:chart_view:1.0.2@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ee7cfd4ff038b5ff0798826fcfe70c16/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ee7cfd4ff038b5ff0798826fcfe70c16/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.veken/chart_view/1.0.2/3c367c154101de36577114a610f1e494e2a112b4/chart_view-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

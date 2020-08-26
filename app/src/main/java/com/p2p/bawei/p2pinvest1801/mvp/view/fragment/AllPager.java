@@ -5,23 +5,19 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.framwork.mvp.view.BaseFragment;
-import com.example.net.bean.InvestBean;
+import com.example.common.bean.InvestBean;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.adapter.HomeAdapter;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.InvestContract;
 import com.p2p.bawei.p2pinvest1801.mvp.model.InvestModel;
 import com.p2p.bawei.p2pinvest1801.mvp.presenter.InvestPresenter;
-import com.p2p.bawei.p2pinvest1801.mvp.view.MyView;
+import com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class AllPager extends BaseFragment<InvestPresenter> implements InvestContract.InvestView  {

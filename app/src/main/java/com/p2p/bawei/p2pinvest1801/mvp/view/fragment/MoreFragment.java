@@ -9,9 +9,7 @@ import android.widget.Toast;
 import com.example.framwork.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.mvp.view.PatternActivity;
-import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.user.RegisterActivity;
-
-import java.util.regex.Pattern;
+import com.p2p.bawei.p2pinvest1801.mvp.view.user.RegisterActivity;
 
 public class MoreFragment extends BaseFragment {
     private ImageView morePassword;

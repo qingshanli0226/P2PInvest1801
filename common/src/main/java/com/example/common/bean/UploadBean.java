@@ -1,11 +1,11 @@
-package com.example.net.bean;
+package com.example.common.bean;
 
-public class RegisterBean {
+public class UploadBean {
 
     /**
      * code : 200
      * message : 请求成功
-     * result : 注册成功
+     * result : /bawei/1558511974540.jpg
      */
 
     private String code;

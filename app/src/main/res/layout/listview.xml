@@ -180,7 +180,7 @@
                     android:textSize="15sp"/>
             </LinearLayout>
         </LinearLayout>
-        <com.p2p.bawei.p2pinvest1801.mvp.view.ProgressView
+        <com.p2p.bawei.p2pinvest1801.mvp.view.mine.ProgressView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginLeft="5dp"

@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -13,12 +12,10 @@ import android.view.animation.LinearInterpolator;
 
 import com.example.framwork.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.mvp.view.MyView;
+import com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 
 public class CommendFragment extends BaseFragment {
     private MyView commendView;

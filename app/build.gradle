@@ -40,7 +40,7 @@ dependencies {
     implementation project(path: ':framwork')
     implementation project(path: ':common')//glide依赖
     implementation 'com.alibaba:fastjson:1.2.41' //fastjson
-
+    implementation 'com.veken:chart_view:1.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     implementation 'com.github.ihsg:PatternLocker:2.5.6'
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
@@ -63,6 +63,6 @@ dependencies {
     //权限动态申请
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:+'
     implementation 'org.greenrobot:greendao:3.3.0'
-
+    implementation 'com.jakewharton:disklrucache:2.0.2'
     implementation 'com.zhy:autolayout:1.4.5'
 }

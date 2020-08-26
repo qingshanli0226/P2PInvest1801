@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.github.ihsg.patternlocker.PatternIndicatorView
         android:id="@+id/pattern_indicator_view"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100px"
+        android:layout_height="100px"
         android:layout_gravity="center"
-        android:layout_margin="20dp" />
+        android:layout_margin="10px" />
 
     <com.github.ihsg.patternlocker.PatternLockerView
         android:id="@+id/pattern_lock_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="20dp" />
-</LinearLayout>
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
+        android:layout_marginTop="100px" />
+</com.zhy.autolayout.AutoLinearLayout>

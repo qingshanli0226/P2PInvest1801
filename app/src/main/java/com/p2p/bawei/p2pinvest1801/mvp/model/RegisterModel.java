@@ -1,17 +1,14 @@
 package com.p2p.bawei.p2pinvest1801.mvp.model;
 
-import android.util.Base64;
-
 import com.example.framwork.mvp.model.BaseModel;
 import com.example.net.BaseObserver;
 import com.example.net.NetFunction;
 import com.example.net.P2PApi;
 import com.example.net.RetrofitManager;
-import com.example.net.bean.BaseBean;
+import com.example.common.bean.BaseBean;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.RegisterContract;
 import com.p2p.bawei.p2pinvest1801.util.EncryptUtil;
 
-import java.util.HashMap;
 import java.util.TreeMap;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;

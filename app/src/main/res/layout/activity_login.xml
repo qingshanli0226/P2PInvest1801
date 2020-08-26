@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.example.common.ToolBar
+        android:layout_width="match_parent"
+        app:center_text="用户登录"
+        app:left_show="true"
+        android:id="@+id/toolbar"
+        app:right_show="true"
+        android:layout_height="150px"></com.example.common.ToolBar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="265px"
+            android:textColor="#000"
+            android:gravity="center"
+            android:textSize="45px"
+            android:text="手机号:"
+            android:layout_height="match_parent" />
+        <EditText
+            android:layout_width="match_parent"
+            android:background="@null"
+            android:hint="请输入手机号"
+            android:textSize="45px"
+            android:id="@+id/login_phone"
+            android:layout_marginLeft="15px"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:inputType="phone"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#D3D0D0"></View>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="265px"
+            android:textColor="#000"
+            android:gravity="center"
+            android:textSize="45px"
+            android:text="密    码:"
+            android:layout_height="match_parent" />
+        <EditText
+            android:layout_width="match_parent"
+            android:background="@null"
+            android:hint="请输入密码"
+            android:textSize="45px"
+            android:id="@+id/login_password"
+            android:layout_marginLeft="15px"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:inputType="phone"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#D3D0D0"></View>
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="130px"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/btn_01"
+        android:text="登  录"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+</LinearLayout>

@@ -12,11 +12,11 @@
         android:gravity="left|center"
         android:textSize="30sp"/>
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:textColor="#fff"
         android:text="您还没有登录哦！么么"
         android:id="@+id/dasilog_message"
-        android:textSize="28sp"
+        android:textSize="25sp"
         android:gravity="left|center"
         android:layout_marginLeft="30dp"
         android:layout_height="50dp" />
@@ -29,7 +29,7 @@
             android:layout_width="170dp"
             android:text="确定"
             android:layout_centerInParent="true"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:id="@+id/dasilog_ensure"
             android:layout_height="match_parent"
             android:layout_margin="10dp"/>

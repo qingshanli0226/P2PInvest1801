@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:id="@+id/toolbar"
+        app:right_show="false"
         app:center_text="我的资产"></com.example.common.ToolBar>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,6 +29,7 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:textColor="#fff"
+            android:id="@+id/proper_name"
             android:text="Hi,welcome!"
             android:layout_below="@id/proper_touxiang"
             android:layout_centerHorizontal="true"

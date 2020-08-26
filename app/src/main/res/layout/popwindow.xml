@@ -15,4 +15,11 @@
         android:layout_marginTop="10dp"
         android:id="@+id/pop_chose"
         android:text="从相册选择一张图片"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/pop_upload"
+        android:text="上传头像"/>
 </LinearLayout>
