@@ -5,8 +5,12 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 import com.example.common.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
@@ -24,6 +28,9 @@ public class Myfragment extends BaseFragment {
     private List<String> list_pic=new ArrayList<>();
     private TextView jh;
     private TextView lir;
+    private Button join;
+    private List<String> ex;
+
     @Override
     public int BondLayout() {
         return R.layout.myfragment;
@@ -35,6 +42,7 @@ public class Myfragment extends BaseFragment {
         pv = (MyPragessagerView) findViewById(R.id.pv);
         jh = (TextView) findViewById(R.id.jh);
         lir = (TextView) findViewById(R.id.lir);
+        join = (Button) findViewById(R.id.join);
     }
 
     @Override
@@ -58,6 +66,16 @@ public class Myfragment extends BaseFragment {
             }
         });
         bann.start();
+
+        //异常
+        join.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ex.add("cx");
+
+            }
+        });
+
     }
     private Bitmap getpic(int height,int width){
         ImageView imageView = new ImageView(getContext());

@@ -11,7 +11,6 @@ import io.reactivex.Observable;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 
 public interface Api {
@@ -27,5 +26,7 @@ public interface Api {
     @POST("upload")
     @FormUrlEncoded
     Observable<MyUploadEntity>setupload(@FieldMap Map<String,String> upmap);
-
+//    @POST("crash")
+//    @FormUrlEncoded
+//    Observable<BaseBean<String>> crashReport(@FieldMap HashMap<String,String> params);
 }

@@ -2,16 +2,18 @@ package com.p2p.bawei.p2pinvest1801.application;
 
 import android.app.Application;
 
+import com.p2p.bawei.p2pinvest1801.exception.CrashHandler;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.socialize.PlatformConfig;
 
 public class AppApplication  extends Application {
-
+    public static AppApplication applicationthis;
     @Override
     public void onCreate() {
         super.onCreate();
+
          RefWatcher refWatcher;
         //使用leakcannary来检测当前应用是否有页面内存泄漏.
         if (!LeakCanary.isInAnalyzerProcess(this)) {
@@ -24,5 +26,7 @@ public class AppApplication  extends Application {
         PlatformConfig.setSinaWeibo("3921700954", "04b48b094faeb16683c32669824ebdad","http://sns.whalecloud.com");
         PlatformConfig.setYixin("yxc0614e80c9304c11b0391514d09f13bf");
         PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
+        applicationthis=this;
+        CrashHandler.getInstance().init(this);
     }
 }

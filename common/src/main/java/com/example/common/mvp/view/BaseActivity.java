@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.example.common.http.HttpManager;
 import com.example.common.mvp.presenter.IPresenter;
 
 public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IActivity,IView {
@@ -16,6 +17,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
         initview();
         initdata();
         initInJect();
+        HttpManager.getInstance().addActivity(this);
     }
 
     @Override
@@ -40,5 +42,6 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
             mPresenter.Destory();
             mPresenter=null;
         }
+        HttpManager.getInstance().removeActivity(this);
     }
 }

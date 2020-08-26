@@ -84,5 +84,6 @@ dependencies {
     implementation files('libs/umeng-share-wechat-simplify-6.9.6.jar')
     implementation files('libs/umeng-shareboard-widget-6.9.6.jar')
     implementation files('libs/umeng-sharetool-6.9.6.jar')
+    implementation 'com.github.uncleleonfan:StellarMap:v1.0.0'
 //    implementation 'org.greenrobot:greendao:3.2.2'
 }

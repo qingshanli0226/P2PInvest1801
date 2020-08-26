@@ -1,5 +1,9 @@
 package com.example.common.http;
 
+import android.app.Activity;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -9,6 +13,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HttpManager {
+    private List<Activity> activityList = new ArrayList<>();//存储所有在后台的Activity实例，便于结束进程
     public static HttpManager httpManager;
     public static HttpManager getInstance(){
         if (httpManager==null){
@@ -40,4 +45,18 @@ public class HttpManager {
     }
 
 
+    public void addActivity(Activity activity) {
+        if (!activityList.contains(activity)) {
+            activityList.add(activity);
+        }
+    }
+
+    public void removeActivity(Activity activity) {
+        if (activityList.contains(activity)) {
+            activityList.remove(activity);
+        }
+    }
+    public List<Activity> getActivityList() {
+        return activityList;
+    }
 }
