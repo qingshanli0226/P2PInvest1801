@@ -11,10 +11,12 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.common.CacheManager;
 import com.example.common.InvestConstant;
 import com.example.framework.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.user.activity.BigbitmapActivity;
 import com.p2p.bawei.p2pinvest1801.user.activity.InvestmentActivity;
 import com.p2p.bawei.p2pinvest1801.user.activity.TouziActivity;
 import com.p2p.bawei.p2pinvest1801.user.activity.UserInfoActivity;
@@ -68,8 +70,6 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
         //标题
         tvTitle.setText("我的资产");
         ivTitleSetting.setVisibility(View.VISIBLE);
-
-
     }
 
 
@@ -81,8 +81,8 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
                 launchActivity(UserInfoActivity.class, new Bundle());
                 break;
             case R.id.iv_me_icon:
-                //跳转用户信息页面
-                launchActivity(UserInfoActivity.class, new Bundle());
+                //显示用户头像大图
+                launchActivity(BigbitmapActivity.class, new Bundle());
                 break;
             case R.id.recharge:
                 //充值
@@ -112,12 +112,17 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
         tvMeName.setText(name);
 
         String icon = sharedPreferences.getString(InvestConstant.SP_ICON, "");
-        if (icon != null) {
-            //更新头像
-            Glide.with(getContext())
-                    .load(icon)
-                    .transform(new CircleCrop())
-                    .into(ivMeIcon);
-        }
+
+        RequestOptions options = new RequestOptions()
+                .placeholder(R.drawable.my_user_default)//图片加载出来前，显示的图片
+                .fallback(R.drawable.my_user_default) //url为空的时候,显示的图片
+                .error(R.drawable.my_user_default);//图片加载失败
+
+        //更新头像
+        Glide.with(getContext())
+                .load(icon)
+                .apply(options)
+                .transform(new CircleCrop())
+                .into(ivMeIcon);
     }
 }

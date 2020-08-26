@@ -23,6 +23,7 @@ import androidx.core.content.FileProvider;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterInside;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.common.CacheManager;
 import com.example.common.InvestConstant;
 import com.example.framework.BaseActivity;
@@ -286,14 +287,20 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
         super.onStart();
         SharedPreferences sharedPreferences = CacheManager.getCacheManager().getSharedPreferences();
         String icon = sharedPreferences.getString(InvestConstant.SP_ICON, "");
-        if (icon != null) {
+        if (!icon.equals("")) {
+            RequestOptions options = new RequestOptions()
+                    .placeholder(R.drawable.my_user_default)//图片加载出来前，显示的图片
+                    .fallback(R.drawable.my_user_default) //url为空的时候,显示的图片
+                    .error(R.drawable.my_user_default);//图片加载失败
+
             //更新头像
             Glide.with(this)
                     .load(icon)
+                    .apply(options)
                     .transform(new CircleCrop())
                     .into(ivUserIcon);
             printLog("更新头像---" + icon);
-        }else {
+        } else {
             //从服务端下载头像
 
         }

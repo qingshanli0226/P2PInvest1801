@@ -31,7 +31,8 @@
         android:theme="@style/AppTheme"
         android:useEmbeddedDex="true"
         android:usesCleartextTraffic="true">
-        <activity android:name=".user.activity.InvestmentActivity"></activity>
+        <activity android:name=".user.activity.BigbitmapActivity"></activity>
+        <activity android:name=".user.activity.InvestmentActivity" />
         <activity android:name=".user.activity.ZichanActivity" />
         <activity android:name=".user.activity.TouziActivity" />
 
