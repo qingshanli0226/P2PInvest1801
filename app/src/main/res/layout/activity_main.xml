@@ -36,5 +36,10 @@
         app:tl_iconHeight="30dp"
         app:tl_iconWidth="30dp"></com.flyco.tablayout.CommonTabLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:visibility="gone"></View>
 
 </LinearLayout>

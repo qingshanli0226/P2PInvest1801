@@ -150,7 +150,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:id="@+id/moreFeedback">
 
         <ImageView
             android:layout_width="30dp"
@@ -171,7 +172,8 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#CFCCCC"></View>
+        android:background="#CFCCCC"
+        android:id="@+id/moreShare"></View>
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -1,19 +1,22 @@
 package com.p2p.bawei.p2pinvest1801.presenter;
 
-import com.alibaba.fastjson.JSONObject;
 import com.example.net.FinanceManager;
 import com.example.net.mode.LoginBean;
 import com.example.net.mode.RegisterBean;
 import com.example.net.mode.UnLoginBean;
+import com.example.net.mode.UploadBean;
 import com.p2p.bawei.p2pinvest1801.contract.RegisterLoginContract;
-import com.p2p.bawei.p2pinvest1801.until.EncryptUntil;
+import com.example.framework.base.until.EncryptUntil;
 
+import java.io.File;
 import java.util.TreeMap;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 
 public class RegisterLoginPresenterImpl extends RegisterLoginContract.RegisterLoginPresenter {
     @Override
@@ -136,10 +139,46 @@ public class RegisterLoginPresenterImpl extends RegisterLoginContract.RegisterLo
 
                     @Override
                     public void onNext(UnLoginBean unLoginBean) {
-                        if(unLoginBean.equals("200")){
+                        if(unLoginBean.getCode().equals("200")){
                             iHttpView.onLoginOutData(unLoginBean);
                         } else{
                             iHttpView.showError(unLoginBean.getCode()+"",unLoginBean.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    @Override
+    public void upload(File file) {
+//        MultipartBody multipartBody = (MultipartBody) MultipartBody.create(MediaType.parse("multipart/form-data"),file);
+        RequestBody requestBody =  RequestBody.create(MediaType.parse("multipart/form-data"),file);
+
+        FinanceManager.getInstance().getFinanceApi()
+                .uploadFile(requestBody)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<UploadBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(UploadBean uploadBean) {
+                        if(uploadBean.getCode().equals("200")){
+                            iHttpView.uploadData(uploadBean);
+                        } else{
+                            iHttpView.showError(uploadBean.getCode()+"",uploadBean.getMessage());
                         }
                     }
 

@@ -4,23 +4,20 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.common.CacheManager;
 import com.example.common.FinanceConstant;
 import com.example.framework.base.BaseActivity;
 import com.example.net.mode.BannerBean;
@@ -107,6 +104,7 @@ public class MainActivity extends BaseActivity {
         boolean aBoolean = sharedPreferences.getBoolean(FinanceConstant.ISLOGIN, false);
         if(aBoolean){
             //登录过
+
         } else{
             //第一次登录
             //弹出对话框
@@ -137,8 +135,10 @@ public class MainActivity extends BaseActivity {
     protected void initView() {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             //获取权限
-            requestPermissions(new String[]{Manifest.permission.CAMERA,Manifest.permission.CALL_PHONE},120);
+            requestPermissions(new String[]{Manifest.permission.CAMERA,Manifest.permission.CALL_PHONE,Manifest.permission.WRITE_EXTERNAL_STORAGE},120);
         }
+
+//        initState();
 
         //获取sp的实例
         sharedPreferences = CacheManager.getInstance().getSharedPreferences();
@@ -157,6 +157,17 @@ public class MainActivity extends BaseActivity {
         createFragment();
         initFragment();
 
+    }
+
+    private void initState() {
+//        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+//            //透明导航栏
+//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//            //透明导航栏
+//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+//        }
+        //设置底部导航栏不会遮挡布局
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
     }
 
     //显示Fragment的方法

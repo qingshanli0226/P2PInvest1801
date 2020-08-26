@@ -1,8 +1,6 @@
 package com.p2p.bawei.p2pinvest1801.activity;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,7 +10,8 @@ import com.example.framework.base.BaseMVPActivity;
 import com.example.net.mode.LoginBean;
 import com.example.net.mode.RegisterBean;
 import com.example.net.mode.UnLoginBean;
-import com.p2p.bawei.p2pinvest1801.CacheManager;
+import com.example.common.CacheManager;
+import com.example.net.mode.UploadBean;
 import com.p2p.bawei.p2pinvest1801.MainActivity;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.contract.RegisterLoginContract;
@@ -105,6 +104,11 @@ public class LoginActivity extends BaseMVPActivity<RegisterLoginPresenterImpl, R
 
     @Override
     public void onLoginOutData(UnLoginBean unLoginBean) {
+
+    }
+
+    @Override
+    public void uploadData(UploadBean uploadBean) {
 
     }
 

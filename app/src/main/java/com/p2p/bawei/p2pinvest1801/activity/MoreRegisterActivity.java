@@ -9,6 +9,7 @@ import com.example.framework.base.BaseMVPActivity;
 import com.example.net.mode.LoginBean;
 import com.example.net.mode.RegisterBean;
 import com.example.net.mode.UnLoginBean;
+import com.example.net.mode.UploadBean;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.contract.RegisterLoginContract;
 import com.p2p.bawei.p2pinvest1801.presenter.RegisterLoginPresenterImpl;
@@ -100,6 +101,11 @@ public class MoreRegisterActivity extends BaseMVPActivity<RegisterLoginPresenter
 
     @Override
     public void onLoginOutData(UnLoginBean unLoginBean) {
+
+    }
+
+    @Override
+    public void uploadData(UploadBean uploadBean) {
 
     }
 

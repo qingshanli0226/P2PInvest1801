@@ -1,5 +1,8 @@
 package com.example.net;
 
+import com.example.common.CacheManager;
+import com.example.common.FinanceConstant;
+
 import java.io.IOException;
 
 import okhttp3.Interceptor;
@@ -11,7 +14,7 @@ public class TokenInterceptor implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
 
         Request request = chain.request();
-        Request build = request.newBuilder().addHeader("token", "159b0a24-969f-4c37-9434-a3e0dde9bc84AND1597968572047").build();
+        Request build = request.newBuilder().addHeader("token", CacheManager.getInstance().getSharedPreferences().getString(FinanceConstant.TOKEN,"")).build();
 
         return chain.proceed(build);
     }

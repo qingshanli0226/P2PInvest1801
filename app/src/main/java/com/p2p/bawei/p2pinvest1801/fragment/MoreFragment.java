@@ -4,10 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,7 +13,7 @@ import android.widget.ImageView;
 
 import com.example.common.FinanceConstant;
 import com.example.framework.base.BaseFragment;
-import com.p2p.bawei.p2pinvest1801.CacheManager;
+import com.example.common.CacheManager;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.activity.HandPasswordActivity;
 import com.p2p.bawei.p2pinvest1801.activity.MoreAboutActivity;
@@ -48,6 +45,8 @@ public class MoreFragment extends BaseFragment implements OnClickListener {
         findViewById(R.id.moreRegister).setOnClickListener(this);
         findViewById(R.id.reHandPassword).setOnClickListener(this);
         findViewById(R.id.moreCallPhone).setOnClickListener(this);
+        findViewById(R.id.moreFeedback).setOnClickListener(this);
+        findViewById(R.id.moreShare).setOnClickListener(this);
         handPassword = (ImageView) findViewById(R.id.handPassword);
         handPassword.setOnClickListener(this);
 
@@ -85,7 +84,58 @@ public class MoreFragment extends BaseFragment implements OnClickListener {
             case R.id.moreCallPhone:
                 moreCallPhone();
             break;
+            //用户反馈
+            case R.id.moreFeedback:
+                moreFeedback();
+                break;
+                //分享页面
+            case R.id.moreShare:
+                moreShare();
+                break;
         }
+    }
+
+    private void moreShare() {
+
+    }
+
+    private void moreFeedback() {
+        //弹出自定义对话框
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        View inflate = LayoutInflater.from(getContext()).inflate(R.layout.myview_feedback, null);
+        builder.setView(inflate);
+        final AlertDialog alertDialog = builder.create();
+        //设置点击外部可取消
+        alertDialog.setCanceledOnTouchOutside(true);
+        alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                showMessage("取消了用户反馈");
+            }
+        });
+        alertDialog.show();
+
+        //获取yseFeedback noFeedback按钮
+        Button yesFeedback = inflate.findViewById(R.id.yesFeedback);
+        Button noFeedback = inflate.findViewById(R.id.noFeedback);
+
+        //点击yesFeedback
+        yesFeedback.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+                showMessage("反馈成功");
+            }
+        });
+
+        //点击noFeedback
+        noFeedback.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+                showMessage("取消了反馈");
+            }
+        });
     }
 
     private void moreCallPhone() {
@@ -94,7 +144,7 @@ public class MoreFragment extends BaseFragment implements OnClickListener {
         final View inflate = LayoutInflater.from(getContext()).inflate(R.layout.myview_call_phone, null);
         builder.setView(inflate);
         final AlertDialog alertDialog = builder.create();
-        //设置点击外部不可取消
+        //设置点击外部可取消
         alertDialog.setCanceledOnTouchOutside(true);
         //外部点击和取消键的监听
         alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {

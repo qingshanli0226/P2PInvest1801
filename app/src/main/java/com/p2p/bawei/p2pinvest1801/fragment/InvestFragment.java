@@ -11,6 +11,7 @@ import com.example.framework.base.BaseFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.adapter.InvestAdapter;
+import com.p2p.bawei.p2pinvest1801.ui.MyViewPage;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,7 @@ public class InvestFragment extends BaseFragment {
 
     ToolBar toolBar;
     TabLayout investTab;
-    ViewPager investVp;
+    MyViewPage investVp;
 
     //Fragment数据源
     private ArrayList<Fragment> fragments = new ArrayList<>();
@@ -52,7 +53,7 @@ public class InvestFragment extends BaseFragment {
     protected void initView() {
         toolBar = (ToolBar) findViewById(R.id.toolBar);
         investTab = (TabLayout) findViewById(R.id.investTab);
-        investVp = (ViewPager) findViewById(R.id.investVp);
+        investVp = (MyViewPage) findViewById(R.id.investVp);
         //创建Fragment对象
 //        createFragment();
 

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/commom_top">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户反馈"
+            android:textSize="30sp"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="发 送："
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center_vertical"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+            
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="技术部"
+                android:textSize="15sp"
+                android:textColor="#EB0A0A"/>
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="理财部"
+                android:textSize="15sp"
+                android:textColor="#EB0A0A"/>
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="咨询部"
+                android:textSize="15sp"
+                android:textColor="#EB0A0A"/>
+            
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="信 息："
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center_vertical"/>
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:hint="反馈你遇到的任何问题给客服人员"
+            android:maxLines="1"
+            android:background="@drawable/feedback"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#000"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#9F9F9F"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="确认"
+            android:textSize="20sp"
+            android:id="@+id/yesFeedback"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:textSize="20sp"
+            android:text="取消"
+            android:id="@+id/noFeedback"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

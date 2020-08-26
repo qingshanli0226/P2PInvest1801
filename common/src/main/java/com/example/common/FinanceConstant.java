@@ -34,4 +34,6 @@ public class FinanceConstant {
     public static String TOKEN = "token";
     //phone手机号码
     public static String PHONE = "phone";
+    //保存勾选地址
+    public static String IMG_ADDRESS = "imgAddress";
 }

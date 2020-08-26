@@ -40,6 +40,7 @@ public class FinanceManager {
                 .writeTimeout(1, TimeUnit.MINUTES)
                 .readTimeout(1, TimeUnit.MINUTES)
                 .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                .addInterceptor(new TokenInterceptor())
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
