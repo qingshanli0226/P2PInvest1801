@@ -29,7 +29,7 @@ dependencies {
 
     implementation 'com.github.ihsg:PatternLocker:2.5.6'//手势密码
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
-
+//    implementation 'com.github.guoxiaoxing:phoenix:1.0.15
     implementation 'com.youth.banner:banner:1.4.10'//轮播图
     implementation 'com.android.support:design:27.1.0'
 //    implementation 'org.greenrobot:greendao:3.2.2' // add library

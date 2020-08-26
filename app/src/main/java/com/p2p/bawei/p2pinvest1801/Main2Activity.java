@@ -35,6 +35,7 @@ public class Main2Activity extends BaseActivity {
 
     @Override
     public void initView() {
+        Thread.setDefaultUncaughtExceptionHandler(new CustomExceptionHandler());
         viewpager = findViewById(R.id.viewpager);
         tabIdLayout = findViewById(R.id.tab_id_layout);
         tvIdAct = findViewById(R.id.tv_id_act);

@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.p2p.bawei.p2pinvest1801">
 
     <application
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/TranslucentTheme">
-        <activity android:name=".fragment.fragmentthree.activity.TheOneActivity"></activity>
-        <activity android:name=".fragment.fragmentfour.activity.gesturelocksctivity.GestureLockActivity" />
-        <activity android:name=".fragment.fragmentfour.activity.aboutactivity.AboutActivity" />
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.p2p.bawei.p2pinvest1801.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:ignore="WrongManifestParent">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
+        <activity android:name=".fragment.fragmentthree.activity.TheOneActivity" android:theme="@style/TranslucentTheme"></activity>
+        <activity android:name=".fragment.fragmentfour.activity.gesturelocksctivity.GestureLockActivity" android:theme="@style/TranslucentTheme"/>
+        <activity android:name=".fragment.fragmentfour.activity.aboutactivity.AboutActivity" android:theme="@style/TranslucentTheme"/>
         <activity
             android:name=".fragment.fragmentfour.activity.registeractivity.RegisterActivity"
             android:theme="@style/TranslucentTheme" />
@@ -28,11 +41,12 @@
             </intent-filter>
         </activity>
     </application>
+<!--    <uses-permission android:name="android.permission.CAMERA" />-->
+    <uses-permission android:name="IMAGE_CAPTURE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
