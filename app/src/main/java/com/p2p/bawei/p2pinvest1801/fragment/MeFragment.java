@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.common.FinanceConstant;
 import com.example.framework.base.BaseFragment;
 import com.example.common.CacheManager;
@@ -64,6 +65,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
             String address = sharedPreferences.getString(FinanceConstant.IMG_ADDRESS, "");
             Bitmap bitmap = samplePicPath(meUserImg.getWidth(), meUserImg.getHeight(), address);
             meUserImg.setImageBitmap(bitmap);
+//            Glide.with(getContext()).load(address).into(meUserImg);
 
         } else{
             //未登录 改变ui

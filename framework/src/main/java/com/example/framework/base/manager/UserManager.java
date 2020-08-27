@@ -1,5 +1,6 @@
 package com.example.framework.base.manager;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -11,6 +12,7 @@ import com.example.framework.base.until.EncryptUntil;
 import com.example.net.FinanceManager;
 import com.example.net.mode.AutoLoginBean;
 
+import java.util.ArrayList;
 import java.util.TreeMap;
 
 import io.reactivex.Observer;
@@ -19,6 +21,28 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 public class UserManager {
+
+    //储存activity的集合
+    private ArrayList<Activity> activityArrayList = new ArrayList<>();
+    private String userName;
+    private String version;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
     private UserManager(){}
 
     private SharedPreferences sharedPreferences;
@@ -95,5 +119,22 @@ public class UserManager {
         } else {
             //没有登录  进入主页面去登录
         }
+    }
+
+    //添加activity的方法
+    public void addActivity(Activity activity){
+        if(!activityArrayList.contains(activity)){
+            activityArrayList.add(activity);
+        }
+    }
+    //移除activity的方法
+    public void removeActivity(Activity activity){
+        if(activityArrayList.contains(activity)){
+            activityArrayList.remove(activity);
+        }
+    }
+
+    public ArrayList<Activity> getActivityArrayList() {
+        return activityArrayList;
     }
 }

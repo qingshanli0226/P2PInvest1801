@@ -21,9 +21,9 @@
         app:tabTextAppearance="@style/TabLayoutTextStyle"
         app:tabBackground="@drawable/invest_bac"></com.google.android.material.tabs.TabLayout>
 
-    <com.p2p.bawei.p2pinvest1801.ui.MyViewPage
+    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/investVp"></com.p2p.bawei.p2pinvest1801.ui.MyViewPage>
+        android:id="@+id/investVp"></androidx.viewpager.widget.ViewPager>
 
 </LinearLayout>

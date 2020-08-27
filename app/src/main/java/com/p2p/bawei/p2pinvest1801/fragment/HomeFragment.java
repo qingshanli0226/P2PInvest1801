@@ -8,6 +8,7 @@ import android.os.Message;
 import android.os.Parcelable;
 import android.os.SystemClock;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,6 +44,7 @@ public class HomeFragment extends BaseFragment {
     private BannerBean bannerBean;
 
     private int currentProgress;
+    private Button homeJoin;
 
     public HomeFragment(ArrayList<String> stringArrayList) {
         this.stringArrayList = stringArrayList;
@@ -102,6 +104,14 @@ public class HomeFragment extends BaseFragment {
         homeRoundProgress = (RoundProgress) findViewById(R.id.homeRoundProgress);
         homeYear = (TextView) findViewById(R.id.homeYear);
         homeAnim = (ImageView) findViewById(R.id.homeAnim);
+        homeJoin = findViewById(R.id.homeJoin);
+
+        homeJoin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showMessage("join");
+            }
+        });
 
         //获取banner数据
         Bundle arguments = getArguments();

@@ -167,6 +167,7 @@ public class UserMessageActivity extends BaseMVPActivity<RegisterLoginPresenterI
         path = getName();
         //保存头像地址
         saveIcon(path);
+        printLog(path);
         Intent intent = new Intent();
         intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
         Uri uri = FileProvider.getUriForFile(this, "com.p2p.bawei.p2pinvest1801", new File(path));
@@ -188,6 +189,8 @@ public class UserMessageActivity extends BaseMVPActivity<RegisterLoginPresenterI
         if(requestCode == 111 && resultCode == Activity.RESULT_OK){
             Uri data1 = data.getData();//获取原图
             String path = data1.getPath();
+            printLog(data1.getEncodedPath());
+            printLog(path);
             //保存图片
             saveIcon(path);
             try {

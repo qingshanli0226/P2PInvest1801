@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.common.FinanceConstant;
 import com.example.common.view.ToolBar;
 import com.example.framework.R;
+import com.example.framework.base.manager.UserManager;
 
 public abstract class BaseActivity extends AppCompatActivity implements ToolBar.IToolBarClickListner {
 
@@ -21,7 +22,8 @@ public abstract class BaseActivity extends AppCompatActivity implements ToolBar.
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-
+        //添加此Activity
+        UserManager.getInstance().addActivity(this);
         initView();
         toolBar = findViewById(R.id.toolBar);
         toolBar.setiToolBarClickListner(this);
@@ -57,5 +59,12 @@ public abstract class BaseActivity extends AppCompatActivity implements ToolBar.
     @Override
     public void onRightClick() {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //删除此activity
+        UserManager.getInstance().removeActivity(this);
     }
 }

@@ -1,5 +1,6 @@
 package com.example.common;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
@@ -7,6 +8,7 @@ public class CacheManager {
 
     private SharedPreferences.Editor editor;
     private SharedPreferences sharedPreferences;
+
 
     private CacheManager() {
     }

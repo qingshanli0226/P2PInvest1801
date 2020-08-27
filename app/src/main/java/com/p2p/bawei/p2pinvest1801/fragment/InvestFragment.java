@@ -1,6 +1,7 @@
 package com.p2p.bawei.p2pinvest1801.fragment;
 
 import android.content.Context;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -19,7 +20,7 @@ public class InvestFragment extends BaseFragment {
 
     ToolBar toolBar;
     TabLayout investTab;
-    MyViewPage investVp;
+    ViewPager investVp;
 
     //Fragment数据源
     private ArrayList<Fragment> fragments = new ArrayList<>();
@@ -53,7 +54,7 @@ public class InvestFragment extends BaseFragment {
     protected void initView() {
         toolBar = (ToolBar) findViewById(R.id.toolBar);
         investTab = (TabLayout) findViewById(R.id.investTab);
-        investVp = (MyViewPage) findViewById(R.id.investVp);
+        investVp = (ViewPager) findViewById(R.id.investVp);
         //创建Fragment对象
 //        createFragment();
 

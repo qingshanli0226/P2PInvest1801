@@ -7,6 +7,7 @@ import android.widget.EditText;
 
 import com.example.common.FinanceConstant;
 import com.example.framework.base.BaseMVPActivity;
+import com.example.framework.base.manager.UserManager;
 import com.example.net.mode.LoginBean;
 import com.example.net.mode.RegisterBean;
 import com.example.net.mode.UnLoginBean;
@@ -96,6 +97,8 @@ public class LoginActivity extends BaseMVPActivity<RegisterLoginPresenterImpl, R
         //改变登录状态
         editor.putBoolean(FinanceConstant.ISLOGIN,true);
         editor.commit();
+        //设置用户名称
+        UserManager.getInstance().setUserName(sharedPreferences.getString(FinanceConstant.NAME,""));
         //重新跳转到主页面
         lunachActivity(MainActivity.class,null);
         //销毁这个页面

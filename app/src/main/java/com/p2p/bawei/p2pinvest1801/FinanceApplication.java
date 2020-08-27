@@ -10,11 +10,15 @@ import com.squareup.leakcanary.RefWatcher;
 public class FinanceApplication extends Application {
 
     private RefWatcher refWatcher;
+    public static FinanceApplication financeApplication;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
+        financeApplication = this;
+
+//        CrashHandler.getInstance().init(this);
         CacheManager.getInstance().init(this);
         UserManager.getInstance().init(this);
 

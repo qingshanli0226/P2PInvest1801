@@ -2,6 +2,7 @@ package com.example.net;
 
 import com.example.net.mode.AutoLoginBean;
 import com.example.net.mode.BannerBean;
+import com.example.net.mode.BaseBean;
 import com.example.net.mode.InvestListBean;
 import com.example.net.mode.LoginBean;
 import com.example.net.mode.RegisterBean;
@@ -9,6 +10,7 @@ import com.example.net.mode.UploadBean;
 import com.example.net.mode.UnLoginBean;
 import com.example.net.mode.VersionBean;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import io.reactivex.Observable;
@@ -50,5 +52,9 @@ public interface FinanceApi {
     @POST("autoLogin")
     @FormUrlEncoded
     Observable<AutoLoginBean> autoLogin(@FieldMap Map<String, String> params);
+
+    @POST("crash")
+    @FormUrlEncoded
+    Observable<String> crashReport(@FieldMap HashMap<String,String> params);
 
 }

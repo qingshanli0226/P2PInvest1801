@@ -22,6 +22,7 @@ import androidx.annotation.NonNull;
 
 import com.example.common.FinanceConstant;
 import com.example.framework.base.BaseMVPActivity;
+import com.example.framework.base.manager.UserManager;
 import com.example.net.mode.BannerBean;
 import com.example.net.mode.VersionBean;
 import com.p2p.bawei.p2pinvest1801.contract.HomeContract;
@@ -189,6 +190,8 @@ public class WelcomeActivity extends BaseMVPActivity<HomePresenterImpl, HomeCont
     public void onGetVersionData(VersionBean versionBean) {
 //        printLog(versionBean.toString());
         newVersionBean = versionBean;
+        //设置版本信息
+        UserManager.getInstance().setVersion(versionBean.getResult().getVersion());
         handler.sendEmptyMessage(1);
     }
 

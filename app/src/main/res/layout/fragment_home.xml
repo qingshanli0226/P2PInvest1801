@@ -143,7 +143,8 @@
             android:textColor="#fff"
             android:textSize="35sp"
             android:textStyle="bold"
-            android:background="@drawable/button_bac"/>
+            android:background="@drawable/button_bac"
+            android:id="@+id/homeJoin"/>
         
     </RelativeLayout>
     
