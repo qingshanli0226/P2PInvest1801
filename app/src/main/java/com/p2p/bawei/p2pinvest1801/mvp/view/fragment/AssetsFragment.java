@@ -374,20 +374,6 @@ public class AssetsFragment extends BaseFragment<LoginPresenter> implements Logi
                     if (context!=null){
                         Glide.with(context).load(pictureBean.getPath()).transform(new CircleCrop()).into(userImg);
                         Log.e("获取到的图片地址", "onActivityResult: "+pictureBean.getPath()+":");
-                        //上传图片
-                        OkGo.<String>post("http://49.233.93.155:8080/upload").params("MultipartFile",pictureBean.getPath()).execute(new StringCallback() {
-                            @Override
-                            public void onSuccess(Response<String> response) {
-                                String body = response.body();
-                                Log.e("么么么么么么么么吗", "onSuccess: " +body);
-                            }
-
-                            @Override
-                            public void onError(Response<String> response) {
-                                super.onError(response);
-                                Log.e("数据上传失败", "onError: ");
-                            }
-                        });
 
                     }
 
@@ -439,22 +425,6 @@ public class AssetsFragment extends BaseFragment<LoginPresenter> implements Logi
     @Override
     public void success() {
         Toast.makeText(getContext(), "登录成功请手动返回上一级页面", Toast.LENGTH_SHORT).show();
-        String a = "http://49.233.93.155:8080/downloadFile";
-        OkGo.<Bitmap>get(a).execute(new BitmapCallback() {
-            @Override
-            public void onSuccess(Response<Bitmap> response) {
-                Bitmap body = response.body();
-                Log.e("么么么么么", "onSuccess: "+ body);
-                Glide.with(getContext()).load(body).transform(new CircleCrop()).into(userImg);
-            }
-
-            @Override
-            public void onError(Response<Bitmap> response) {
-                super.onError(response);
-                Log.e("失败", "onError: "+response.body() );
-            }
-        });
-
 
     }
 }

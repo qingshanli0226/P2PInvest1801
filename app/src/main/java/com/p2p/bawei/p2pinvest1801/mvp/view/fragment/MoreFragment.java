@@ -116,8 +116,6 @@ public class MoreFragment extends BaseFragment<RegisterPresenter> implements Reg
         switch (v.getId()){
             case R.id.more_register:
                 //注册
-                List<String> listss = null;
-                listss.add("aa");
                 register();
                 break;
             case R.id.more_secret:

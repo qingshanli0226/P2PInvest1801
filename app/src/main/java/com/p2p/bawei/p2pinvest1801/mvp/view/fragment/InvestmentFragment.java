@@ -15,6 +15,7 @@ public class InvestmentFragment extends BaseFragment {
 
     private List<Fragment> fragment_list = new ArrayList<>();//fragment集合
     private List<String> title_list = new ArrayList<>();//tab标题
+
     @Override
     public void initView() {
         TabLayout mainInvestmentViewTabLayout = (TabLayout) findViewById(R.id.main_investment_view_tabLayout);
