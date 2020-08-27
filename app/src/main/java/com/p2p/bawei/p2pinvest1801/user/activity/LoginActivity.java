@@ -120,7 +120,6 @@ public class LoginActivity extends BaseMVPActivity<LoginPresenterImpl, LoginCont
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         launchActivity(MainActivity.class, null);
-        finish();
         return super.onKeyDown(keyCode, event);
     }
 

@@ -4,11 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#AA66CC"
     android:orientation="vertical"
     tools:context=".user.activity.InvestmentActivity">
 
     <include layout="@layout/common_title" />
 
+    <com.example.common.view.HistogramDemoView
+        android:layout_marginTop="40dp"
+        android:id="@+id/histogram"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>

@@ -21,6 +21,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         instance = this;
 
         //检测未知错误异常
