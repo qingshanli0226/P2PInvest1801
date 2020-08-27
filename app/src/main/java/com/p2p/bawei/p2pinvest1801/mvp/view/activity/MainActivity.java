@@ -16,13 +16,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.common.mvp.view.BaseActivity;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.FileCallback;
+import com.lzy.okgo.model.Response;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.bean.EdtivitnEnitiy;
 import com.p2p.bawei.p2pinvest1801.bean.MyBannerEntity;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.MyContract;
 import com.p2p.bawei.p2pinvest1801.mvp.model.MyGetbanner;
 import com.p2p.bawei.p2pinvest1801.mvp.presenter.MyGetBannerPresenter;
+import com.p2p.bawei.p2pinvest1801.utils.MyVersions;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -118,6 +125,33 @@ public class MainActivity extends BaseActivity<MyGetBannerPresenter> implements 
             message.what=1;
             handler.sendMessage(message);
         }
+        String apkUrl = edtivitnEnitiy1.getResult().getApkUrl();
+        Log.e("", "getedtivity: "+apkUrl );
+        OkGo.<File>get(apkUrl).execute(new FileCallback() {
+            @Override
+            public void onSuccess(Response<File> response) {
+                File body = response.body();
+                try {
+                    FileInputStream fileInputStream = new FileInputStream(body);
+                    String s = MyVersions.md5HashCode32(fileInputStream);
+                    Log.e("fileapk", "onSuccess: "+s+"更新后返回的字符串" );
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+        String jiamuMd5="9c8f646e8ae518bb992425cec4cad757";
+//        OkGo.<File>get("http://49.233.93.155:9999/downloadFile").execute(new FileCallback() {
+//            @Override
+//            public void onSuccess(Response<File> response) {
+//                File body = response.body();
+//                Log.e("fileapk", "onSuccess: "+body.getName() );
+//            }
+//        });
+
+
+
     }
 
 
