@@ -29,8 +29,8 @@ public class UserManager {
     public UserManager() {
     }
 
-    private SharedPreferences sharedPreferences;
-    private SharedPreferences.Editor editor;
+    private SharedPreferences sharedPreferences = CacheManager.getCacheManager().getSharedPreferences();
+    private SharedPreferences.Editor editor = CacheManager.getCacheManager().getEditor();
 
     public static UserManager getUserManager() {
         if (userManager == null) {
@@ -40,10 +40,7 @@ public class UserManager {
     }
 
     public void init(final Context context) {
-        sharedPreferences = CacheManager.getCacheManager().getSharedPreferences();
-        editor = CacheManager.getCacheManager().getEditor();
-
-        boolean isLogin = sharedPreferences.getBoolean(InvestConstant.SP_ISLOGIN, false);
+        boolean isLogin = (boolean) (sharedPreferences.getBoolean(InvestConstant.SP_ISLOGIN, false));
 
         //如果登录过
         if (isLogin) {
@@ -85,7 +82,7 @@ public class UserManager {
                                 editor.putString(InvestConstant.SP_TOKEN, autologinBean.getResult().getToken());
                                 editor.commit();
                             } else {
-                                Log.d("---", "onNext: "+ autologinBean.getMessage());
+                                Log.d("---", "onNext: " + autologinBean.getMessage());
                             }
                         }
 

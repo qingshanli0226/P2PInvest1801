@@ -4,8 +4,6 @@ import com.example.net.RetrofitManager;
 import com.example.net.bean.ProductBean;
 import com.p2p.bawei.p2pinvest1801.invest.all.contract.ProductContract;
 
-import java.util.concurrent.TimeUnit;
-
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -18,7 +16,6 @@ public class ProductPresenterImpl extends ProductContract.ProductPresenter {
     public void getProductData() {
         RetrofitManager.getInvestApiService()
                 .getProductData()
-                .delay(1, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .doOnSubscribe(new Consumer<Disposable>() {

@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -92,7 +93,12 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
         switch (v.getId()) {
             case R.id.iv_title_back:
                 //退出当前页面
-                finish();
+                if (popupWindow.isShowing()) {
+                    popupWindow.dismiss();
+                    return;
+                } else {
+                    finish();
+                }
                 break;
             case R.id.btn_user_logout:
                 //退出登录
@@ -302,14 +308,23 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
             printLog("更新头像---" + icon);
         } else {
             //从服务端下载头像
-
         }
-
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         popupWindow = null;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (popupWindow.isShowing()) {
+            popupWindow.dismiss();
+            return true;
+        } else {
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

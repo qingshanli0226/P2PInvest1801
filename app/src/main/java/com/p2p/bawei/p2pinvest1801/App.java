@@ -27,7 +27,6 @@ public class App extends Application {
         //检测未知错误异常
 //        CrashHandler.getInstance().init(this);
         CacheManager.getCacheManager().init(this);
-        com.example.framework.manager.CacheManager.getCacheManager().init(this);
         GlideManager.getInstance().init(this);
         UserManager.getUserManager().init(this);
 

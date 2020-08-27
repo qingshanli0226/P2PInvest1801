@@ -21,7 +21,7 @@ import com.p2p.bawei.p2pinvest1801.user.presenter.LoginPresenterImpl;
 
 public class LoginActivity extends BaseMVPActivity<LoginPresenterImpl, LoginContract.ILoginView> implements LoginContract.ILoginView {
     private MyLoadingBar loadingBar;
-
+    private SharedPreferences.Editor editor = CacheManager.getCacheManager().getEditor();
     @Override
     protected void initHttpData() {
 
@@ -93,7 +93,7 @@ public class LoginActivity extends BaseMVPActivity<LoginPresenterImpl, LoginCont
     }
 
     private void saveUser(LoginBean loginResult) {
-        SharedPreferences.Editor editor = CacheManager.getCacheManager().getEditor();
+
         editor.putString(InvestConstant.SP_USERNAME, loginResult.getResult().getName());
         editor.putString(InvestConstant.SP_PASSWORD, loginResult.getResult().getPassword());
         editor.putString(InvestConstant.SP_TOKEN, loginResult.getResult().getToken());//保存请求头

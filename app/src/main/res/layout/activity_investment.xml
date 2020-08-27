@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.p2p.bawei.p2pinvest1801.user.view.MyDomeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,11 +10,26 @@
 
     <include layout="@layout/common_title" />
 
-    <com.example.common.view.HistogramDemoView
-        android:layout_marginTop="40dp"
+    <com.lixs.charts.BarChart.LBarChartView
+        android:layout_marginTop="140dp"
+        android:layout_gravity="center"
         android:id="@+id/histogram"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="340dp"
+        android:layout_height="330dp"
+        app:barShowNumber="6"
+        app:borderColor="@color/colorAccent"
+        app:bottomTextSpace="20dp"
+        app:dataTextColor="@color/colorPrimaryDark"
+        app:dataTextSize="12sp"
+        app:descriptionTextColor="#000"
+        app:descriptionTextSize="20sp"
+        app:isClickAnimation="true"
+        app:labelTextColor="#FFF"
+        app:labelTextSize="10sp"
+        app:leftTextSpace="30dp"
+        app:titleTextColor="@color/colorPrimaryDark"
+        app:titleTextSize="20sp"
+        app:topTextSpace="50dp" />
 
 
-</LinearLayout>
+</com.p2p.bawei.p2pinvest1801.user.view.MyDomeLinearLayout>

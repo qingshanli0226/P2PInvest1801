@@ -8,8 +8,8 @@ import android.os.Process;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.common.CacheManager;
 import com.example.common.InvestConstant;
-import com.example.framework.manager.CacheManager;
 import com.example.net.NetFunction;
 import com.example.net.RetrofitManager;
 import com.example.net.bean.BaseBean;

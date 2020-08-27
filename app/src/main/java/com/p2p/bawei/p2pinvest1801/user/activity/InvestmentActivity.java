@@ -4,8 +4,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.common.view.HistogramDemoView;
 import com.example.framework.BaseActivity;
+import com.lixs.charts.BarChart.LBarChartView;
 import com.p2p.bawei.p2pinvest1801.R;
 
 import java.util.ArrayList;
@@ -18,26 +18,26 @@ import java.util.List;
 public class InvestmentActivity extends BaseActivity {
     private ImageView ivTitleBack;
     private TextView tvTitle;
-    private HistogramDemoView histogram;
+    private LBarChartView histogram;
 
 
     @Override
     protected void initData() {
-        List<Long> data = new ArrayList<>();
+        List<Double> data = new ArrayList<>();
         List<String> name = new ArrayList<>();
 
-        data.add((long) (Math.random() * 100));
-        data.add((long) (Math.random() * 100));
-        data.add((long) (Math.random() * 100));
-        data.add((long) (Math.random() * 100));
-        data.add((long) (Math.random() * 100));
-        data.add((long) (Math.random() * 100));
-        data.add((long) (Math.random() * 100));
-        data.add((long) (Math.random() * 100));
-        data.add((long) (Math.random() * 100));
-        data.add((long) (Math.random() * 100));
-        data.add((long) (Math.random() * 100));
-        data.add((long) (Math.random() * 100));
+        data.add((double) Math.round(Math.random() * 100));
+        data.add((double) Math.round(Math.random() * 100));
+        data.add((double) Math.round(Math.random() * 100));
+        data.add((double) Math.round(Math.random() * 100));
+        data.add((double) Math.round(Math.random() * 100));
+        data.add((double) Math.round(Math.random() * 100));
+        data.add((double) Math.round(Math.random() * 100));
+        data.add((double) Math.round(Math.random() * 100));
+        data.add((double) Math.round(Math.random() * 100));
+        data.add((double) Math.round(Math.random() * 100));
+        data.add((double) Math.round(Math.random() * 100));
+        data.add((double) Math.round(Math.random() * 100));
 
         name.add("Jan");
         name.add("Feb");
@@ -52,14 +52,14 @@ public class InvestmentActivity extends BaseActivity {
         name.add("Now");
         name.add("Dec");
 
-        histogram.updateThisData(data, name);
+        histogram.setDatas(data, name, true);
+
     }
 
     @Override
     protected void initView() {
         ivTitleBack = findViewById(R.id.iv_title_back);
         tvTitle = findViewById(R.id.tv_title);
-
         histogram = findViewById(R.id.histogram);
 
         ivTitleBack.setVisibility(View.VISIBLE);

@@ -8,7 +8,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.framework.manager.CacheManager;
+import com.example.common.CacheManager;
 
 //定义Activity的基类，在里面定义抽象方法，抽象方法按照一定时序调用。并且在基类中定义方法，让子类复用
 public abstract class BaseActivity extends AppCompatActivity {

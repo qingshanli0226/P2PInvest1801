@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.p2p.bawei.p2pinvest1801.user.view.MyDomeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,11 +10,12 @@
 
     <include layout="@layout/common_title" />
 
-
-    <com.example.common.view.LinechartDemoView
+    <com.lixs.charts.LineChartView
         android:id="@+id/linechar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp" />
+        android:layout_width="350dp"
+        android:layout_height="320dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"
+        app:labelTextSize="12dp" />
 
-</LinearLayout>
+</com.p2p.bawei.p2pinvest1801.user.view.MyDomeLinearLayout>

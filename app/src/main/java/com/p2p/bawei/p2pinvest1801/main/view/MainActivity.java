@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.framework.manager.CacheManager;
+import com.example.common.CacheManager;
 import com.example.common.InvestConstant;
 import com.example.framework.BaseActivity;
 import com.flyco.tablayout.CommonTabLayout;
@@ -80,7 +80,6 @@ public class MainActivity extends BaseActivity {
 
         //初始化common
         initCommon();
-
     }
 
     private void isToggle() {

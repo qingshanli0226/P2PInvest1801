@@ -14,10 +14,13 @@
         android:layout_height="match_parent"
         android:background="#AA66CC">
 
-        <com.example.common.view.PiechartDemoView
-            android:id="@+id/piecharview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <com.lixs.charts.PieChartView
+            android:id="@+id/pieView"
+            android:layout_width="370dp"
+            android:layout_height="370dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="85dp" />
+
 
         <LinearLayout
             android:layout_width="wrap_content"

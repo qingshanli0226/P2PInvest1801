@@ -38,14 +38,14 @@
                 android:text="手势密码" />
 
             <ToggleButton
+                android:layout_centerVertical="true"
                 android:gravity="center"
                 android:id="@+id/toggle_more"
-                android:layout_width="150px"
-                android:layout_height="150px"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
+                android:layout_width="120px"
+                android:layout_height="115px"
                 android:layout_marginTop="0px"
-                android:layout_marginRight="20px"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="70px"
                 android:background="@drawable/toggle_selector"
                 android:textOff=""
                 android:textOn="" />

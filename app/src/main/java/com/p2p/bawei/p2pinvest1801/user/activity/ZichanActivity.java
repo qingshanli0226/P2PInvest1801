@@ -1,21 +1,29 @@
 package com.p2p.bawei.p2pinvest1801.user.activity;
 
+import android.graphics.Color;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.common.view.PiechartDemoView;
 import com.example.framework.BaseActivity;
+import com.lixs.charts.PieChartView;
 import com.p2p.bawei.p2pinvest1801.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 扇形图demo
- *
  */
 public class ZichanActivity extends BaseActivity {
     private ImageView ivTitleBack;
     private TextView tvTitle;
-    private PiechartDemoView piecharview;
+    private PieChartView pieView;
+
+    private List<Float> datas = new ArrayList<>();
+    private List<Integer> colors = new ArrayList<>();
+    private List<String> description = new ArrayList<>();
+
 
     @Override
     protected void initData() {
@@ -26,7 +34,7 @@ public class ZichanActivity extends BaseActivity {
     protected void initView() {
         ivTitleBack = findViewById(R.id.iv_title_back);
         tvTitle = findViewById(R.id.tv_title);
-        piecharview = findViewById(R.id.piecharview);
+        pieView = findViewById(R.id.pieView);
 
         ivTitleBack.setVisibility(View.VISIBLE);
         ivTitleBack.setOnClickListener(new View.OnClickListener() {
@@ -37,15 +45,26 @@ public class ZichanActivity extends BaseActivity {
         });
         tvTitle.setText("饼状图demo");
 
-        double math = (double) (Math.random() * 50);
-        printLog("math--->" + math);
+        float random = (float) ((float) Math.random()*0.5);
+        float random2 = (float) ((float) Math.random()*0.5);
 
-        piecharview.setDatas(new double[]{math, 50 - math, math, 50 - math});
-        piecharview.setTexts(new String[]{"三星", "华为", "oppo", "vivo"});
-        piecharview.setMaxNum(4);
-        piecharview.setRadius(800);
-        piecharview.setTextSize(100);
-        piecharview.invalidate();
+        datas.add(random);
+        datas.add((float) Math.abs(0.5 - random));
+        datas.add(random2);
+        datas.add((float) Math.abs(0.5 - random2));
+
+        colors.add(Color.parseColor("#FFC65B"));
+        colors.add(Color.parseColor("#FD5998"));
+        colors.add(Color.parseColor("#8971FB"));
+        colors.add(Color.parseColor("#676974"));
+
+        description.add("三星");
+        description.add("华为");
+        description.add("oppo");
+        description.add("vivo");
+
+        pieView.setCanClickAnimation(true);
+        pieView.setDatas(datas, colors, description);
 
     }
 
