@@ -8,10 +8,10 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:id="@+id/main_framlayout"
-        android:layout_height="match_parent"></FrameLayout>
+        android:layout_height="1800px"></FrameLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="2px"
+        android:layout_height="5px"
         android:layout_above="@id/main_common"
         android:background="#3882D0"></View>
     <com.flyco.tablayout.CommonTabLayout

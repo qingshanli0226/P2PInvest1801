@@ -100,7 +100,7 @@ public class ProgressView extends View {
             return;
         }
 
-        RectF rectF = new RectF(progressViewWidth / 2 - round_size, progressViewHeight / 2 - round_size, progressViewWidth / 2 + round_size, progressViewWidth / 2 + round_size);
+        RectF rectF = new RectF(progressViewWidth / 2 - round_size, progressViewHeight / 2 - round_size, progressViewWidth / 2 + round_size, progressViewWidth / 2 + round_size - 5);
         paint.setColor(arc_color);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(stroke_width);

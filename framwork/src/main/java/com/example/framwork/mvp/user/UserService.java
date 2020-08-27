@@ -40,9 +40,12 @@ public class UserService extends Service {
                 .subscribe(new BaseObserver<BaseBean<LoginBean>>() {
                     @Override
                     public void onNext(BaseBean<LoginBean> loginBeanBaseBean) {
-                        Log.i("----", loginBeanBaseBean.getCode());
-                        UserManagers.getInstance().saveLoginBean(loginBeanBaseBean.getResult());
-                        Toast.makeText(UserService.this, "service 弹吐司:自动登录成功",Toast.LENGTH_SHORT).show();
+                        if(loginBeanBaseBean.getCode().equals("200")){
+                            UserManagers.getInstance().saveLoginBean(loginBeanBaseBean.getResult());
+                            Toast.makeText(UserService.this, "service 弹吐司:自动登录成功",Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(UserService.this, ""+loginBeanBaseBean.getCode()+":"+loginBeanBaseBean.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
                     }
 
                     @Override

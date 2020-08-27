@@ -8,40 +8,17 @@ import android.provider.MediaStore;
 import com.example.framwork.mvp.view.BaseActivity;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.mvp.view.mine.LinechartDemoView;
+import com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyScollows;
 
 public class TouZiActivity extends BaseActivity {
-    private LinechartDemoView touzi;
+    private MyScollows touziScollow;
     @Override
     public void initViews() {
-        touzi = (LinechartDemoView) findViewById(R.id.touzi);
+        touziScollow = (MyScollows) findViewById(R.id.touzi_scollow);
     }
     @Override
     public void initDatas() {
-        touzi.setInfo(
-                new String[]{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Now", "Dec"},
-                new String[]{"0", "20", "40", "60", "80", "100"},
-                new String[]{
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100),
-                        "" + (int)(Math.random() * 100)
-                },
-                ""
-        );
+
     }
 
     @Override

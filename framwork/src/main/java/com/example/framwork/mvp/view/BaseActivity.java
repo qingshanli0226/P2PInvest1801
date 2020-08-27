@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.common.ToolBar;
 import com.example.framwork.R;
 import com.example.framwork.mvp.presenter.IPresenter;
+import com.example.framwork.mvp.user.UserManagers;
 
 public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IActivity,IView {
     protected P mPresenter;
@@ -22,6 +23,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(bandLayout());
+        UserManagers.getInstance().addActivity(this);
         initViews();
         initDatas();
     }
@@ -33,5 +35,6 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
             mPresenter.destroy();
             mPresenter = null;
         }
+        UserManagers.getInstance().removeActivity(this);
     }
 }

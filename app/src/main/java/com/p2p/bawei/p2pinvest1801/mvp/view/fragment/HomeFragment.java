@@ -1,7 +1,10 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 
 import android.content.Context;
+import android.opengl.Visibility;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -11,6 +14,7 @@ import com.example.framwork.mvp.view.BaseFragment;
 import com.example.common.bean.HomeBean;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.cache.CacheManager;
+import com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyDialog;
 import com.p2p.bawei.p2pinvest1801.mvp.view.mine.ProgressView;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -28,14 +32,16 @@ public class HomeFragment extends BaseFragment implements CacheManager.IDataChan
     private TextView homeTitle;
     private ProgressView homeProgress;
     List<HomeBean.ResultBean.ProInfoBean> list_proinfobean;
-
+    private Button homeNull;
     private TextView homeAnticipate;
+    private MyDialog ss;
     @Override
     public void initViews() {
         homeBanner = (Banner) findViewById(R.id.home_banner);
         homeTitle = (TextView) findViewById(R.id.home_title);
         homeProgress = (ProgressView) findViewById(R.id.home_progress);
         homeAnticipate = (TextView) findViewById(R.id.home_anticipate);
+        homeNull = (Button) findViewById(R.id.home_null);
     }
 
     @Override
@@ -46,6 +52,12 @@ public class HomeFragment extends BaseFragment implements CacheManager.IDataChan
 
     @Override
     public void initDatas() {
+        homeNull.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ss.showCancel(View.VISIBLE);
+            }
+        });
         list = CacheManager.getInstance().getList();
         list_proinfobean = CacheManager.getInstance().getList_proinfobean();
         if(list.size() != 0 && list_proinfobean.size() != 0){
@@ -92,7 +104,7 @@ public class HomeFragment extends BaseFragment implements CacheManager.IDataChan
 
     @Override
     public void showMsg(String message) {
-
+        Toast.makeText(getContext(), ""+message, Toast.LENGTH_SHORT).show();
     }
 
     @Override

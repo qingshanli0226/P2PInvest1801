@@ -1,5 +1,6 @@
 package com.example.framwork.mvp.user;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -7,9 +8,11 @@ import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.example.common.bean.LoginBean;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -17,6 +20,7 @@ public class UserManagers {
     private static UserManagers userManagers;
     private LoginBean loginBean;
     private Context context;
+    private List<Activity> list_activity = new ArrayList<>();
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private List<ILoginStatusChangeListener> loginStatusChangeListeners = new LinkedList<>();
@@ -58,8 +62,6 @@ public class UserManagers {
                 listener.onLoginSuccess(loginBean);
             }
         }
-
-
         //使用sp存储token
         editor.putString("token", loginBean.getToken());
         editor.commit();
@@ -89,6 +91,14 @@ public class UserManagers {
         }
         return "";
     }
+    private String versions;
+    public void setVersion(String version){
+        this.versions = version;
+    }
+
+    public String getVersion(){
+        return versions;
+    }
     public void setLoginStatusChangeListener(ILoginStatusChangeListener listener) {
         if (!loginStatusChangeListeners.contains(listener)) {
             loginStatusChangeListeners.add(listener);
@@ -103,6 +113,7 @@ public class UserManagers {
     public String getToken() {
         SharedPreferences sharedPreferences = context.getSharedPreferences("tokens",Context.MODE_PRIVATE);
         String token = sharedPreferences.getString("token", "");
+        Log.i("----", token);
         return token;
     }
 
@@ -112,7 +123,23 @@ public class UserManagers {
         void onLogoutSuccess();
     }
 
+
     public void removeService(){
         context.unbindService(serviceConnection);
+    }
+
+    public void addActivity(Activity activity){
+        if(!list_activity.contains(activity)){
+            list_activity.add(activity);
+        }
+    }
+    public void removeActivity(Activity activity){
+        if (list_activity.contains(activity)) {
+            list_activity.remove(activity);
+        }
+    }
+
+    public List<Activity> getList_activity(){
+        return list_activity;
     }
 }

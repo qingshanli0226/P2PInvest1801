@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.example.common.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="200px"
         app:right_show="true"
         app:center_text="投资"></com.example.common.ToolBar>
     <com.flyco.tablayout.CommonTabLayout
         android:layout_width="match_parent"
         android:id="@+id/invest_common"
+        android:layout_marginTop="200px"
         app:tl_textSelectColor="#FF0000"
         app:tl_indicator_color="#3F51B5"
-        app:tl_textsize="20sp"
-        app:tl_indicator_height="60dp"
+        app:tl_textsize="60px"
+        app:tl_indicator_height="180px"
         app:tl_textUnselectColor="#000"
-        android:layout_height="60dp"></com.flyco.tablayout.CommonTabLayout>
-    <com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyViewPager
-        android:layout_width="match_parent"
-        android:layout_height="540dp"
-        android:id="@+id/invest_viewpage"></com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyViewPager>
+        android:layout_height="180px"></com.flyco.tablayout.CommonTabLayout>
 
-</LinearLayout>
+    <com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyViewPager
+        android:id="@+id/invest_viewpage"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/invest_common"
+        android:layout_height="match_parent"></com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyViewPager>
+
+</com.zhy.autolayout.AutoRelativeLayout>

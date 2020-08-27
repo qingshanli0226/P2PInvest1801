@@ -10,10 +10,10 @@
         app:right_show="true"
         app:left_show="true"
         android:id="@+id/toolbar"
-        android:layout_height="150px"></com.example.common.ToolBar>
+        android:layout_height="200px"></com.example.common.ToolBar>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150px"
+        android:layout_height="130px"
         android:orientation="horizontal">
         <TextView
             android:layout_width="265px"
@@ -36,11 +36,11 @@
     </LinearLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="5px"
         android:background="#D3D0D0"></View>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="130px"
         android:orientation="horizontal">
 
         <TextView
@@ -63,11 +63,11 @@
     </LinearLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="5px"
         android:background="#D3D0D0"></View>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="130px"
         android:orientation="horizontal">
 
         <TextView
@@ -91,11 +91,11 @@
     </LinearLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="5px"
         android:background="#D3D0D0"></View>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="130px"
         android:orientation="horizontal">
         <TextView
             android:layout_width="265px"
@@ -119,7 +119,7 @@
     </LinearLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="5px"
         android:background="#D3D0D0"></View>
     <Button
         android:id="@+id/btn_register"
@@ -127,9 +127,9 @@
         android:layout_height="130px"
         android:layout_marginLeft="50px"
         android:layout_marginRight="50px"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="50px"
         android:background="@drawable/btn_01"
         android:text="注  册"
         android:textColor="#ffffff"
-        android:textSize="18sp" />
+        android:textSize="50px" />
 </com.zhy.autolayout.AutoLinearLayout>

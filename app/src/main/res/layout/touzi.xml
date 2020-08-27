@@ -4,9 +4,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.p2p.bawei.p2pinvest1801.mvp.view.mine.LinechartDemoView
+    <com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyScollows
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_centerInParent="true"
-        android:id="@+id/touzi"/>
+        android:layout_height="match_parent"
+        android:paddingTop="300dp"
+        android:id="@+id/touzi_scollow"></com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyScollows>
 </RelativeLayout>

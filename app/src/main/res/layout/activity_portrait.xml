@@ -8,7 +8,7 @@
     tools:ignore="MissingDefaultResource">
     <com.example.common.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="200px"
         app:right_show="true"
         app:left_show="true"
         android:id="@+id/toolbar"

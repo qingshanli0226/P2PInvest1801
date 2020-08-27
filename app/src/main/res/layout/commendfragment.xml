@@ -2,9 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyView
+    <com.leon.stellarmap.lib.StellarMap
         android:layout_width="match_parent"
-        android:id="@+id/commend_view"
-        android:layout_height="match_parent" />
-
+        android:layout_height="match_parent"
+        android:id="@+id/commend"></com.leon.stellarmap.lib.StellarMap>
 </LinearLayout>

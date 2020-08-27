@@ -119,6 +119,7 @@ public class Welecome extends BaseActivity implements CacheManager.IDataChangeLi
                         if(versionBean.getCode() == 200){
                             title = versionBean.getResult().getDesc();
                             handler.sendEmptyMessage(0);
+                            UserManagers.getInstance().setVersion(versionBean.getResult().getVersion());
                             Log.i("----version", "1111");
                         }else{
                             Toast.makeText(Welecome.this, "请求出错", Toast.LENGTH_SHORT).show();

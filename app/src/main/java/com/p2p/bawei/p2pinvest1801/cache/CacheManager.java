@@ -52,6 +52,8 @@ public class CacheManager {
         return list;
     }
     public void add(){
+        list.clear();
+        list_proinfobean.clear();
         list.addAll(list_homebean.get(0).getImageArr());
         list_proinfobean.add(list_homebean.get(0).getProInfo());
     }

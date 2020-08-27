@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
     <com.example.common.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="150px"
         android:id="@+id/toolbar"
         app:right_show="false"
         app:center_text="我的资产"></com.example.common.ToolBar>

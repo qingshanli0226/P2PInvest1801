@@ -47,4 +47,8 @@ public interface P2PApi {
 
     @POST("logout")
     Observable<BaseBean<String>> logout();
+
+    @POST("crash")
+    @FormUrlEncoded
+    Observable<BaseBean<String>> crashReport(@FieldMap HashMap<String,String> params);
 }
