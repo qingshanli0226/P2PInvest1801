@@ -44,20 +44,13 @@ public class MainActivity extends BaseActivity {
         if (Build.VERSION.SDK_INT >= 25) {
             requestPermissions(new String[]{
                     Manifest.permission.ACCESS_NETWORK_STATE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_EXTERNAL_STORAGE,
                     Manifest.permission.CAMERA,
             }, 100258);
         }
 
-        CommonTabLayout mComTab =  findViewById(R.id.com_tab);
-        firstFragment = new FirstFragment();
-        investFragment = new InvestFragment();
-        userFragment = new UserFragment();
-        moreFragment = new MoreFragment();
-        list.add(new TabBean("首页", R.drawable.bottom02, R.drawable.bottom01));
-        list.add(new TabBean("投资", R.drawable.bottom04, R.drawable.bottom03));
-        list.add(new TabBean("我的资产", R.drawable.bottom06, R.drawable.bottom05));
-        list.add(new TabBean("更多", R.drawable.bottom08, R.drawable.bottom07));
-        mComTab.setTabData(list);
+        CommonTabLayout mComTab = initTab();
         initFragment();
         if (lockFlag.getBoolean("lockFlag", false)) {
             startActivity(new Intent(this, LockFragment.class));
@@ -86,6 +79,20 @@ public class MainActivity extends BaseActivity {
 
             }
         });
+    }
+
+    private CommonTabLayout initTab() {
+        CommonTabLayout mComTab =  findViewById(R.id.com_tab);
+        firstFragment = new FirstFragment();
+        investFragment = new InvestFragment();
+        userFragment = new UserFragment();
+        moreFragment = new MoreFragment();
+        list.add(new TabBean("首页", R.drawable.bottom02, R.drawable.bottom01));
+        list.add(new TabBean("投资", R.drawable.bottom04, R.drawable.bottom03));
+        list.add(new TabBean("我的资产", R.drawable.bottom06, R.drawable.bottom05));
+        list.add(new TabBean("更多", R.drawable.bottom08, R.drawable.bottom07));
+        mComTab.setTabData(list);
+        return mComTab;
     }
 
     private void initFragment() {

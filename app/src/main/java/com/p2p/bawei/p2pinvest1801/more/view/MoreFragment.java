@@ -20,12 +20,7 @@ import java.util.Objects;
 
 public class MoreFragment extends BaseFragment {
     private TextView mUserRegisterTxt;
-    private Switch mHandLockSwc;
     private TextView mHandChangeTxt;
-    private RelativeLayout mCountPhoneTxt;
-    private TextView mUserRequestTxt;
-    private TextView mShareFiredTxt;
-    private TextView mGuiGuAboutTxt;
 
     @Override
     public void onClick(View view) {
@@ -56,12 +51,12 @@ public class MoreFragment extends BaseFragment {
     public void initView() {
         ARouter.getInstance().inject(getContext());
         findViewById(R.id.user_register_txt).setOnClickListener(this);
-        mHandLockSwc = (Switch) findViewById(R.id.hand_lock_swc);
+        Switch mHandLockSwc = (Switch) findViewById(R.id.hand_lock_swc);
         findViewById(R.id.hand_change_txt).setOnClickListener(this);
-        mCountPhoneTxt = (RelativeLayout) findViewById(R.id.count_phone_txt);
-        mUserRequestTxt = (TextView) findViewById(R.id.user_request_txt);
-        mShareFiredTxt = (TextView) findViewById(R.id.share_fired_txt);
-        mGuiGuAboutTxt = (TextView) findViewById(R.id.guiGu_about_txt);
+        findViewById(R.id.count_phone_txt);
+        findViewById(R.id.user_request_txt);
+        findViewById(R.id.share_fired_txt);
+        findViewById(R.id.guiGu_about_txt);
         final SharedPreferences lock = Objects.requireNonNull(getContext()).getSharedPreferences("lock", Context.MODE_PRIVATE);
 
         mHandLockSwc.setChecked(lock.getBoolean("lockFlag", false));

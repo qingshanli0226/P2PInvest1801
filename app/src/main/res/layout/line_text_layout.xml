@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.p2p.bawei.p2pinvest1801.invest.view.view.MyText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="硅谷金融豪运到头，首投返现最高达188元"
+        android:textColor="#f00"
+        android:textSize="@dimen/dp_30">
+
+    </com.p2p.bawei.p2pinvest1801.invest.view.view.MyText>
+</LinearLayout>

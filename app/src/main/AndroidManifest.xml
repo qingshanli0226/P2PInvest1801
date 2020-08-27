@@ -44,16 +44,24 @@
         <activity
             android:name=".lock.LockAct"
             android:launchMode="singleTask" />
-        <activity android:name=".user.TouManagerAct" />
-        <activity android:name=".user.Picture" />
+        <activity
+            android:name=".user.TouManagerAct"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".user.Picture"
+            android:launchMode="singleTask" />
         <activity
             android:name=".user.ZhuAct"
             android:launchMode="singleTask" />
         <activity
             android:name=".user.YuanAct"
             android:launchMode="singleTask" />
-        <activity android:name=".lock.LockFragment" />
-        <activity android:name=".user.ZheAct" />
+        <activity
+            android:name=".lock.LockFragment"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".user.ZheAct"
+            android:launchMode="singleTask" />
 
         <meta-data
             android:name="design_width_in_dp"

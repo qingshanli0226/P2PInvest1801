@@ -59,16 +59,6 @@ public class LoginAct extends BaseActivity<LoginPresenter> implements LoginContr
     public void goMain(LoginBean.ResultBean loginBean) {
         Intent head_image = new Intent().putExtra("head_image", loginBean.getAvatar());
         setResult(10000,head_image);
-        UserManager.getUserManager().setAddress(loginBean.getAddress());
-        UserManager.getUserManager().setAvatar(loginBean.getAvatar());
-        UserManager.getUserManager().setEmail(loginBean.getEmail());
-        UserManager.getUserManager().setId(loginBean.getId());
-        UserManager.getUserManager().setMoney(loginBean.getMoney());
-        UserManager.getUserManager().setName(loginBean.getName());
-        UserManager.getUserManager().setAddress(loginBean.getPassword());
-        UserManager.getUserManager().setPhone(loginBean.getPhone());
-        UserManager.getUserManager().setPoint(loginBean.getPoint());
-        UserManager.getUserManager().setToken(loginBean.getToken());
         finish();
     }
 }

@@ -31,7 +31,6 @@ import java.util.Objects;
 public class UserFragment extends BaseFragment {
     private ImageView mHeadPic;
     private boolean flag = false;
-    private String image = "http://49.233.93.155:8080/atguigu";
     private String image_pic;
     private PopupWindow popupWindow;
 
@@ -62,6 +61,9 @@ public class UserFragment extends BaseFragment {
         if (view.getId() == R.id.head_pic_beck) {
             popupWindow.dismiss();
         }
+        if (view.getId() == R.id.up_head_pic) {
+            popupWindow.dismiss();
+        }
 
         if (view.getId() == R.id.show_head_pic) {
             Intent intent = new Intent(getContext(), Picture.class);
@@ -69,6 +71,7 @@ public class UserFragment extends BaseFragment {
             startActivity(intent);
             popupWindow.dismiss();
         }
+
     }
 
     private void initPop() {
@@ -80,6 +83,10 @@ public class UserFragment extends BaseFragment {
         popupWindow.showAsDropDown(findViewById(R.id.zhe));
         inflate.findViewById(R.id.show_head_pic).setOnClickListener(this);
         inflate.findViewById(R.id.head_pic_beck).setOnClickListener(this);
+        inflate.findViewById(R.id.up_head_pic).setOnClickListener(this);
+        inflate.findViewById(R.id.change_user).setOnClickListener(this);
+
+
     }
 
     @Override
@@ -99,12 +106,13 @@ public class UserFragment extends BaseFragment {
 
     }
 
-    private Bitmap samplePic() {
+    private Bitmap samplePic(String path) {
 
         //第一次采样，主要采集图片边框，算出图片的尺寸
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;//通过该标志位，确定第一次采样只采集边框
-        BitmapFactory.decodeResource(getResources(), R.mipmap.a, options);
+//        BitmapFactory.decodeResource(getResources(), R.drawable.a, options);
+        BitmapFactory.decodeFile(path,options);
         //计算出图片的宽度和高度
         int picWidth = options.outWidth;
         int picHeight = options.outHeight;
@@ -121,7 +129,8 @@ public class UserFragment extends BaseFragment {
         options.inPreferredConfig = Bitmap.Config.ARGB_8888;
 
 
-        return BitmapFactory.decodeResource(getResources(), R.mipmap.a, options);
+        return BitmapFactory.decodeFile(path,options);
+
 
     }
 
@@ -141,7 +150,9 @@ public class UserFragment extends BaseFragment {
         if (requestCode == 152 && resultCode == 10000) {
             flag = true;
             String head_image = data.getStringExtra("head_image");
+            String image = "http://49.233.93.155:8080/atguigu";
             image_pic = image + head_image;
+            Bitmap bitmap = samplePic(image_pic);
             Glide.with(this).load(image_pic).transform(new CircleCrop()).into(mHeadPic);
         }
         if (requestCode == PictureSelector.SELECT_REQUEST_CODE) {

@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.baselibrary.CacheManager;
 import com.example.baselibrary.mvp.presenter.IPresenter;
 
 
@@ -21,6 +24,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
             mPresenter.onDestroy();
             mPresenter = null;
         }
+        CacheManager.getCacheManager().removeAct(this);
     }
 
     @Override
@@ -30,6 +34,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
         initView();
         initPresenter();
         initData();
+        CacheManager.getCacheManager().addAct(this);
     }
 
 
@@ -42,8 +47,6 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
     public void hideView() {
 
     }
-
-
 
 
     @Override

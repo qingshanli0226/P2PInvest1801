@@ -21,10 +21,10 @@ import java.util.Random;
 
 public class HistogramVIew extends View {
 
-    private static String ZHU = "1";
-    private static String YUAN = "2";
-    private static String ZHE = "3";
-    private String strings[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "A", "B", "C", "D", "E", "F"};
+    static String ZHU = "1";
+    static String YUAN = "2";
+    static String ZHE = "3";
+    String strings[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "A", "B", "C", "D", "E", "F"};
 
     private int viewWidth;
     private int viewHeight;
@@ -50,7 +50,6 @@ public class HistogramVIew extends View {
     private int size;
     private boolean flag = false;
     private int max;
-    private int max2;
     private int imageColor, titleColor, numberColor;
     private String style;
 
@@ -160,7 +159,7 @@ public class HistogramVIew extends View {
                 max = changeable.get(i).getNumber();
             }
         }
-        max2 = max;
+        int max2 = max;
         //进行等比缩小
         while (true) {
             if (max >= viewHeight) {

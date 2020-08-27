@@ -1,6 +1,7 @@
 package com.p2p.bawei.p2pinvest1801.lock;
 
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.View;
 
 import com.example.baselibrary.mvp.view.BaseActivity;
@@ -41,6 +42,7 @@ public class LockAct extends BaseActivity {
 
             @Override
             public void onChange(@NotNull PatternLockerView patternLockerView, @NotNull List<Integer> list) {
+
             }
 
             @Override
@@ -50,13 +52,12 @@ public class LockAct extends BaseActivity {
                     flag = false;
                 } else {
                     if (lock_list.size() != list.size()) {
+                        clear();
                         return;
                     } else {
                         for (int i = 0; i < list.size(); i++) {
                             if (!list.get(i).equals(lock_list.get(i))) {
-                                lock_flag = false;
-                                showMessage("图案不一致，请重新输入");
-                                flag = true;
+                                clear();
                                 return;
                             }
                         }
@@ -72,6 +73,13 @@ public class LockAct extends BaseActivity {
 
             }
         });
+    }
+
+    private void clear() {
+        lock_list.clear();
+        flag = true;
+        lock_flag = true;
+        showMessage("图案不一致，请重新输入");
     }
 
     private void keep(@NotNull List<Integer> list) {

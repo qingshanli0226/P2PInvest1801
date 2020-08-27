@@ -1,5 +1,6 @@
 package com.p2p.bawei.p2pinvest1801.first.view;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.view.KeyEvent;
 import android.view.View;
@@ -16,6 +17,7 @@ public class BanAct extends BaseActivity {
 
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     public void initView() {
         mBanWeb = findViewById(R.id.ban_web);

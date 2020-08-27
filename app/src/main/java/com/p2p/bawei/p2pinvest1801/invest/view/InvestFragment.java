@@ -64,7 +64,7 @@ public class InvestFragment extends BaseFragment {
 
         final List<Fragment> list = new ArrayList<>();
         list.add(new InvestFirstFragment());
-        list.add(new InvestFirstFragment());
+        list.add(new InvestTuiFragment());
         list.add(new InvestHotFragment());
         mListVp.setAdapter(new FragmentStatePagerAdapter(getChildFragmentManager()) {
             @NonNull

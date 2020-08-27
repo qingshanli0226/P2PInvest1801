@@ -1,122 +1,52 @@
 package com.p2p.bawei.p2pinvest1801.user_act.manager;
 
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+
+import com.p2p.bawei.p2pinvest1801.user_act.bean.LoginBean;
+
 public class UserManager {
     private static UserManager userManager;
+    Context context;
+    private String token;
+    private SharedPreferences userSp;
+    private SharedPreferences.Editor edit;
+    LoginBean loginBean;
 
-    public static UserManager getUserManager() {
+    public void setLoginBean(LoginBean loginBean) {
+        this.loginBean = loginBean;
+        edit.putString("token", loginBean.getResult().getToken());
+        edit.apply();
+    }
+
+    public static UserManager getInstance() {
         if (userManager == null) {
             userManager = new UserManager();
         }
         return userManager;
     }
 
-
-
-    private String id;
-    private String name;
-    private String password;
-    private Object email;
-    private Object phone;
-    private Object point;
-    private Object address;
-    private Object money;
-    private String avatar;
-    private String token;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Object getEmail() {
-        return email;
-    }
-
-    public void setEmail(Object email) {
-        this.email = email;
-    }
-
-    public Object getPhone() {
-        return phone;
-    }
-
-    public void setPhone(Object phone) {
-        this.phone = phone;
-    }
-
-    public Object getPoint() {
-        return point;
-    }
-
-    public void setPoint(Object point) {
-        this.point = point;
-    }
-
-    public Object getAddress() {
-        return address;
-    }
-
-    public void setAddress(Object address) {
-        this.address = address;
-    }
-
-    public Object getMoney() {
-        return money;
-    }
-
-    public void setMoney(Object money) {
-        this.money = money;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
     public String getToken() {
-        return token;
+        return userSp.getString("token", "");
     }
 
-    public void setToken(String token) {
-        this.token = token;
+
+    @SuppressLint("CommitPrefEdits")
+    public void init(Context context) {
+        this.context = context;
+        userSp = context.getSharedPreferences("user", Context.MODE_PRIVATE);
+        edit = userSp.edit();
+
     }
 
-    @Override
-    public String toString() {
-        return "UserManager{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", email=" + email +
-                ", phone=" + phone +
-                ", point=" + point +
-                ", address=" + address +
-                ", money=" + money +
-                ", avatar='" + avatar + '\'' +
-                ", token='" + token + '\'' +
-                '}';
+
+    //添加一个通知接口，当用户登录或者退出登录，通知监听状态的页面
+    public interface ILoginStatusChangeListener {
+        void onLoginSuccess(LoginBean loginBean);
+
+        void onLogoutSuccess();//退出登录成功
     }
 }

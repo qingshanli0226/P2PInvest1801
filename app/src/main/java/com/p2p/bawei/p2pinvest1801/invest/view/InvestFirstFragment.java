@@ -2,6 +2,7 @@ package com.p2p.bawei.p2pinvest1801.invest.view;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,6 +36,8 @@ public class InvestFirstFragment extends BaseFragment<InvestPresenter> implement
         mListRv.setLayoutManager(new LinearLayoutManager(getContext()));
         myAdapter = new MyAdapter(R.layout.item_layout, resultBeans);
         mListRv.setAdapter(myAdapter);
+        View inflate = getLayoutInflater().inflate(R.layout.line_text_layout, null);
+        myAdapter.addHeaderView(inflate);
     }
 
     @Override

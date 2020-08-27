@@ -164,7 +164,7 @@ public class ProgressView extends View {
             invalidate();//只是触发onDraw方法
             if (progressAngle <= offseAngle) {
                 progressAngle += stepAngle;
-                handler.sendEmptyMessageDelayed(1, 20);
+                handler.sendEmptyMessage(1);
             }
 
         }

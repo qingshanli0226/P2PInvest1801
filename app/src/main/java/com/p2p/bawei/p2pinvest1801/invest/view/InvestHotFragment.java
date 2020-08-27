@@ -61,8 +61,8 @@ public class InvestHotFragment extends BaseFragment {
             drawable.setGradientType(GradientDrawable.RECTANGLE);
             drawable.setCornerRadius(10);
 
-            int nowcolor = color[(int) (color.length * Math.random())];
-            drawable.setColor(nowcolor);
+            int nowColor = color[(int) (color.length * Math.random())];
+            drawable.setColor(nowColor);
 
 
             TextView tv = new TextView(getContext());

@@ -54,7 +54,7 @@ public class LockFragment extends BaseActivity {
                     number--;
                     if (number == 0){
                         showMessage("图案错误，请重新登录!");
-                        SharedPreferences.Editor edit = lock.edit();
+                        @SuppressLint("CommitPrefEdits") SharedPreferences.Editor edit = lock.edit();
                         edit.clear();
                         finish();
                     }else {

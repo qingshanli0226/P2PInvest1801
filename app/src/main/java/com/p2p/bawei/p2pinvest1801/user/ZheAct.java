@@ -30,6 +30,22 @@ public class ZheAct extends BaseActivity {
         beanArrayList.add(new Bean("哦九年", 400));
         beanArrayList.add(new Bean("哦九年", 500));
         beanArrayList.add(new Bean("哦九年", 400));
+        beanArrayList.add(new Bean("哦九年", 150));
+        beanArrayList.add(new Bean("哦九年", 400));
+        beanArrayList.add(new Bean("哦九年", 200));
+        beanArrayList.add(new Bean("哦九年", 150));
+        beanArrayList.add(new Bean("哦九年", 500));
+        beanArrayList.add(new Bean("哦九年", 400));
+        beanArrayList.add(new Bean("哦九年", 500));
+        beanArrayList.add(new Bean("哦九年", 400));
+        beanArrayList.add(new Bean("哦九年", 150));
+        beanArrayList.add(new Bean("哦九年", 400));
+        beanArrayList.add(new Bean("哦九年", 200));
+        beanArrayList.add(new Bean("哦九年", 150));
+        beanArrayList.add(new Bean("哦九年", 500));
+        beanArrayList.add(new Bean("哦九年", 400));
+        beanArrayList.add(new Bean("哦九年", 500));
+        beanArrayList.add(new Bean("哦九年", 400));
         mZhuView.setList(beanArrayList);
     }
 
