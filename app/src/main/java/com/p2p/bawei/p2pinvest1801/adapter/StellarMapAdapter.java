@@ -47,6 +47,7 @@ public class StellarMapAdapter implements StellarMap.Adapter {
             }
         });
         return textView;
+
     }
 
     @Override
