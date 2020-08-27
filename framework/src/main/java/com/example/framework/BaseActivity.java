@@ -8,6 +8,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.framework.manager.CacheManager;
+
 //定义Activity的基类，在里面定义抽象方法，抽象方法按照一定时序调用。并且在基类中定义方法，让子类复用
 public abstract class BaseActivity extends AppCompatActivity {
 
@@ -18,6 +20,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         initView();
         initData();
+
+        CacheManager.getCacheManager().addActivity(this);
     }
 
     //子类需要实现的抽象方法
@@ -37,6 +41,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected void launchActivity(Class launcActivityClass, Bundle bundle) {
         Intent intent = new Intent();
+        if (bundle == null){
+            bundle = new Bundle();
+        }
         intent.putExtra("param", bundle);
         intent.setClass(this, launcActivityClass);
         startActivity(intent);
@@ -58,6 +65,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
         destroy();
         printLog("onDestroy..............");
+        CacheManager.getCacheManager().removeActivity(this);
     }
 
     private void destroy() {

@@ -46,7 +46,6 @@ public class LoginActivity extends BaseMVPActivity<LoginPresenterImpl, LoginCont
         final EditText etLoginPwd = findViewById(R.id.et_login_pwd);
         Button btnLogin = findViewById(R.id.btn_login);
 
-
         tvTitle.setText("用户登录");
         ivTitleBack.setVisibility(View.VISIBLE);
 
@@ -121,6 +120,8 @@ public class LoginActivity extends BaseMVPActivity<LoginPresenterImpl, LoginCont
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         launchActivity(MainActivity.class, null);
+        finish();
         return super.onKeyDown(keyCode, event);
     }
+
 }

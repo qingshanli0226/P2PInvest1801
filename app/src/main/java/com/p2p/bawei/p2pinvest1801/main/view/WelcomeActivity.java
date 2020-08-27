@@ -1,8 +1,10 @@
 package com.p2p.bawei.p2pinvest1801.main.view;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Handler;
@@ -17,6 +19,7 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.example.common.InvestConstant;
 import com.example.framework.BaseActivity;
+import com.example.framework.manager.CacheManager;
 import com.example.net.bean.UpdataBean;
 import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
@@ -30,8 +33,9 @@ import java.util.TimerTask;
 public class WelcomeActivity extends BaseActivity {
     private RelativeLayout rlWelcome;
     private ProgressDialog progressDialog;
-
+    private SharedPreferences.Editor editor = CacheManager.getCacheManager().getEditor();
     private int progress = 0;
+    @SuppressLint("HandlerLeak")
     private final Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -43,7 +47,10 @@ public class WelcomeActivity extends BaseActivity {
                     break;
                 case 2:
                     //更新版本UI
+                    printLog(msg.obj.toString());
                     tvWelcomeVersion.setText(msg.obj.toString());
+                    editor.putString(InvestConstant.SP_VERSION, msg.obj.toString());
+                    editor.commit();
                     break;
                 case 3:
                     progressDialog.setProgress(progress);
@@ -65,9 +72,10 @@ public class WelcomeActivity extends BaseActivity {
     protected void initView() {
         rlWelcome = findViewById(R.id.rl_welcome);
         tvWelcomeVersion = findViewById(R.id.tv_welcome_version);
+        SharedPreferences sharedPreferences = CacheManager.getCacheManager().getSharedPreferences();
+        String version = sharedPreferences.getString(InvestConstant.SP_VERSION, "");
 
-
-
+//        tvWelcomeVersion.setText(CacheManager.getCacheManager().getSharedPreferences().getString(InvestConstant.SP_VERSION, "1.1"));
         //弹出得请求更新对话框
         initDialog();
         //启动动画

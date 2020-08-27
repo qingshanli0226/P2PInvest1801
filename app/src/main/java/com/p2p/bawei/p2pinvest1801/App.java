@@ -1,8 +1,6 @@
 package com.p2p.bawei.p2pinvest1801;
 
 import android.app.Application;
-import android.content.Context;
-import android.os.Handler;
 import android.util.Log;
 
 import com.example.common.CacheManager;
@@ -16,21 +14,19 @@ import com.umeng.message.PushAgent;
 import com.umeng.socialize.PlatformConfig;
 
 public class App extends Application {
-    private static Context context;//需要使用的上下文对象：application实例
-    private static Handler handler;//需要使用的handler
-    private static Thread mainThread;//提供主线程对象
-    private static int mainThreadId;//提供主线程对象的id
+
     private RefWatcher refWatcher;
+    public static App instance;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        context = this.getApplicationContext();
-        handler = new Handler();
-        mainThread = Thread.currentThread();//实例化当前Application的线程即为主线程
-        mainThreadId = android.os.Process.myTid();//获取当前线程的id
+        instance = this;
 
+        //检测未知错误异常
+//        CrashHandler.getInstance().init(this);
         CacheManager.getCacheManager().init(this);
+        com.example.framework.manager.CacheManager.getCacheManager().init(this);
         GlideManager.getInstance().init(this);
         UserManager.getUserManager().init(this);
 

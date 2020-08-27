@@ -3,6 +3,9 @@ package com.p2p.bawei.p2pinvest1801.user.activity;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.common.CacheManager;
 import com.example.common.InvestConstant;
@@ -17,6 +20,9 @@ import com.p2p.bawei.p2pinvest1801.R;
 public class BigbitmapActivity extends BaseActivity {
     private PhotoView photoview;
     private PhotoViewAttacher photoViewAttacher;
+    private ImageView ivTitleBack;
+    private TextView tvTitle;
+
 
     @Override
     protected void initData() {
@@ -25,8 +31,19 @@ public class BigbitmapActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        ivTitleBack = findViewById(R.id.iv_title_back);
+        tvTitle = findViewById(R.id.tv_title);
         photoview = findViewById(R.id.photoview);
         photoViewAttacher = new PhotoViewAttacher(photoview);
+
+        ivTitleBack.setVisibility(View.VISIBLE);
+        ivTitleBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        tvTitle.setText("头像");
 
         SharedPreferences sharedPreferences = CacheManager.getCacheManager()
                 .getSharedPreferences();

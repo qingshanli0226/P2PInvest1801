@@ -19,9 +19,9 @@ import android.widget.ToggleButton;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
-import com.example.common.CacheManager;
 import com.example.common.InvestConstant;
 import com.example.framework.BaseFragment;
+import com.example.framework.manager.CacheManager;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.more.activity.GuiGuInvestActivity;
 import com.p2p.bawei.p2pinvest1801.more.activity.RegisterActivity;

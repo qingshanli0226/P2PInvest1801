@@ -51,6 +51,9 @@ public abstract class BaseFragment extends Fragment {
 
     protected void launchActivity(Class launcActivityClass, Bundle bundle) {
         Intent intent = new Intent();
+        if (bundle == null){
+            bundle = new Bundle();
+        }
         intent.putExtras(bundle);
         intent.setClass(getActivity(), launcActivityClass);
         startActivity(intent);

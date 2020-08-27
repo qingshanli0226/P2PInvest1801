@@ -31,7 +31,7 @@
         android:theme="@style/AppTheme"
         android:useEmbeddedDex="true"
         android:usesCleartextTraffic="true">
-        <activity android:name=".user.activity.BigbitmapActivity"></activity>
+        <activity android:name=".user.activity.BigbitmapActivity" />
         <activity android:name=".user.activity.InvestmentActivity" />
         <activity android:name=".user.activity.ZichanActivity" />
         <activity android:name=".user.activity.TouziActivity" />
@@ -56,7 +56,8 @@
             android:name=".more.activity.TogglemoreActivity"
             android:launchMode="singleTask" />
         <activity android:name=".user.activity.UserInfoActivity" />
-        <activity android:name=".user.activity.LoginActivity" />
+        <activity android:name=".user.activity.LoginActivity"
+            android:launchMode="singleTop"/>
         <activity android:name=".more.activity.RegisterActivity" />
         <activity
             android:name=".more.activity.GuiGuInvestActivity"

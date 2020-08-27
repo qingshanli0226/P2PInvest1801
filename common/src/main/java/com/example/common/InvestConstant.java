@@ -21,6 +21,8 @@ public class InvestConstant {
     public static final String SP_LOCK_STR = "lock_str";
     //是否登录
     public static final String SP_ISLOGIN = "isLogin" ;
+    //版本信息
+    public static final String SP_VERSION = "isLogin" ;
 
     public static final String JSCON_ERROR_CODE = "1001";
     public static final String JSON_ERROR_MESSAGE = "服务端范湖数据解析错误";

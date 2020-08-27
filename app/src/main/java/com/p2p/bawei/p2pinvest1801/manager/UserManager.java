@@ -22,6 +22,10 @@ public class UserManager {
 
     private static UserManager userManager;
 
+    private String username;
+    private String version;
+
+
     public UserManager() {
     }
 

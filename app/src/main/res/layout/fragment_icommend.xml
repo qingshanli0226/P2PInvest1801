@@ -4,8 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/divider_line"
+    android:orientation="vertical"
     tools:context=".invest.commend.view.ICommendFragment">
 
+    <com.leon.stellarmap.lib.StellarMap
+        android:id="@+id/stellarmap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.leon.stellarmap.lib.StellarMap>
 
 
 </LinearLayout>

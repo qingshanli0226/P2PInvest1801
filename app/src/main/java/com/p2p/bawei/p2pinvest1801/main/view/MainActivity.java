@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.common.CacheManager;
+import com.example.framework.manager.CacheManager;
 import com.example.common.InvestConstant;
 import com.example.framework.BaseActivity;
 import com.flyco.tablayout.CommonTabLayout;
@@ -38,6 +38,7 @@ public class MainActivity extends BaseActivity {
     private InvestFragment investFragment;
     private UserFragment userFragment;
     private MoreFragment moreFragment;
+    private SharedPreferences sharedPreferences = CacheManager.getCacheManager().getSharedPreferences();
     private long exitTime = 0;
     private boolean checked;
 
@@ -84,7 +85,6 @@ public class MainActivity extends BaseActivity {
 
     private void isToggle() {
         //做一下手势密码的判断
-        SharedPreferences sharedPreferences = CacheManager.getCacheManager().getSharedPreferences();
         checked = sharedPreferences.getBoolean(InvestConstant.SP_ISCHECKED, false);
         if (checked) {
             //需要手势密码
@@ -188,7 +188,7 @@ public class MainActivity extends BaseActivity {
                 // 表示并没有完全处理完该事件，更希望其他回调方法继续对其进行处理，
                 return true;
             } else {
-                finish();
+                CacheManager.getCacheManager().removeAll();
             }
         }
         return super.onKeyDown(keyCode, event);

@@ -8,6 +8,7 @@ import com.example.net.bean.LoginBean;
 import com.example.net.bean.ProductBean;
 import com.example.net.bean.UploadBean;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import io.reactivex.Observable;
@@ -56,4 +57,9 @@ public interface InvestApiService {
     @GET
     @Streaming
     Observable<ResponseBody> downloadFile(@Url String url);
+
+    //上传错误到服务端
+    @POST("crash")
+    @FormUrlEncoded
+    Observable<BaseBean<String>> crashReport(@FieldMap HashMap<String,String> params);
 }
