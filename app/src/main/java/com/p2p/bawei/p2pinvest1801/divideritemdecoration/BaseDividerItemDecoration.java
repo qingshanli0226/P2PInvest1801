@@ -3,7 +3,6 @@ package com.p2p.bawei.p2pinvest1801.divideritemdecoration;
 import android.content.Context;
 import android.graphics.Color;
 
-import com.p2p.bawei.p2pinvest1801.R;
 import com.yanyusong.y_divideritemdecoration.Y_Divider;
 import com.yanyusong.y_divideritemdecoration.Y_DividerBuilder;
 import com.yanyusong.y_divideritemdecoration.Y_DividerItemDecoration;

@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 
+import com.example.lib_core.http.Manager;
 import com.example.lib_core.mvp.presenter.IPresenter;
 
 public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IActivity, IView {
@@ -16,7 +17,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
         initInJect();
         initView();
         initData();
-
+        Manager.getInstance().addActivity(this);
     }
 
     @Override
@@ -26,6 +27,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
             mPresenter.onDestroy();
             mPresenter = null;
         }
+        Manager.getInstance().removeActivity(this);
     }
 
     @Override

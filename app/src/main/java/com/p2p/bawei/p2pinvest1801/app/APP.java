@@ -2,14 +2,19 @@ package com.p2p.bawei.p2pinvest1801.app;
 
 import android.app.Application;
 
+import com.p2p.bawei.p2pinvest1801.ex.CrashHandler;
+import com.p2p.bawei.p2pinvest1801.glide.GlideManager;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.socialize.PlatformConfig;
 
 public class APP extends Application {
 
+    public static APP instance;
+
     @Override
     public void onCreate() {
         super.onCreate();
+
         UMConfigure.init(this,"5f3cd2a7fa5e894f08bd4334"
                 ,"umeng",UMConfigure.DEVICE_TYPE_PHONE,"6eb023b391072f822aa9e558b7f70897");//58edcfeb310c93091c000be2 5965ee00734be40b580001a0
         PlatformConfig.setWeixin("wxdc1e388c3822c80b", "3baf1193c85774b3fd9d18447d76cab0");
@@ -25,5 +30,8 @@ public class APP extends Application {
         PlatformConfig.setDing("dingoalmlnohc0wggfedpk");
         PlatformConfig.setVKontakte("5764965","5My6SNliAaLxEm3Lyd9J");
         PlatformConfig.setDropbox("oz8v5apet3arcdy","h7p2pjbzkkxt02a");
+
+        CrashHandler.getInstance().init(this);
+
     }
 }

@@ -21,6 +21,9 @@ import com.andrognito.patternlockview.listener.PatternLockViewListener;
 import com.andrognito.patternlockview.utils.PatternLockUtils;
 import com.example.lib_core.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.mvp.contract.RegisterContract;
+import com.p2p.bawei.p2pinvest1801.mvp.model.RegisterModel;
+import com.p2p.bawei.p2pinvest1801.mvp.presenter.RegisterPresenter;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
@@ -28,7 +31,8 @@ import com.umeng.socialize.bean.SHARE_MEDIA;
 import java.util.List;
 
 
-public class MoreFragment extends BaseFragment implements View.OnClickListener {
+
+public class MoreFragment extends BaseFragment<RegisterPresenter> implements RegisterContract.View ,View.OnClickListener {
     private LinearLayout moreRegister;
     private PatternLockView mPatternLockView;
     private RelativeLayout moreSecret;
@@ -38,6 +42,7 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener {
     private LinearLayout moreSms;
     private LinearLayout moreShear;
     private LinearLayout moreAbout;
+    private PopupWindow registerPopupWindow;
     private PatternLockViewListener mPatternLockViewListener = new PatternLockViewListener() {
         @Override
         public void onStarted() {
@@ -111,6 +116,8 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener {
         switch (v.getId()){
             case R.id.more_register:
                 //注册
+                List<String> listss = null;
+                listss.add("aa");
                 register();
                 break;
             case R.id.more_secret:
@@ -276,21 +283,45 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener {
 
     //注册
     private void register(){
-        PopupWindow popupWindow = new PopupWindow();
-        popupWindow.setFocusable(true);
+        registerPopupWindow = new PopupWindow();
+        registerPopupWindow.setFocusable(true);
         //注册
-        View inflate = LayoutInflater.from(getContext()).inflate(R.layout.more_pop_register, null);
+        final View inflate = LayoutInflater.from(getContext()).inflate(R.layout.more_pop_register, null);
         ImageView morePopBack = inflate.findViewById(R.id.more_pop_back);
-        EditText moreRegisterPhone = inflate.findViewById(R.id.more_register_phone);
-        EditText moreRegisterUsername = inflate.findViewById(R.id.more_register_username);
-        EditText moreRegisterPassword = inflate.findViewById(R.id.more_register_password);
-        EditText moreRegisterConfirmPassword = inflate.findViewById(R.id.more_register_confirm_password);
-        Button morePopRegisterBtn = inflate.findViewById(R.id.more_pop_register_btn);
-        moreRegisterOnclick(popupWindow,morePopBack,moreRegisterPhone,moreRegisterUsername,moreRegisterPassword,moreRegisterConfirmPassword,morePopRegisterBtn);
-        popupWindow.setHeight(ViewGroup.LayoutParams.MATCH_PARENT);
-        popupWindow.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
-        popupWindow.setContentView(inflate);
-        popupWindow.showAsDropDown(moreRegister, Gravity.BOTTOM, 0, 0);
+        final EditText moreRegisterPhone = inflate.findViewById(R.id.more_register_phone);
+        final EditText moreRegisterUsername = inflate.findViewById(R.id.more_register_username);
+        final EditText moreRegisterPassword = inflate.findViewById(R.id.more_register_password);
+        final EditText moreRegisterConfirmPassword = inflate.findViewById(R.id.more_register_confirm_password);
+        final Button morePopRegisterBtn = inflate.findViewById(R.id.more_pop_register_btn);
+
+        morePopRegisterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onRegisterInflate(moreRegisterPhone,moreRegisterUsername,moreRegisterPassword,moreRegisterConfirmPassword);
+
+            }
+        });
+        moreRegisterOnclick(registerPopupWindow,morePopBack,moreRegisterPhone,moreRegisterUsername,moreRegisterPassword,moreRegisterConfirmPassword,morePopRegisterBtn);
+        registerPopupWindow.setHeight(ViewGroup.LayoutParams.MATCH_PARENT);
+        registerPopupWindow.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+        registerPopupWindow.setContentView(inflate);
+        registerPopupWindow.showAsDropDown(moreRegister, Gravity.BOTTOM, 0, 0);
+    }
+
+    //注册业务
+    private void onRegisterInflate(EditText moreRegisterPhone, EditText moreRegisterUsername, EditText moreRegisterPassword, EditText moreRegisterConfirmPassword) {
+
+         String phone = String.valueOf(moreRegisterPhone.getText());//手机号
+         String name = String.valueOf(moreRegisterUsername.getText());//用户名
+         String pwd = String.valueOf(moreRegisterPassword.getText());//密码
+         String rePwd = String.valueOf(moreRegisterConfirmPassword.getText());//再次输入密码
+        if (phone.length()<=0 && name.length() <= 0 && pwd.length() <= 0 && rePwd.length() <= 0){
+            Toast.makeText(getContext(), "以上条件不能为空", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        mPresenter = new RegisterPresenter(new RegisterModel(),MoreFragment.this);
+        mPresenter.register(phone,name,pwd,rePwd);
+
     }
 
     //注册页面的点击事件
@@ -301,8 +332,12 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener {
                 popupWindow.dismiss();
             }
         });
+    }
 
 
+    @Override
+    public void success() {
+        registerPopupWindow.dismiss();
     }
 
 
