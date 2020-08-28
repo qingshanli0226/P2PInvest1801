@@ -15,7 +15,7 @@ public class MyHotDanmuView extends ScrollView {
     private int measuredHeight;
     private int measuredWidth;
     private int textSize=25;
-    private ArrayList<String> strings=new ArrayList<>();
+    private ArrayList<String> strings = null;
     private int colors[]=new int[]{Color.GREEN,Color.BLUE,Color.GRAY,Color.RED};
 
     public MyHotDanmuView(Context context) {
@@ -39,6 +39,10 @@ public class MyHotDanmuView extends ScrollView {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
+        if (strings==null){
+            return;
+        }
 
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.FILL);
@@ -66,8 +70,7 @@ public class MyHotDanmuView extends ScrollView {
     }
 
     public void setTitles(ArrayList<String> titles){
-        strings.clear();
-        strings.addAll(titles);
+        this.strings=titles;
     }
 
     public void ondestoryView(){

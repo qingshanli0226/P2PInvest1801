@@ -1,5 +1,7 @@
 package com.bw.net;
 
+import com.bw.net.Interceptor.MyInterceptor;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -19,12 +21,15 @@ public class RetrofitManager {  //网络请求框架
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
 
+        MyInterceptor myInterceptor = new MyInterceptor();
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(httpLoggingInterceptor)
+                .addInterceptor(myInterceptor)
                 .connectTimeout(1, TimeUnit.MINUTES)
                 .readTimeout(1, TimeUnit.MINUTES)
                 .writeTimeout(1, TimeUnit.MINUTES)
                 .build();
+
 
         retrofit = new Retrofit.Builder()
                 .baseUrl("http://49.233.93.155:8080")

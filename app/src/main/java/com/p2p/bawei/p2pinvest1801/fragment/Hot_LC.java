@@ -28,4 +28,9 @@ public class Hot_LC extends BaseFragment {
     public void hideLoading() {
 
     }
+
+    @Override
+    public void showError(int code, String message) {
+
+    }
 }

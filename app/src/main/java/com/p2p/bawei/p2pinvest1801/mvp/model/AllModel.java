@@ -27,7 +27,6 @@ public class AllModel extends BaseModel implements AllContract.Model {
                 .subscribeOn(Schedulers.io())
                 .doOnSubscribe(consumer)
                 .doFinally(action)
-
                 .subscribe(callBack);
     }
 }

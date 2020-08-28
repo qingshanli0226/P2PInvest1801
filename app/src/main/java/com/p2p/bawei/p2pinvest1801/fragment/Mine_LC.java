@@ -23,7 +23,7 @@ public class Mine_LC extends BaseFragment<AllPresenter> implements AllContract.V
     private ArrayList<AllLCBean.ResultBean> data = new ArrayList<>();
     private ImageView dogeimg;
     private AnimationDrawable dogeimgBackground;
-    private TextView loadingtext;
+    private TextView loadingtext,paoma;
 
 
     @Override
@@ -32,6 +32,9 @@ public class Mine_LC extends BaseFragment<AllPresenter> implements AllContract.V
         dogeimg = findViewById(R.id.doge_img);
         dogeimgBackground = (AnimationDrawable) dogeimg.getBackground();
         loadingtext=findViewById(R.id.loading_text);
+
+        paoma=findViewById(R.id.paoma);
+        paoma.setText("硅谷金融豪运到头，首投返现最高达188元。奥利给，干了兄弟们！");
 
         adapter = new Mine_LCAdapter(R.layout.minelcrv_item, data);
         mineLcRv.setAdapter(adapter);
@@ -56,11 +59,13 @@ public class Mine_LC extends BaseFragment<AllPresenter> implements AllContract.V
     public void setData(AllLCBean allLCBean) {
         data.clear();
         data.addAll(allLCBean.getResult());
+        data.addAll(allLCBean.getResult());
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void showLoading() {
+        paoma.setVisibility(View.GONE);
         mineLcRv.setVisibility(View.GONE);
         dogeimg.setVisibility(View.VISIBLE);
         loadingtext.setVisibility(View.VISIBLE);
@@ -69,9 +74,15 @@ public class Mine_LC extends BaseFragment<AllPresenter> implements AllContract.V
 
     @Override
     public void hideLoading() {
+        paoma.setVisibility(View.VISIBLE);
         mineLcRv.setVisibility(View.VISIBLE);
         dogeimg.setVisibility(View.GONE);
         loadingtext.setVisibility(View.GONE);
         dogeimgBackground.stop();
+    }
+
+    @Override
+    public void showError(int code, String message) {
+
     }
 }

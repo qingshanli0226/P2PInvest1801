@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="-2dp"
         app:text="首页"
-        app:text_size="25sp"
+        app:text_size="20sp"
         app:toolBar_text_color="#03A9F4">
 
     </com.bw.common.view.ToolBar>
@@ -106,6 +106,7 @@
         android:layout_margin="10dp"/>
 
     <Button
+        android:id="@+id/lijijiaru"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/main_text_num"

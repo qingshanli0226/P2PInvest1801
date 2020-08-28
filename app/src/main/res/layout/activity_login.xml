@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.bw.common.view.ToolBar
+        android:id="@+id/login_toolbar"
+        app:text="登录"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:toolBar_text_color="#2196F3"
+        app:left_img="@drawable/left"
+        app:left_see="true"
+        >
+    </com.bw.common.view.ToolBar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="15dp"
+            android:text="手机号："
+            android:textSize="20sp"
+            android:layout_gravity="left|center"/>
+        <EditText
+            android:id="@+id/login_name"
+            android:layout_width="0dp"
+            android:layout_weight="3.5"
+            android:layout_height="wrap_content"
+            android:hint="请输入用户名"
+            android:textSize="20sp"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="15dp"
+            android:text="密码："
+            android:textSize="20sp"
+            android:layout_gravity="left|center"/>
+        <EditText
+            android:inputType="textPassword"
+            android:id="@+id/login_pwd"
+            android:layout_width="0dp"
+            android:layout_weight="3.5"
+            android:layout_height="wrap_content"
+            android:hint="请输入密码"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:textSize="20sp"
+        android:background="@drawable/yuan"
+        />
+
+
+
+</LinearLayout>

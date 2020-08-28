@@ -3,7 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.bw.common.view.MyTextView
+        android:visibility="gone"
+        android:id="@+id/paoma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textColor="#F44336"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:focusableInTouchMode="true"
+        />
+
     <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/paoma"
         android:id="@+id/mine_lc_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

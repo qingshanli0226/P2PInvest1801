@@ -56,28 +56,6 @@ public class BottomBar extends FrameLayout {
 
         initView();
 
-
-//        RadioGroup radioGroup =view.findViewById(R.id.bottomGroup);
-//        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int checkedId) {
-//
-//                if (checkedId==R.id.home){
-//                    Log.i("wjh","id"+0);
-//                    setView(HOME_INDEX);
-//                }else if (checkedId==R.id.type){
-//                    Log.i("wjh","id"+1);
-//                    setView(TYPE_INDEX);
-//                }else if (checkedId==R.id.shopcar){
-//                    Log.i("wjh","id"+2);
-//                    setView(SHOPCAR_INDEX);
-//                }else if (checkedId==R.id.mine){
-//                    Log.i("wjh","id"+3);
-//                    setView(MINE_INDEX);
-//                }
-//            }
-//        });
-
         view.findViewById(R.id.type).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,7 +107,7 @@ public class BottomBar extends FrameLayout {
         }
     }
 
-    private void setView(int num){
+    public void setView(int num){
         for (int i = 0; i < buttons.size(); i++) {
             RadioButton radioButton = buttons.get(i);
             if (i==num){
@@ -151,13 +129,14 @@ public class BottomBar extends FrameLayout {
                         break;
                 }
 
+                if (iBottomBarSelectListener!=null) {
+                    iBottomBarSelectListener.onBottomBarSelected(num);
+                }
             }else {
                 radioButton.setTextColor(Color.BLACK);
             }
 
-            if (iBottomBarSelectListener!=null) {
-                iBottomBarSelectListener.onBottomBarSelected(num);
-            }
+
         }
     }
 

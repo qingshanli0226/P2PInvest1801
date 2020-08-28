@@ -18,4 +18,6 @@ public interface AllContract {
     interface Model extends IModel{
         void getData(MyCallBack<AllLCBean> callBack,  Consumer<Disposable> consumer,Action action);
     }
+
+
 }

@@ -2,8 +2,8 @@ package com.p2p.bawei.p2pinvest1801.fragment;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 
+import com.bw.common.view.MyViewpager;
 import com.bw.framwork.view.BaseFragment;
 import com.bw.framwork.view.IView;
 import com.p2p.bawei.p2pinvest1801.R;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class InvestmentFragment extends BaseFragment implements IView {
     private TabLayout tabLayout;
-    private ViewPager viewPager;
+    private MyViewpager viewPager;
     private ArrayList<Fragment> fragments=new ArrayList<>();
     private ArrayList<String> tabnames=new ArrayList<>();
     private InvestmentViewPagerAdapter adapter;
@@ -21,7 +21,7 @@ public class InvestmentFragment extends BaseFragment implements IView {
     @Override
     public void initView() {
         tabLayout= (TabLayout) findViewById(R.id.investment_tab);
-        viewPager= (ViewPager) findViewById(R.id.investment_vp);
+        viewPager= (MyViewpager) findViewById(R.id.investment_vp);
 
         adapter=new InvestmentViewPagerAdapter(getActivity().getSupportFragmentManager(), tabnames, fragments);
         viewPager.setAdapter(adapter);
@@ -55,6 +55,11 @@ public class InvestmentFragment extends BaseFragment implements IView {
 
     @Override
     public void hideLoading() {
+
+    }
+
+    @Override
+    public void showError(int code, String message) {
 
     }
 }

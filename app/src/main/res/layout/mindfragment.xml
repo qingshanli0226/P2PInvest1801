@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <com.bw.common.view.ToolBar
+        android:id="@+id/mind_ToolBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:right_img="@drawable/my_setting_icon"
@@ -19,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="150dp">
         <ImageView
+            android:background="@drawable/yuan"
             android:id="@+id/mind_img"
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -74,6 +76,7 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:id="@+id/chat1"
             android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -102,6 +105,7 @@
                 android:layout_centerInParent="true"/>
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/chat2"
             android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -130,6 +134,7 @@
                 android:layout_centerInParent="true"/>
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/chat3"
             android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

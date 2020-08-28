@@ -1,6 +1,8 @@
 package com.p2p.bawei.p2pinvest1801.fragment;
 
 import android.content.Context;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,6 +26,7 @@ public class HomePageFragment extends BaseFragment {
     private ArrayList<String> imgs=new ArrayList<>();
     private ArrayList<String> imgsText=new ArrayList<>();
     private TextView maintext,textnum;
+    private Button button,button1;
 
     @Override
     public void initView() {
@@ -32,11 +35,24 @@ public class HomePageFragment extends BaseFragment {
 
         myProgressBar= (MyProgressBar) findViewById(R.id.myPro);
         textnum= (TextView) findViewById(R.id.main_text_num);
+
+        button= (Button) findViewById(R.id.lijijiaru);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button1=null;
+                button1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+            }
+        });
     }
 
     @Override
     public void initData() {
-
         imgs.clear();
         List<HomeBean.ResultBean.ImageArrBean> imageArr = HomeDataManager.getInstance().getHomeBean().getResult().getImageArr();
         for (int i = 0; i < imageArr.size(); i++) {
@@ -63,6 +79,7 @@ public class HomePageFragment extends BaseFragment {
         banner.setBannerAnimation(Transformer.DepthPage);
         banner.setBannerTitles(imgsText);
         banner.setDelayTime(2000);
+
         banner.start();
 
         HomeBean.ResultBean.ProInfoBean proInfo = HomeDataManager.getInstance().getHomeBean().getResult().getProInfo();
@@ -73,6 +90,8 @@ public class HomePageFragment extends BaseFragment {
         myProgressBar.setProgress(progress);
 
         textnum.setText("预期年利率为："+proInfo.getYearRate()+"%");
+
+
     }
 
     @Override
@@ -87,6 +106,11 @@ public class HomePageFragment extends BaseFragment {
 
     @Override
     public void hideLoading() {
+
+    }
+
+    @Override
+    public void showError(int code, String message) {
 
     }
 

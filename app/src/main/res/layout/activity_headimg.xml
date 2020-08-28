@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.bw.common.view.ToolBar
+        android:id="@+id/head_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="用户信息"
+        app:text_size="20sp"
+        app:toolBar_text_color="#2196F3"
+        app:left_img="@drawable/left"
+        app:left_see="true">
+    </com.bw.common.view.ToolBar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:background="@drawable/yuan"
+            android:id="@+id/head_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/my_user_default"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/head_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="点击更换头像"
+        android:textSize="20sp"
+        android:textColor="#2196F3"/>
+
+    <Button
+        android:id="@+id/outLogin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_01"
+        android:text="退出登录"
+        android:textSize="20sp"
+        android:layout_margin="15dp"/>
+
+</LinearLayout>

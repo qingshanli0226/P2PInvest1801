@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@mipmap/ic_launcher_round"/>
+
+        <com.lixs.charts.LineChartView
+            android:id="@+id/lineView"
+            android:layout_width="350dp"
+            android:layout_height="300dp"
+            app:labelTextSize="10dp"
+            app:title="折线图示例1"
+            app:titleTextSize="20dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@mipmap/ic_launcher_round"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@mipmap/ic_launcher_round"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@mipmap/ic_launcher_round"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@mipmap/ic_launcher_round"/>
+    </LinearLayout>
+
+
+
+</ScrollView>

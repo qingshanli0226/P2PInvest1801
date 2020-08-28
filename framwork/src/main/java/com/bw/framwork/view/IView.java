@@ -7,4 +7,6 @@ public interface IView {
     void showLoading();
 
     void hideLoading();
+
+    void showError(int code,String message);
 }
