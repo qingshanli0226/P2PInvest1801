@@ -34,6 +34,10 @@ public class FinanceConstant {
     public static String TOKEN = "token";
     //phone手机号码
     public static String PHONE = "phone";
-    //保存勾选地址
+    //保存头像地址
     public static String IMG_ADDRESS = "imgAddress";
+    //版本号
+    public static String VERSION = "version";
+    //要切换的fragment的下标
+    public static String INDEX = "index";
 }

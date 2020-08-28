@@ -2,7 +2,9 @@ package com.p2p.bawei.p2pinvest1801;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +15,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -20,6 +24,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.common.CacheManager;
 import com.example.common.FinanceConstant;
 import com.example.framework.base.BaseActivity;
+import com.example.framework.base.manager.UserManager;
 import com.example.net.mode.BannerBean;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
@@ -34,9 +39,9 @@ import com.p2p.bawei.p2pinvest1801.mode.CommonCustomTabEntity;
 import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity {
+    public static final int REQUESTCODE = 120;
 
     private SharedPreferences sharedPreferences;
-    private SharedPreferences.Editor editor;
 
     private CommonTabLayout common;
 
@@ -50,10 +55,16 @@ public class MainActivity extends BaseActivity {
     private MoreFragment moreFragment;
 
     private long firstTime = 0;
+    //储存Fragment的集合
+    private ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
 
-    //banner数据源
-    private ArrayList<String> stringArrayList;
-    private BannerBean bannerBean;
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        int index = getIntent().getBundleExtra(FinanceConstant.BUNDLE).getInt(FinanceConstant.INDEX, 1);
+        showFragment(fragmentArrayList.get(index));
+    }
 
     @Override
     protected void initData() {
@@ -104,7 +115,6 @@ public class MainActivity extends BaseActivity {
         boolean aBoolean = sharedPreferences.getBoolean(FinanceConstant.ISLOGIN, false);
         if(aBoolean){
             //登录过
-
         } else{
             //第一次登录
             //弹出对话框
@@ -135,29 +145,40 @@ public class MainActivity extends BaseActivity {
     protected void initView() {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             //获取权限
-            requestPermissions(new String[]{Manifest.permission.CAMERA,Manifest.permission.CALL_PHONE,Manifest.permission.WRITE_EXTERNAL_STORAGE},120);
-        }
+            requestPermissions(new String[]{Manifest.permission.CAMERA,Manifest.permission.CALL_PHONE,Manifest.permission.WRITE_EXTERNAL_STORAGE},REQUESTCODE);
 
-//        initState();
+        }
 
         //获取sp的实例
         sharedPreferences = CacheManager.getInstance().getSharedPreferences();
-        editor = CacheManager.getInstance().getEditor();
 
         common = (CommonTabLayout) findViewById(R.id.common);
 
-        //获取传递过来的banner数据
-        Bundle bundleExtra = getIntent().getBundleExtra(FinanceConstant.BUNDLE);
-        stringArrayList = bundleExtra.getStringArrayList(FinanceConstant.BUNDLE_BANNER);
-        bannerBean = bundleExtra.getParcelable("hj");
-//        printLog("123123");
-//        printLog(bannerBean.getResult().getImageArr().get(0).getIMAURL());
-
         //创建Fragment实例对象
         createFragment();
+        //添加数据
+        fragmentArrayList.add(homeFragment);
+        fragmentArrayList.add(investFragment);
+        fragmentArrayList.add(meFragment);
+        fragmentArrayList.add(moreFragment);
         initFragment();
 
     }
+    //判断权限
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode){
+            case REQUESTCODE:
+                if(grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults.length > 0){
+                    //有权限
+                } else{
+                    showMessage("没有此权限");
+                }
+                break;
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+}
 
     private void initState() {
 //        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
@@ -196,10 +217,7 @@ public class MainActivity extends BaseActivity {
 
     private void createFragment() {
         if(homeFragment == null){
-            homeFragment = new HomeFragment(stringArrayList);
-            Bundle bundle = new Bundle();
-            bundle.putParcelable("hj1",bannerBean);
-            homeFragment.setArguments(bundle);
+            homeFragment = new HomeFragment();
         }
         if(investFragment == null){
             investFragment = new InvestFragment();

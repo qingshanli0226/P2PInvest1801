@@ -12,7 +12,9 @@ import com.example.common.FinanceConstant;
 import com.example.framework.base.BaseFragment;
 import com.example.common.CacheManager;
 import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.activity.ColumnarActivity;
 import com.p2p.bawei.p2pinvest1801.activity.MyInvestActivity;
+import com.p2p.bawei.p2pinvest1801.activity.SectorActivity;
 import com.p2p.bawei.p2pinvest1801.activity.UserMessageActivity;
 import com.p2p.bawei.p2pinvest1801.ui.MyLineChartDemoView;
 
@@ -36,9 +38,17 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            //投资管理
+            //投资管理  折现图
             case R.id.meInvest:
                 lunachActivity(MyInvestActivity.class,null);
+                break;
+                //资产管理  扇形图
+            case R.id.meAsset:
+                lunachActivity(SectorActivity.class,null);
+                break;
+                //投资管理 直观 柱状图
+            case R.id.meInvestManager:
+                lunachActivity(ColumnarActivity.class,null);
                 break;
         }
     }
@@ -50,6 +60,8 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
         meUserImg = (ImageView) findViewById(R.id.meUserImg);
         meName = (TextView) findViewById(R.id.meName);
         findViewById(R.id.meInvest).setOnClickListener(this);
+        findViewById(R.id.meAsset).setOnClickListener(this);
+        findViewById(R.id.meInvestManager).setOnClickListener(this);
     }
 
     @Override

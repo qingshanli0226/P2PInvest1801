@@ -112,6 +112,7 @@
         android:paddingRight="20dp"/>
 
     <TextView
+        android:id="@+id/meInvestManager"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:textSize="20sp"
@@ -126,6 +127,7 @@
         android:paddingRight="20dp"/>
 
     <TextView
+        android:id="@+id/meAsset"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:textSize="20sp"

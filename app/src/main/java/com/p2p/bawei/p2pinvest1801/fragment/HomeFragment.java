@@ -17,6 +17,7 @@ import androidx.annotation.NonNull;
 import com.bumptech.glide.Glide;
 import com.example.common.view.ToolBar;
 import com.example.framework.base.BaseFragment;
+import com.example.framework.base.manager.UserManager;
 import com.example.net.mode.BannerBean;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.ui.RoundProgress;
@@ -27,6 +28,7 @@ import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -40,15 +42,12 @@ public class HomeFragment extends BaseFragment {
     private boolean isStart = true;
 
     //banner数据源
-    private ArrayList<String> stringArrayList;
+    private ArrayList<String> stringArrayList = new ArrayList<>();
     private BannerBean bannerBean;
 
     private int currentProgress;
     private Button homeJoin;
 
-    public HomeFragment(ArrayList<String> stringArrayList) {
-        this.stringArrayList = stringArrayList;
-    }
 
     @Override
     protected int getLayoutId() {
@@ -77,6 +76,9 @@ public class HomeFragment extends BaseFragment {
             //开启线程
             thread.start();
             isStart = false;
+        } else{
+            //结束线程
+            thread.interrupt();
         }
 
         //添加数据
@@ -87,7 +89,7 @@ public class HomeFragment extends BaseFragment {
         bannerHome.setImageLoader(new ImageLoader() {
             @Override
             public void displayImage(Context context, Object path, ImageView imageView) {
-                Glide.with(context).load(path).into(imageView);
+                Glide.with(getActivity()).load(path).into(imageView);
             }
         });
         //设置banner轮播动画
@@ -113,13 +115,20 @@ public class HomeFragment extends BaseFragment {
             }
         });
 
-        //获取banner数据
-        Bundle arguments = getArguments();
-        bannerBean = arguments.getParcelable("hj1");
+        bannerBean = UserManager.getInstance().getBannerBean();
+        List<BannerBean.ResultBean.ImageArrBean> imageArr = bannerBean.getResult().getImageArr();
+        //获取banner的数据
+        for (int i = 0; i < imageArr.size(); i++) {
+            stringArrayList.add(imageArr.get(i).getIMAURL());
+        }
         //赋值
         currentProgress = Integer.parseInt(bannerBean.getResult().getProInfo().getProgress());
-//        printLog("123123123123");
-//        printLog(bannerBean.getResult().getImageArr().get(0).getIMAURL());
-//        printLog(bannerBean.getResult().getImageArr().get(1).getIMAURL());
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        //结束线程
+        thread.interrupt();
     }
 }

@@ -49,4 +49,5 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
     implementation 'com.alibaba:fastjson:1.2.41'
+    implementation 'com.lzy.net:okgo:3.0.4'
 }

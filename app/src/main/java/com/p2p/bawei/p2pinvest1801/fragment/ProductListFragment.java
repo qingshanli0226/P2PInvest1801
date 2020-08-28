@@ -21,8 +21,6 @@ import java.util.ArrayList;
 public class ProductListFragment extends BaseMVPFragment<ProductListPresenterImpl, ProductListContract.ProductListView> implements ProductListContract.ProductListView {
 
     private RecyclerView investListRv;
-    private ImageView listImg;
-    private AnimationDrawable animationDrawable;
     private MyLoadingView listLoadingView;
 
     //判断是否请求一次
@@ -50,8 +48,7 @@ public class ProductListFragment extends BaseMVPFragment<ProductListPresenterImp
     @Override
     protected void initView() {
         investListRv = (RecyclerView) findViewById(R.id.investListRv);
-//        listImg = (ImageView) findViewById(R.id.listImg);
-//        animationDrawable = (AnimationDrawable) listImg.getDrawable();
+
         listLoadingView = (MyLoadingView) findViewById(R.id.listLoadingView);
 
     }
@@ -72,7 +69,6 @@ public class ProductListFragment extends BaseMVPFragment<ProductListPresenterImp
 
     @Override
     public void onListData(InvestListBean investListBean) {
-//        printLog(investListBean.toString()+"-----");
         //清除所以数据
         resultBeans.clear();
         resultBeans.addAll(investListBean.getResult());
@@ -87,15 +83,13 @@ public class ProductListFragment extends BaseMVPFragment<ProductListPresenterImp
     @Override
     public void showLoading() {
         listLoadingView.setVisibility(View.VISIBLE);
-//        listImg.setVisibility(View.VISIBLE);
-//        animationDrawable.start();
+
     }
 
     @Override
     public void hideLoading() {
         listLoadingView.setVisibility(View.GONE);
         listLoadingView.stop();
-//        listImg.setVisibility(View.GONE);
-//        animationDrawable.stop();
+
     }
 }

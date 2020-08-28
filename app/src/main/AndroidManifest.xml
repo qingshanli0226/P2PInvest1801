@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.p2p.bawei.p2pinvest1801">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.CAMERA"></uses-permission>
     <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
@@ -21,7 +22,8 @@
             android:launchMode="singleTask">
 
         </activity>
-        <activity android:name=".WelcomeActivity" >
+        <activity android:name=".WelcomeActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,16 +36,16 @@
         <activity android:name=".activity.LoginActivity"></activity>
         <activity android:name=".activity.UserMessageActivity"></activity>
         <activity android:name=".activity.MyInvestActivity"></activity>
-
-
+        <activity android:name=".activity.SectorActivity"></activity>
+        <activity android:name=".activity.ColumnarActivity"></activity>
+        <service android:name="com.example.framework.base.service.FinanceService"></service>
         <provider
             android:authorities="com.p2p.bawei.p2pinvest1801"
             android:name="androidx.core.content.FileProvider"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/paths"
-                >
+                android:resource="@xml/paths">
 
             </meta-data>
         </provider>

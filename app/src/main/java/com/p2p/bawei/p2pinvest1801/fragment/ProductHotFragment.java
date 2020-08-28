@@ -65,14 +65,7 @@ public class ProductHotFragment extends BaseFragment {
         child.setText(str);
         child.setTextSize(30);
         child.setBackgroundResource(R.drawable.flowlayout_textview);
-//        child.setBackgroundColor(newColor);
         child.setTextColor(newColorBac);
-//        GradientDrawable drawable=new GradientDrawable();
-//        drawable.setShape(GradientDrawable.RECTANGLE);
-//        drawable.setGradientType(GradientDrawable.RECTANGLE);
-//        drawable.setCornerRadius(60);
-//        drawable.setColor(newColor);
-//        child.setBackground(drawable);
         initEvents(child);//监听
         hotFlowLayout.addView(child);
     }

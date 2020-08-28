@@ -12,7 +12,6 @@ import com.example.framework.base.BaseFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.adapter.InvestAdapter;
-import com.p2p.bawei.p2pinvest1801.ui.MyViewPage;
 
 import java.util.ArrayList;
 
@@ -24,9 +23,6 @@ public class InvestFragment extends BaseFragment {
 
     //Fragment数据源
     private ArrayList<Fragment> fragments = new ArrayList<>();
-    ProductListFragment productListFragment;
-    ProductRecommondFragment productRecommondFragment;
-    ProductHotFragment productHotFragment;
     //标题数据源
     private ArrayList<String> tabLayoutTitles = new ArrayList<>();
     //适配器
@@ -56,24 +52,12 @@ public class InvestFragment extends BaseFragment {
         investTab = (TabLayout) findViewById(R.id.investTab);
         investVp = (ViewPager) findViewById(R.id.investVp);
         //创建Fragment对象
-//        createFragment();
 
         //创建适配器
-        investAdapter = new InvestAdapter(getActivity().getSupportFragmentManager(),fragments,tabLayoutTitles);
+        investAdapter = new InvestAdapter(getChildFragmentManager(),fragments,tabLayoutTitles);
         investVp.setAdapter(investAdapter);
         investTab.setupWithViewPager(investVp);
     }
 
-    private void createFragment() {
-            productListFragment = new ProductListFragment();
-
-
-            productRecommondFragment = new ProductRecommondFragment();
-
-
-
-            productHotFragment = new ProductHotFragment();
-
-    }
 
 }

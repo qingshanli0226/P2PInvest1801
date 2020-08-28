@@ -1,6 +1,7 @@
 package com.p2p.bawei.p2pinvest1801.activity;
 
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -100,7 +101,9 @@ public class LoginActivity extends BaseMVPActivity<RegisterLoginPresenterImpl, R
         //设置用户名称
         UserManager.getInstance().setUserName(sharedPreferences.getString(FinanceConstant.NAME,""));
         //重新跳转到主页面
-        lunachActivity(MainActivity.class,null);
+        Bundle bundle = new Bundle();
+        bundle.putInt(FinanceConstant.INDEX,0);
+        lunachActivity(MainActivity.class,bundle);
         //销毁这个页面
         finish();
     }

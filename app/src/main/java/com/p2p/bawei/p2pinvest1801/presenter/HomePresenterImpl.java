@@ -8,6 +8,7 @@ import com.p2p.bawei.p2pinvest1801.contract.HomeContract;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 public class HomePresenterImpl extends HomeContract.HomePresenter {
@@ -17,6 +18,12 @@ public class HomePresenterImpl extends HomeContract.HomePresenter {
                 .getBannerData()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable){
+                        gDisposable = disposable;
+                    }
+                })
                 .subscribe(new Observer<BannerBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
@@ -50,6 +57,12 @@ public class HomePresenterImpl extends HomeContract.HomePresenter {
                 .getVersionData()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable){
+                        gDisposable = disposable;
+                    }
+                })
                 .subscribe(new Observer<VersionBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {

@@ -1,15 +1,19 @@
 package com.p2p.bawei.p2pinvest1801;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
@@ -20,9 +24,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.common.CacheManager;
 import com.example.common.FinanceConstant;
 import com.example.framework.base.BaseMVPActivity;
 import com.example.framework.base.manager.UserManager;
+import com.example.framework.base.service.FinanceService;
 import com.example.net.mode.BannerBean;
 import com.example.net.mode.VersionBean;
 import com.p2p.bawei.p2pinvest1801.contract.HomeContract;
@@ -45,8 +51,13 @@ public class WelcomeActivity extends BaseMVPActivity<HomePresenterImpl, HomeCont
     private VersionBean newVersionBean;
     private BannerBean newBannerBean;
 
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+
+
+
     //banner数据源
-    private ArrayList<String> bannerArrayList = new ArrayList<>();
+//    private ArrayList<String> bannerArrayList = new ArrayList<>();
 
     @SuppressLint("HandlerLeak")
     private Handler handler = new Handler(){
@@ -56,8 +67,14 @@ public class WelcomeActivity extends BaseMVPActivity<HomePresenterImpl, HomeCont
             if(msg.what == 1){
                 handlerCount++;
                 if(handlerCount == 3){
-                    //开启Dialog
-                    startDialog();
+                    if(newVersionBean.getResult().getVersion().equals(sharedPreferences.getString(FinanceConstant.VERSION,""))){
+                        //不用更新
+                        startActivity();
+                    } else{
+                        //版本号不一样 需要更新
+                        //开启Dialog
+                        startDialog();
+                    }
                 }
             }
         }
@@ -72,24 +89,29 @@ public class WelcomeActivity extends BaseMVPActivity<HomePresenterImpl, HomeCont
         builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                //更新版本
+                updateApkFile();
             }
         });
         //取消
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Bundle bundle = new Bundle();
-                bundle.putStringArrayList(FinanceConstant.BUNDLE_BANNER,bannerArrayList);
-                bundle.putParcelable("hj",newBannerBean);
-                lunachActivity(MainActivity.class,bundle);
-                finish();
+                startActivity();
             }
         });
 
         AlertDialog alertDialog = builder.create();
         //显示dialog
         alertDialog.show();
+    }
+
+    private void startActivity() {
+//        Bundle bundle = new Bundle();
+//        bundle.putStringArrayList(FinanceConstant.BUNDLE_BANNER, bannerArrayList);
+//        bundle.putParcelable("hj", newBannerBean);
+        lunachActivity(MainActivity.class, null);
+        finish();
     }
 
     @Override
@@ -102,6 +124,10 @@ public class WelcomeActivity extends BaseMVPActivity<HomePresenterImpl, HomeCont
         welcomeImg = (ImageView) findViewById(R.id.welcomeImg);
         relative = (RelativeLayout) findViewById(R.id.relative);
         timerCount = (TextView) findViewById(R.id.timerCount);
+
+        sharedPreferences = CacheManager.getInstance().getSharedPreferences();
+        editor = CacheManager.getInstance().getEditor();
+
         timer = new Timer();
 
         //去掉窗口标题栏
@@ -112,6 +138,33 @@ public class WelcomeActivity extends BaseMVPActivity<HomePresenterImpl, HomeCont
         startAnimator();
         //开启倒计时
         startTimer();
+
+    }
+
+    private void updateApkFile() {
+        //判断手机是否有网络
+        boolean connect = isConnect();
+        if(connect){
+            //有网络
+            //开启Service下载版本
+            UserManager.getInstance().getBinder().getFinanceService().downLoadFile(newVersionBean.getResult().getApkUrl());
+            //改变储存的版本信息
+        } else{
+            //无网络
+            showMessage("当前无网络连接，更新失败");
+            startActivity();
+
+        }
+    }
+
+    private boolean isConnect() {
+
+        ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
+        if(networkInfo != null){
+            return networkInfo.isConnected();
+        }
+        return false;
     }
 
     private void startTimer() {
@@ -177,11 +230,12 @@ public class WelcomeActivity extends BaseMVPActivity<HomePresenterImpl, HomeCont
 
     @Override
     public void onGetBannerData(BannerBean bannerBean) {
-//        printLog(bannerBean.toString());
-        List<BannerBean.ResultBean.ImageArrBean> imageArrBeans = bannerBean.getResult().getImageArr();
-        for (int i = 0; i <imageArrBeans.size() ; i++) {
-            bannerArrayList.add(imageArrBeans.get(i).getIMAURL());
-        }
+        UserManager.getInstance().setBannerBean(bannerBean);
+
+//        List<BannerBean.ResultBean.ImageArrBean> imageArrBeans = bannerBean.getResult().getImageArr();
+//        for (int i = 0; i <imageArrBeans.size() ; i++) {
+//            bannerArrayList.add(imageArrBeans.get(i).getIMAURL());
+//        }
         newBannerBean = bannerBean;
         handler.sendEmptyMessage(1);
     }
@@ -192,6 +246,9 @@ public class WelcomeActivity extends BaseMVPActivity<HomePresenterImpl, HomeCont
         newVersionBean = versionBean;
         //设置版本信息
         UserManager.getInstance().setVersion(versionBean.getResult().getVersion());
+        //保存版本信息1.1 让第一次可以更新
+        editor.putString(FinanceConstant.VERSION,"1.1");
+        editor.commit();
         handler.sendEmptyMessage(1);
     }
 
@@ -208,5 +265,14 @@ public class WelcomeActivity extends BaseMVPActivity<HomePresenterImpl, HomeCont
     @Override
     public void hideLoading() {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //页面结束时关闭
+        timer.cancel();
+        //移除handle未处理的消息
+        handler.removeCallbacksAndMessages(null);
     }
 }

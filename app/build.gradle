@@ -64,6 +64,9 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     implementation 'com.alibaba:fastjson:1.2.41'
     implementation 'com.github.uncleleonfan:StellarMap:v1.0.0'
+    //柱状图 折线图 扇形图
+    implementation 'com.lixs.charts:charts:1.0.7'
+
 
 }
 allprojects {
