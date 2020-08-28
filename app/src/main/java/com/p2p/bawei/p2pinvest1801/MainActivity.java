@@ -57,13 +57,16 @@ public class MainActivity extends BaseActivity {
     private long firstTime = 0;
     //储存Fragment的集合
     private ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
+    private Fragment currentFragment;
 
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         setIntent(intent);
         int index = getIntent().getBundleExtra(FinanceConstant.BUNDLE).getInt(FinanceConstant.INDEX, 1);
-        showFragment(fragmentArrayList.get(index));
+        switchFragment(fragmentArrayList.get(index));
+        common.getIconView(index).setImageResource(R.mipmap.bottom02);
+        common.getIconView(2).setImageResource(R.mipmap.bottom05);
     }
 
     @Override
@@ -85,20 +88,20 @@ public class MainActivity extends BaseActivity {
             public void onTabSelect(int position) {
                 switch (position){
                     case 0:
-                        showFragment(homeFragment);
+                        switchFragment(homeFragment);
                         break;
                     case 1:
-                        showFragment(investFragment);
+                        switchFragment(investFragment);
                         break;
                     case 2:
-                        showFragment(meFragment);
+                        switchFragment(meFragment);
                         TextView titleView = common.getTitleView(position);
                         titleView.setTextColor(Color.RED);
                         //判断登录状态
                         isLogin();
                         break;
                     case 3:
-                        showFragment(moreFragment);
+                        switchFragment(moreFragment);
                         break;
                 }
             }
@@ -161,7 +164,7 @@ public class MainActivity extends BaseActivity {
         fragmentArrayList.add(investFragment);
         fragmentArrayList.add(meFragment);
         fragmentArrayList.add(moreFragment);
-        initFragment();
+        switchFragment(homeFragment);
 
     }
     //判断权限
@@ -192,28 +195,23 @@ public class MainActivity extends BaseActivity {
     }
 
     //显示Fragment的方法
-    public void showFragment(Fragment fragment){
-        getSupportFragmentManager().beginTransaction()
-                .hide(homeFragment)
-                .hide(investFragment)
-                .hide(meFragment)
-                .hide(moreFragment)
-                .show(fragment)
-                .commit();
+    private void switchFragment(Fragment fragment) {
+        if(currentFragment == fragment){
+            return;
+        }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        if (currentFragment!=null) {
+            fragmentTransaction.hide(currentFragment);
+        }
+        if (fragment.isAdded()) {
+            fragmentTransaction.show(fragment).commit();
+        } else {
+            fragmentTransaction.add( R.id.frame, fragment,fragment.getClass().getSimpleName()).commit();
+        }
+        currentFragment = fragment;
     }
 
-    public void initFragment(){
-        FragmentManager supportFragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.frame,homeFragment);
-        fragmentTransaction.add(R.id.frame,investFragment);
-        fragmentTransaction.add(R.id.frame,meFragment);
-        fragmentTransaction.add(R.id.frame,moreFragment);
-        fragmentTransaction.hide(investFragment);
-        fragmentTransaction.hide(meFragment);
-        fragmentTransaction.hide(moreFragment);
-        fragmentTransaction.commit();
-    }
 
     private void createFragment() {
         if(homeFragment == null){
@@ -249,6 +247,8 @@ public class MainActivity extends BaseActivity {
                 showMessage("请在两秒内再按一次退出App");
                 firstTime = System.currentTimeMillis();
             } else{
+                //解绑服务
+                UserManager.getInstance().unBindFinanceService();
                 finish();
                 System.exit(0);
             }

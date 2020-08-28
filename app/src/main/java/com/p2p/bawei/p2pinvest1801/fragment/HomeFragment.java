@@ -102,6 +102,7 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected void initView() {
         bannerHome = (Banner) findViewById(R.id.bannerHome);
+
         homeTv = (TextView) findViewById(R.id.homeTv);
         homeRoundProgress = (RoundProgress) findViewById(R.id.homeRoundProgress);
         homeYear = (TextView) findViewById(R.id.homeYear);

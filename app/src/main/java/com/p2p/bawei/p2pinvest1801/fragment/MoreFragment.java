@@ -25,6 +25,9 @@ public class MoreFragment extends BaseFragment implements OnClickListener {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
+    private boolean isLogin;
+    private boolean isOpen;
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_more;
@@ -51,8 +54,10 @@ public class MoreFragment extends BaseFragment implements OnClickListener {
         handPassword.setOnClickListener(this);
 
         //进入页面就判断状态
-        boolean aBoolean = sharedPreferences.getBoolean(FinanceConstant.ISOPEN, false);
-        if(aBoolean){
+        synchronized (this){
+            isLogin = sharedPreferences.getBoolean(FinanceConstant.ISOPEN, false);
+        }
+        if(isLogin){
             //打开的
             handPassword.setImageResource(R.drawable.toggle_on);
         } else{
@@ -184,8 +189,10 @@ public class MoreFragment extends BaseFragment implements OnClickListener {
 
     private void reHandPassword() {
         //获取状态
-        boolean aBoolean = sharedPreferences.getBoolean(FinanceConstant.ISOPEN, false);
-        if(aBoolean){
+        synchronized (this){
+            isOpen = sharedPreferences.getBoolean(FinanceConstant.ISOPEN, false);
+        }
+        if(isOpen){
             //已经打开的手势密码  可以重置 跳转到绘制的页面
             showMessage("打开了手势密码，跳转到重置页面");
         } else {
@@ -196,13 +203,17 @@ public class MoreFragment extends BaseFragment implements OnClickListener {
 
     //手势密码
     private void handPassword() {
-        //先从数据库读取
-        boolean isOpen = sharedPreferences.getBoolean(FinanceConstant.ISOPEN, false);
+        //先从sp读取
+        synchronized (this){
+            isOpen = sharedPreferences.getBoolean(FinanceConstant.ISOPEN, false);
+        }
         if(isOpen){
             //已经打开了 点击关闭 改变图片和状态
             handPassword.setImageResource(R.drawable.toggle_off);
-            editor.putBoolean(FinanceConstant.ISOPEN,false);
-            editor.commit();
+            synchronized (this){
+                editor.putBoolean(FinanceConstant.ISOPEN,false);
+                editor.commit();
+            }
             showMessage("关闭了手势密码");
         } else{
             //第一次选择打开  弹窗并改变图片和状态
@@ -218,17 +229,20 @@ public class MoreFragment extends BaseFragment implements OnClickListener {
                 public void onCancel(DialogInterface dialog) {
                     showMessage("取消了设置手势密码");
                     handPassword.setImageResource(R.drawable.toggle_off);
-                    editor.putBoolean(FinanceConstant.ISOPEN,false);
-                    editor.commit();
+                    synchronized (this){
+                        editor.putBoolean(FinanceConstant.ISOPEN,false);
+                        editor.commit();
+                    }
                 }
             });
             alertDialog.show();
             //改变图片
             handPassword.setImageResource(R.drawable.toggle_on);
             //改变存储的状态
-           editor.putBoolean(FinanceConstant.ISOPEN,true);
-           editor.commit();
-
+            synchronized (this){
+                editor.putBoolean(FinanceConstant.ISOPEN,true);
+                editor.commit();
+            }
            //获取yes no Button按钮
             Button yes = inflate.findViewById(R.id.yes);
             Button no = inflate.findViewById(R.id.no);
@@ -252,8 +266,10 @@ public class MoreFragment extends BaseFragment implements OnClickListener {
                     showMessage("关闭了手势密码");
                     alertDialog.dismiss();
                     handPassword.setImageResource(R.drawable.toggle_off);
-                    editor.putBoolean(FinanceConstant.ISOPEN,false);
-                    editor.commit();
+                    synchronized (this){
+                        editor.putBoolean(FinanceConstant.ISOPEN,false);
+                        editor.commit();
+                    }
                 }
             });
 

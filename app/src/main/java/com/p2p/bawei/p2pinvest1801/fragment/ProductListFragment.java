@@ -1,13 +1,9 @@
 package com.p2p.bawei.p2pinvest1801.fragment;
 
-import android.graphics.drawable.AnimationDrawable;
-import android.view.View;
-import android.widget.ImageView;
 
+import android.view.View;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.framework.base.BaseFragment;
 import com.example.framework.base.BaseMVPFragment;
 import com.example.net.mode.InvestListBean;
 import com.p2p.bawei.p2pinvest1801.R;

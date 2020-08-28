@@ -1,6 +1,5 @@
 package com.p2p.bawei.p2pinvest1801.fragment;
 
-import com.example.common.CacheManager;
 import com.example.framework.base.BaseFragment;
 import com.leon.stellarmap.lib.StellarMap;
 import com.p2p.bawei.p2pinvest1801.R;

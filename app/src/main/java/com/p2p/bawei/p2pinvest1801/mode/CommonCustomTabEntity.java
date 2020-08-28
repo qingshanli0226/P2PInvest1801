@@ -33,12 +33,4 @@ public class CommonCustomTabEntity implements CustomTabEntity {
         return unSelectIcon;
     }
 
-    public TextView getTextView() {
-        return textView;
-    }
-
-    public void setColor(){
-        textView.setTextColor(Color.RED);
-        Log.i("hj", "setColor: 123");
-    }
 }

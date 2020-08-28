@@ -89,15 +89,17 @@ public class LoginActivity extends BaseMVPActivity<RegisterLoginPresenterImpl, R
     public void onLoginData(LoginBean loginBean) {
         showMessage("登录成功");
         //保存用户信息
-        //用户名
-        editor.putString(FinanceConstant.NAME,loginBean.getResult().getName());
-        //Token值
-        editor.putString(FinanceConstant.TOKEN,loginBean.getResult().getToken());
-        //phone
-        editor.putString(FinanceConstant.PHONE,loginBean.getResult().getPhone());
-        //改变登录状态
-        editor.putBoolean(FinanceConstant.ISLOGIN,true);
-        editor.commit();
+        synchronized (this){
+            //用户名
+            editor.putString(FinanceConstant.NAME,loginBean.getResult().getName());
+            //Token值
+            editor.putString(FinanceConstant.TOKEN,loginBean.getResult().getToken());
+            //phone
+            editor.putString(FinanceConstant.PHONE,loginBean.getResult().getPhone());
+            //改变登录状态
+            editor.putBoolean(FinanceConstant.ISLOGIN,true);
+            editor.commit();
+        }
         //设置用户名称
         UserManager.getInstance().setUserName(sharedPreferences.getString(FinanceConstant.NAME,""));
         //重新跳转到主页面

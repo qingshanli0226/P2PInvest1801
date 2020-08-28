@@ -18,7 +18,7 @@ public class FinanceApplication extends Application {
 
         financeApplication = this;
 
-//        CrashHandler.getInstance().init(this);
+        CrashHandler.getInstance().init(this);
         CacheManager.getInstance().init(this);
         UserManager.getInstance().init(this);
 

@@ -4,9 +4,12 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.common.CacheManager;
@@ -19,6 +22,7 @@ import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.FileCallback;
 import com.lzy.okgo.model.Response;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.TreeMap;
 
@@ -29,6 +33,8 @@ import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 
 public class FinanceService extends Service {
+
+    private boolean isLogin;
 
     public class FinanceBinder extends Binder{
 
@@ -44,14 +50,14 @@ public class FinanceService extends Service {
     public IBinder onBind(Intent intent) {
         return new FinanceBinder();
     }
-
+    //自动登录
     public void autoLogin(final Context context){
         sharedPreferences = CacheManager.getInstance().getSharedPreferences();
         editor = CacheManager.getInstance().getEditor();
-
-        //自动登录
-        boolean aBoolean = sharedPreferences.getBoolean(FinanceConstant.ISLOGIN, false);
-        if(aBoolean){
+        synchronized (this){
+            isLogin = sharedPreferences.getBoolean(FinanceConstant.ISLOGIN, false);
+        }
+        if(isLogin){
             //登陆过一次
             TreeMap<String,String> params = new TreeMap<>();
             params.put("token", CacheManager.getInstance().getSharedPreferences().getString(FinanceConstant.TOKEN,""));
@@ -84,10 +90,12 @@ public class FinanceService extends Service {
                         public void onNext(AutoLoginBean autoLoginBean) {
                             if(autoLoginBean.getCode().equals("200")){
                                 Toast.makeText(context, "自动登录成功", Toast.LENGTH_SHORT).show();
-                                //把token和登录状态存入SP文件中
-                                editor.putString(FinanceConstant.TOKEN,autoLoginBean.getResult().getToken());
-                                editor.putBoolean(FinanceConstant.ISLOGIN,true);
-                                editor.commit();
+                                synchronized (this){
+                                    //把token和登录状态存入SP文件中
+                                    editor.putString(FinanceConstant.TOKEN,autoLoginBean.getResult().getToken());
+                                    editor.putBoolean(FinanceConstant.ISLOGIN,true);
+                                    editor.commit();
+                                }
                             } else{
                                 Toast.makeText(context, ""+autoLoginBean.getMessage(), Toast.LENGTH_SHORT).show();
                             }
@@ -124,6 +132,59 @@ public class FinanceService extends Service {
                         Log.i("hj", "onError: "+response.getException()+"---"+response.message());
                     }
                 });
+    }
+
+    //二次采样
+    //通过地址的二次采样
+    public Bitmap samplePicPath(int width, int height, String filePath) {
+
+        //第一次采样，主要采集图片边框，算出图片的尺寸
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;//通过该标志位，确定第一次采样只采集边框
+        BitmapFactory.decodeFile(filePath,options);
+        //计算出图片的宽度和高度
+        int picWidth = options.outWidth;
+        int picHeight = options.outHeight;
+        //计算出缩放比例
+        int sampleSize = 1;
+        while (picHeight/sampleSize>height || picWidth/sampleSize > width) {
+            sampleSize = sampleSize*2;
+        }
+        //第一次采样结束
+
+        //第二次采样，就是按照这个比例采集像素
+        options.inJustDecodeBounds = false;//不是采集边框，而是按比例采集像素
+        options.inSampleSize = sampleSize;
+        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+
+        return BitmapFactory.decodeFile(filePath, options);
+
+    }
+
+    //通过图片的二次采样的方法
+    public Bitmap samplePic(ImageView imageView, Bitmap bitmap){
+
+        int picWidth = bitmap.getWidth();
+        int picHeight = bitmap.getHeight();
+        //计算出缩放比例
+        int sampleSize = 1;
+        while (picHeight/sampleSize>imageView.getHeight() || picWidth/sampleSize > imageView.getWidth()) {
+            sampleSize = sampleSize*2;
+        }
+        //第一次采样结束
+
+        //第二次采样，就是按照这个比例采集像素
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = false;//不是采集边框，而是按比例采集像素
+        options.inSampleSize = sampleSize;
+        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+
+        //将bitmap转换成byte[]
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+        byte[] bytes = byteArrayOutputStream.toByteArray();
+        Bitmap samPlaceBitmap =  BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
+        return samPlaceBitmap;
     }
 
 }

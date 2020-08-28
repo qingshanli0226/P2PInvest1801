@@ -107,9 +107,7 @@ public class WelcomeActivity extends BaseMVPActivity<HomePresenterImpl, HomeCont
     }
 
     private void startActivity() {
-//        Bundle bundle = new Bundle();
-//        bundle.putStringArrayList(FinanceConstant.BUNDLE_BANNER, bannerArrayList);
-//        bundle.putParcelable("hj", newBannerBean);
+
         lunachActivity(MainActivity.class, null);
         finish();
     }
@@ -232,10 +230,6 @@ public class WelcomeActivity extends BaseMVPActivity<HomePresenterImpl, HomeCont
     public void onGetBannerData(BannerBean bannerBean) {
         UserManager.getInstance().setBannerBean(bannerBean);
 
-//        List<BannerBean.ResultBean.ImageArrBean> imageArrBeans = bannerBean.getResult().getImageArr();
-//        for (int i = 0; i <imageArrBeans.size() ; i++) {
-//            bannerArrayList.add(imageArrBeans.get(i).getIMAURL());
-//        }
         newBannerBean = bannerBean;
         handler.sendEmptyMessage(1);
     }

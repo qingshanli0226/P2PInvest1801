@@ -22,6 +22,8 @@ import androidx.core.content.FileProvider;
 
 import com.example.common.FinanceConstant;
 import com.example.framework.base.BaseMVPActivity;
+import com.example.framework.base.manager.UserManager;
+import com.example.framework.base.service.FinanceService;
 import com.example.net.mode.LoginBean;
 import com.example.net.mode.RegisterBean;
 import com.example.net.mode.UnLoginBean;
@@ -32,7 +34,6 @@ import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.contract.RegisterLoginContract;
 import com.p2p.bawei.p2pinvest1801.presenter.RegisterLoginPresenterImpl;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -53,6 +54,11 @@ public class UserMessageActivity extends BaseMVPActivity<RegisterLoginPresenterI
     private String newPath = "/sdcard/DCIM/aa.jpg";
     private String newFilePath = "/sdcard/皮蛋瘦肉粥.jpg";
 
+    private boolean aBoolean = false;
+
+    private FinanceService.FinanceBinder binder;
+
+
     @Override
     protected void initGetData() {
 
@@ -60,14 +66,14 @@ public class UserMessageActivity extends BaseMVPActivity<RegisterLoginPresenterI
         unLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                //判断登录状态
-                boolean aBoolean = sharedPreferences.getBoolean(FinanceConstant.ISLOGIN, false);
+                synchronized (this){
+                    //判断登录状态
+                   aBoolean = sharedPreferences.getBoolean(FinanceConstant.ISLOGIN, false);
+                }
                 if(aBoolean){
                     //登录过 可以退出登录
                     //发起退出登录的网络请求
                     iHttpPresenter.onLoginOut();
-//                    showMessage("退出登录成功");
 
                 } else{
                     //没有登录
@@ -88,7 +94,9 @@ public class UserMessageActivity extends BaseMVPActivity<RegisterLoginPresenterI
         userMessageTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean aBoolean = sharedPreferences.getBoolean(FinanceConstant.ISLOGIN, false);
+                synchronized (this){
+                    aBoolean = sharedPreferences.getBoolean(FinanceConstant.ISLOGIN, false);
+                }
                 if(aBoolean){
                     //登录了
                     //点击弹出popWindow选择框
@@ -157,9 +165,11 @@ public class UserMessageActivity extends BaseMVPActivity<RegisterLoginPresenterI
 
     private void saveIcon(String path) {
         //保存图片
-        SharedPreferences.Editor editor = CacheManager.getInstance().getEditor();
-        editor.putString(FinanceConstant.IMG_ADDRESS, path);
-        editor.commit();
+        synchronized (this){
+            SharedPreferences.Editor editor = CacheManager.getInstance().getEditor();
+            editor.putString(FinanceConstant.IMG_ADDRESS, path);
+            editor.commit();
+        }
     }
 
 
@@ -167,7 +177,6 @@ public class UserMessageActivity extends BaseMVPActivity<RegisterLoginPresenterI
         path = getName();
         //保存头像地址
         saveIcon(path);
-        printLog(path);
         Intent intent = new Intent();
         intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
         Uri uri = FileProvider.getUriForFile(this, "com.p2p.bawei.p2pinvest1801", new File(path));
@@ -188,80 +197,23 @@ public class UserMessageActivity extends BaseMVPActivity<RegisterLoginPresenterI
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 111 && resultCode == Activity.RESULT_OK){
             Uri data1 = data.getData();//获取原图
-            String path = data1.getPath();
-            printLog(data1.getEncodedPath());
-            printLog(path);
             //保存图片
             saveIcon(path);
             try {
                 InputStream inputStream = getContentResolver().openInputStream(data1);
                 Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-                //进行二次采样
-                Bitmap newBitmap = samplePic(userMessageImg,bitmap);
+                //通过服务进行二次采样
+                Bitmap newBitmap = binder.getFinanceService().samplePic(userMessageImg,bitmap);
                 userMessageImg.setImageBitmap(newBitmap);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         } else if(requestCode == 112 && resultCode == Activity.RESULT_OK){
-
-            //进行二次采样
-            Bitmap bitmap = samplePicPath(userMessageImg.getWidth(), userMessageImg.getHeight(), path);
+            //通过服务进行二次采样
+            Bitmap bitmap = binder.getFinanceService().samplePicPath(userMessageImg.getWidth(), userMessageImg.getHeight(), path);
             userMessageImg.setImageBitmap(bitmap);
 
-
         }
-    }
-    //通过地址的二次采样
-    private Bitmap samplePicPath(int width, int height, String filePath) {
-
-        //第一次采样，主要采集图片边框，算出图片的尺寸
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;//通过该标志位，确定第一次采样只采集边框
-        BitmapFactory.decodeFile(filePath,options);
-        //计算出图片的宽度和高度
-        int picWidth = options.outWidth;
-        int picHeight = options.outHeight;
-        //计算出缩放比例
-        int sampleSize = 1;
-        while (picHeight/sampleSize>height || picWidth/sampleSize > width) {
-            sampleSize = sampleSize*2;
-        }
-        //第一次采样结束
-
-        //第二次采样，就是按照这个比例采集像素
-        options.inJustDecodeBounds = false;//不是采集边框，而是按比例采集像素
-        options.inSampleSize = sampleSize;
-        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-
-
-        return BitmapFactory.decodeFile(filePath, options);
-
-    }
-
-    //通关图片的二次采样的方法
-    private Bitmap samplePic(ImageView imageView,Bitmap bitmap){
-
-        int picWidth = bitmap.getWidth();
-        int picHeight = bitmap.getHeight();
-        //计算出缩放比例
-        int sampleSize = 1;
-        while (picHeight/sampleSize>imageView.getHeight() || picWidth/sampleSize > imageView.getWidth()) {
-            sampleSize = sampleSize*2;
-        }
-        //第一次采样结束
-
-        //第二次采样，就是按照这个比例采集像素
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = false;//不是采集边框，而是按比例采集像素
-        options.inSampleSize = sampleSize;
-        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-
-        //将bitmap转换成byte[]
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
-        byte[] bytes = byteArrayOutputStream.toByteArray();
-        Bitmap samPlaceBitmap =  BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
-        return samPlaceBitmap;
     }
 
     @Override
@@ -269,6 +221,9 @@ public class UserMessageActivity extends BaseMVPActivity<RegisterLoginPresenterI
         //获取sp文件实例
         sharedPreferences = CacheManager.getInstance().getSharedPreferences();
         editor = CacheManager.getInstance().getEditor();
+
+        //获取服务
+        binder = UserManager.getInstance().getBinder();
 
         userMessageTv = (TextView) findViewById(R.id.userMessageTv);
         unLoginButton = (Button) findViewById(R.id.unLoginButton);
@@ -294,9 +249,11 @@ public class UserMessageActivity extends BaseMVPActivity<RegisterLoginPresenterI
     @Override
     public void onLoginOutData(UnLoginBean unLoginBean) {
         showMessage("退出登录成功");
-        //改变登录状态
-        editor.putBoolean(FinanceConstant.ISLOGIN,false);
-        editor.commit();
+        synchronized (this){
+            //改变登录状态
+            editor.putBoolean(FinanceConstant.ISLOGIN,false);
+            editor.commit();
+        }
         lunachActivity(MainActivity.class,null);
     }
 
