@@ -8,6 +8,8 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
@@ -25,6 +27,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 
+import com.bumptech.glide.Glide;
 import com.example.common.ToolBar;
 import com.example.common.bean.LoginBean;
 import com.example.common.bean.UploadBean;
@@ -55,6 +58,14 @@ public class PropertyFragment extends BaseFragment<UploadPresenter> implements U
     String path;
     @Override
     public void initViews() {
+        //动态申请权限
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            requestPermissions(new String[]{
+                    "android.permission.READ_EXTERNAL_STORAGE",
+                    "android.permission.WRITE_EXTERNAL_STORAGE",
+                    "android.permission.CAMERA"
+            }, 103) ;
+        }
         properName = (TextView) findViewById(R.id.proper_name);
         properTouxiang = (ImageView) findViewById(R.id.proper_touxiang);
         recharge = (ImageView) findViewById(R.id.recharge);
@@ -69,7 +80,7 @@ public class PropertyFragment extends BaseFragment<UploadPresenter> implements U
         toolbar.setClicksListener(this);
         UserManagers.getInstance().setLoginStatusChangeListener(this);
     }
-
+    //检查是否登录
     private void Loginstate() {
         if(UserManagers.getInstance().isUserLogin()){
             properTouxiang.setImageResource(R.drawable.my_user_bg_icon);
@@ -92,26 +103,27 @@ public class PropertyFragment extends BaseFragment<UploadPresenter> implements U
         llTouzi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), TouZiActivity.class);
-                startActivity(intent);
+                launchActivity(TouZiActivity.class, new Bundle());
             }
         });
     }
     Button pop_chose;
     Button pop_photo;
     private Button popUpload;
-
+    //没有登录弹框登录
     private void initPopWindow() {
         final PopupWindow popupWindow = new PopupWindow(properLin, LinearLayout.LayoutParams.MATCH_PARENT, 700);
         popupWindow.setOutsideTouchable(true);
         LayoutInflater from = LayoutInflater.from(getContext());
         View inflate = from.inflate(R.layout.popwindow, null);
+        //初始化弹框中控件
         pop_chose = inflate.findViewById(R.id.pop_chose);
         popUpload = inflate.findViewById(R.id.pop_upload);
         pop_photo = inflate.findViewById(R.id.pop_photo);
         popupWindow.setContentView(inflate);
         popupWindow.setBackgroundDrawable(new ColorDrawable(Color.GRAY));
         popupWindow.showAtLocation(inflate, Gravity.BOTTOM,0,0);
+        //选择相机图片
         pop_chose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,6 +131,7 @@ public class PropertyFragment extends BaseFragment<UploadPresenter> implements U
                 popupWindow.dismiss();
             }
         });
+        //拍照
         pop_photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,31 +139,31 @@ public class PropertyFragment extends BaseFragment<UploadPresenter> implements U
                 popupWindow.dismiss();
             }
         });
-
+        //上传图片
         popUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mPresenter.uploadP();
-
             }
         });
     }
-
+    //拍照
     private void photo() {
         Intent intent = new Intent();
         intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
-        String path = "/sdcard/tmp"+getName();
+        path = "/sdcard/电影/"+getName();
         Uri uriForFile = FileProvider.getUriForFile(getContext(), "com.example.hemingxuan.aa", new File(path));
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uriForFile);
         startActivityForResult(intent, 102);
     }
-
+    //图册选择
     private void chose() {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_PICK);
         intent.setType("image/*");
         startActivityForResult(intent, 101);
     }
+    //用当前时间作为文件前缀
     private String getName(){
         Date date = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
@@ -174,7 +187,7 @@ public class PropertyFragment extends BaseFragment<UploadPresenter> implements U
 
     @Override
     public void showMsg(String message) {
-
+        Toast.makeText(getContext(), ""+message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -182,22 +195,22 @@ public class PropertyFragment extends BaseFragment<UploadPresenter> implements U
         Toast.makeText(getContext(), "code："+code+"错误信息："+message, Toast.LENGTH_SHORT).show();
     }
 
-    Handler handler = new Handler(){
-        @Override
-        public void handleMessage(@NonNull Message msg) {
-            super.handleMessage(msg);
-            properTouxiang.setImageBitmap((Bitmap) msg.obj);
-        }
-    };
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable final Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 101 && resultCode == Activity.RESULT_OK){
-            String data1 = String.valueOf(getRealPathFromUri(getContext(),data.getData()));
-            Bitmap bitmap = GlideCacheManager.getInstance().samplePic(properTouxiang.getMeasuredWidth(), properTouxiang.getMeasuredHeight(), data1);
-            properTouxiang.setImageBitmap(bitmap);
+            Uri data1 = data.getData();
+//            Bitmap bitmap = GlideCacheManager.getInstance().samplePic(properTouxiang.getMeasuredWidth(), properTouxiang.getMeasuredHeight(), data1);
+//            properTouxiang.setImageBitmap(bitmap);
+            Glide.with(this)
+                    .load(data1)
+                    .circleCrop()
+                    .into(properTouxiang);
         }else if(requestCode == 102 && resultCode == Activity.RESULT_OK){
-
+            Glide.with(this)
+                    .load(path)
+                    .circleCrop()
+                    .into(properTouxiang);
         }
     }
 
@@ -205,20 +218,6 @@ public class PropertyFragment extends BaseFragment<UploadPresenter> implements U
     public void uploadView(UploadBean uploadBean) {
         Toast.makeText(getContext(), ""+uploadBean.getCode()
                 +"返回字符串"+uploadBean.getMessage(), Toast.LENGTH_SHORT).show();
-    }
-    public String getRealPathFromUri(Context context, Uri contentUri) {
-        Cursor cursor = null;
-        try {
-            String[] proj = {MediaStore.Images.Media.DATA};
-            cursor = context.getContentResolver().query(contentUri, proj, null, null, null);
-            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-            cursor.moveToFirst();
-            return cursor.getString(column_index);
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
-        }
     }
     @Override
     public String url() {
@@ -229,18 +228,16 @@ public class PropertyFragment extends BaseFragment<UploadPresenter> implements U
     public void leftclick() {
 
     }
-
     @Override
     public void rightclick() {
-        Intent intent = new Intent(getContext(), Myportrait.class);
-        startActivity(intent);
+        launchActivity(Myportrait.class, new Bundle());
     }
-
+    //监听登录状态
     @Override
     public void onLoginSuccess(LoginBean loginBean) {
         Loginstate();
     }
-
+    //监听是否退出登录
     @Override
     public void onLogoutSuccess() {
         Loginstate();

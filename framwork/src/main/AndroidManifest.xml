@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.framwork">
     <application>
-        <service android:name=".mvp.user.UserService"></service>
+        <service android:name=".mvp.user.UserService"
+            android:exported="true"></service>
     </application>
 </manifest>

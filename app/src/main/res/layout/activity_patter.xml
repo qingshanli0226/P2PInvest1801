@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent">   
+    <com.example.common.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/HeightView"
+        android:id="@+id/toolbar"
+        android:visibility="gone"></com.example.common.ToolBar>
     <com.github.ihsg.patternlocker.PatternIndicatorView
         android:id="@+id/pattern_indicator_view"
         android:layout_width="100px"
@@ -16,4 +21,4 @@
         android:layout_marginLeft="50px"
         android:layout_marginRight="50px"
         android:layout_marginTop="100px" />
-</com.zhy.autolayout.AutoLinearLayout>
+</LinearLayout>

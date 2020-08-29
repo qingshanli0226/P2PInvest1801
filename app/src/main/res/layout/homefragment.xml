@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.example.common.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="200px"
+        android:layout_height="@dimen/HeightView"
         android:id="@+id/toolbar"
         app:right_show="true"
         app:center_text="首页"></com.example.common.ToolBar>
     <com.youth.banner.Banner
         android:layout_width="match_parent"
-        android:layout_height="420px"
-        android:layout_marginTop="180px"
+        android:layout_height="@dimen/bannerHight"
         android:id="@+id/home_banner"></com.youth.banner.Banner>
     <ImageView
-        android:layout_width="200px"
-        android:layout_height="200px"
+        android:layout_width="@dimen/HeightView"
+        android:layout_height="@dimen/HeightView"
         android:layout_gravity="center"
         android:background="@drawable/anims"
-        android:id="@+id/home_image"
+        android:id="@+id/image"
         android:visibility="gone"
         android:layout_centerInParent="true"/>
     <TextView
@@ -28,49 +27,51 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:text="努力加载中..."
-        android:textSize="50px"
-        android:id="@+id/home_basetext"
-        android:layout_below="@id/home_image"
+        android:textSize="@dimen/dogTextSize"
+        android:id="@+id/basetext"
+        android:layout_below="@id/image"
         android:layout_centerInParent="true"/>
-    <com.zhy.autolayout.AutoRelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="600px"
+        android:orientation="vertical"
         android:layout_height="match_parent">
-        <com.zhy.autolayout.AutoRelativeLayout
-            android:layout_width="800px"
-            android:layout_marginTop="30px"
-            android:layout_height="120px"
+        <RelativeLayout
+            android:layout_width="@dimen/RelativeWidth"
+            android:layout_marginTop="@dimen/AllTop"
+            android:layout_height="@dimen/RelativeHeight"
+            android:layout_gravity="center"
             android:layout_centerHorizontal="true">
-
             <TextView
                 android:id="@+id/home_title"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="0dp"
                 android:gravity="center"
-                android:textSize="80px" />
+                android:textSize="@dimen/TitleSize" />
             <ImageView
-                android:layout_width="80px"
+                android:layout_width="@dimen/TitleImgWidth"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/recommend"
                 android:layout_height="match_parent" />
-        </com.zhy.autolayout.AutoRelativeLayout>
-        <com.zhy.autolayout.AutoLinearLayout
-            android:layout_width="900px"
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_centerHorizontal="true"
-            android:layout_height="100px"
-            android:layout_marginTop="80dp"
+            android:layout_height="@dimen/CenterHeight"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/LeftView"
+            android:layout_marginTop="@dimen/AllTop"
+            android:layout_marginRight="@dimen/LeftView"
             android:orientation="horizontal"
             android:id="@+id/home_liner">
             <TextView
-                android:layout_width="0px"
+                android:layout_width="0dp"
                 android:layout_marginRight="30px"
                 android:layout_weight="1"
                 android:background="@drawable/botton"
                 android:text="本息保障"
                 android:gravity="center"
-                android:textSize="50px"
+                android:textSize="@dimen/dogTextSize"
                 android:layout_height="match_parent" />
             <TextView
                 android:layout_width="0dp"
@@ -78,8 +79,8 @@
                 android:background="@drawable/botton"
                 android:text="每日计息"
                 android:gravity="center"
-                android:textSize="50px"
-                android:layout_marginRight="30px"
+                android:textSize="@dimen/dogTextSize"
+                android:layout_marginRight="@dimen/AllMargin"
                 android:layout_height="match_parent" />
             <TextView
                 android:layout_width="0dp"
@@ -87,39 +88,40 @@
                 android:background="@drawable/botton"
                 android:text="高额利益"
                 android:gravity="center"
-                android:textSize="50px"
+                android:textSize="@dimen/dogTextSize"
                 android:layout_height="match_parent" />
-        </com.zhy.autolayout.AutoLinearLayout>
+        </LinearLayout>
         <com.p2p.bawei.p2pinvest1801.mvp.view.mine.ProgressView
-            android:layout_below="@+id/home_liner"
-            android:layout_width="400px"
-            android:layout_height="400px"
+            android:layout_width="@dimen/Progress"
+            android:layout_height="@dimen/Progress"
+            android:layout_marginTop="@dimen/AllTop"
             app:stroke_width="25"
             android:id="@+id/home_progress"
             app:text_color="@android:color/holo_blue_dark"
             app:round_size="150"
-            app:text_size="40px"
+            app:text_size="@dimen/dogTextSize"
             app:circle_color="@android:color/holo_red_dark"
             app:arc_color="@android:color/holo_blue_dark"
-            android:layout_centerHorizontal="true"/>
+            android:layout_gravity="center"/>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="200px"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="70px"
+            android:textSize="@dimen/TextSizeView"
             android:text="预期年利率: "
-            android:layout_below="@id/home_progress"
+            android:layout_marginTop="@dimen/AllTop"
             android:id="@+id/home_anticipate"/>
         <Button
-            android:layout_width="800px"
+            android:layout_width="@dimen/ButtonWidth"
             android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"
-            android:textSize="70px"
+            android:layout_marginTop="@dimen/AllTop"
+            android:textSize="@dimen/TextSizeView"
             android:textColor="#fff"
             android:id="@+id/home_null"
             android:background="@drawable/buttons"
-            android:layout_below="@id/home_anticipate"
+            android:layout_gravity="center"
             android:text="立即加入"/>
-    </com.zhy.autolayout.AutoRelativeLayout>
+    </LinearLayout>
 
-</com.zhy.autolayout.AutoRelativeLayout>
+</LinearLayout>

@@ -10,7 +10,7 @@
         app:left_show="true"
         android:id="@+id/toolbar"
         app:right_show="true"
-        android:layout_height="200px"></com.example.common.ToolBar>
+        android:layout_height="@dimen/HeightView"></com.example.common.ToolBar>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="130px"

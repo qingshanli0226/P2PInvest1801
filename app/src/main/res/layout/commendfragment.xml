@@ -2,6 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <com.example.common.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/HeightView"
+        android:id="@+id/toolbar"
+        android:visibility="gone"></com.example.common.ToolBar>
     <com.leon.stellarmap.lib.StellarMap
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".mvp.view.MainActivity">
+    <com.example.common.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/HeightView"
+        android:visibility="gone"
+        android:id="@+id/toolbar"></com.example.common.ToolBar>
     <FrameLayout
         android:layout_width="match_parent"
         android:id="@+id/main_framlayout"
@@ -13,15 +18,15 @@
         android:layout_weight="1"></FrameLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="5px"
+        android:layout_height="@dimen/viewHight"
         android:layout_above="@id/main_common"
         android:background="#3882D0"></View>
     <com.flyco.tablayout.CommonTabLayout
         android:layout_width="match_parent"
-        android:layout_height="180px"
+        android:layout_height="@dimen/commonHight"
         android:id="@+id/main_common"
         app:tl_textSelectColor="#3882D0"
         app:tl_textUnselectColor="#000"
         android:background="#f9f9f9"
         android:layout_alignParentBottom="true"></com.flyco.tablayout.CommonTabLayout>
-</com.zhy.autolayout.AutoLinearLayout>
+</LinearLayout>

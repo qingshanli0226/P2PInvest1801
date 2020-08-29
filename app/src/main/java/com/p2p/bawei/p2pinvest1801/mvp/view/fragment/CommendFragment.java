@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
+import android.widget.Toast;
 
 import com.example.framwork.mvp.view.BaseFragment;
 import com.leon.stellarmap.lib.StellarMap;
@@ -69,11 +70,11 @@ public class CommendFragment extends BaseFragment {
 
     @Override
     public void showMsg(String message) {
-
+        Toast.makeText(getContext(), ""+message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showError(String code, String message) {
-
+        Toast.makeText(getContext(), "code："+code+"错误信息："+message, Toast.LENGTH_SHORT).show();
     }
 }

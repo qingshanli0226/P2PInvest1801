@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -34,5 +34,12 @@
         <item name="android:paddingRight">20dp</item>
         <item name="android:textColor">@color/product_detail_common</item>
         <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar" >
+        <!-- 欢迎页背景引用刚才写好的 -->
+        <item name="android:windowBackground">@mipmap/add</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
     </style>
 </resources>

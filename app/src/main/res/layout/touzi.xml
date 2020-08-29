@@ -4,9 +4,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <com.example.common.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/HeightView"
+        app:center_text="折线图demo"
+        app:right_show="true"
+        android:id="@+id/toolbar"
+        app:left_show="true"></com.example.common.ToolBar>
     <com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyScollows
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="300dp"
+        android:paddingTop="700px"
         android:id="@+id/touzi_scollow"></com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyScollows>
 </RelativeLayout>

@@ -23,6 +23,7 @@ public class MoreFragment extends BaseFragment {
 
     @Override
     public void initDatas() {
+        //手势密码切换
         morePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +68,7 @@ public class MoreFragment extends BaseFragment {
 
     @Override
     public void showMsg(String message) {
-
+        Toast.makeText(getContext(), ""+message, Toast.LENGTH_SHORT).show();
     }
 
     @Override

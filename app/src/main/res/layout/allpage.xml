@@ -2,24 +2,29 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <com.example.common.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/HeightView"
+        android:id="@+id/toolbar"
+        android:visibility="gone"></com.example.common.ToolBar>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/all_rv"
         android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/HeightView"
+        android:layout_height="@dimen/HeightView"
         android:layout_gravity="center"
         android:background="@drawable/anims"
-        android:visibility="gone"
         android:id="@+id/image"
+        android:visibility="gone"
         android:layout_centerInParent="true"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="努力加载中..."
-        android:textSize="25sp"
         android:visibility="gone"
+        android:text="努力加载中..."
+        android:textSize="@dimen/dogTextSize"
         android:id="@+id/basetext"
         android:layout_below="@id/image"
         android:layout_centerInParent="true"/>

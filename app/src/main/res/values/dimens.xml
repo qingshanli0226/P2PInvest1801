@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="HeightView">100dp</dimen>
+    <dimen name="HeightWelcome">150dp</dimen>
+    <dimen name="bannerHight">270dp</dimen>
+    <dimen name="dogTextSize">20sp</dimen>
+    <dimen name="RelativeWidth">420dp</dimen>
+    <dimen name="RelativeHeight">60dp</dimen>
+    <dimen name="CenterHeight">50dp</dimen>
+    <dimen name="AllTop">20dp</dimen>
+    <dimen name="AllMargin">10dp</dimen>
+    <dimen name="TitleSize">40sp</dimen>
+    <dimen name="TitleImgWidth">40dp</dimen>
+    <dimen name="LeftView">40dp</dimen>
+    <dimen name="Progress">200dp</dimen>
+    <dimen name="ButtonWidth">400dp</dimen>
+    <dimen name="TextSizeView">25sp</dimen>
+    <dimen name="viewHight">2dp</dimen>
+    <dimen name="commonHight">70dp</dimen>
+</resources>

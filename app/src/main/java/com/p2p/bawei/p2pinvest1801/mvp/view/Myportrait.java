@@ -1,5 +1,6 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,7 +19,7 @@ import com.p2p.bawei.p2pinvest1801.R;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
-
+//用户详情解界面
 public class Myportrait extends BaseActivity implements ToolBar.ClicksListener{
     private ToolBar toolbar;
     private ImageView properTouxiang;
@@ -35,6 +36,7 @@ public class Myportrait extends BaseActivity implements ToolBar.ClicksListener{
 
     @Override
     public void initDatas() {
+        //点击退出登录
         btnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,27 +44,31 @@ public class Myportrait extends BaseActivity implements ToolBar.ClicksListener{
             }
         });
     }
-
+    //退出登录请求
     private void initReturn() {
-        RetrofitManager.getInstance().getRetrofit().create(P2PApi.class)
-                .logout()
-                .map(new NetFunction<BaseBean<String>,String>())
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new BaseObserver<String>() {
-                    @Override
-                    public void onNext(String s) {
-                        showMsg(s);
-                        UserManagers.getInstance().processLogout();
-                        finish();
-                    }
+        if(UserManagers.getInstance().isUserLogin()){
+            RetrofitManager.getInstance().getRetrofit().create(P2PApi.class)
+                    .logout()
+                    .map(new NetFunction<BaseBean<String>,String>())
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new BaseObserver<String>() {
+                        @Override
+                        public void onNext(String s) {
+                            showMsg(s);
+                            UserManagers.getInstance().processLogout();
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("index", 0);
+                            launchActivity(MainActivity.class, bundle);
+                            finish();
+                        }
 
-                    @Override
-                    public void onRequestError(String code, String message) {
-                        showError(code,message);
-                    }
-                });
-
+                        @Override
+                        public void onRequestError(String code, String message) {
+                            showError(code,message);
+                        }
+                    });
+        }
     }
 
     @Override
@@ -89,7 +95,7 @@ public class Myportrait extends BaseActivity implements ToolBar.ClicksListener{
     public void showError(String code, String message) {
         Toast.makeText(Myportrait.this, ""+code+"--"+message, Toast.LENGTH_SHORT).show();
     }
-
+    //点击返回
     @Override
     public void leftclick() {
         finish();

@@ -18,12 +18,14 @@ import com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyDialog;
 import com.p2p.bawei.p2pinvest1801.mvp.view.mine.ProgressView;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
+import com.youth.banner.Transformer;
 import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+//首页
 public class HomeFragment extends BaseFragment implements CacheManager.IDataChangeListener{
     private Banner homeBanner;
     List<HomeBean.ResultBean.ImageArrBean> list;
@@ -62,8 +64,6 @@ public class HomeFragment extends BaseFragment implements CacheManager.IDataChan
         list_proinfobean = CacheManager.getInstance().getList_proinfobean();
         if(list.size() != 0 && list_proinfobean.size() != 0){
             list_banner.clear();
-            Log.i("----list_img", list.size()+"");
-            Log.i("----list_pro", list_proinfobean.size()+"");
             homeTitle.setText(list_proinfobean.get(0).getName());
             String progress = list_proinfobean.get(0).getProgress();
             homeProgress.setProgress(Integer.parseInt(progress));
@@ -71,20 +71,19 @@ public class HomeFragment extends BaseFragment implements CacheManager.IDataChan
             for (int i = 0; i < list.size(); i++) {
                 String imaurl = list.get(i).getIMAURL();
                 list_banner.add(imaurl);
-                Log.i("----list", list_banner.get(i));
             }
             homeBanner.setImages(list_banner);
             homeBanner.setImageLoader(new ImageLoader() {
                 @Override
                 public void displayImage(Context context, Object path, ImageView imageView) {
-                    Glide.with(context)
+                    Glide.with(getActivity())
                             .load(path)
                             .into(imageView);
                 }
             });
-            Log.i("----list_banner", list_banner.size() + "");
             homeBanner.setBannerTitles(Arrays.asList(text));
             homeBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
+            homeBanner.setBannerAnimation(Transformer.DepthPage);
             homeBanner.start();
         }
     }

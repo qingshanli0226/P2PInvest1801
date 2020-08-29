@@ -1,5 +1,7 @@
 package com.p2p.bawei.p2pinvest1801.mvp.view.user;
 
+import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +15,9 @@ import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.LoginContract;
 import com.p2p.bawei.p2pinvest1801.mvp.model.LoginModel;
 import com.p2p.bawei.p2pinvest1801.mvp.presenter.LoginPresenter;
+import com.p2p.bawei.p2pinvest1801.mvp.view.MainActivity;
 
+//登录界面
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.LoginView, ToolBar.ClicksListener {
     private EditText loginPhone;
     private EditText loginPassword;
@@ -56,19 +60,24 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void showMsg(String message) {
-
+        Toast.makeText(this, ""+message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showError(String code, String message) {
-
+        Toast.makeText(this, ""+code+"--"+message, Toast.LENGTH_SHORT).show();
     }
 
 
     @Override
     public void loginView(LoginBean loginBean) {
         Toast.makeText(this, "登陆成功", Toast.LENGTH_SHORT).show();
+        Log.i("----token", loginBean.getToken());
         UserManagers.getInstance().saveLoginBean(loginBean);
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("index", 0);
+        launchActivity(MainActivity.class,bundle);
         finish();
     }
 

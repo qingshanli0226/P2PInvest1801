@@ -11,7 +11,7 @@ import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.RegisterContract;
 import com.p2p.bawei.p2pinvest1801.mvp.model.RegisterModel;
 import com.p2p.bawei.p2pinvest1801.mvp.presenter.RegisterPresenter;
-
+//注册界面
 public class RegisterActivity extends BaseActivity<RegisterPresenter> implements RegisterContract.RegisterView, ToolBar.ClicksListener {
     private EditText registerPhone;
     private EditText registerUser;
@@ -58,7 +58,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
     @Override
     public void showMsg(String message) {
-
+        Toast.makeText(this, ""+message, Toast.LENGTH_SHORT).show();
     }
 
     @Override

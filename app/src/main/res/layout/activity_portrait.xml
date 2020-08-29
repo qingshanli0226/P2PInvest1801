@@ -8,26 +8,26 @@
     tools:ignore="MissingDefaultResource">
     <com.example.common.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="200px"
+        android:layout_height="@dimen/HeightView"
         app:right_show="true"
         app:left_show="true"
         android:id="@+id/toolbar"
         app:center_text="用户信息"></com.example.common.ToolBar>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp">
+        android:layout_height="500px">
         <ImageView
-            android:layout_width="150dp"
-            android:layout_marginTop="10dp"
-            android:layout_height="100dp"
+            android:layout_width="300px"
+            android:layout_marginTop="30px"
+            android:layout_height="300px"
             android:id="@+id/proper_touxiang"
             android:layout_centerHorizontal="true"
             android:src="@drawable/my_user_default"/>
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:textSize="30sp"
-            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:textSize="70px"
+            android:layout_marginTop="30px"
             android:gravity="center"
             android:textColor="#00BCD4"
             android:id="@+id/proper_name"
@@ -42,9 +42,9 @@
         android:layout_height="130px"
         android:layout_marginLeft="50px"
         android:layout_marginRight="50px"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50px"
         android:background="@drawable/btn_01"
         android:text="退出登录"
         android:textColor="#ffffff"
-        android:textSize="18sp" />
+        android:textSize="50px" />
 </LinearLayout>

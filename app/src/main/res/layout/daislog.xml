@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:background="#000" android:layout_width="match_parent"
-    android:layout_height="180dp">
+    android:layout_height="500px">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:text="提示"
         android:id="@+id/dasilog_title"
         android:textColor="#fff"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="30px"
         android:gravity="left|center"
-        android:textSize="30sp"/>
+        android:textSize="80px"/>
     <TextView
-        android:layout_width="300dp"
+        android:layout_width="800px"
         android:textColor="#fff"
         android:text="您还没有登录哦！么么"
         android:id="@+id/dasilog_message"
-        android:textSize="25sp"
+        android:textSize="70px"
         android:gravity="left|center"
-        android:layout_marginLeft="30dp"
-        android:layout_height="50dp" />
+        android:layout_marginLeft="100px"
+        android:layout_height="150px" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:background="#979797"
         android:orientation="horizontal"
         android:layout_height="match_parent">
         <Button
-            android:layout_width="170dp"
+            android:layout_width="500px"
             android:text="确定"
             android:layout_centerInParent="true"
-            android:textSize="20sp"
+            android:textSize="60px"
             android:id="@+id/dasilog_ensure"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"/>
+            android:layout_margin="30px"/>
     </RelativeLayout>
 </LinearLayout>

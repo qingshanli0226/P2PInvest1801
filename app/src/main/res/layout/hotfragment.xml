@@ -1,26 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <com.example.common.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="200px"
+        android:visibility="gone"
+        android:id="@+id/toolbar"></com.example.common.ToolBar>
     <com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyFlow
         android:id="@+id/flowlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyFlow>
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:visibility="gone"
-        android:background="@drawable/wc_ac_01"
-        android:id="@+id/image"
-        android:layout_centerInParent="true"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="努力加载中..."
-        android:textSize="25sp"
-        android:visibility="gone"
-        android:id="@+id/basetext"
-        android:layout_below="@id/image"
-        android:layout_centerInParent="true"/>
-</LinearLayout>
+</com.zhy.autolayout.AutoRelativeLayout>

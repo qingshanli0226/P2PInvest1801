@@ -3,11 +3,11 @@ package com.p2p.bawei.p2pinvest1801.mvp.view.fragment;
 import android.graphics.Color;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.framwork.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyFlow;
-
 public class HotFragment extends BaseFragment {
     private String mNames[] = {
             "welcome","android","TextView",
@@ -57,11 +57,11 @@ public class HotFragment extends BaseFragment {
 
     @Override
     public void showMsg(String message) {
-
+        Toast.makeText(getContext(), ""+message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showError(String code, String message) {
-
+        Toast.makeText(getContext(), "code："+code+"错误信息："+message, Toast.LENGTH_SHORT).show();
     }
 }

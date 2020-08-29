@@ -12,7 +12,7 @@ import com.p2p.bawei.p2pinvest1801.R;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-
+//手势密码界面
 public class PatternActivity extends BaseActivity {
     private PatternIndicatorView patternIndicatorView;
     private PatternLockerView patternLockView;
@@ -40,11 +40,13 @@ public class PatternActivity extends BaseActivity {
 
             @Override
             public void onComplete(@NotNull PatternLockerView patternLockerView, @NotNull List<Integer> list) {
+                //每次至少要连接四次
                 if(list.size() < 4){
                     Toast.makeText(PatternActivity.this, "请滑动至少4个按钮", Toast.LENGTH_SHORT).show();
                     patternLockerView.clearHitState();
                 }else{
                     if(flag){
+
                         pattern = null;
                         for (int i = 0; i < list.size(); i++) {
                             pattern += list.get(i);
@@ -95,11 +97,11 @@ public class PatternActivity extends BaseActivity {
 
     @Override
     public void showMsg(String message) {
-
+        Toast.makeText(this, ""+message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showError(String code, String message) {
-
+        Toast.makeText(this, ""+code+"--"+message, Toast.LENGTH_SHORT).show();
     }
 }

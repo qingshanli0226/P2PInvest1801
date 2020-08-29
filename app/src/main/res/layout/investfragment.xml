@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.example.common.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="200px"
+        android:layout_height="@dimen/HeightView"
+        android:id="@+id/toolbar"
         app:right_show="true"
         app:center_text="投资"></com.example.common.ToolBar>
     <com.flyco.tablayout.CommonTabLayout
         android:layout_width="match_parent"
         android:id="@+id/invest_common"
-        android:layout_marginTop="200px"
+        android:layout_marginTop="162px"
         app:tl_textSelectColor="#FF0000"
         app:tl_indicator_color="#3F51B5"
         app:tl_textsize="60px"
@@ -26,4 +27,4 @@
         android:layout_below="@+id/invest_common"
         android:layout_height="match_parent"></com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyViewPager>
 
-</com.zhy.autolayout.AutoRelativeLayout>
+</LinearLayout>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:background="#152732" android:layout_width="match_parent"
-    android:layout_height="200px">
+    android:layout_height="100dp">
     <ImageView
         android:layout_width="150px"
         android:layout_height="match_parent"
-        android:visibility="visible"
+        android:visibility="gone"
         android:paddingTop="80px"
         android:id="@+id/toolbar_left"
         android:src="@drawable/back"/>
@@ -29,4 +29,4 @@
         android:layout_alignParentRight="true"
         android:id="@+id/toolbar_right"
         android:src="@drawable/my_setting_icon"/>
-</com.zhy.autolayout.AutoRelativeLayout>
+</RelativeLayout>

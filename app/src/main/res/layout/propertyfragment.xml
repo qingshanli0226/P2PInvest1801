@@ -7,26 +7,27 @@
     android:layout_height="match_parent">
     <com.example.common.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="150px"
+        android:layout_height="@dimen/HeightView"
         android:id="@+id/toolbar"
         app:right_show="false"
         app:center_text="我的资产"></com.example.common.ToolBar>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_marginTop="-20px"
+        android:layout_height="500px"
         android:background="#00BCD4">
         <ImageView
-            android:layout_width="150dp"
-            android:layout_marginTop="10dp"
-            android:layout_height="100dp"
+            android:layout_width="300px"
+            android:layout_marginTop="30px"
+            android:layout_height="300px"
             android:id="@+id/proper_touxiang"
             android:layout_centerHorizontal="true"
             android:src="@drawable/my_user_default"/>
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:textSize="25sp"
-            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:textSize="70px"
+            android:layout_marginTop="30px"
             android:gravity="center"
             android:textColor="#fff"
             android:id="@+id/proper_name"
@@ -38,7 +39,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="30px"
+        android:layout_marginRight="30px"
         android:orientation="vertical">
 
         <TextView
@@ -62,22 +65,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="30px"
         android:gravity="center">
 
         <ImageView
             android:id="@+id/recharge"
-            android:layout_width="0dp"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:layout_marginRight="9dp"
+            android:layout_marginRight="20px"
             android:layout_weight="1"
             android:src="@drawable/my_recharge_bg" />
 
         <ImageView
             android:id="@+id/withdraw"
-            android:layout_width="0dp"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="9dp"
+            android:layout_marginLeft="20px"
             android:layout_weight="1"
             android:src="@drawable/my_withdraw_bg" />
     </LinearLayout>

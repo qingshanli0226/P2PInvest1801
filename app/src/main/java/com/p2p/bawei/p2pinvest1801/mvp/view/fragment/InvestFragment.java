@@ -26,25 +26,24 @@ public class InvestFragment extends BaseFragment {
     public void initViews() {
         investCommon = (CommonTabLayout) findViewById(R.id.invest_common);
         investViewpage = (ViewPager) findViewById(R.id.invest_viewpage);
-        viewpagerAdapter = new ViewpagerAdapter(getActivity().getSupportFragmentManager(), 1,list);
+        viewpagerAdapter = new ViewpagerAdapter(getChildFragmentManager(), 1,list);
         investViewpage.setAdapter(viewpagerAdapter);
         viewpagerAdapter.notifyDataSetChanged();
-
-
-
     }
 
     @Override
     public void initDatas() {
+        //顶部导航
         list_common.clear();
         list_common.add(new CommonAdapter("全部理财", 0, 0));
         list_common.add(new CommonAdapter("推荐理财", 0, 0));
         list_common.add(new CommonAdapter("热门理财", 0, 0));
         investCommon.setTabData(list_common);
-        list.add(new AllPager());
+        list.add(new AllPagerFragment());
         list.add(new CommendFragment());
         list.add(new HotFragment());
         viewpagerAdapter.notifyDataSetChanged();
+        //顶部导航和viewpager联动
         investCommon.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int position) {
@@ -91,7 +90,7 @@ public class InvestFragment extends BaseFragment {
 
     @Override
     public void showMsg(String message) {
-
+        Toast.makeText(getContext(), ""+message, Toast.LENGTH_SHORT).show();
     }
 
     @Override

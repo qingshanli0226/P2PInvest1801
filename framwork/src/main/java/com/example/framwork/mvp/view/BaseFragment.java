@@ -1,5 +1,6 @@
 package com.example.framwork.mvp.view;
 
+import android.content.Intent;
 import android.graphics.Paint;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import com.example.framwork.mvp.presenter.IPresenter;
 public abstract class BaseFragment<P extends IPresenter> extends Fragment implements IView,IFragment {
     protected P mPresenter;
     private View rootview;
+    protected ToolBar toolBar;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public abstract class BaseFragment<P extends IPresenter> extends Fragment implem
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        toolBar = findViewById(R.id.toolbar);
         initViews();
         initDatas();
     }
@@ -47,5 +50,10 @@ public abstract class BaseFragment<P extends IPresenter> extends Fragment implem
             mPresenter = null;
         }
     }
-
+    protected void launchActivity(Class launcActivityClass, Bundle bundle) {
+        Intent intent = new Intent();
+        intent.putExtras(bundle);
+        intent.setClass(getActivity(), launcActivityClass);
+        startActivity(intent);
+    }
 }

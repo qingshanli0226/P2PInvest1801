@@ -92,10 +92,16 @@ public class UserManagers {
         return "";
     }
     private String versions;
+    private String url;
     public void setVersion(String version){
         this.versions = version;
     }
-
+    public void setVersionurl(String url){
+        this.url = url;
+    }
+    public String getVersionurl(){
+        return url;
+    }
     public String getVersion(){
         return versions;
     }
@@ -113,7 +119,6 @@ public class UserManagers {
     public String getToken() {
         SharedPreferences sharedPreferences = context.getSharedPreferences("tokens",Context.MODE_PRIVATE);
         String token = sharedPreferences.getString("token", "");
-        Log.i("----", token);
         return token;
     }
 
@@ -121,11 +126,6 @@ public class UserManagers {
     public interface ILoginStatusChangeListener{
         void onLoginSuccess(LoginBean loginBean);
         void onLogoutSuccess();
-    }
-
-
-    public void removeService(){
-        context.unbindService(serviceConnection);
     }
 
     public void addActivity(Activity activity){
@@ -139,6 +139,12 @@ public class UserManagers {
         }
     }
 
+    public void removeService(){
+        if(serviceConnection == null){
+            return;
+        }
+        context.unbindService(serviceConnection);
+    }
     public List<Activity> getList_activity(){
         return list_activity;
     }
