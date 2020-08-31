@@ -107,4 +107,15 @@
             android:textSize="20sp"
             />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注册"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:background="@mipmap/btn_01"
+        android:layout_margin="10dp"
+        />
 </LinearLayout>

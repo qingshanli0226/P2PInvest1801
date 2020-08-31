@@ -28,7 +28,6 @@ public class BottomBar extends FrameLayout {
 
     private View view;
 
-
     private int selectColor=Color.BLUE;
 
     public BottomBar(Context context) {
@@ -100,7 +99,7 @@ public class BottomBar extends FrameLayout {
         buttons.add(mineButton);
     }
 
-    //数组的长度为4
+    //更新BottomBar文字
     public void setTabTitle(String[] tabTitles) {
         for (int i = 0; i < buttons.size(); i++) {
             buttons.get(i).setText(tabTitles[i]);
@@ -140,7 +139,7 @@ public class BottomBar extends FrameLayout {
         }
     }
 
-    private void setImgs(){
+    private void setImgs(){ //回复所有的图片背景图
         homeimg.setImageResource(R.drawable.bottom01);
         typeimg.setImageResource(R.drawable.bottom03);
         shopcarimg.setImageResource(R.drawable.bottom05);

@@ -48,7 +48,7 @@ public class LoginService extends Service {
                     public void onNext(LoginBean loginBean) {
                         if (loginBean.getCode().equals("200")){
                             UserManager.getInstance().saveUserBean(loginBean);
-                            SpManager.getInstance().addContent("token",loginBean.getResult().getToken());
+                            SpManager.getInstance().addContents("token",loginBean.getResult().getToken());
                             Toast.makeText(LoginService.this, "自动登录成功", Toast.LENGTH_SHORT).show();
                         }
                     }

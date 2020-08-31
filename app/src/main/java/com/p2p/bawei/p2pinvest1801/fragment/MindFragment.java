@@ -76,7 +76,7 @@ public class MindFragment extends BaseFragment implements ToolBar.OnToolBarClick
     @Override
     public void onResume() { //读取头像文件，并设置
         super.onResume();
-        String imagePath = SpManager.getInstance().getContent("imagePath");
+        String imagePath = SpManager.getInstance().getContents("imagePath");
 
         Bitmap bitmap = GlideManager.getInstance().samplePic(mind_img.getMeasuredWidth(), mind_img.getMeasuredHeight(), imagePath);
         mind_img.setImageBitmap(bitmap);

@@ -18,6 +18,7 @@
         android:orientation="vertical"
         >
         <RelativeLayout
+
             android:id="@+id/go_register"
             android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
@@ -81,6 +82,7 @@
                 />
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/more_reset"
             android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -163,6 +165,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/share"
             android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"

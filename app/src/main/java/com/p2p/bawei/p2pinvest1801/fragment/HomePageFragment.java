@@ -1,8 +1,6 @@
 package com.p2p.bawei.p2pinvest1801.fragment;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,32 +21,17 @@ import java.util.List;
 public class HomePageFragment extends BaseFragment {
     private MyProgressBar myProgressBar;
     private Banner banner;
-    private ArrayList<String> imgs=new ArrayList<>();
-    private ArrayList<String> imgsText=new ArrayList<>();
+    private ArrayList<String> imgs=new ArrayList<>();   //储存图片路径
+    private ArrayList<String> imgsText=new ArrayList<>(); //储存图片的提示文字
     private TextView maintext,textnum;
-    private Button button,button1;
 
     @Override
     public void initView() {
         banner= (Banner) findViewById(R.id.main_banner);
         maintext= (TextView) findViewById(R.id.main_text);
-
         myProgressBar= (MyProgressBar) findViewById(R.id.myPro);
         textnum= (TextView) findViewById(R.id.main_text_num);
 
-        button= (Button) findViewById(R.id.lijijiaru);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                button1=null;
-                button1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                    }
-                });
-            }
-        });
     }
 
     @Override
@@ -79,7 +62,6 @@ public class HomePageFragment extends BaseFragment {
         banner.setBannerAnimation(Transformer.DepthPage);
         banner.setBannerTitles(imgsText);
         banner.setDelayTime(2000);
-
         banner.start();
 
         HomeBean.ResultBean.ProInfoBean proInfo = HomeDataManager.getInstance().getHomeBean().getResult().getProInfo();
@@ -88,9 +70,9 @@ public class HomePageFragment extends BaseFragment {
 
         int progress = Integer.parseInt(proInfo.getProgress());
         myProgressBar.setProgress(progress);
+        myProgressBar.showProgressBarAnimation();
 
         textnum.setText("预期年利率为："+proInfo.getYearRate()+"%");
-
 
     }
 

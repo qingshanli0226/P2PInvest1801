@@ -155,7 +155,7 @@ public class HeadPortraitActivity extends BaseActivity<UploadPresenter> implemen
             String imagePath = getImagePath(data1, null);
 
             //真实的图片路径存入sp
-            SpManager.getInstance().addContent("imagePath",imagePath);
+            SpManager.getInstance().addContents("imagePath",imagePath);
             try {
                 Bitmap bitmap1 = BitmapFactory.decodeStream(getContentResolver().openInputStream(data1));
                 Bitmap bitmap = GlideManager.getInstance().sampleBitmap(imageView.getMeasuredWidth(), imageView.getMeasuredHeight(), bitmap1);
@@ -187,7 +187,7 @@ public class HeadPortraitActivity extends BaseActivity<UploadPresenter> implemen
     @Override
     public void outLogin(OutLoginBean outLoginBean) {
         showMsg("退出登录");
-        if (SpManager.getInstance().isHaveToken()){
+        if (SpManager.getInstance().isHaveToken()){  //退出登录逻辑
             SpManager.getInstance().remove("token");
             UserManager.getInstance().saveUserBean(null);
             SpManager.getInstance().remove("imagePath");

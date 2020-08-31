@@ -14,7 +14,7 @@
             android:layout_height="300dp"
             android:src="@mipmap/ic_launcher_round"/>
 
-        <com.lixs.charts.LineChartView
+        <com.lixs.charts.RadarChartView
             android:id="@+id/lineView"
             android:layout_width="350dp"
             android:layout_height="300dp"

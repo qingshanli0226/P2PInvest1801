@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 
 public class MyViewpager extends ViewPager {
 
-    private int x ;
+    private int x;
     private int y;
 
     public MyViewpager(@NonNull Context context) {

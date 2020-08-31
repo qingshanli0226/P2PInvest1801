@@ -1,6 +1,5 @@
 package com.p2p.bawei.p2pinvest1801.activity;
 
-import android.graphics.Color;
 import android.widget.TextView;
 
 import com.bw.framwork.view.BaseActivity;
@@ -31,35 +30,34 @@ public class MoreShuoActivity extends BaseActivity {
         patternLockView.setOnPatternChangedListener(new OnPatternChangeListener() {
             @Override
             public void onStart(PatternLockerView patternLockerView) {
-
             }
 
             @Override
             public void onChange(PatternLockerView patternLockerView, List<Integer> list) {
-
-
             }
 
             @Override
             public void onComplete(PatternLockerView patternLockerView, List<Integer> list) {
                 if (list.size() < 4) {
-                    moreShuoText.setTextColor(Color.RED);
                     moreShuoText.setText("最少输入四个点，请重新绘制！");
                 } else {
                     if (mList == null) {
                         mList = new ArrayList<>();
                         mList.addAll(list);
                     } else {
-                        for (int i = 0; i < mList.size(); i++) {
-                            Integer integer = mList.get(i);
-                            if (integer != list.get(i)) {
-                                moreShuoText.setTextColor(Color.RED);
-                                moreShuoText.setText("与上一次绘制的不一致，请重新绘制！");
-                                return;
+                        if (list.size()!=mList.size()){
+                            moreShuoText.setText("与上一次绘制的不一致，请重新绘制！");
+                        }else {
+                            for (int i = 0; i < mList.size(); i++) {
+                                Integer integer = mList.get(i);
+                                if (integer != list.get(i)) {
+                                    moreShuoText.setText("与上一次绘制的不一致，请重新绘制！");
+                                    return;
+                                }
                             }
+                            showMsg("设置完成");
+                            finish();
                         }
-                        showMsg("设置完成");
-                        finish();
                     }
                 }
             }

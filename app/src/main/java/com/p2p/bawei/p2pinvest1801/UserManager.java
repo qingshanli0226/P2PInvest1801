@@ -53,7 +53,7 @@ public class UserManager {
                 LoginService.LoginBinder loginBinder=(LoginService.LoginBinder)service;
                 LoginService service1 = loginBinder.getService();
                 if (SpManager.getInstance().isHaveToken()){
-                    service1.autologin(SpManager.getInstance().getContent("token"));
+                    service1.autologin(SpManager.getInstance().getContents("token"));
                 }
             }
             @Override

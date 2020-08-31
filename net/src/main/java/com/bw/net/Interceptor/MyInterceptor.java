@@ -15,7 +15,7 @@ public class MyInterceptor implements Interceptor {
         Request request = chain.request();
         Request.Builder builder = request.newBuilder();
 
-        Request build = builder.addHeader("token", SpManager.getInstance().getContent("token")).build();
+        Request build = builder.addHeader("token", SpManager.getInstance().getContents("token")).build();
 
         return chain.proceed(build);
     }

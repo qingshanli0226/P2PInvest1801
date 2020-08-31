@@ -21,7 +21,7 @@ public class UploadModel extends BaseModel implements UploadContract.Model {
     @Override
     public void goUpload(MyCallBack<UploadBean> callBack) {
 
-        File file = new File(SpManager.getInstance().getContent("imagePath"));
+        File file = new File(SpManager.getInstance().getContents("imagePath"));
         RequestBody fileRQ = RequestBody.create(MediaType.parse("image/*"), file);
         MultipartBody.Part part = MultipartBody.Part.createFormData("picture", file.getName(), fileRQ);
 

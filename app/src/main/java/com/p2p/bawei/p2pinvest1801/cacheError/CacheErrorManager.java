@@ -28,24 +28,24 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class CacheError implements Thread.UncaughtExceptionHandler {
+public class CacheErrorManager implements Thread.UncaughtExceptionHandler {
 
     private String crashPath;
 
     private Context context;
     private Thread.UncaughtExceptionHandler defalutExceptionHandler;
 
-    private static CacheError cacheError;
+    private static CacheErrorManager cacheErrorManager;
 
-    public static CacheError getInstance() {
-        if (cacheError == null) {
+    public static CacheErrorManager getInstance() {
+        if (cacheErrorManager == null) {
             synchronized (String.class) {
-                if (cacheError == null) {
-                    cacheError = new CacheError();
+                if (cacheErrorManager == null) {
+                    cacheErrorManager = new CacheErrorManager();
                 }
             }
         }
-        return cacheError;
+        return cacheErrorManager;
     }
 
     @Override
@@ -77,7 +77,7 @@ public class CacheError implements Thread.UncaughtExceptionHandler {
             e1.printStackTrace();
         }
 
-        killProcess();
+        killProcess(true);
     }
 
 
@@ -94,17 +94,23 @@ public class CacheError implements Thread.UncaughtExceptionHandler {
         }
     }
 
-    private void killProcess() {
+    /**
+     *
+     * @param isResurrection 判断是否要复活本程序
+     */
+    public void killProcess(boolean isResurrection) {
         //想停掉这个应用，必须确保当前所有的Activity已经finish后才可以结束该进程，否则当前进程会一直存在
 
         for (Activity activity : UserManager.getInstance().getActivities()) {
             activity.finish();
         }
 
-        Intent intent = new Intent();
-        intent.setClass(context, WelcomeActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
+        if (isResurrection){
+            Intent intent = new Intent();
+            intent.setClass(context, WelcomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+        }
 
         System.exit(1);//结束进程
         android.os.Process.killProcess(Process.myPid());

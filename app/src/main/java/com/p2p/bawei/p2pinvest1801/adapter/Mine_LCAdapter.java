@@ -26,5 +26,6 @@ public class Mine_LCAdapter extends BaseQuickAdapter<AllLCBean.ResultBean, BaseV
 
         MyProgressBar myProgressBar = helper.getView(R.id.list_progress);
         myProgressBar.setProgress(Integer.parseInt(item.getProgress()));
+        myProgressBar.unProgressBarAnimation();
     }
 }

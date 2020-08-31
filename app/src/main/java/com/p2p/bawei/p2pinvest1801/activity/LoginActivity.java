@@ -105,7 +105,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ToolB
     public void loginOk(LoginBean loginBean) {
         showMsg(loginBean.getMessage());
         UserManager.getInstance().saveUserBean(loginBean);   //储存用户登录信息
-        SpManager.getInstance().addContent("token",loginBean.getResult().getToken());  //sp储存token
+        SpManager.getInstance().addContents("token",loginBean.getResult().getToken());  //sp储存token
 
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("num",0);

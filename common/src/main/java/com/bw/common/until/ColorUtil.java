@@ -1,4 +1,4 @@
-package com.p2p.bawei.p2pinvest1801.adapter;
+package com.bw.common.until;
 
 import android.graphics.Color;
 

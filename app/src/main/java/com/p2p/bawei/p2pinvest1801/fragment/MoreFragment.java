@@ -6,40 +6,43 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.bw.framwork.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.UserManager;
 import com.p2p.bawei.p2pinvest1801.activity.MoreShuoActivity;
 import com.p2p.bawei.p2pinvest1801.activity.RegisterActivity;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
 
-public class MoreFragment extends BaseFragment {
+public class MoreFragment extends BaseFragment implements View.OnClickListener {
     private CheckBox checkBox;
-    private RelativeLayout go_register;
 
     @Override
     public void initView() {
-        checkBox= (CheckBox) findViewById(R.id.more_checkBox);
+        checkBox = (CheckBox) findViewById(R.id.more_checkBox);
+        findViewById(R.id.go_register).setOnClickListener(this);
+        findViewById(R.id.more_reset).setOnClickListener(this);
+        findViewById(R.id.share).setOnClickListener(this);
 
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
-                    initDialog();
-                }else {
+                if (isChecked) {  //点击手势索时判断用户是否
+                    if (UserManager.getInstance().isLogin()) {
+                        initDialog();
+                    } else {
+                        showMsg("请先登录");
+                        checkBox.setChecked(false);
+                    }
 
                 }
             }
         });
 
-        go_register= (RelativeLayout) findViewById(R.id.go_register);
-
-        go_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), RegisterActivity.class));
-            }
-        });
     }
 
     @Override
@@ -54,20 +57,18 @@ public class MoreFragment extends BaseFragment {
 
     @Override
     public void showLoading() {
-
     }
 
     @Override
     public void hideLoading() {
-
     }
 
     @Override
     public void showError(int code, String message) {
-
     }
 
-    private void initDialog(){
+
+    private void initDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setMessage("是否设置手势密码?");
         builder.setTitle("设置手势密码");
@@ -93,5 +94,76 @@ public class MoreFragment extends BaseFragment {
 
         alertDialog.setCanceledOnTouchOutside(false);
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.go_register:
+                //去到注册界面
+                startActivity(new Intent(getActivity(), RegisterActivity.class));
+                break;
+            case R.id.more_reset:
+                //重置手势索
+
+                break;
+            case R.id.share:
+                //社会化分享
+                share();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void share() {
+        new ShareAction(getActivity()).withText("hello").setDisplayList(SHARE_MEDIA.SINA, SHARE_MEDIA.QQ, SHARE_MEDIA.WEIXIN)
+                .setCallback(shareListener).open();
+    }
+
+    private UMShareListener shareListener = new UMShareListener() {
+        /**
+         * @descrption 分享开始的回调
+         * @param platform 平台类型
+         */
+        @Override
+        public void onStart(SHARE_MEDIA platform) {
+
+        }
+
+        /**
+         * @descrption 分享成功的回调
+         * @param platform 平台类型
+         */
+        @Override
+        public void onResult(SHARE_MEDIA platform) {
+            Toast.makeText(getActivity(), "成功了", Toast.LENGTH_LONG).show();
+        }
+
+        /**
+         * @descrption 分享失败的回调
+         * @param platform 平台类型
+         * @param t 错误原因
+         */
+        @Override
+        public void onError(SHARE_MEDIA platform, Throwable t) {
+            Toast.makeText(getActivity(), "失败" + t.getMessage(), Toast.LENGTH_LONG).show();
+        }
+
+        /**
+         * @descrption 分享取消的回调
+         * @param platform 平台类型
+         */
+        @Override
+        public void onCancel(SHARE_MEDIA platform) {
+            Toast.makeText(getActivity(), "取消了", Toast.LENGTH_LONG).show();
+
+        }
+    };
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(getContext()).onActivityResult(requestCode, resultCode, data);
     }
 }

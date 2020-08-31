@@ -26,7 +26,7 @@ import java.util.TimerTask;
 public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdContract.View {
 
     private UpdataBean.ResultBean result;
-    private int num = 2;
+    private int num = 3;
     private ImageView wImg;
     private TextView wTime;
     private Handler handler = new Handler() {
@@ -35,14 +35,22 @@ public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdCont
             super.handleMessage(msg);
             if (msg.what == 1) {
                 wTime.setText("倒计时" + num-- + "秒");
-            }
-            if (num < 0) {
-                if (!HomeDataManager.getInstance().isHaveUpdate()) {
-                    mPresenter.upDate();
+                if (num < 0) {
+                    if (!HomeDataManager.getInstance().isHaveUpdate()) {
+                        mPresenter.upDate();
+                    }
+                } else {
+                    handler.sendEmptyMessageDelayed(1, 1000);
                 }
-            } else {
-                handler.sendEmptyMessageDelayed(1, 1000);
+            }else if (msg.what == 2) {  //跳转到主页面的逻辑
+                if (HomeDataManager.getInstance().isHaveUpdate() && HomeDataManager.getInstance().isHaveHomeBean()) {  //判断各数据是否都请求到了
+                    startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+                    finish();
+                }else {
+                    handler.sendEmptyMessageDelayed(2,2000);  //没有的话各两秒再重新检测
+                }
             }
+
         }
     };
 
@@ -54,16 +62,17 @@ public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdCont
         wTime = findViewById(R.id.w_time);
 
         mPresenter = new HdPresenter(new HdModel(), this);
-        if (!HomeDataManager.getInstance().isHave()) {
+        if (!HomeDataManager.getInstance().isHaveHomeBean()) {
             mPresenter.homeData();
         }
 
+        handler.sendEmptyMessage(1);
+
         ObjectAnimator alpha = ObjectAnimator.ofFloat(wImg, "alpha", 0, 1);  //欢迎界面动画
-        alpha.setDuration(2000);
+        alpha.setDuration(3000);
         alpha.setInterpolator(new LinearInterpolator());
         alpha.start();
 
-        handler.sendEmptyMessage(1);
 
     }
 
@@ -87,17 +96,15 @@ public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdCont
         result = updateBean.getResult();
         HomeDataManager.getInstance().saveUpdataBean(updateBean);
 
-//        int code = Integer.parseInt(result.getVersion());
         float code = Float.parseFloat(result.getVersion());
-        if (code>APKVersionCodeUtils.getInstance().getVersionCode()){   //判断版本号，是否要提醒用户更新
-            initDalog();
-        }else {
-            startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
-            finish();
+        if (code > APKVersionCodeUtils.getInstance().getVersionCode()) {   //判断版本号，是否要提醒用户更新
+            initDialog();
+        } else {
+            handler.sendEmptyMessage(2);
         }
     }
 
-    public void initDalog() {
+    public void initDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setIcon(R.mipmap.ic_launcher_round);
@@ -118,6 +125,7 @@ public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdCont
                 final Timer timer = new Timer();
                 timer.schedule(new TimerTask() {
                     int progress = 0;
+
                     @Override
                     public void run() {
                         if (progress == 100) {
@@ -130,10 +138,10 @@ public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdCont
                                     showMsg("更新完成。");
                                 }
                             });
-                            startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
-                            finish();
+                            handler.sendEmptyMessage(2);
+
                         } else {
-                            progressDialog.setProgress(progress+=2);
+                            progressDialog.setProgress(progress += 2);
                         }
 
                     }
@@ -144,8 +152,7 @@ public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdCont
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
-                finish();
+                handler.sendEmptyMessage(2);
             }
         });
 

@@ -23,7 +23,7 @@ public class InvestmentFragment extends BaseFragment implements IView {
         tabLayout= (TabLayout) findViewById(R.id.investment_tab);
         viewPager= (MyViewpager) findViewById(R.id.investment_vp);
 
-        adapter=new InvestmentViewPagerAdapter(getActivity().getSupportFragmentManager(), tabnames, fragments);
+        adapter=new InvestmentViewPagerAdapter(getChildFragmentManager(), tabnames, fragments);
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
     }
@@ -37,7 +37,7 @@ public class InvestmentFragment extends BaseFragment implements IView {
         tabnames.add("推荐理财");
         tabnames.add("热门理财");
 
-        fragments.add(new Mine_LC());
+        fragments.add(new All_LC());
         fragments.add(new Recommend_LC());
         fragments.add(new Hot_LC());
         adapter.notifyDataSetChanged();

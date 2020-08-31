@@ -17,7 +17,7 @@ import com.p2p.bawei.p2pinvest1801.mvp.presenter.AllPresenter;
 
 import java.util.ArrayList;
 
-public class Mine_LC extends BaseFragment<AllPresenter> implements AllContract.View {
+public class All_LC extends BaseFragment<AllPresenter> implements AllContract.View {
     private RecyclerView mineLcRv;
     private Mine_LCAdapter adapter;
     private ArrayList<AllLCBean.ResultBean> data = new ArrayList<>();

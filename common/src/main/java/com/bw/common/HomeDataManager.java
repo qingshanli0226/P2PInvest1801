@@ -28,7 +28,7 @@ public class HomeDataManager {
         this.homeBean = homeBean;
     }
 
-    public boolean isHave() {
+    public boolean isHaveHomeBean() {
 
         return homeBean != null;
     }
