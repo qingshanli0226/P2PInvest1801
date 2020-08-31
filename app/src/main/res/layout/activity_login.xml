@@ -76,4 +76,15 @@
         android:text="登  录"
         android:textColor="#ffffff"
         android:textSize="50px"  />
+    <Button
+        android:id="@+id/btn_otherlogin"
+        android:layout_width="match_parent"
+        android:layout_height="130px"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
+        android:layout_marginTop="50px"
+        android:background="@drawable/btn_01"
+        android:text="第三方登录"
+        android:textColor="#ffffff"
+        android:textSize="50px"  />
 </LinearLayout>

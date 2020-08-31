@@ -2,11 +2,9 @@ package com.p2p.bawei.p2pinvest1801.mvp.view;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.FrameLayout;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.common.bean.LoginBean;
 import com.example.framwork.mvp.user.UserManagers;
 import com.example.framwork.mvp.view.BaseActivity;
 import com.flyco.tablayout.CommonTabLayout;
@@ -23,23 +20,18 @@ import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.p2p.bawei.p2pinvest1801.mvp.view.mine.MyDialog;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.adapter.CommonAdapter;
-import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.HomeFragment;
-import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.InvestFragment;
-import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.MoreFragment;
-import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.PropertyFragment;
+import com.p2p.bawei.p2pinvest1801.mvp.view.mainfragment.HomeFragment;
+import com.p2p.bawei.p2pinvest1801.mvp.view.mainfragment.InvestFragment;
+import com.p2p.bawei.p2pinvest1801.mvp.view.mainfragment.MoreFragment;
+import com.p2p.bawei.p2pinvest1801.mvp.view.mainfragment.PropertyFragment;
 import com.p2p.bawei.p2pinvest1801.mvp.view.user.LoginActivity;
 
 import java.util.ArrayList;
-import java.util.List;
 
 //主页面
 public class MainActivity extends BaseActivity {
     private FrameLayout mainFramlayout;
     private CommonTabLayout mainCommon;
-    private HomeFragment homeFragment;
-    private InvestFragment investFragment;
-    private MoreFragment moreFragment;
-    private PropertyFragment propertyFragment;
     public static final int Home_INDEX = 0;
     public static final int InvestFragment_INDEX = 1;
     public static final int PropertyFragment_INDEX = 2;
@@ -53,10 +45,6 @@ public class MainActivity extends BaseActivity {
         mainFramlayout = (FrameLayout) findViewById(R.id.main_framlayout);
         mainCommon = (CommonTabLayout) findViewById(R.id.main_common);
 
-        homeFragment = new HomeFragment();
-        investFragment = new InvestFragment();
-        moreFragment = new MoreFragment();
-        propertyFragment = new PropertyFragment();
     }
     @Override
     public void initDatas() {
@@ -120,8 +108,11 @@ public class MainActivity extends BaseActivity {
         super.onNewIntent(intent);
         setIntent(intent);
         Bundle extras = getIntent().getExtras();
+        Log.i("----111",extras.toString());
         int index1 = extras.getInt("index",-1);
+        Log.i("----111",index1+"");
         showFragment(index1);
+        mainCommon.setCurrentTab(0);
     }
 
     //显示当前点击的fragment

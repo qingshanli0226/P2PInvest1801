@@ -8,7 +8,7 @@
         app:right_show="true"
         android:layout_width="match_parent"
         android:id="@+id/toolbar"
-        android:layout_height="@dimen/viewHight"
+        android:layout_height="@dimen/HeightView"
         app:center_text="更多"></com.example.common.ToolBar>
     <LinearLayout
         android:layout_width="match_parent"
@@ -158,6 +158,7 @@
         android:layout_width="match_parent"
         android:layout_height="120px"
         android:layout_marginTop="40px"
+        android:id="@+id/moreshares"
         android:orientation="horizontal">
         <ImageView
             android:layout_marginLeft="10px"

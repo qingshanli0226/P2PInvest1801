@@ -40,7 +40,7 @@ public class UserManagers {
             public void onServiceConnected(ComponentName name, IBinder service) {
                 UserService.MyBind myBinder = (UserService.MyBind) service;
                 if (!TextUtils.isEmpty(getToken())) {
-                    myBinder.getBind().init(getToken());
+                    myBinder.getBind().autologin(getToken());
                 }
             }
 
@@ -84,7 +84,7 @@ public class UserManagers {
         return loginBean != null;//如果loginBean不为空则代表已经登录
     }
     //判断当前用户是否登录
-    public String getetname() {
+    public synchronized String getetname() {
         String name = loginBean.getName();
         if(name !=null){
             return name;
@@ -93,18 +93,26 @@ public class UserManagers {
     }
     private String versions;
     private String url;
-    public void setVersion(String version){
+    public synchronized void setVersion(String version){
         this.versions = version;
     }
-    public void setVersionurl(String url){
+
+
+    public synchronized void setVersionurl(String url){
         this.url = url;
     }
-    public String getVersionurl(){
+
+
+    public synchronized String getVersionurl(){
         return url;
     }
-    public String getVersion(){
+
+
+    public synchronized String getVersion(){
         return versions;
     }
+
+
     public void setLoginStatusChangeListener(ILoginStatusChangeListener listener) {
         if (!loginStatusChangeListeners.contains(listener)) {
             loginStatusChangeListeners.add(listener);
@@ -116,7 +124,7 @@ public class UserManagers {
             loginStatusChangeListeners.remove(listener);
         }
     }
-    public String getToken() {
+    public synchronized String getToken() {
         SharedPreferences sharedPreferences = context.getSharedPreferences("tokens",Context.MODE_PRIVATE);
         String token = sharedPreferences.getString("token", "");
         return token;
@@ -145,7 +153,7 @@ public class UserManagers {
         }
         context.unbindService(serviceConnection);
     }
-    public List<Activity> getList_activity(){
+    public synchronized List<Activity> getList_activity(){
         return list_activity;
     }
 }

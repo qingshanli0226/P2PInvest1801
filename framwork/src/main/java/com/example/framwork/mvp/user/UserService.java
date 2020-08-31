@@ -47,8 +47,7 @@ public class UserService extends Service {
     }
 
 
-    public void init(String token){
-        Log.i("-----service", token);
+    public void autologin(String token){
         HashMap<String,String> params = new HashMap<>();
         params.put("token", token);
         RetrofitManager.getInstance().getRetrofit()

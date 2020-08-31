@@ -103,7 +103,8 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         e.printStackTrace(printWriter);
 
         HashMap<String,String> map= new HashMap<>();
-        map.put("message",printWriter.toString()+"\n----异常用户信息:"+UserManagers.getInstance().getetname()+"\n----版本信息:"+UserManagers.getInstance().getVersion());
+//        map.put("message",printWriter.toString()+"\n----异常用户信息:"+UserManagers.getInstance().getetname()+"\n----版本信息:"+UserManagers.getInstance().getVersion());
+        map.put("message",printWriter.toString());
         RetrofitManager.getInstance().getRetrofit()
                 .create(P2PApi.class)
                 .crashReport(map)

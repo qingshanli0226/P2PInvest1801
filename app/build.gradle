@@ -22,24 +22,33 @@ android {
         daoPackage 'com.p2p.bawei.p2pinvest1801.cache.dao'
         targetGenDir 'src/main/java'
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'//万能适配器
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
+    //万能适配器
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2@aar'//flycotablayout
-    implementation 'com.youth.banner:banner:1.4.10'//轮播图
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2@aar'
+    //flycotablayout
+    implementation 'com.youth.banner:banner:1.4.10'
+    //轮播图
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation project(path: ':net')
     implementation project(path: ':framwork')
-    implementation project(path: ':common')//glide依赖
-    implementation 'com.alibaba:fastjson:1.2.41' //fastjson
+    implementation project(path: ':common')
+    //glide依赖
+    implementation 'com.alibaba:fastjson:1.2.41'
+    //fastjson
     implementation 'com.veken:chart_view:1.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     implementation 'com.github.ihsg:PatternLocker:2.5.6'
@@ -68,4 +77,21 @@ dependencies {
     implementation 'com.github.uncleleonfan:StellarMap:v1.0.0'
     implementation 'me.jessyan:autosize:1.2.1'
     implementation 'com.lixs.charts:charts:1.0.7'
+    //PushSDK必须依赖基础组件库，所以需要加入对应依赖
+    //implementation 'com.umeng.umsdk:common:2.1.0'
+    //PushSDK必须依赖utdid库，所以需要加入对应依赖
+    implementation 'com.umeng.umsdk:utdid:1.1.5.3'
+    //PushSDK
+    implementation 'com.umeng.umsdk:push:6.0.1'
+    implementation 'com.umeng.umsdk:analytics:8.0.0'
+    //    implementation 'com.umeng.umsdk:common:2.1.0'
+    implementation files('libs/umeng-common-2.1.0.jar')
+    implementation files('libs/umeng-share-core-6.9.6.jar')
+    implementation files('libs/umeng-share-QQ-simplify-6.9.6.jar')
+    implementation files('libs/umeng-share-sina-simplify-6.9.6.jar')
+    implementation files('libs/umeng-share-wechat-simplify-6.9.6.jar')
+    implementation files('libs/umeng-shareboard-widget-6.9.6.jar')
+    implementation files('libs/umeng-sharetool-6.9.6.jar')
+    implementation files('libs/hyphenatechat_3.6.7.jar')
+    implementation files('libs/org.apache.http.legacy.jar')
 }

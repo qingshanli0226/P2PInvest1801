@@ -27,6 +27,7 @@ import com.example.net.P2PApi;
 import com.example.net.RetrofitManager;
 import com.example.common.bean.VersionBean;
 import com.p2p.bawei.p2pinvest1801.cache.CacheManager;
+import com.p2p.bawei.p2pinvest1801.exception.CrashHandler;
 import com.p2p.bawei.p2pinvest1801.mvp.view.MainActivity;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -53,14 +54,12 @@ public class Welecome extends BaseActivity implements CacheManager.IDataChangeLi
                     break;
                 case 2:
                     handlercount++;
-                    if(version.equals(UserManagers.getInstance().getVersion())){
-                        if(handlercount == 3){
+                    if(handlercount == 3){
+                        if(version.equals(UserManagers.getInstance().getVersion())){
                             Intent intent = new Intent(Welecome.this, MainActivity.class);
                             startActivity(intent);
                             finish();
-                        }
-                    }else{
-                        if(handlercount == 3){
+                        }else{
                             showlog();
                         }
                     }
@@ -121,8 +120,9 @@ public class Welecome extends BaseActivity implements CacheManager.IDataChangeLi
     public void initViews() {
         welcomeCount = (TextView) findViewById(R.id.welcome_count);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        //在欢迎页进行所有单例传值
         CacheManager.getInstance().registerDataChangeListener(Welecome.this);
+        //在欢迎页面进行单例类传值
+        CrashHandler.getInstance().init(this);
         CacheManager.getInstance().init(this);
         UserManagers.getInstance().init(this);
         NetModel.init(this);
@@ -230,7 +230,7 @@ public class Welecome extends BaseActivity implements CacheManager.IDataChangeLi
         handler.removeMessages(0);
         handler.removeMessages(1);
         handler.removeMessages(2);
-        //
+        //解除绑定
         UserManagers.getInstance().removeService();
         //清除
         CacheManager.getInstance().unRegisterDataChangeListener(this);

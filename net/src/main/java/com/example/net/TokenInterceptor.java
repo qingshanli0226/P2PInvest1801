@@ -21,7 +21,6 @@ public class TokenInterceptor implements Interceptor {
         Context context = NetModel.context;
         SharedPreferences sharedPreferences = context.getSharedPreferences("tokens",Context.MODE_PRIVATE);
         String token = sharedPreferences.getString("token", "");
-        Log.i("---拦截的token", token);
         Request request = chain.request();
         Request newRequest = request.newBuilder().addHeader("token",token).build();
         return chain.proceed(newRequest);

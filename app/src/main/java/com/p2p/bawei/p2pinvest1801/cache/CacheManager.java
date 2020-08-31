@@ -48,20 +48,20 @@ public class CacheManager {
                     }
                 });
     }
-    public List<HomeBean.ResultBean.ImageArrBean> getList(){
+    public synchronized List<HomeBean.ResultBean.ImageArrBean> getList(){
         return list;
     }
-    public void add(){
+    public synchronized void add(){
         list.clear();
         list_proinfobean.clear();
         list.addAll(list_homebean.get(0).getImageArr());
         list_proinfobean.add(list_homebean.get(0).getProInfo());
     }
-    public List<HomeBean.ResultBean.ProInfoBean> getList_proinfobean(){
+    public synchronized List<HomeBean.ResultBean.ProInfoBean> getList_proinfobean(){
         return list_proinfobean;
     }
 
-    public void registerDataChangeListener(IDataChangeListener listener) {
+    public synchronized void registerDataChangeListener(IDataChangeListener listener) {
         if (!dataChangeListenerList.contains(listener)) {
             dataChangeListenerList.add(listener);
         }
