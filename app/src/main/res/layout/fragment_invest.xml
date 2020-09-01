@@ -22,10 +22,10 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
     </com.google.android.material.tabs.TabLayout>
-    <androidx.viewpager.widget.ViewPager
+    <com.p2p.bawei.p2pinvest1801.custom.MyViewPager
         android:id="@+id/invest_vp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </androidx.viewpager.widget.ViewPager>
+    </com.p2p.bawei.p2pinvest1801.custom.MyViewPager>
 </LinearLayout>

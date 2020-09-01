@@ -1,14 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.MineFragment">
+    android:orientation="vertical"
+    android:background="#EFEFEF"
+    tools:context=".mine.mvp.view.fragment.MineFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="MineFragment" />
+        android:layout_height="50dp">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#122733"
+            android:gravity="center"
+            android:text="我的资产"
+            android:textColor="#2196F3"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/fragment_mine_user_setting"
+            android:layout_width="50dp"
+            android:src="@drawable/my_setting_icon"
+            android:layout_margin="5dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/fragment_mime_ll_login"
+        android:background="#2ABAED"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+        <ImageView
+            android:id="@+id/fragment_mine_user_pic"
+            android:layout_margin="10dp"
+            android:background="@drawable/my_user_bg_icon"
+            android:src="@drawable/my_user_default"
+            android:padding="2dp"
+            android:layout_width="100dp"
+            android:layout_gravity="center"
+            android:layout_height="100dp" />
+        <TextView
+            android:id="@+id/fragment_mine_user_name"
+            android:text="Hi,welcome!"
+            android:textColor="#fff"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+        <TextView
+            android:textColor="#FF0000"
+            android:text="学习提示:"
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:text="虫子撒地方都是法国大撒旦法施工等是否发按时发散"
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:text="虫子撒地方奥大师大撒多阿萨德阿萨德大师都是法国大撒旦法施工等是否发按时发散"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+        
+        <Button
+            android:background="@drawable/btn_stroke_red"
+            android:layout_weight="1"
+            android:text="充值"
+            android:textColor="#FF0000"
+            android:layout_width="0dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_height="50dp" />
+
+        <Button
+            android:background="@drawable/btn_stroke_bule"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="提现"
+            android:textColor="#00BBFF"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="210dp">
+        <RelativeLayout
+            android:id="@+id/fragment_mime_rl1"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:src="@drawable/my_invest_manage"
+                android:id="@+id/fragment_mime_pic1"
+                android:layout_margin="15dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <TextView
+                android:layout_toRightOf="@id/fragment_mime_pic1"
+                android:text="投资管理"
+                android:textSize="20sp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:src="@drawable/right"
+                android:layout_alignParentRight="true"
+                android:layout_margin="15dp"
+                android:layout_width="20dp"
+                android:layout_height="40dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/fragment_mime_rl2"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:src="@drawable/my_reward_manage"
+                android:id="@+id/fragment_mime_pic2"
+                android:layout_margin="15dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <TextView
+                android:layout_toRightOf="@id/fragment_mime_pic2"
+                android:text="投资管理"
+                android:textSize="20sp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:src="@drawable/right"
+                android:layout_alignParentRight="true"
+                android:layout_margin="15dp"
+                android:layout_width="20dp"
+                android:layout_height="40dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/fragment_mime_rl3"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:src="@drawable/my_asset_manage"
+                android:id="@+id/fragment_mime_pic3"
+                android:layout_margin="15dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <TextView
+                android:layout_toRightOf="@id/fragment_mime_pic3"
+                android:text="投资管理"
+                android:textSize="20sp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:src="@drawable/right"
+                android:layout_alignParentRight="true"
+                android:layout_margin="15dp"
+                android:layout_width="20dp"
+                android:layout_height="40dp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

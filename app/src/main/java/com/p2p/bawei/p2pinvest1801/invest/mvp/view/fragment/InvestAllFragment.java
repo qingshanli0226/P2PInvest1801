@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.common.Llog;
 import com.example.framwork.mvp.presenter.BasePresenter;
 import com.example.framwork.mvp.view.BaseFragment;
 import com.google.android.material.tabs.TabLayout;
@@ -64,7 +65,7 @@ public class InvestAllFragment extends BaseFragment<InvestPresenter> implements 
 
     @Override
     public void onInvestAllBean(InvestAllBean investAllBean) {
-        Log.i("AAAAAAAAAAA", "onInvestAllBean: ." + investAllBean.getResult().get(0).getName());
+        Llog.d( "onInvestAllBean: ." + investAllBean.getResult().get(0).getName());
 
         investAllAdapter.setNewData(investAllBean.getResult());
         investAllAdapter.notifyDataSetChanged();

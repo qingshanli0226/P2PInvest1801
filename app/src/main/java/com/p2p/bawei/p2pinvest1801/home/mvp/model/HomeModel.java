@@ -1,5 +1,8 @@
 package com.p2p.bawei.p2pinvest1801.home.mvp.model;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import com.example.framwork.mvp.model.BaseModel;
 import com.example.net.NetRetrofitManager;
 import com.p2p.bawei.p2pinvest1801.api.Api;
@@ -9,6 +12,8 @@ import com.p2p.bawei.p2pinvest1801.home.mvp.contract.HomeContract;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 public class HomeModel extends BaseModel implements HomeContract.IHomeContractModle {
@@ -22,6 +27,7 @@ public class HomeModel extends BaseModel implements HomeContract.IHomeContractMo
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
+
     }
 
     @Override

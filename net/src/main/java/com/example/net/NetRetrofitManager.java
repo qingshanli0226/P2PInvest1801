@@ -13,7 +13,7 @@ public class NetRetrofitManager {
     private static NetRetrofitManager instance;
 
 
-    Retrofit retrofit;
+    private Retrofit retrofit;
 
     public static NetRetrofitManager getInstance() {
         if (instance == null) {
@@ -36,7 +36,7 @@ public class NetRetrofitManager {
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(client)
-                    .baseUrl("http://49.233.93.155:8080/")
+                    .baseUrl("http://49.233.93.155:9999/")
                     .build();
 
         }

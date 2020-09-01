@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".mine.mvp.view.activity.UserInfoActivity">
+
+    <ImageView
+        android:id="@+id/activity_user_info_pic"
+        android:layout_margin="10dp"
+        android:background="@drawable/my_user_bg_icon"
+        android:src="@drawable/my_user_default"
+        android:padding="2dp"
+        android:layout_width="100dp"
+        android:layout_gravity="center"
+        android:layout_height="100dp" />
+    <TextView
+        android:id="@+id/activity_user_info_set_pic"
+        android:text="更改头像"
+        android:textColor="#2196F3"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_height="40dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <Button
+        android:id="@+id/activity_user_info_out"
+        android:background="#03A9F4"
+        android:text="退出登录"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -9,6 +10,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -20,10 +22,11 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -31,7 +34,26 @@ dependencies {
     implementation project(path: ':common')
     implementation project(path: ':framwork')
 
+
+    implementation 'com.alibaba:fastjson:1.2.41' //fastjson
+    implementation 'com.github.lecho:hellocharts-android:v1.5.8' //柱状折线饼图
+
+    implementation 'com.android.support:multidex:1.0.1'
+
+    implementation 'com.github.uncleleonfan:StellarMap:v1.0.0' //飞流布局(星星)
+    implementation 'com.blankj:utilcode:1.23.4'    //工具类
+    implementation 'com.github.wildma:PictureSelector:1.1.6' //图片文件选择器
+    implementation 'com.github.ihsg:PatternLocker:2.5.6' //手势密码
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.google.android.material:material:1.2.0'
+    implementation 'com.fynn.fluidlayout:fluidlayout:1.0'
+    implementation 'com.hyman:flowlayout-lib:1.1.2' //流式布局
+    implementation files('src/main/libs/umeng-common-2.1.0.jar')
+    implementation files('src/main/libs/umeng-share-core-6.9.6.jar')
+    implementation files('src/main/libs/umeng-share-QQ-simplify-6.9.6.jar')
+    implementation files('src/main/libs/umeng-share-sina-simplify-6.9.6.jar')
+    implementation files('src/main/libs/umeng-share-wechat-simplify-6.9.6.jar')
+    implementation files('src/main/libs/umeng-shareboard-widget-6.9.6.jar')
+    implementation files('src/main/libs/umeng-sharetool-6.9.6.jar')
 }

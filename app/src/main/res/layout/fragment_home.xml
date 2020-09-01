@@ -65,7 +65,7 @@
         app:stokeSize="30"
         app:circleColor = "#837777"
         app:roundSize="300"
-        app:textSize="30dp"
+        app:textSize="30sp"
         android:layout_gravity="center"
         android:layout_width="200dp"
         android:layout_height="200dp" />

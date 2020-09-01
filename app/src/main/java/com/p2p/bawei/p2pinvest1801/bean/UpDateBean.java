@@ -5,10 +5,11 @@ package com.p2p.bawei.p2pinvest1801.bean;
  */
 public class UpDateBean {
 
+
     /**
      * code : 200
      * msg : 请求成功
-     * result : {"version":"1.2","apkUrl":"http://49.233.93.155:8080/atguigu/apk/P2PInvest/app_new.apk","desc":"解决一些bug, 优化网络请求!"}
+     * result : {"version":"1.2","apkUrl":"http://49.233.93.155:8080/atguigu/apk/P2PInvest/app_new.apk","desc":"解决一些bug, 优化网络请求!","force":true,"versionCode":2}
      */
 
     private int code;
@@ -44,11 +45,15 @@ public class UpDateBean {
          * version : 1.2
          * apkUrl : http://49.233.93.155:8080/atguigu/apk/P2PInvest/app_new.apk
          * desc : 解决一些bug, 优化网络请求!
+         * force : true
+         * versionCode : 2
          */
 
         private String version;
         private String apkUrl;
         private String desc;
+        private boolean force;
+        private int versionCode;
 
         public String getVersion() {
             return version;
@@ -72,6 +77,22 @@ public class UpDateBean {
 
         public void setDesc(String desc) {
             this.desc = desc;
+        }
+
+        public boolean isForce() {
+            return force;
+        }
+
+        public void setForce(boolean force) {
+            this.force = force;
+        }
+
+        public int getVersionCode() {
+            return versionCode;
+        }
+
+        public void setVersionCode(int versionCode) {
+            this.versionCode = versionCode;
         }
     }
 }

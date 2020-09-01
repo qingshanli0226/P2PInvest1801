@@ -15,6 +15,7 @@ public class HomePresenter extends BasePresenter<HomeContract.IHomeContractModle
 
     public void getHome() {
         mModel.getHomeBean(new Observer<HomeBean>() {
+
             @Override
             public void onSubscribe(Disposable d) {
 

@@ -6,5 +6,13 @@
     android:orientation="vertical"
     tools:context=".invest.mvp.view.fragment.InvestRecommendFragment">
 
+    <com.leon.stellarmap.lib.StellarMap
+        android:id="@+id/stellar"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.leon.stellarmap.lib.StellarMap>
+
 
 </LinearLayout>

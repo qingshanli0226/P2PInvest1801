@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.example.common.Llog;
 import com.example.framwork.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.home.bean.HomeBean;
@@ -32,7 +33,6 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     private TextView homeName;
     private TextView homeYearRate;
     private Banner homeBanner;
-
 
 
     public HomeFragment() {
@@ -68,7 +68,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
 
     @Override
     public void onHomeBean(HomeBean homeBean) {
-        Log.i("liuxuanxxx", "onNext: " + homeBean.getCode() + "     size" + homeBean.getResult().getImageArr().size());
+        Llog.d("onNext: " + homeBean.getCode() + "     size" + homeBean.getResult().getImageArr().size());
 
         List<HomeBean.ResultBean.ImageArrBean> imageArr = homeBean.getResult().getImageArr();
         imageUrls = new ArrayList<>();
@@ -84,7 +84,6 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         progressView.setProgress(parseInt);
         homeName.setText(proInfo.getName());
         homeYearRate.setText("预期年利率:" + proInfo.getYearRate() + "%");
-
 
 
         homeBanner.setImages(imageUrls);

@@ -1,14 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.MoreFragment">
+    android:background="#EBEBEB"
+    android:orientation="vertical"
+    tools:context=".more.mvp.view.fragment.MoreFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="MoreFragment" />
+        android:layout_height="50dp"
+        android:background="#122733"
+        android:gravity="center"
+        android:text="更多"
+        android:textColor="#2196F3"
+        android:textSize="30sp" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/fragment_more_user_register"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:drawableLeft="@drawable/icon_more_regist"
+        android:gravity="center_vertical"
+        android:text="   用户注册"
+        android:textColor="#03A9F4"
+        android:textSize="25sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:drawableLeft="@drawable/icon_more_secret"
+            android:gravity="center_vertical"
+            android:text="   手势密码"
+            android:textColor="#03A9F4"
+            android:textSize="25sp" />
+
+        <Switch
+            android:id="@+id/switch_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:drawableLeft="@drawable/icon_more_reset"
+        android:gravity="center_vertical"
+        android:text="  重置手势密码"
+        android:textColor="#03A9F4"
+        android:textSize="25sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/fragment_more_notescontact"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:drawableLeft="@drawable/icon_more_contact"
+            android:gravity="center_vertical"
+            android:text="   联系客服"
+            android:textColor="#03A9F4"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="010-56253825"
+            android:textColor="#FF0000"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/fragment_more_user_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:drawableLeft="@drawable/icon_more_sms"
+        android:gravity="center_vertical"
+        android:text="   用户反馈"
+        android:textColor="#03A9F4"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/fragment_mime_share"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:drawableLeft="@drawable/icon_more_share"
+        android:gravity="center_vertical"
+        android:text="   分享给好友"
+        android:textColor="#03A9F4"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/fragment_more_about_finance"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:drawableLeft="@drawable/icon_more_about"
+        android:gravity="center_vertical"
+        android:text="   关于硅谷理财"
+        android:textColor="#03A9F4"
+        android:textSize="25sp" />
+
+</LinearLayout>

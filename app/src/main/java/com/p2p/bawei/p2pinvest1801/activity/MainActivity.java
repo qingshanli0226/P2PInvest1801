@@ -1,12 +1,17 @@
-package com.p2p.bawei.p2pinvest1801;
+package com.p2p.bawei.p2pinvest1801.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.blankj.utilcode.util.BarUtils;
+import com.blankj.utilcode.util.EncryptUtils;
 import com.next.easynavigation.view.EasyNavigationBar;
+import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.execption.CrashHandler;
 import com.p2p.bawei.p2pinvest1801.home.mvp.view.fragment.HomeFragment;
 import com.p2p.bawei.p2pinvest1801.invest.mvp.view.fragment.InvestFragment;
 import com.p2p.bawei.p2pinvest1801.mine.mvp.view.fragment.MineFragment;
@@ -27,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         easyBar = findViewById(R.id.easyBar);
 
+//        List<String> a = null;
+//        a.add("a");
+
+
+
+
+
 //        getIntent()
 //        Bundle bundle = getIntent().getBundleExtra("bundle");
 //        HomeBean home = bundle.getParcelable("home");
@@ -43,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         HomeFragment homeFragment = new HomeFragment();
 //        homeFragment.setArguments(bundle);
 
+        BarUtils.setStatusBarColor(this, Color.TRANSPARENT);
         fragmentList.add(homeFragment);
         fragmentList.add(new InvestFragment());
         fragmentList.add(new MineFragment());
@@ -59,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
                 .setOnTabLoadListener(new EasyNavigationBar.OnTabLoadListener() { //tab加载完毕回调
                     @Override
                     public void onTabLoadCompleteEvent() {
-                        easyBar.setMsgPointCount(0,9);
-                        easyBar.setMsgPointCount(1,314);
-                        easyBar.setMsgPointCount(2,42);
-                        easyBar.setHintPoint(3, true);
+//                        easyBar.setMsgPointCount(0,9);
+//                        easyBar.setMsgPointCount(1,314);
+//                        easyBar.setMsgPointCount(2,42);
+//                        easyBar.setHintPoint(3, true);
                     }
                 })
                 .setOnTabClickListener(new EasyNavigationBar.OnTabClickListener() {

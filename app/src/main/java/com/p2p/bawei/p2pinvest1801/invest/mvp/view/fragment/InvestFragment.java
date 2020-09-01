@@ -13,13 +13,14 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.custom.MyViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class InvestFragment extends Fragment {
     private TabLayout investTab;
-    private ViewPager investVp;
+    private MyViewPager investVp;
     private List<Fragment> fragmentList;
 
     public InvestFragment() {

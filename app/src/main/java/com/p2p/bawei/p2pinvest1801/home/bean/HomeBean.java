@@ -1,13 +1,13 @@
 package com.p2p.bawei.p2pinvest1801.home.bean;
 
-import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.List;
+
 /**
  * Home 数据
  */
-public class HomeBean implements Parcelable {
+public class HomeBean {
 
     /**
      * code : 200
@@ -18,23 +18,6 @@ public class HomeBean implements Parcelable {
     private int code;
     private String msg;
     private ResultBean result;
-
-    protected HomeBean(Parcel in) {
-        code = in.readInt();
-        msg = in.readString();
-    }
-
-    public static final Creator<HomeBean> CREATOR = new Creator<HomeBean>() {
-        @Override
-        public HomeBean createFromParcel(Parcel in) {
-            return new HomeBean(in);
-        }
-
-        @Override
-        public HomeBean[] newArray(int size) {
-            return new HomeBean[size];
-        }
-    };
 
     public int getCode() {
         return code;
@@ -60,17 +43,6 @@ public class HomeBean implements Parcelable {
         this.result = result;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(code);
-        dest.writeString(msg);
-    }
-
     public static class ResultBean {
         /**
          * imageArr : [{"ID":"1","IMAPAURL":"http://fund.eastmoney.com/f10/jjjl_002939.html","IMAURL":"http://49.233.93.155:8080/atguigu/img/P2PInvest/index01.png"},{"ID":"2","IMAPAURL":"http://fund.eastmoney.com/519983.html","IMAURL":"http://49.233.93.155:8080/atguigu/img/P2PInvest/index02.png"},{"ID":"3","IMAPAURL":"http://www.gffunds.com.cn/funds/?fundcode=004997","IMAURL":"http://49.233.93.155:8080/atguigu/img/P2PInvest/index03.png"},{"ID":"5","IMAPAURL":"http://fund.eastmoney.com/002939.html","IMAURL":"http://49.233.93.155:8080/atguigu/img/P2PInvest/index04.png"}]
@@ -79,6 +51,14 @@ public class HomeBean implements Parcelable {
 
         private ProInfoBean proInfo;
         private List<ImageArrBean> imageArr;
+
+        @Override
+        public String toString() {
+            return "ResultBean{" +
+                    "proInfo=" + proInfo +
+                    ", imageArr=" + imageArr +
+                    '}';
+        }
 
         public ProInfoBean getProInfo() {
             return proInfo;
