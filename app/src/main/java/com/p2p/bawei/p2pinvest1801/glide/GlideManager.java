@@ -35,31 +35,34 @@ public class GlideManager {
     //初始化
     public void init(Context context){
         this.context = context;
+        File absoluteFile = context.getExternalCacheDir().getAbsoluteFile();
+        if (absoluteFile!=null){
+            fileDir = new File(absoluteFile + "/p2p/");
 
-        fileDir = new File(context.getExternalCacheDir().getAbsoluteFile() + "/p2p/");
+            if (!fileDir.exists()){
+                fileDir.mkdir();
+            }
 
-        if (!fileDir.exists()){
-            fileDir.mkdir();
+            try {
+                //使用缩略图,磁盘内存最多使用1个G的空间,如果超出则默认删除最先存储的图片
+                DiskLruCache.open(fileDir,1,1,1000*1024*1024);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //实例化最大内存空间
+            lruCache = new LruCache<>(Runtime.getRuntime().maxMemory()/8);
         }
 
-        try {
-            //使用缩略图,磁盘内存最多使用1个G的空间,如果超出则默认删除最先存储的图片
-            DiskLruCache.open(fileDir,1,1,1000*1024*1024);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        //实例化最大内存空间
-        lruCache = new LruCache<>(Runtime.getRuntime().maxMemory()/8);
 
     }
 
 
-    //从三级缓存中读取图片
-    public Bitmap getBitmapFromMen(String key){
-        synchronized (lruCache){
-            return lruCache.get(key);
-        }
-    }
+//    //从三级缓存中读取图片
+//    public Bitmap getBitmapFromMen(String key){
+//        synchronized (lruCache){
+//            return lruCache.get(key);
+//        }
+//    }
 
 }

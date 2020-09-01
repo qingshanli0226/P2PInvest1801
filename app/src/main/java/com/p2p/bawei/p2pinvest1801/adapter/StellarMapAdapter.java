@@ -8,7 +8,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.leon.stellarmap.lib.StellarMap;
-import com.p2p.bawei.p2pinvest1801.R;
 
 import java.util.List;
 import java.util.Random;

@@ -35,5 +35,4 @@ public class LoginPresenter extends BasePresenter<LoginContract.Model,LoginContr
             }
         });
     }
-
 }

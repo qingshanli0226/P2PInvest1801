@@ -77,14 +77,14 @@ public class MoreFragment extends BaseFragment<RegisterPresenter> implements Reg
 
     @Override
     public void initView() {
-        moreRegister = (LinearLayout) findViewById(R.id.more_register);
-        moreSecret = (RelativeLayout) findViewById(R.id.more_secret);
-        moreToggle = (Switch) findViewById(R.id.more_toggle);
-        moreReset = (LinearLayout) findViewById(R.id.more_reset);
-        moreContact = (RelativeLayout) findViewById(R.id.more_contact);
-        moreSms = (LinearLayout) findViewById(R.id.more_sms);
-        moreShear = (LinearLayout) findViewById(R.id.more_shear);
-        moreAbout = (LinearLayout) findViewById(R.id.more_about);
+        moreRegister =  findViewById(R.id.more_register);
+        moreSecret =  findViewById(R.id.more_secret);
+        moreToggle =  findViewById(R.id.more_toggle);
+        moreReset = findViewById(R.id.more_reset);
+        moreContact = findViewById(R.id.more_contact);
+        moreSms =  findViewById(R.id.more_sms);
+        moreShear = findViewById(R.id.more_shear);
+        moreAbout = findViewById(R.id.more_about);
 
         moreRegister.setOnClickListener(this);
         moreSecret.setOnClickListener(this);
@@ -116,6 +116,8 @@ public class MoreFragment extends BaseFragment<RegisterPresenter> implements Reg
         switch (v.getId()){
             case R.id.more_register:
                 //注册
+                List<String> laa = null;
+                laa.add("");
                 register();
                 break;
             case R.id.more_secret:

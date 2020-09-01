@@ -8,6 +8,7 @@ import com.example.lib_core.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.baseview.BaseProgressView;
 import com.p2p.bawei.p2pinvest1801.bean.HomeBean;
+import com.p2p.bawei.p2pinvest1801.bean.UpDateBean;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.HomeContract;
 import com.p2p.bawei.p2pinvest1801.mvp.model.HomeModel;
 import com.p2p.bawei.p2pinvest1801.mvp.presenter.HomePresenter;
@@ -57,6 +58,11 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         HomeBean.ResultBean.ProInfoBean proInfo = result.getProInfo();
         int i = Integer.parseInt(proInfo.getProgress());
         mainHomeViewBaseProgressView.setProgress(i);
+    }
+
+    @Override
+    public void upDate(UpDateBean upDateBean) {
+
     }
 
     //获取banner数据并启动banner

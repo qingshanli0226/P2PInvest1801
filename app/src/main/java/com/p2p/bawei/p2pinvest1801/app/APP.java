@@ -3,7 +3,8 @@ package com.p2p.bawei.p2pinvest1801.app;
 import android.app.Application;
 
 import com.p2p.bawei.p2pinvest1801.ex.CrashHandler;
-import com.p2p.bawei.p2pinvest1801.glide.GlideManager;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.socialize.PlatformConfig;
 
@@ -14,6 +15,12 @@ public class APP extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        RefWatcher refWatcher;
+
+        if (!LeakCanary.isInAnalyzerProcess(this)) {
+            refWatcher = LeakCanary.install(this);
+        }
 
         UMConfigure.init(this,"5f3cd2a7fa5e894f08bd4334"
                 ,"umeng",UMConfigure.DEVICE_TYPE_PHONE,"6eb023b391072f822aa9e558b7f70897");//58edcfeb310c93091c000be2 5965ee00734be40b580001a0
@@ -30,7 +37,7 @@ public class APP extends Application {
         PlatformConfig.setDing("dingoalmlnohc0wggfedpk");
         PlatformConfig.setVKontakte("5764965","5My6SNliAaLxEm3Lyd9J");
         PlatformConfig.setDropbox("oz8v5apet3arcdy","h7p2pjbzkkxt02a");
-
+        instance=this;
         CrashHandler.getInstance().init(this);
 
     }

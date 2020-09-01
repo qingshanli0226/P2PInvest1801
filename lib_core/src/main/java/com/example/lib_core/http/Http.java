@@ -42,7 +42,7 @@ public class Http {
                 .writeTimeout(1, TimeUnit.MINUTES)
                 .build();
         Retrofit.Builder builder = new Retrofit.Builder();
-        builder.baseUrl("http://49.233.93.155:8080/");
+        builder.baseUrl("http://49.233.93.155:9999/");
         builder.client(client);
         builder.addCallAdapterFactory(RxJava2CallAdapterFactory.create());
         builder.addConverterFactory(GsonConverterFactory.create());

@@ -16,33 +16,38 @@ import android.os.Process;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.lib_core.http.Http;
 import com.example.lib_core.http.Manager;
+import com.p2p.bawei.p2pinvest1801.api.API;
 import com.p2p.bawei.p2pinvest1801.app.APP;
-import com.p2p.bawei.p2pinvest1801.mvp.view.activity.MainActivity;
+import com.p2p.bawei.p2pinvest1801.bean.BaseBean;
+import com.p2p.bawei.p2pinvest1801.mvp.view.activity.WelComeActivity;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PipedWriter;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 public class CrashHandler implements Thread.UncaughtExceptionHandler {
-
-
-    private String crashPath;//获取的异常
+    private String crashPath;
 
     private Context context;
-
-    public static CrashHandler instance;
-
     private Thread.UncaughtExceptionHandler uncaughtExceptionHandler;
 
-    public static CrashHandler getInstance(){
-        if (instance==null){
+    private static CrashHandler instance;
+
+    public static CrashHandler getInstance() {
+        if (instance == null) {
             instance = new CrashHandler();
         }
         return instance;
@@ -51,28 +56,28 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     //当程序出现异常时在这个方法里进行处理
     @Override
     public void uncaughtException(Thread t, final Throwable e) {
-        Log.d("shw", "uncaughtException: " + e.getCause());
+        Log.d("shw", "uncaughtException: " +e);
+
         new Thread(new Runnable() {
             @Override
             public void run() {
-                //在这两个中间和在主线程中没有区别
                 Looper.prepare();
-                Toast.makeText(context, "程序出现异常,准备重启", Toast.LENGTH_SHORT).show();
+                Toast.makeText(APP.instance, "程序出现异常，已经重新启动", Toast.LENGTH_SHORT).show();
                 Looper.loop();
-
             }
         }).start();
 
         new Thread(new Runnable() {
             @Override
             public void run() {
-                saveExceptionInfo(e);
+                saveExecptionInfo(e);
                 crashReportToServer(e);
             }
-        });
+        }).start();
+
 
         try {
-            Thread.sleep(15000);
+            Thread.sleep(5000);
         } catch (InterruptedException e1) {
             e1.printStackTrace();
         }
@@ -82,14 +87,46 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
 
     //给服务器的崩溃报告
     private void crashReportToServer(Throwable e) {
+        //将异常信息放到一个输出流里
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter printWriter = new PrintWriter(stringWriter);
+        e.printStackTrace(printWriter);
 
+
+        HashMap<String,String> params = new HashMap<>();
+        params.put("message", "喵喵"+stringWriter.toString());
+        Http.getInstance().creatRetrofit()
+                .create(API.class)
+                .crashReport(params)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<BaseBean<String>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(BaseBean<String> stringBaseBean) {
+                        Log.e("喵喵", "onNext: " );
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
 
 
     }
 
     //用来存储错误信息
-    private void saveExceptionInfo(Throwable e) {
-
+    private void saveExecptionInfo(Throwable e) {
         //将异常信息存在输入流
         StringWriter stringWriter = new StringWriter();
         PrintWriter printWriter = new PrintWriter(stringWriter);
@@ -99,17 +136,17 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String format = simpleDateFormat.format(new Date());
         File file = new File(crashPath + format + ".txt");
-        Log.e("aaaaa", "saveExceptionInfo: "+file );
+        Log.e("aaaaa", "saveExceptionInfo: " + file);
 
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             String s = stringWriter.toString();//获取异常信息
             try {
-                fileOutputStream.write(s.getBytes(),0,s.length());//进行存储
+                fileOutputStream.write(s.getBytes(), 0, s.length());//进行存储
                 fileOutputStream.flush();//刷新
             } catch (IOException e1) {
                 e1.printStackTrace();
-            }finally {
+            } finally {
                 try {
                     fileOutputStream.close();//关流
                 } catch (IOException e1) {
@@ -126,34 +163,33 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
 
 
     //杀死进程
-    private void killProcess(){
+    private void killProcess() {
+        //想停掉这个应用，必须确保当前所有的Activity已经finish后才可以结束该进程，否则当前进程会一直存在
 
-        for (Activity activity: Manager.getInstance().getActivity_list()){
+        for (Activity activity : Manager.getInstance().getActivity_list()) {
             activity.finish();
         }
 
-        //杀死之前拉活一个activity
         Intent intent = new Intent();
-        intent.setClass(APP.instance, MainActivity.class);
+        intent.setClass(APP.instance, WelComeActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         APP.instance.startActivity(intent);
 
-        //结束进程
-        System.exit(1);
+        System.exit(1);//结束进程
         android.os.Process.killProcess(Process.myPid());
     }
 
-    public void init(Context context){
+    public void init(Context context) {
         this.context = context;
-        uncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();//吧之前的处理器缓存起来
+        uncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();//把之前的处理器缓存起来
         Thread.setDefaultUncaughtExceptionHandler(this);
         //存储异常报告目录
-//        Log.e("aaaaaaaaaaa", "init: "+APP.instance.getExternalCacheDir() );
-//        crashPath = APP.instance.getExternalCacheDir()+"/sdcard/Pictures/";
-//        File file = new File(crashPath);
-//        if (!file.exists()){
-//            file.mkdir();
-//        }
+        Log.e("aaaaaaaaaaa", "init: "+APP.instance.getExternalCacheDir() );
+        crashPath = APP.instance.getExternalCacheDir()+"/crash/";
+        File file = new File(crashPath);
+        if (!file.exists()){
+            file.mkdir();
+        }
 
     }
 

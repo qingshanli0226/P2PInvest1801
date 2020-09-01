@@ -56,7 +56,7 @@ public class InvestmentFragmentHotMoneyFragment extends BaseFragment <Investment
             GradientDrawable drawable=new GradientDrawable();
             drawable.setShape(GradientDrawable.RECTANGLE);
             drawable.setGradientType(GradientDrawable.RECTANGLE);
-            drawable.setCornerRadius(60);
+            drawable.setCornerRadius(5);
             drawable.setColor(newcolor);
 
             Button tv = new Button(getContext());

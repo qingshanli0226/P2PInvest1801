@@ -63,8 +63,7 @@ dependencies {
     implementation 'com.fynn.fluidlayout:fluidlayout:1.0'
     //java中切换沉浸式布局
     implementation 'com.readystatesoftware.systembartint:systembartint:1.0.3'
-    //    implementation 'com.squareup.leakcanary:leakcanary-android:1.5.1'
-    //    implementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+
     implementation 'com.github.czy1121:loadinglayout:1.0.1'
     implementation 'com.andrognito.patternlockview:patternlockview:1.0.0'
     // Optional, for RxJava2 adapter
@@ -82,4 +81,12 @@ dependencies {
     implementation 'com.github.PhilJay:MPAndroidChart:v2.2.5'
     implementation 'com.jakewharton:disklrucache:2.0.2'
     implementation 'com.github.uncleleonfan:StellarMap:v1.0.0' //飞流布局(星星)
+
+    //导入LeakCanary的依赖，去定位页面的内存泄漏问题。
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'
+
+
 }

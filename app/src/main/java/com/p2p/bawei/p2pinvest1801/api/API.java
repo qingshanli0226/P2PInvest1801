@@ -5,6 +5,7 @@ import com.p2p.bawei.p2pinvest1801.bean.HomeBean;
 import com.p2p.bawei.p2pinvest1801.bean.InvestmentBean;
 import com.p2p.bawei.p2pinvest1801.bean.LoginBean;
 import com.p2p.bawei.p2pinvest1801.bean.RegisterBean;
+import com.p2p.bawei.p2pinvest1801.bean.UpDateBean;
 import com.p2p.bawei.p2pinvest1801.bean.UpLoadBean;
 
 import java.util.HashMap;
@@ -33,8 +34,11 @@ public interface API {
 
     @POST("upload")
     Observable<UpLoadBean> upload();
+
     @POST("crash")
     @FormUrlEncoded
     Observable<BaseBean<String>> crashReport(@FieldMap HashMap<String,String> params);
 
+    @GET("atguigu/json/P2PInvest/update.json")
+    Observable<UpDateBean> upDate ();
 }

@@ -6,7 +6,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
@@ -41,10 +40,6 @@ import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.PieData;
-import com.lzy.okgo.OkGo;
-import com.lzy.okgo.callback.BitmapCallback;
-import com.lzy.okgo.callback.StringCallback;
-import com.lzy.okgo.model.Response;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.LoginContract;
 import com.p2p.bawei.p2pinvest1801.mvp.model.LoginModel;
@@ -69,20 +64,20 @@ public class AssetsFragment extends BaseFragment<LoginPresenter> implements Logi
     public void initView() {
 
         //柱状图饼状图线性图
-        assetsHistogram = (RelativeLayout) findViewById(R.id.assets_histogram);
-        assetsLineChar = (RelativeLayout) findViewById(R.id.assets_line_char);
-        assetsScreenGraph = (RelativeLayout) findViewById(R.id.assets_Screen_graph);
+        assetsHistogram = findViewById(R.id.assets_histogram);
+        assetsLineChar = findViewById(R.id.assets_line_char);
+        assetsScreenGraph = findViewById(R.id.assets_Screen_graph);
         graphOnClick();
         //弹出登录窗口
         Login();
         //点击大图展示
-        upLoadImg = (ImageView) findViewById(R.id.up_load_img);
+        upLoadImg =  findViewById(R.id.up_load_img);
         //点击换图片
-        userImg = (ImageView) findViewById(R.id.user_img);
+        userImg =  findViewById(R.id.user_img);
         //充值
-        mainAssetsRecharge = (Button) findViewById(R.id.main_assets_recharge);
+        mainAssetsRecharge = findViewById(R.id.main_assets_recharge);
         //提现
-        mainAssetsWithdrawDeposit = (Button) findViewById(R.id.main_assets_withdraw_deposit);
+        mainAssetsWithdrawDeposit = findViewById(R.id.main_assets_withdraw_deposit);
         mainAssetsRecharge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -363,20 +358,16 @@ public class AssetsFragment extends BaseFragment<LoginPresenter> implements Logi
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        /**
-         * 图片回调结果处理
-         */
         if (requestCode == 0) {
             if (data != null) {
                 PictureBean pictureBean = data.getParcelableExtra(PictureSelector.PICTURE_RESULT);
-                if (pictureBean.isCut()) {
-                    Context context = getContext();
-                    if (context!=null){
-                        Glide.with(context).load(pictureBean.getPath()).transform(new CircleCrop()).into(userImg);
-                        Log.e("获取到的图片地址", "onActivityResult: "+pictureBean.getPath()+":");
-
-                    }
-
+                boolean cut = pictureBean.isCut();
+                if (cut){
+                        Context context = getContext();
+                        if (context!=null){
+                            Glide.with(context).load(pictureBean.getPath()).transform(new CircleCrop()).into(userImg);
+                            Log.e("获取到的图片地址", "onActivityResult: "+pictureBean.getPath()+":");
+                        }
                 }
             }
         }
@@ -402,7 +393,7 @@ public class AssetsFragment extends BaseFragment<LoginPresenter> implements Logi
 
 
 
-    /**
+    /*
      * 换沉浸式布局
      * @return
      */
@@ -426,5 +417,10 @@ public class AssetsFragment extends BaseFragment<LoginPresenter> implements Logi
     public void success() {
         Toast.makeText(getContext(), "登录成功请手动返回上一级页面", Toast.LENGTH_SHORT).show();
 
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }

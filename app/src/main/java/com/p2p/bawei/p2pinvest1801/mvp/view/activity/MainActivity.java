@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import com.example.lib_core.mvp.view.BaseActivity;
 import com.next.easynavigation.view.EasyNavigationBar;
 import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.ex.CrashHandler;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.AssetsFragment;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.HomeFragment;
 import com.p2p.bawei.p2pinvest1801.mvp.view.fragment.InvestmentFragment;
@@ -18,17 +19,18 @@ import java.util.List;
 
 public class MainActivity extends BaseActivity {
     private EasyNavigationBar mainEasy;
-    private int[] unSelect = {R.drawable.bottom01,R.drawable.bottom03,R.drawable.bottom05,R.drawable.bottom07};
-    private int[] select = {R.drawable.bottom02,R.drawable.bottom04,R.drawable.bottom06,R.drawable.bottom08};
-    private String[] title = {"首页","投资","我的资产","更多"};
+    private int[] unSelect = {R.drawable.bottom01, R.drawable.bottom03, R.drawable.bottom05, R.drawable.bottom07};
+    private int[] select = {R.drawable.bottom02, R.drawable.bottom04, R.drawable.bottom06, R.drawable.bottom08};
+    private String[] title = {"首页", "投资", "我的资产", "更多"};
     private List<Fragment> fragment_List = new ArrayList<>();
+
     @Override
     public void initView() {
         fragment_List.add(new HomeFragment());
         fragment_List.add(new InvestmentFragment());
         fragment_List.add(new AssetsFragment());
         fragment_List.add(new MoreFragment());
-        mainEasy =  findViewById(R.id.main_easy);
+        mainEasy = findViewById(R.id.main_easy);
         mainEasy.defaultSetting()
                 .selectIconItems(select)
                 .normalIconItems(unSelect)
@@ -64,7 +66,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initData() {
-
+        CrashHandler.getInstance().init(this);
     }
 
     @Override

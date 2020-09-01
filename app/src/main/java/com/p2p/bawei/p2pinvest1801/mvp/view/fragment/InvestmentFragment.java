@@ -24,7 +24,7 @@ public class InvestmentFragment extends BaseFragment {
         InvestmentFragmentAllFinancialFragment investmentFragmentAllFinancialFragment = new InvestmentFragmentAllFinancialFragment();
         InvestmentFragmentRecommendAFinancialFragment investmentFragmentRecommendAFinancialFragment = new InvestmentFragmentRecommendAFinancialFragment();
         InvestmentFragmentHotMoneyFragment investmentFragmentHotMoneyFragment = new InvestmentFragmentHotMoneyFragment();
-        //吧初始化的fragment添加的集合中
+        //吧初始化的fragment添加到集合中
         fragment_list.add(investmentFragmentAllFinancialFragment);
         fragment_list.add(investmentFragmentRecommendAFinancialFragment);
         fragment_list.add(investmentFragmentHotMoneyFragment);
