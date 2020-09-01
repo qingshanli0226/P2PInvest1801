@@ -29,6 +29,11 @@ public class AboutActivity extends BaseActivity {
     }
 
     @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
     public int bandLayout() {
         return R.layout.activity_about;
     }

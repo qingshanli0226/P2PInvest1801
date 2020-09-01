@@ -1,7 +1,9 @@
 package com.p2p.bawei.p2pinvest1801.home.more;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.util.Log;
@@ -91,6 +93,9 @@ public class MoreFragment extends BaseFragment {
 
     private void resetGeste() {
         isOpen=false;
+        SharedPreferences geste = getActivity().getSharedPreferences("geste", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = geste.edit();
+        edit.putBoolean("lock",false);
         more_toggle.setImageResource(R.drawable.toggle_off);
     }
 
@@ -136,6 +141,7 @@ public class MoreFragment extends BaseFragment {
         } else {
             isOpen = true;
             more_toggle.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.toggle_on));
+            startActivity(new Intent(getActivity(),GesteActivity.class));
         }
     }
 

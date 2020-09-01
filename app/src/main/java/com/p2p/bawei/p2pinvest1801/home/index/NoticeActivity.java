@@ -46,6 +46,11 @@ public class NoticeActivity extends BaseActivity {
     }
 
     @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
     public int bandLayout() {
         return R.layout.activity_notice;
     }

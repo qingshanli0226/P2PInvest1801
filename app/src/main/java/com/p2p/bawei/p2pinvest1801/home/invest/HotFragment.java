@@ -11,9 +11,9 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.framework2.manager.CacheManager;
 import com.example.net.activity_bean.InvestBean;
 import com.fynn.fluidlayout.FluidLayout;
-import com.p2p.bawei.p2pinvest1801.CacheManager;
 import com.p2p.bawei.p2pinvest1801.R;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.p2p.bawei.p2pinvest1801;
+package com.p2p.bawei.p2pinvest1801.home;
 
 
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.framework2.mvp.view.BaseActivity;
 import com.google.android.material.tabs.TabLayout;
+import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.home.asset.AssetFragment;
 import com.p2p.bawei.p2pinvest1801.home.index.IndexFragment;
 import com.p2p.bawei.p2pinvest1801.home.invest.InvestFragment;
@@ -138,6 +139,11 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
     public int bandLayout() {
         return R.layout.activity_main;
     }
@@ -160,9 +166,5 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) and run LayoutCreator again
-    }
+
 }

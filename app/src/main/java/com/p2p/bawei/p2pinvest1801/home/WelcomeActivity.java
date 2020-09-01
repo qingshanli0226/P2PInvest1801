@@ -1,4 +1,4 @@
-package com.p2p.bawei.p2pinvest1801;
+package com.p2p.bawei.p2pinvest1801.home;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -13,9 +13,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.common.NetCommon;
+import com.example.framework2.manager.CacheManager;
 import com.example.framework2.mvp.view.BaseActivity;
 import com.example.net.activity_bean.IndexBean;
 import com.example.net.activity_bean.InvestBean;
@@ -23,6 +22,7 @@ import com.example.net.activity_bean.UpdateBean;
 import com.example.net.api_srever.ApiServer;
 import com.example.net.http.HttpManager;
 import com.example.net.observer.BaseObserver;
+import com.p2p.bawei.p2pinvest1801.R;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.Timer;
@@ -40,7 +40,10 @@ public class WelcomeActivity extends BaseActivity {
         public void handleMessage( Message msg) {
             super.handleMessage(msg);
             if (msg.what==6){
-                diaLog();
+                if (CacheManager.getInstance().isGeted()){
+                    diaLog();
+                    timer.cancel();
+                }
             }else {
                 time_number.setText(msg.what+"");
             }
@@ -49,7 +52,6 @@ public class WelcomeActivity extends BaseActivity {
     };
     private TextView time_number;
     private int start=3;
-    private boolean isUpdate=false;
     private  Timer timer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,7 @@ public class WelcomeActivity extends BaseActivity {
         setContentView(R.layout.activity_welcome);
         HttpManager.getHttpManager().setPath(NetCommon.BASE);
         initView();
+//        diaLog();
         initIndex();
         initVersion();
         initInvest();
@@ -87,27 +90,15 @@ public class WelcomeActivity extends BaseActivity {
             @Override
             public void run() {
                 start--;
-                if (start!=0){
+                if (start>=0){
                     handler.sendEmptyMessage(start);
-
                 }else {
-                    handler.sendEmptyMessage(start);
                     handler.sendEmptyMessage(6);
-                    timer.cancel();
-//                    if (!isUpdate){
-//                        Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
-//                        startActivity(intent);
-//                        WelcomeActivity.this.finish();
-//                        timer.cancel();
-//                    }else {
-
-//                    }
-
 
                 }
 
             }
-        }, 1000,1000);
+        }, 0,1000);
     }
 
     private void initInvest() {
@@ -162,7 +153,7 @@ public class WelcomeActivity extends BaseActivity {
                     public void success(IndexBean indexBean) {
                         CacheManager.getInstance().setIndexBean(indexBean);
                         Log.e("FFF", "success: "+indexBean.getMsg()+indexBean.getCode() );
-
+                        CacheManager.getInstance().setGeted(true);
                     }
 
                     @Override
@@ -204,6 +195,11 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     public void initData() {
+
+    }
+
+    @Override
+    public void initPresenter() {
 
     }
 

@@ -2,17 +2,19 @@ package com.p2p.bawei.p2pinvest1801.home.asset;
 
 
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.framework2.manager.CacheManager;
 import com.example.framework2.mvp.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.home.more.log.LogActivity;
 import com.wildma.pictureselector.PictureBean;
 import com.wildma.pictureselector.PictureSelector;
 
@@ -23,21 +25,48 @@ public class AssetFragment extends BaseFragment {
 
 
     private ImageView asset_head;
+    private RelativeLayout asset_manage;
+    private RelativeLayout asset_anschauung;
+    private RelativeLayout property_manage;
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.asset_head:
-                PictureSelector
-                        .create(AssetFragment.this, PictureSelector.SELECT_REQUEST_CODE)
-                        .selectPicture(true);
+                assetCut();
+                break;
+            case R.id.asset_manage:
+                startActivity(new Intent(getActivity(),AssetOneActivity.class));
+                break;
+            case R.id.asset_anschauung:
+                startActivity(new Intent(getActivity(),AssetTwoActivity.class));
+                break;
+            case R.id.property_manage:
+                startActivity(new Intent(getActivity(),AssetThreeActivity.class));
                 break;
         }
     }
 
+    private void assetCut() {
+        if (CacheManager.getInstance().getLoginBean()!=null){
+            PictureSelector
+                    .create(AssetFragment.this, PictureSelector.SELECT_REQUEST_CODE)
+                    .selectPicture(true);
+        }else {
+            startActivity(new Intent(getActivity(), LogActivity.class));
+        }
+
+    }
+
     @Override
     public void initView() {
-        asset_head= (ImageView) findViewById(R.id.asset_head);
+        asset_head = (ImageView) findViewById(R.id.asset_head);
+        asset_anschauung= (RelativeLayout) findViewById(R.id.asset_anschauung);
+        asset_manage= (RelativeLayout) findViewById(R.id.asset_manage);
+        property_manage= (RelativeLayout) findViewById(R.id.property_manage);
+        asset_manage.setOnClickListener(this);
+        asset_anschauung.setOnClickListener(this);
+        property_manage.setOnClickListener(this);
         asset_head.setOnClickListener(this);
     }
 

@@ -12,9 +12,9 @@ import android.widget.ImageView;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.example.framework2.manager.CacheManager;
 import com.example.net.activity_bean.IndexBean;
-import com.p2p.bawei.p2pinvest1801.CacheManager;
-import com.p2p.bawei.p2pinvest1801.ProgressView;
+import com.p2p.bawei.p2pinvest1801.myview.ProgressView;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.youth.banner.Banner;
 import com.youth.banner.Transformer;

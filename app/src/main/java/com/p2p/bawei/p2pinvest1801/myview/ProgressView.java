@@ -1,4 +1,4 @@
-package com.p2p.bawei.p2pinvest1801;
+package com.p2p.bawei.p2pinvest1801.myview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -13,6 +13,8 @@ import android.os.Message;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.p2p.bawei.p2pinvest1801.R;
 
 import io.reactivex.annotations.Nullable;
 

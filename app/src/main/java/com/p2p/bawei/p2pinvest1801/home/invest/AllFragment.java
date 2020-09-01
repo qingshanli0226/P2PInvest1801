@@ -10,8 +10,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.p2p.bawei.p2pinvest1801.CacheManager;
+import com.example.framework2.manager.CacheManager;
 import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.adapter.InvestAllAdapter;
 
 /**
  * A simple {@link Fragment} subclass.

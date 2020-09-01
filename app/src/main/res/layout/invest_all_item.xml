@@ -115,7 +115,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
-            <com.p2p.bawei.p2pinvest1801.ProgressView
+            <com.p2p.bawei.p2pinvest1801.myview.ProgressView
                 android:id="@+id/item_invest_all_progress"
                 android:layout_width="60dp"
                 android:layout_gravity="center"

@@ -8,4 +8,15 @@
         <attr name="text_color" format="color"></attr>
         <attr name="round_size" format="dimension"></attr>
     </declare-styleable>
+
+    <declare-styleable name="HistogramVIew">
+        <attr name="image_color" format="color" />
+        <attr name="title_color" format="color" />
+        <attr name="number_color" format="color" />
+        <attr name="histogram_style" format="string">
+            <enum name="Zhu" value="1" />
+            <enum name="Yuan" value="2" />
+            <enum name="Zhe" value="3" />
+        </attr>
+    </declare-styleable>
 </resources>

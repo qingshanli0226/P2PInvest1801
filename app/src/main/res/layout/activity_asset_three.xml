@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.asset.AssetThreeActivity">
+    <com.p2p.bawei.p2pinvest1801.myview.HistogramVIew
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:number_color="@color/colorAccent"
+        app:title_color="@color/colorBlues"
+        app:image_color="@color/colorBlack"
+        android:id="@+id/three_view"
+        app:histogram_style="Yuan"/>
+</LinearLayout>

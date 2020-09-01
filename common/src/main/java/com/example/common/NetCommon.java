@@ -43,7 +43,7 @@ public class NetCommon {
     public static final String DIGIT_URL = BASE_URL_JSON + "DIGIT_URL.json";
     //游戏专区
     public static final String GAME_URL = BASE_URL_JSON + "GAME_URL.json";
-
+    public static final String SP="cache.db";
 
     //主页Fragment路径
     public static final String HOME_URL = BASE_URL_JSON + "HOME_URL.json";

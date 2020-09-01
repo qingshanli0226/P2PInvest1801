@@ -7,6 +7,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+
+import com.example.framework2.manager.CacheManager;
 import com.example.framework2.mvp.presenter.IPresenter;
 
 
@@ -21,17 +23,16 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
             mPresenter.onDestroy();
             mPresenter = null;
         }
+        CacheManager.getInstance().removeActivity(this);
     }
 
-    @Override
-    public void initPresenter() {
-
-    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(bandLayout());
+        initPresenter();
+        CacheManager.getInstance().addActivity(this);
         initView();
         initData();
     }
