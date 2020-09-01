@@ -23,9 +23,15 @@ public class LogPresenter extends BasePresenter<LogContract.View,LogContract.Mod
 
             @Override
             public void onNext(LoginBean loginBean) {
-                CacheManager.getInstance().setLoginBean(loginBean);
-                CacheManager.getInstance().getSharedPreferences().edit().putString(NetCommon.SP,loginBean.getResult().getToken()).commit();
-                mView.logOk();
+                if (loginBean.getCode().equals("200")){
+                    CacheManager.getInstance().setLoginBean(loginBean);
+                    CacheManager.getInstance().getSharedPreferences().edit().putString(NetCommon.SP,loginBean.getResult().getToken()).commit();
+                    mView.logOk(loginBean);
+                }else {
+                    mView.showMessage(loginBean.getMessage());
+                }
+
+
             }
 
             @Override

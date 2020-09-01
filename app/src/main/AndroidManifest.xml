@@ -36,17 +36,25 @@
         <activity android:name=".home.more.AboutActivity" />
         <activity android:name=".home.more.GesteActivity" />
         <activity android:name=".home.index.NoticeActivity" />
-        <activity android:name=".home.WelcomeActivity">
+        <activity android:name=".home.WelcomeActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".home.MainActivity" />
+        <activity android:name=".home.MainActivity"
+             android:launchMode="singleTask" ></activity>
         <service android:name="com.example.framework2.MyService"
             android:enabled="true"
             android:exported="true"/>
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="720" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="1280" />
     </application>
 
 </manifest>

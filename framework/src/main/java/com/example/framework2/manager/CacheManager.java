@@ -23,6 +23,7 @@ import java.util.List;
 public class CacheManager {
     private CacheManager() {
     }
+
     private LoginBean loginBean;
 
     private SharedPreferences sharedPreferences;
@@ -123,6 +124,12 @@ public class CacheManager {
     public List<Activity> getActivityList() {
         return activityList;
     }
-
-
+    public void notifyLoginState(LoginBean loginBean,LoginINCallback loginINCallback){
+        if (loginINCallback!=null){
+            loginINCallback.OnLoginNotifyCallback(loginBean);
+        }
+    }
+    public interface LoginINCallback{
+        void OnLoginNotifyCallback(LoginBean loginBean);
+    }
 }

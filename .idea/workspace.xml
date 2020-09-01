@@ -11,60 +11,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e6ed28e-09cf-46da-a1f6-6859180cbc1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_uncleleonfan_StellarMap_v1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/adapter/RecommendAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/exception/CrashHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/asset/AssetOneActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/asset/AssetThreeActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/asset/AssetTwoActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogPresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/reg/RegContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/reg/RegModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/reg/RegPresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/myview/Bean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/myview/HistogramVIew.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/myview/LineCharView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_asset_three.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_asset_two.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/example/framework2/MyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/src/main/java/com/example/framework2/manager/CacheManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/net/src/main/java/com/example/net/activity_bean/LoginBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/net/src/main/java/com/example/net/activity_bean/RegisterBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__me_jessyan_autosize_1_1_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/hd.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/CacheManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/ProgressView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/myview/ProgressView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/WelcomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/WelcomeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/asset/AssetFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/asset/AssetFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/index/IndexFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/index/IndexFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/index/NoticeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/index/NoticeActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/invest/AllFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/invest/AllFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/invest/HotFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/invest/HotFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/invest/InvestAllAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/adapter/InvestAllAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/invest/RecommendFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/invest/RecommendFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/AboutActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/AboutActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/GesteActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/GesteActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/MoreFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/MoreFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/reg/RegActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/reg/RegActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_welcome.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_welcome.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_asset.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_asset.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_recommend.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_recommend.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/invest_all_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/invest_all_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/NetCommon.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/NetCommon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/src/main/java/com/example/framework2/mvp/view/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/main/java/com/example/framework2/mvp/view/BaseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/net/src/main/java/com/example/net/api_srever/ApiServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/net/src/main/java/com/example/net/api_srever/ApiServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/net/src/main/java/com/example/net/http/NetMapFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/net/src/main/java/com/example/net/http/NetMapFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/src/main/java/com/example/framework2/manager/CacheManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/main/java/com/example/framework2/manager/CacheManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,10 +51,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/App.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+            <state relative-caret-position="185">
+              <caret line="150" column="5" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,18 +63,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/reg/RegActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/WelcomeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="66" column="25" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
+            <state relative-caret-position="109">
+              <caret line="56" column="56" selection-start-line="56" selection-start-column="56" selection-end-line="56" selection-end-column="56" />
               <folding>
-                <element signature="e#1311#1312#0" expanded="true" />
-                <element signature="e#1375#1376#0" expanded="true" />
-                <element signature="e#1514#1515#0" expanded="true" />
-                <element signature="e#1581#1582#0" expanded="true" />
-                <element signature="e#1629#1630#0" expanded="true" />
-                <element signature="e#1695#1696#0" expanded="true" />
-                <element signature="e#1773#1774#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,8 +77,45 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/src/main/java/com/example/common/NetCommon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+            <state relative-caret-position="259">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/net/src/main/java/com/example/net/http/HttpManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="54" column="18" lean-forward="true" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="33" column="73" selection-start-line="33" selection-start-column="73" selection-end-line="33" selection-end-column="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/asset/AssetFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="113" column="43" selection-start-line="113" selection-start-column="43" selection-end-line="113" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -131,45 +123,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+            <state relative-caret-position="215">
+              <caret line="72" column="28" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
               <folding>
                 <element signature="e#758#759#0" expanded="true" />
-                <element signature="e#783#784#0" expanded="true" />
-                <element signature="e#1151#1152#0" expanded="true" />
-                <element signature="e#1215#1216#0" expanded="true" />
+                <element signature="e#792#793#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/example/framework2/manager/CacheManager.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/net/src/main/java/com/example/net/activity_bean/LoginBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="199">
+              <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2816#2817#0" expanded="true" />
+                <element signature="e#2853#2854#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-manifest" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/asset/AssetFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="65" column="58" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -177,15 +149,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+            <state relative-caret-position="239">
+              <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mix-127.0.0.1_21503/data/data/com.p2p.bawei.p2pinvest1801/shared_prefs/cache.db.xml">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -211,8 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/call_popwindow.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/feedback_popwindow.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/myview/Bean.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" />
@@ -223,7 +188,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_asset_one.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/myview/HistogramVIew.java" />
         <option value="$PROJECT_DIR$/net/src/main/java/com/example/net/activity_bean/LoginBean.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogContract.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogModel.java" />
         <option value="$PROJECT_DIR$/net/src/main/java/com/example/net/activity_bean/RegisterBean.java" />
         <option value="$PROJECT_DIR$/net/src/main/java/com/example/net/http/NetMapFunction.java" />
@@ -238,7 +202,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/AboutActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/GesteActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/exception/CrashHandler.java" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/adapter/RecommendAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_recommend.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/invest/RecommendFragment.java" />
@@ -254,20 +217,24 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/MyService.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/example/common/NetCommon.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/manager/CacheManager.java" />
-        <option value="$PROJECT_DIR$/framework/src/main/java/com/example/framework2/manager/CacheManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/App.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/asset/AssetFragment.java" />
         <option value="$PROJECT_DIR$/framework/src/main/java/com/example/framework2/mvp/view/BaseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/reg/RegActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/framework/src/main/java/com/example/framework2/manager/CacheManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/asset/AssetFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogPresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogContract.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="333" />
-    <option name="y" value="90" />
+    <option name="x" value="369" />
+    <option name="y" value="148" />
     <option name="width" value="1555" />
     <option name="height" value="856" />
   </component>
@@ -290,127 +257,7 @@
             <path>
               <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="asset" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="more" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="more" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="p2pinvest1801" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="more" type="462c0819:PsiDirectoryNode" />
-              <item name="reg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="common" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="common" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="common" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="common" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="framework" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="framework" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="framework" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="framework2" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="framework" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="framework2" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="manager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="net" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="net" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="net" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="net" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="net" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="net" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="activity_bean" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="net" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="net" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="api_srever" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
-              <item name="net" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="net" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="http" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
             <path>
               <item name="P2PInvest1801" type="1abcf292:AndroidViewProjectNode" />
@@ -428,7 +275,7 @@
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="127.0.0.1:21503" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi" />
     <property name="last_opened_file_path" value="F:/two/Class5/framework" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -451,11 +298,11 @@
       <recent name="com.p2p.bawei.p2pinvest1801.home.asset" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\bw\1801\six\P2PInvest1801\app\src\main\res\mipmap-mdpi" />
       <recent name="F:\bw\1801\six\P2PInvest1801\app\src\main\java\com\p2p\bawei\p2pinvest1801\home\more\reg" />
       <recent name="F:\bw\1801\six\P2PInvest1801\net\src\main\java\com\example\net\activity_bean" />
       <recent name="F:\bw\1801\six\P2PInvest1801\app\src\main\res\layout" />
       <recent name="F:\bw\1801\six\P2PInvest1801\app\src\main\java\com\p2p\bawei\p2pinvest1801\myview" />
-      <recent name="F:\bw\1801\six\P2PInvest1801\app\src\main\res\drawable" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -560,10 +407,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="333" y="90" width="1555" height="856" extended-state="0" />
+    <frame x="574" y="148" width="1555" height="856" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.5023328" side_tool="true" weight="0.17239144" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4976672" visible="true" weight="0.15117057" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4976672" visible="true" weight="0.15117057" />
       <window_info id="Structure" order="2" sideWeight="0.5023328" side_tool="true" weight="0.17239144" />
       <window_info id="Favorites" order="3" sideWeight="0.5023328" side_tool="true" weight="0.17239144" />
       <window_info id="Build Variants" order="4" sideWeight="0.5023328" side_tool="true" weight="0.17239144" />
@@ -582,12 +430,12 @@
       <window_info anchor="bottom" id="Android Profiler" order="8" weight="0.32923833" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.3287841" />
       <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.5080745" />
-      <window_info active="true" anchor="right" id="Device File Explorer" order="0" side_tool="true" visible="true" weight="0.30301005" />
+      <window_info anchor="right" id="Device File Explorer" order="0" sideWeight="0.5011236" side_tool="true" weight="0.18862876" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Preview" order="5" weight="0.18862876" />
+      <window_info anchor="right" id="Preview" order="5" sideWeight="0.4988764" weight="0.18862876" />
     </layout>
     <layout-to-restore>
       <window_info id="Captures" order="0" sideWeight="0.5023328" side_tool="true" weight="0.17239144" />
@@ -623,7 +471,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/framework/src/main/java/com/example/framework2/manager/CacheManager.java</url>
-          <line>58</line>
+          <line>59</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
@@ -631,50 +479,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/install/AndroidSDK/sources/android-29/android/graphics/drawable/GradientDrawable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="208" column="11" selection-start-line="208" selection-start-column="11" selection-end-line="208" selection-end-column="11" />
-          <folding>
-            <element signature="e#7623#7624#0" expanded="true" />
-            <element signature="e#7698#7699#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/adapter/ListAdapter.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/adapter/RecommendAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/invest/RecommendFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_recommend.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/adapter/InvestAllAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="65" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/shape_button_color.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/shape_button.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -704,13 +508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/exception/CrashHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -725,13 +522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2460">
           <caret line="102" column="52" selection-start-line="102" selection-start-column="52" selection-end-line="102" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -752,14 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_asset.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -810,44 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/example/framework2/mvp/view/BaseFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1110">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding>
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/net/src/main/java/com/example/net/activity_bean/LoginBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/WelcomeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -938,53 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/reg/RegActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="66" column="25" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
-          <folding>
-            <element signature="e#1311#1312#0" expanded="true" />
-            <element signature="e#1375#1376#0" expanded="true" />
-            <element signature="e#1514#1515#0" expanded="true" />
-            <element signature="e#1581#1582#0" expanded="true" />
-            <element signature="e#1629#1630#0" expanded="true" />
-            <element signature="e#1695#1696#0" expanded="true" />
-            <element signature="e#1773#1774#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
-          <folding>
-            <element signature="e#758#759#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#1151#1152#0" expanded="true" />
-            <element signature="e#1215#1216#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/example/common/NetCommon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/reg/RegPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -992,22 +689,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/asset/AssetFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="65" column="58" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/xiaomi-mix-127.0.0.1_21503/data/data/com.p2p.bawei.p2pinvest1801/shared_prefs/cache.db.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/App.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1019,14 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
     <entry file="file://D:/install/AndroidSDK/sources/android-29/android/os/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
@@ -1034,15 +709,185 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/example/framework2/manager/CacheManager.java">
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-405" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/reg/RegPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/asset/AssetOneActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-330">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/AboutActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-539">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/reg/RegActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="66" column="25" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
+          <folding>
+            <element signature="e#1311#1312#0" expanded="true" />
+            <element signature="e#1375#1376#0" expanded="true" />
+            <element signature="e#1514#1515#0" expanded="true" />
+            <element signature="e#1581#1582#0" expanded="true" />
+            <element signature="e#1629#1630#0" expanded="true" />
+            <element signature="e#1695#1696#0" expanded="true" />
+            <element signature="e#1774#1775#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_asset.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/example/framework2/mvp/view/BaseFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="e#609#610#0" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/example/framework2/manager/CacheManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="127" column="35" selection-start-line="127" selection-start-column="35" selection-end-line="127" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/asset/AssetFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="113" column="43" selection-start-line="113" selection-start-column="43" selection-end-line="113" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/net/src/main/java/com/example/net/activity_bean/LoginBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+          <folding>
+            <element signature="e#2816#2817#0" expanded="true" />
+            <element signature="e#2853#2854#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/more/log/LogActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="72" column="28" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
+          <folding>
+            <element signature="e#758#759#0" expanded="true" />
+            <element signature="e#792#793#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/net/src/main/java/com/example/net/http/HttpManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/example/common/NetCommon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="150" column="5" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/p2p/bawei/p2pinvest1801/home/WelcomeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="56" column="56" selection-start-line="56" selection-start-column="56" selection-end-line="56" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="33" column="73" selection-start-line="33" selection-start-column="73" selection-end-line="33" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="54" column="18" lean-forward="true" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
     </entry>
   </component>
 </project>

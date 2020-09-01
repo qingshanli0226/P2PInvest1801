@@ -13,7 +13,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -37,6 +37,7 @@ dependencies {
 //    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
     implementation 'com.github.ihsg:PatternLocker:2.5.6'
     implementation 'com.github.uncleleonfan:StellarMap:v1.0.0'
+    implementation 'me.jessyan:autosize:1.1.2'
     implementation project(":net")
     implementation project(":common")
     implementation project(":framework")

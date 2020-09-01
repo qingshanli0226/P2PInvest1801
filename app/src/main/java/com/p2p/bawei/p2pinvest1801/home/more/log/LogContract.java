@@ -11,7 +11,7 @@ public interface LogContract {
     interface View extends IView {
         String getUserName();
         String getUserPwd();
-        void logOk();
+        void logOk(LoginBean loginBean);
     }
     interface Model extends IModel{
         void requestLog(String name, String pwd, Observer<LoginBean> observer);

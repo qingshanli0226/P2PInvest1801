@@ -10,9 +10,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.framework2.manager.CacheManager;
 import com.example.framework2.mvp.view.BaseFragment;
+import com.example.net.activity_bean.LoginBean;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.home.more.log.LogActivity;
 import com.wildma.pictureselector.PictureBean;
@@ -21,7 +23,7 @@ import com.wildma.pictureselector.PictureSelector;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AssetFragment extends BaseFragment {
+public class AssetFragment extends BaseFragment implements CacheManager.LoginINCallback{
 
 
     private ImageView asset_head;
@@ -73,6 +75,7 @@ public class AssetFragment extends BaseFragment {
     @Override
     public void initData() {
 
+
     }
 
     @Override
@@ -103,6 +106,15 @@ public class AssetFragment extends BaseFragment {
                         .load(pictureBean.getPath())
                         .apply(RequestOptions.centerCropTransform()).into(asset_head);
             }
+        }
+    }
+
+    @Override
+    public void OnLoginNotifyCallback(LoginBean loginBean) {
+        if (!(CacheManager.getInstance().getLoginBean()==null)){
+            Glide.with(getActivity()).load(CacheManager.getInstance().getLoginBean().getResult().getAvatar())
+                    .transform(new CircleCrop())
+                    .into(asset_head);
         }
     }
 }

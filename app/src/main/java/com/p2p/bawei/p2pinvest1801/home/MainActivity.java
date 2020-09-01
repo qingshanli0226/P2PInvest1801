@@ -1,6 +1,7 @@
 package com.p2p.bawei.p2pinvest1801.home;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -141,6 +142,12 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initPresenter() {
 
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+//        intent.
     }
 
     @Override

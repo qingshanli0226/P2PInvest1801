@@ -1,5 +1,6 @@
 package com.p2p.bawei.p2pinvest1801.home.more.log;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,8 +9,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.framework2.manager.CacheManager;
 import com.example.framework2.mvp.view.BaseActivity;
+import com.example.net.activity_bean.LoginBean;
 import com.p2p.bawei.p2pinvest1801.R;
+import com.p2p.bawei.p2pinvest1801.home.MainActivity;
 import com.p2p.bawei.p2pinvest1801.myview.Bean;
 
 public class LogActivity extends BaseActivity<LogPresenter> implements LogContract.View {
@@ -64,8 +68,12 @@ public class LogActivity extends BaseActivity<LogPresenter> implements LogContra
     }
 
     @Override
-    public void logOk() {
+    public void logOk(LoginBean loginBean) {
         Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("name",loginBean.getResult().getName());
+        intent.putExtra("avatar",(String) loginBean.getResult().getAvatar());
+        startActivity(intent);
         finish();
     }
 }
