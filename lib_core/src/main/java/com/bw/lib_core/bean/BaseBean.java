@@ -1,4 +1,4 @@
-package com.p2p.bawei.p2pinvest1801.bean;
+package com.bw.lib_core.bean;
 
 public class BaseBean<T> {
 

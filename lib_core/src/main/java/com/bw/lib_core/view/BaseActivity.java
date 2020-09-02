@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 
-
+import com.bw.lib_core.http.HttpRetrofitManager;
 import com.bw.lib_core.presenter.IPresenter;
 
 public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IActivity,IView {
@@ -19,6 +19,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
         initView();
         initInject();
         initData();
+        HttpRetrofitManager.getInstance().addActivity(this);
     }
 
 
@@ -45,5 +46,6 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
             mPresenter.onDestroy();
             mPresenter=null;
         }
+        HttpRetrofitManager.getInstance().removeActivity(this);
     }
 }

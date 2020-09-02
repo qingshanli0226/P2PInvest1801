@@ -1,4 +1,4 @@
-package com.shopmall.bawei.net.mode;
+package com.p2p.bawei.p2pinvest1801.bean;
 
 public class ShopcarBean {
 
