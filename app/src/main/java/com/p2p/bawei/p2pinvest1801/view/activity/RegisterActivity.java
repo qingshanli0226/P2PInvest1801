@@ -8,6 +8,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bw.lib_core.view.BaseActivity;
@@ -17,6 +18,9 @@ import com.p2p.bawei.p2pinvest1801.contract.MyRegisterContract;
 import com.p2p.bawei.p2pinvest1801.model.MyRegisterModel;
 import com.p2p.bawei.p2pinvest1801.presenter.MyRegisterPresenter;
 
+/**
+ * 注册
+ */
 public class RegisterActivity extends BaseActivity<MyRegisterPresenter> implements MyRegisterContract.View {
 
     private EditText editPhone;
@@ -24,6 +28,8 @@ public class RegisterActivity extends BaseActivity<MyRegisterPresenter> implemen
     private EditText editPwd;
     private EditText editQrpwd;
     private Button btRegister;
+    private ImageView imageBack;
+
 
     @Override
         public int bandLayout() {
@@ -38,6 +44,14 @@ public class RegisterActivity extends BaseActivity<MyRegisterPresenter> implemen
         editPwd = (EditText) findViewById(R.id.edit_pwd);
         editQrpwd = (EditText) findViewById(R.id.edit_qrpwd);
         btRegister = (Button) findViewById(R.id.bt_register);
+        imageBack = (ImageView) findViewById(R.id.image_back);
+
+        imageBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
@@ -50,30 +64,31 @@ public class RegisterActivity extends BaseActivity<MyRegisterPresenter> implemen
     @Override
     public void initData() {
 
-//         btRegister.setEnabled(false);
-//
-//         editName.addTextChangedListener(new TextWatcher() {
-//             @Override
-//             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//             }
-//
-//             @Override
-//             public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//             }
-//
-//             @Override
-//             public void afterTextChanged(Editable s) {
-//
-//                 if(s.length()>0){
-//                     btRegister.setEnabled(true);
-//                 }else {
-//                     btRegister.setEnabled(false);
-//                     Toast.makeText(RegisterActivity.this, "请输入要注册的用户名密码", Toast.LENGTH_SHORT).show();
-//                 }
-//             }
-//         });
+         btRegister.setClickable(false);
+
+         editName.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+             }
+
+             @Override
+             public void afterTextChanged(Editable s) {
+
+                 if(s.length()>0){
+                     btRegister.setClickable(true);
+                     mPresenter.get_register();
+                 }else {
+                     btRegister.setClickable(false);
+                     Toast.makeText(RegisterActivity.this, "请输入要注册的用户名密码", Toast.LENGTH_SHORT).show();
+                 }
+             }
+         });
     }
 
     @Override

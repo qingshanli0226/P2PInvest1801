@@ -2,24 +2,23 @@ package com.p2p.bawei.p2pinvest1801.view.activity;
 
 import android.content.Intent;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.next.easynavigation.view.EasyNavigationBar;
 import com.p2p.bawei.p2pinvest1801.R;
 import com.p2p.bawei.p2pinvest1801.view.fragment.HomeFragment;
-import com.p2p.bawei.p2pinvest1801.view.fragment.MoneyFragment;
+import com.p2p.bawei.p2pinvest1801.view.fragment.InvestmentFragment;
 import com.p2p.bawei.p2pinvest1801.view.fragment.MoreFragment;
-import com.p2p.bawei.p2pinvest1801.view.fragment.MyMoneyFragment;
+import com.p2p.bawei.p2pinvest1801.view.fragment.MyAssetsFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private int[] list_unselect = {R.drawable.bottom01,R.drawable.bottom03,R.drawable.bottom05,R.drawable.bottom07};
     private int[] list_select = {R.drawable.bottom02,R.drawable.bottom04,R.drawable.bottom06,R.drawable.bottom08};
 
+    private long mTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
         initView();
 
 
-        Log.d("LQS", "1801学习git");
-        Log.d("LQS", "1801wby.....");
+        Log.d("wby", "1801学习git");
+        Log.d("wby", "1801wby.....");
     }
 
     private void initTab() {
         list_fragment.add(new HomeFragment());
-        list_fragment.add(new MoneyFragment());
-        list_fragment.add(new MyMoneyFragment());
+        list_fragment.add(new InvestmentFragment());
+        list_fragment.add(new MyAssetsFragment());
         list_fragment.add(new MoreFragment());
 
     }
@@ -116,5 +116,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //双击返回
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
 
+        if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){
+            if((System.currentTimeMillis() - mTime)>=2000){
+                Toast.makeText(this, "双击退出", Toast.LENGTH_SHORT).show();
+                mTime = System.currentTimeMillis();
+            }else {
+                finish();
+                if(mTime!=0){
+                    mTime=0;
+                }
+            }
+            return true;
+        }
+
+        return false;
+    }
 }

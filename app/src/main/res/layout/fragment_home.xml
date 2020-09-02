@@ -83,7 +83,7 @@
 
     </LinearLayout>
 
-    <com.p2p.bawei.p2pinvest1801.view.ProgressView
+    <com.p2p.bawei.p2pinvest1801.ProgressView
         android:id="@+id/progress_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -107,6 +107,7 @@
             android:layout_gravity="center_horizontal"/>
 
         <Button
+            android:id="@+id/bt_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"

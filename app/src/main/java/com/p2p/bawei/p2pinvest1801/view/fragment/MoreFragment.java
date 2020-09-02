@@ -1,15 +1,7 @@
 package com.p2p.bawei.p2pinvest1801.view.fragment;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
@@ -24,9 +16,16 @@ import com.p2p.bawei.p2pinvest1801.bean.MyHomeBean;
 import com.p2p.bawei.p2pinvest1801.contract.MyHomeContract;
 import com.p2p.bawei.p2pinvest1801.presenter.MyHomePresenter;
 import com.p2p.bawei.p2pinvest1801.view.activity.GuiGuActivity;
-import com.p2p.bawei.p2pinvest1801.view.activity.PwdActivity;
+import com.p2p.bawei.p2pinvest1801.view.activity.GesturePasswordActivity;
 import com.p2p.bawei.p2pinvest1801.view.activity.RegisterActivity;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.media.UMImage;
 
+/**
+ * 更多
+ */
 public class MoreFragment  extends BaseFragment<MyHomePresenter> implements MyHomeContract.View {
 
     private Switch btSwitch;
@@ -35,6 +34,7 @@ public class MoreFragment  extends BaseFragment<MyHomePresenter> implements MyHo
     private ImageView imagePwd;
     private TextView textRegister;
     private TextView textUser;
+    private TextView textShare;
 
 
     @Override
@@ -51,6 +51,7 @@ public class MoreFragment  extends BaseFragment<MyHomePresenter> implements MyHo
         imagePwd = (ImageView) findViewById(R.id.image_pwd);
         textRegister = (TextView) findViewById(R.id.text_register);
         textUser = (TextView) findViewById(R.id.text_user);
+        textShare = (TextView) findViewById(R.id.text_share);
 
         init_switch();//手势开关
         init_phone();//联系客服
@@ -58,8 +59,62 @@ public class MoreFragment  extends BaseFragment<MyHomePresenter> implements MyHo
         init_pwd();//重新绘制密码
         init_register();
         init_userResult();
+        textShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                init_share();//分享
+            }
+        });
+
 
     }
+
+    private void init_share() {
+
+        UMImage image = new UMImage(getActivity(), R.drawable.umeng_socialize_share_web);//资源文件
+        new ShareAction(getActivity()).withText("hello").withMedia(image).setDisplayList(SHARE_MEDIA.SINA,SHARE_MEDIA.QQ,SHARE_MEDIA.WEIXIN)
+                .setCallback(shareListener).open();
+    }
+
+    private UMShareListener shareListener = new UMShareListener() {
+        /**
+         * @descrption 分享开始的回调
+         * @param platform 平台类型
+         */
+        @Override
+        public void onStart(SHARE_MEDIA platform) {
+
+        }
+
+        /**
+         * @descrption 分享成功的回调
+         * @param platform 平台类型
+         */
+        @Override
+        public void onResult(SHARE_MEDIA platform) {
+            Toast.makeText(getContext(),"成功了",Toast.LENGTH_LONG).show();
+        }
+
+        /**
+         * @descrption 分享失败的回调
+         * @param platform 平台类型
+         * @param t 错误原因
+         */
+        @Override
+        public void onError(SHARE_MEDIA platform, Throwable t) {
+            Toast.makeText(getActivity(),"失败"+t.getMessage(),Toast.LENGTH_LONG).show();
+        }
+
+        /**
+         * @descrption 分享取消的回调
+         * @param platform 平台类型
+         */
+        @Override
+        public void onCancel(SHARE_MEDIA platform) {
+            Toast.makeText(getActivity(),"取消了",Toast.LENGTH_LONG).show();
+
+        }
+    };
 
     private void init_userResult() {
         textUser.setOnClickListener(new View.OnClickListener() {
@@ -108,7 +163,7 @@ public class MoreFragment  extends BaseFragment<MyHomePresenter> implements MyHo
          imagePwd.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 Intent intent = new Intent(getContext(), PwdActivity.class);
+                 Intent intent = new Intent(getContext(), GesturePasswordActivity.class);
                  startActivity(intent);
              }
          });
@@ -189,7 +244,7 @@ public class MoreFragment  extends BaseFragment<MyHomePresenter> implements MyHo
                         public void onClick(View v) {
                             Toast.makeText(getContext(), "设置手势密码,请稍后...", Toast.LENGTH_SHORT).show();
                             popupWindow.dismiss();
-                            Intent intent = new Intent(getContext(),PwdActivity.class);
+                            Intent intent = new Intent(getContext(), GesturePasswordActivity.class);
                             startActivity(intent);
                         }
                     });

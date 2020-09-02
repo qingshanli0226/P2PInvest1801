@@ -3,7 +3,7 @@ package com.p2p.bawei.p2pinvest1801.model;
 import com.bw.lib_core.http.BaseObserver;
 import com.bw.lib_core.http.HttpRetrofitManager;
 import com.bw.lib_core.model.BaseModel;
-import com.p2p.bawei.p2pinvest1801.app.MyApi;
+import com.p2p.bawei.p2pinvest1801.api.MyApi;
 import com.p2p.bawei.p2pinvest1801.bean.MyHomeBean;
 import com.p2p.bawei.p2pinvest1801.contract.MyHomeContract;
 

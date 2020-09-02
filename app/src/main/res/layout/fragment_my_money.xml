@@ -101,6 +101,7 @@
             android:id="@+id/linear">
 
             <Button
+                android:id="@+id/bt_cz"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -113,6 +114,7 @@
                />
 
             <Button
+                android:id="@+id/bt_tx"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -150,6 +152,7 @@
                 android:layout_marginLeft="10dp"/>
 
             <TextView
+                android:id="@+id/text_tzgl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="投资管理"
@@ -183,6 +186,7 @@
                 android:layout_marginLeft="10dp"/>
 
             <TextView
+                android:id="@+id/text_tzgl_zg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="投资管理(直观)"
@@ -216,6 +220,7 @@
                 android:layout_marginLeft="10dp"/>
 
             <TextView
+                android:id="@+id/text_zcgl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="资产管理"
