@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.bw.net.RetrofitManager;
 import com.bw.net.SpManager;
-import com.p2p.bawei.p2pinvest1801.UserManager;
+import com.p2p.bawei.p2pinvest1801.manager.UserManager;
 import com.bw.net.api.Api;
 import com.bw.net.bean.LoginBean;
 
@@ -20,8 +20,8 @@ import io.reactivex.schedulers.Schedulers;
 
 public class LoginService extends Service {
 
-    public class LoginBinder extends Binder{
-        public LoginService getService(){
+    public class LoginBinder extends Binder {
+        public LoginService getService() {
             return LoginService.this;
         }
     }
@@ -32,7 +32,7 @@ public class LoginService extends Service {
         return new LoginBinder();
     }
 
-    public void autologin(String token){
+    public void autologin(String token) {
         RetrofitManager.getInstance().retrofit
                 .create(Api.class)
                 .autoLogin(token)
@@ -46,9 +46,9 @@ public class LoginService extends Service {
 
                     @Override
                     public void onNext(LoginBean loginBean) {
-                        if (loginBean.getCode().equals("200")){
+                        if (loginBean.getCode().equals("200")) {
                             UserManager.getInstance().saveUserBean(loginBean);
-                            SpManager.getInstance().addContents("token",loginBean.getResult().getToken());
+                            SpManager.getInstance().addContents("token", loginBean.getResult().getToken());
                             Toast.makeText(LoginService.this, "自动登录成功", Toast.LENGTH_SHORT).show();
                         }
                     }

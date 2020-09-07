@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.bw.framwork.view.BaseFragment;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.UserManager;
+import com.p2p.bawei.p2pinvest1801.manager.UserManager;
 import com.p2p.bawei.p2pinvest1801.activity.MoreShuoActivity;
 import com.p2p.bawei.p2pinvest1801.activity.RegisterActivity;
 import com.umeng.socialize.ShareAction;

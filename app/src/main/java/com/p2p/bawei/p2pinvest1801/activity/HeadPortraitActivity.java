@@ -24,7 +24,7 @@ import com.bw.net.SpManager;
 import com.bw.net.bean.OutLoginBean;
 import com.bw.net.bean.UploadBean;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.UserManager;
+import com.p2p.bawei.p2pinvest1801.manager.UserManager;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.UploadContract;
 import com.p2p.bawei.p2pinvest1801.mvp.model.UploadModel;
 import com.p2p.bawei.p2pinvest1801.mvp.presenter.UploadPresenter;
@@ -129,11 +129,6 @@ public class HeadPortraitActivity extends BaseActivity<UploadPresenter> implemen
 
     @Override
     public void hideLoading() {
-
-    }
-
-    @Override
-    public void showError(int code, String message) {
 
     }
 

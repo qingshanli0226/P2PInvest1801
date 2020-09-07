@@ -32,7 +32,7 @@ public class RetrofitManager {  //网络请求框架
 
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://49.233.93.155:8080")
+                .baseUrl("http://49.233.93.155:9999")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)

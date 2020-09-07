@@ -32,4 +32,9 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
             mPresenter=null;
         }
     }
+
+    @Override
+    public void showError(int code, String message) {
+        showMsg("错误"+code+"==="+message);
+    }
 }

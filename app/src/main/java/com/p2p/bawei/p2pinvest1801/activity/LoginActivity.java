@@ -10,7 +10,7 @@ import com.bw.framwork.view.BaseActivity;
 import com.bw.net.SpManager;
 import com.bw.net.bean.LoginBean;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.UserManager;
+import com.p2p.bawei.p2pinvest1801.manager.UserManager;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.LoginContract;
 import com.p2p.bawei.p2pinvest1801.mvp.model.LoginModel;
 import com.p2p.bawei.p2pinvest1801.mvp.presenter.LoginPresenter;
@@ -66,11 +66,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ToolB
     @Override
     public void hideLoading() {
 
-    }
-
-    @Override
-    public void showError(int code, String message) {
-        showMsg("错误"+code+":"+message);
     }
 
     @Override

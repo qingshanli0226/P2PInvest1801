@@ -37,9 +37,9 @@ public class InvestmentFragment extends BaseFragment implements IView {
         tabnames.add("推荐理财");
         tabnames.add("热门理财");
 
-        fragments.add(new All_LC());
-        fragments.add(new Recommend_LC());
-        fragments.add(new Hot_LC());
+        fragments.add(new AllFinancial());
+        fragments.add(new RecommendFinancial());
+        fragments.add(new HotFinancial());
         adapter.notifyDataSetChanged();
     }
 

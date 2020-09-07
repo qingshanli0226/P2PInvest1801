@@ -101,4 +101,10 @@ public class HomePageFragment extends BaseFragment {
         super.onDestroy();
         myProgressBar.unMyProgressBar();
     }
+
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+    }
 }

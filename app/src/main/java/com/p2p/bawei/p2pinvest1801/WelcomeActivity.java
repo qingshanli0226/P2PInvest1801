@@ -16,6 +16,7 @@ import com.bw.framwork.view.BaseActivity;
 import com.bw.net.bean.HomeBean;
 import com.bw.net.bean.UpdataBean;
 import com.p2p.bawei.p2pinvest1801.activity.MainActivity;
+import com.p2p.bawei.p2pinvest1801.manager.UserManager;
 import com.p2p.bawei.p2pinvest1801.mvp.contract.HdContract;
 import com.p2p.bawei.p2pinvest1801.mvp.model.HdModel;
 import com.p2p.bawei.p2pinvest1801.mvp.presenter.HdPresenter;
@@ -61,10 +62,6 @@ public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdCont
         wImg = findViewById(R.id.w_img);
         wTime = findViewById(R.id.w_time);
 
-        mPresenter = new HdPresenter(new HdModel(), this);
-        if (!HomeDataManager.getInstance().isHaveHomeBean()) {
-            mPresenter.homeData();
-        }
 
         handler.sendEmptyMessage(1);
 
@@ -78,6 +75,10 @@ public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdCont
 
     @Override
     public void initData() {
+        mPresenter = new HdPresenter(new HdModel(), this);
+        if (!HomeDataManager.getInstance().isHaveHomeBean()) {
+            mPresenter.homeData();
+        }
 
     }
 
@@ -174,11 +175,6 @@ public class WelcomeActivity extends BaseActivity<HdPresenter> implements HdCont
 
     @Override
     public void hideLoading() {
-
-    }
-
-    @Override
-    public void showError(int code, String message) {
 
     }
 }

@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Message;
 
+import com.bw.common.until.EncryptUtil;
 import com.bw.net.RetrofitManager;
 import com.bw.net.api.Api;
 import com.jakewharton.disklrucache.DiskLruCache;

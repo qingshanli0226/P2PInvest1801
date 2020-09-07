@@ -73,7 +73,6 @@ public class MyProgressBar extends View {
         if (progress == 0) {
             return;
         }
-
         RectF rectF = new RectF(measuredWidth / 2 - radius, measuredHeight / 2 - radius, measuredWidth / 2 + radius, measuredHeight / 2 + radius);
 
         paint.setColor(arc_color);

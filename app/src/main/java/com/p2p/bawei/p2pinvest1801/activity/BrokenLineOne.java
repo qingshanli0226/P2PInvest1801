@@ -3,7 +3,7 @@ package com.p2p.bawei.p2pinvest1801.activity;
 import com.bw.framwork.view.BaseActivity;
 import com.lixs.charts.RadarChartView;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.UserManager;
+import com.p2p.bawei.p2pinvest1801.manager.UserManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,13 +11,10 @@ import java.util.List;
 public class BrokenLineOne extends BaseActivity {
     private RadarChartView radarChartView;
 
-
     @Override
     public void initView() {
         UserManager.getInstance().addActivity(this);
-
         radarChartView = findViewById(R.id.lineView);
-
     }
 
     @Override
@@ -61,12 +58,6 @@ public class BrokenLineOne extends BaseActivity {
     public void hideLoading() {
 
     }
-
-    @Override
-    public void showError(int code, String message) {
-
-    }
-
 
     @Override
     protected void onDestroy() {

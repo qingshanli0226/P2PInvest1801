@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.bw.net.RetrofitManager;
 import com.bw.net.api.Api;
 import com.bw.net.bean.UploadBean;
-import com.p2p.bawei.p2pinvest1801.UserManager;
+import com.p2p.bawei.p2pinvest1801.manager.UserManager;
 import com.p2p.bawei.p2pinvest1801.WelcomeActivity;
 
 import java.io.File;

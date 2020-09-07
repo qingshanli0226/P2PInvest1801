@@ -5,8 +5,6 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
@@ -14,12 +12,12 @@ import android.view.KeyEvent;
 import com.bw.common.view.BottomBar;
 import com.bw.framwork.view.BaseActivity;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.UserManager;
 import com.p2p.bawei.p2pinvest1801.cacheError.CacheErrorManager;
 import com.p2p.bawei.p2pinvest1801.fragment.HomePageFragment;
 import com.p2p.bawei.p2pinvest1801.fragment.InvestmentFragment;
 import com.p2p.bawei.p2pinvest1801.fragment.MindFragment;
 import com.p2p.bawei.p2pinvest1801.fragment.MoreFragment;
+import com.p2p.bawei.p2pinvest1801.manager.UserManager;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import io.reactivex.Observer;
@@ -54,13 +52,13 @@ public class MainActivity extends BaseActivity {    //王俊豪练习项目
             }
         });
 
-        if (Build.VERSION.SDK_INT >= 23) {
-            String[] mPermissionList = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.CALL_PHONE, Manifest.permission.READ_LOGS, Manifest.permission.READ_PHONE_STATE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.SET_DEBUG_APP, Manifest.permission.SYSTEM_ALERT_WINDOW, Manifest.permission.GET_ACCOUNTS, Manifest.permission.WRITE_APN_SETTINGS};
-            ActivityCompat.requestPermissions(this, mPermissionList, 123);
-        }
-
         //动态权限申请
-        new RxPermissions(this).request(new String[]{"android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE"})
+        new RxPermissions(this).request(new String[]{"android.permission.READ_EXTERNAL_STORAGE",
+                "android.permission.WRITE_EXTERNAL_STORAGE", Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.CALL_PHONE, Manifest.permission.READ_LOGS,
+                Manifest.permission.READ_PHONE_STATE, Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.SET_DEBUG_APP, Manifest.permission.SYSTEM_ALERT_WINDOW, Manifest.permission.GET_ACCOUNTS,
+                Manifest.permission.WRITE_APN_SETTINGS})
                 .subscribe(new Observer<Boolean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
@@ -108,21 +106,14 @@ public class MainActivity extends BaseActivity {    //王俊豪练习项目
                     homePageFragment = new HomePageFragment();
                     transaction.add(R.id.main_vp, homePageFragment);
                 }
-
-
                 transaction.show(homePageFragment);
-
-
                 break;
             case INVESTMENT:
                 if (investmentFragment == null) {
                     investmentFragment = new InvestmentFragment();
                     transaction.add(R.id.main_vp, investmentFragment);
                 }
-
                 transaction.show(investmentFragment);
-
-
                 break;
             case MIND:
                 if (mindFragment == null) {
@@ -211,11 +202,6 @@ public class MainActivity extends BaseActivity {    //王俊豪练习项目
 
     @Override
     public void hideLoading() {
-
-    }
-
-    @Override
-    public void showError(int code, String message) {
 
     }
 

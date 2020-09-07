@@ -4,6 +4,8 @@ import android.app.Application;
 
 import com.bw.net.SpManager;
 import com.p2p.bawei.p2pinvest1801.cacheError.CacheErrorManager;
+import com.p2p.bawei.p2pinvest1801.manager.ConnectManager;
+import com.p2p.bawei.p2pinvest1801.manager.UserManager;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.socialize.PlatformConfig;
 
@@ -22,6 +24,8 @@ public class App extends Application {
 
         CacheErrorManager.getInstance().init(this);
         APKVersionCodeUtils.getInstance().init(this);
+
+        ConnectManager.getInstance().init(this);
 
         initYm();
     }

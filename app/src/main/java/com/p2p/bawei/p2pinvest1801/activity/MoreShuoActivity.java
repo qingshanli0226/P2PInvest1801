@@ -7,7 +7,7 @@ import com.github.ihsg.patternlocker.OnPatternChangeListener;
 import com.github.ihsg.patternlocker.PatternIndicatorView;
 import com.github.ihsg.patternlocker.PatternLockerView;
 import com.p2p.bawei.p2pinvest1801.R;
-import com.p2p.bawei.p2pinvest1801.UserManager;
+import com.p2p.bawei.p2pinvest1801.manager.UserManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,11 +88,6 @@ public class MoreShuoActivity extends BaseActivity {
 
     @Override
     public void hideLoading() {
-
-    }
-
-    @Override
-    public void showError(int code, String message) {
 
     }
 
